@@ -1,0 +1,47 @@
+<svg viewBox="0 0 920 620" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#eff9ff"/>
+      <stop offset="1" stop-color="#cdefff"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0d8bd2"/>
+      <stop offset="1" stop-color="#d6f6ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="620" rx="34" fill="url(#sky)"/>
+  <g opacity=".35" stroke="#0b5fb3" fill="none">
+    <path d="M57 160C191 74 263 205 404 117C522 43 616 112 789 72"/>
+    <path d="M36 213C198 110 272 246 424 156C561 75 641 150 817 108"/>
+    <path d="M24 271C204 159 300 292 462 199C604 118 699 194 844 151"/>
+    <path d="M18 331C211 214 326 341 489 248C632 167 737 239 869 204"/>
+  </g>
+  <path d="M0 438C187 333 314 406 461 351C606 296 712 284 920 177V620H0V438Z" fill="url(#sea)" opacity=".9"/>
+  <path d="M0 485C190 377 334 465 486 397C621 337 744 326 920 225V620H0V485Z" fill="#ffffff" opacity=".32"/>
+  <g stroke="#ffffff" stroke-width="3" opacity=".82" fill="none">
+    <path d="M43 509C196 427 352 504 518 431C675 361 774 359 896 292"/>
+    <path d="M57 551C207 473 371 545 542 472C696 406 771 407 884 348"/>
+    <path d="M87 590C224 528 393 585 572 520C706 471 801 464 908 417"/>
+  </g>
+  <g opacity=".56" stroke="#0d3f7a" fill="none">
+    <path d="M441 236C471 181 525 166 600 167C676 169 737 103 831 107"/>
+    <path d="M414 257C486 210 523 219 592 222C680 226 742 156 853 158"/>
+    <path d="M384 282C479 253 536 269 612 274C700 281 773 223 884 221"/>
+    <path d="M365 314C455 296 523 319 602 324C697 329 780 284 903 281"/>
+  </g>
+  <path d="M635 236C689 212 744 213 804 180L920 148V305C826 339 760 330 692 355C621 380 552 414 463 434C536 361 581 281 635 236Z" fill="#63bf75" opacity=".95"/>
+  <path d="M649 251C710 227 769 232 826 204" stroke="#1c8d45" stroke-width="5" opacity=".75"/>
+  <path d="M673 289C735 263 792 273 862 238" stroke="#1c8d45" stroke-width="4" opacity=".6"/>
+  <g stroke="#0b5fb3" stroke-width="4" stroke-linecap="round" opacity=".85">
+    <path d="M780 126L815 248"/>
+    <path d="M780 126L736 172"/>
+    <path d="M780 126L816 82"/>
+    <path d="M833 155L858 251" opacity=".6"/>
+    <path d="M833 155L797 194" opacity=".6"/>
+    <path d="M833 155L865 120" opacity=".6"/>
+  </g>
+  <g fill="#0b5fb3" opacity=".55">
+    <path d="M320 459l48-25-13 18 52 10-56 2 10 19z"/>
+    <path d="M481 389l47-25-13 18 52 11-56 2 10 19z"/>
+  </g>
+</svg>

@@ -1,1 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Environmental Fluid Systems Research Group</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .publications-hero {
+      padding: 78px 0 44px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 184, 90, 0.13), transparent 34%),
+        linear-gradient(135deg, #eef8ff 0%, #ffffff 64%);
+    }
+
+    .publications-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: .82rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .publications-hero h1 {
+      max-width: 980px;
+      margin: 0;
+      color: var(--primary-dark);
+      font-size: clamp(2.2rem, 5vw, 4.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .publications-hero p {
+      max-width: 780px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .pub-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-weight: 800;
+      font-size: .9rem;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .pub-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 22px;
+      padding: 24px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(7, 54, 111, .07);
+      transition: .25s ease;
+    }
+
+    .pub-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(11, 95, 179, .28);
+      box-shadow: 0 20px 48px rgba(7, 54, 111, .12);
+    }
+
+    .pub-year {
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      min-height: 120px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 14px;
+    }
+
+    .pub-year strong {
+      display: block;
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .pub-year span {
+      display: block;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      opacity: .9;
+    }
+
+    .pub-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .pub-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .pub-tag.green {
+      background: rgba(37, 184, 90, .12);
+      color: var(--green-dark);
+    }
+
+    .pub-content h3 {
+      margin: 0 0 10px;
+      color: var(--primary-dark);
+      font-size: 1.22rem;
+      line-height: 1.35;
+    }
+
+    .pub-authors {
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.55;
+    }
+
+    .pub-source {
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .pub-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: .88rem;
+      transition: .2s ease;
+    }
+
+    .pub-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .pub-note {
+      margin-top: 30px;
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--primary-dark);
+      color: #fff;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .pub-note i {
+      color: #7fe0a0;
+      font-size: 1.7rem;
+      margin-top: 4px;
+    }
+
+    .pub-note h3 {
+      margin: 0 0 8px;
+      color: #fff;
+    }
+
+    .pub-note p {
+      margin: 0;
+      line-height: 1.7;
+      opacity: .94;
+    }
+
+    @media (max-width: 720px) {
+      .pub-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-year {
+        min-height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .pub-year strong {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/ourlogo.png" alt="EFSRG logo">
+      <div>
+        <strong>Environmental Fluid Systems</strong>
+        <span>Research Group</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="publications.html">Publications</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-primary header-cta" href="contact.html">
+      <i class="fa-regular fa-envelope"></i> Contact Us
+    </a>
+
+    <button class="menu-btn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<section class="publications-hero">
+  <div class="container">
+    <div class="eyebrow">
+      <i class="fa-solid fa-book-open"></i>
+      Publications & Technical Documents
+    </div>
+
+    <h1>Research outputs, technical reports, and scientific contributions.</h1>
+
+    <div class="accent-line"></div>
+
+    <p>
+      This page presents selected publications, conference papers, technical reports, and supporting documents
+      related to water, coastal, groundwater, climate, and environmental fluid systems.
+    </p>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-title">
+      <h2>Selected Publications</h2>
+      <p>
+        A curated list of research articles, conference contributions, reports, and technical documents.
+      </p>
+    </div>
+
+    <div class="pub-filter">
+      <button class="filter-btn active" onclick="filterPublications('all', this)">All</button>
+      <button class="filter-btn" onclick="filterPublications('journal', this)">Journal</button>
+      <button class="filter-btn" onclick="filterPublications('conference', this)">Conference</button>
+      <button class="filter-btn" onclick="filterPublications('report', this)">Technical Report</button>
+      <button class="filter-btn" onclick="filterPublications('guideline', this)">Guideline</button>
+    </div>
+
+    <div class="pub-list">
+
+      <article class="pub-card" data-category="report">
+        <div class="pub-year">
+          <div>
+            <strong>2026</strong>
+            <span>Technical Report</span>
+          </div>
+        </div>
+
+        <div class="pub-content">
+          <div class="pub-meta">
+            <span class="pub-tag"><i class="fa-solid fa-water"></i> Hydrology</span>
+            <span class="pub-tag"><i class="fa-solid fa-house-flood-water"></i> Hydraulic</span>
+            <span class="pub-tag green"><i class="fa-solid fa-cloud-sun-rain"></i> Climate Impact</span>
+          </div>
+
+          <h3>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant</h3>
+
+          <div class="pub-authors">
+            Environmental Fluid Systems Research Group
+          </div>
+
+          <div class="pub-source">
+            Technical support document for hydrology, hydraulic modelling, and climate-change-related hazard
+            assessment of the Pakil Pumped Storage Plant and Laguna de Bay system.
+          </div>
+
+          <div class="pub-actions">
+            <a class="pub-link" href="projects.html">
+              <i class="fa-solid fa-folder-open"></i> Related Project
+            </a>
+            <a class="pub-link" href="#" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub-card" data-category="report">
+        <div class="pub-year">
+          <div>
+            <strong>2026</strong>
+            <span>Technical Report</span>
+          </div>
+        </div>
+
+        <div class="pub-content">
+          <div class="pub-meta">
+            <span class="pub-tag"><i class="fa-solid fa-water"></i> Hydrodynamic</span>
+            <span class="pub-tag"><i class="fa-solid fa-layer-group"></i> Sediment</span>
+            <span class="pub-tag green"><i class="fa-solid fa-dam"></i> Pumped Storage</span>
+          </div>
+
+          <h3>Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant</h3>
+
+          <div class="pub-authors">
+            Environmental Fluid Systems Research Group
+          </div>
+
+          <div class="pub-source">
+            Technical modelling document covering rainfall-runoff, hydrodynamic simulation, and sediment transport
+            assessment for the Laguna de Bay system.
+          </div>
+
+          <div class="pub-actions">
+            <a class="pub-link" href="projects.html">
+              <i class="fa-solid fa-folder-open"></i> Related Project
+            </a>
+            <a class="pub-link" href="#" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub-card" data-category="report">
+        <div class="pub-year">
+          <div>
+            <strong>2025</strong>
+            <span>Technical Report</span>
+          </div>
+        </div>
+
+        <div class="pub-content">
+          <div class="pub-meta">
+            <span class="pub-tag"><i class="fa-solid fa-house-flood-water"></i> Flood Modelling</span>
+            <span class="pub-tag"><i class="fa-solid fa-water"></i> River Capacity</span>
+            <span class="pub-tag green"><i class="fa-solid fa-map"></i> HEC-RAS</span>
+          </div>
+
+          <h3>Hydrology and Hydraulic Modelling for River Flood Assessment PIT 110</h3>
+
+          <div class="pub-authors">
+            Environmental Fluid Systems Research Group
+          </div>
+
+          <div class="pub-source">
+            Technical report for rainfall-runoff and river hydraulic simulation to assess flood inundation,
+            overflow risk, and alternative diversion channel design in Borneo, Indonesia.
+          </div>
+
+          <div class="pub-actions">
+            <a class="pub-link" href="projects.html">
+              <i class="fa-solid fa-folder-open"></i> Related Project
+            </a>
+            <a class="pub-link" href="#" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub-card" data-category="report">
+        <div class="pub-year">
+          <div>
+            <strong>2025</strong>
+            <span>Technical Report</span>
+          </div>
+        </div>
+
+        <div class="pub-content">
+          <div class="pub-meta">
+            <span class="pub-tag"><i class="fa-solid fa-house-flood-water"></i> Flood Assessment</span>
+            <span class="pub-tag"><i class="fa-solid fa-gauge-high"></i> Hydraulic</span>
+            <span class="pub-tag green"><i class="fa-solid fa-map-location-dot"></i> Inundation</span>
+          </div>
+
+          <h3>Hydrology and Hydraulic Modelling for River Flood Assessment PIT 131</h3>
+
+          <div class="pub-authors">
+            Environmental Fluid Systems Research Group
+          </div>
+
+          <div class="pub-source">
+            Technical report for existing river hydraulic assessment, flood inundation analysis, and
+            riverbank channel design evaluation for improved flow capacity.
+          </div>
+
+          <div class="pub-actions">
+            <a class="pub-link" href="projects.html">
+              <i class="fa-solid fa-folder-open"></i> Related Project
+            </a>
+            <a class="pub-link" href="#" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub-card" data-category="guideline">
+        <div class="pub-year">
+          <div>
+            <strong>2025</strong>
+            <span>Guideline</span>
+          </div>
+        </div>
+
+        <div class="pub-content">
+          <div class="pub-meta">
+            <span class="pub-tag"><i class="fa-solid fa-file-lines"></i> Guideline</span>
+            <span class="pub-tag"><i class="fa-solid fa-seedling"></i> Water Resources</span>
+            <span class="pub-tag green"><i class="fa-solid fa-droplet"></i> Water Supply</span>
+          </div>
+
+          <h3>Guidelines for Sustainable Water Supply Management</h3>
+
+          <div class="pub-authors">
+            Environmental Fluid Systems Research Group
+          </div>
+
+          <div class="pub-source">
+            Technical guideline document for integrated planning, efficient water allocation, infrastructure
+            optimization, and environmental protection to support long-term water security.
+          </div>
+
+          <div class="pub-actions">
+            <a class="pub-link" href="assets/jasatirta.pdf" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> View PDF
+            </a>
+            <a class="pub-link" href="projects.html">
+              <i class="fa-solid fa-folder-open"></i> Related Project
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub-card" data-category="conference">
+        <div class="pub-year">
+          <div>
+            <strong>2025</strong>
+            <span>Conference</span>
+          </div>
+        </div>
+
+        <div class="pub-content">
+          <div class="pub-meta">
+            <span class="pub-tag"><i class="fa-solid fa-water"></i> Coastal</span>
+            <span class="pub-tag"><i class="fa-solid fa-house-tsunami"></i> Tsunami</span>
+            <span class="pub-tag green"><i class="fa-solid fa-cubes"></i> Numerical Model</span>
+          </div>
+
+          <h3>Numerical Modelling of Coastal and Tsunami-Driven Flow Processes</h3>
+
+          <div class="pub-authors">
+            Author Name, Co-author Name
+          </div>
+
+          <div class="pub-source">
+            Conference contribution related to coastal hydrodynamics, tsunami-driven inundation,
+            and numerical simulation of flow processes. Replace this example with real conference details.
+          </div>
+
+          <div class="pub-actions">
+            <a class="pub-link" href="#" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
+            </a>
+            <a class="pub-link" href="#">
+              <i class="fa-solid fa-link"></i> DOI / Link Coming Soon
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub-card" data-category="journal">
+        <div class="pub-year">
+          <div>
+            <strong>2024</strong>
+            <span>Journal</span>
+          </div>
+        </div>
+
+        <div class="pub-content">
+          <div class="pub-meta">
+            <span class="pub-tag"><i class="fa-solid fa-wind"></i> CFD</span>
+            <span class="pub-tag"><i class="fa-solid fa-arrows-spin"></i> Turbulence</span>
+            <span class="pub-tag green"><i class="fa-solid fa-flask"></i> Dispersion</span>
+          </div>
+
+          <h3>Computational Fluid Dynamics for Environmental Flow and Dispersion Analysis</h3>
+
+          <div class="pub-authors">
+            Author Name, Co-author Name
+          </div>
+
+          <div class="pub-source">
+            Journal article placeholder for CFD-based analysis of environmental fluid dynamics,
+            turbulence, mixing, and dispersion. Replace with real title, journal name, volume, pages, and DOI.
+          </div>
+
+          <div class="pub-actions">
+            <a class="pub-link" href="#" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
+            </a>
+            <a class="pub-link" href="#">
+              <i class="fa-solid fa-link"></i> DOI / Link Coming Soon
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="pub-note">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <h3>Publication list can be updated anytime.</h3>
+        <p>
+          Replace the placeholder authors, journal titles, conference names, PDFs, and DOI links with real publication data.
+          Technical reports may also be linked to project pages or downloadable PDF summaries.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="brand">
+      <img src="assets/ourlogo.png" alt="EFSRG logo">
+      <div>
+        <strong>Environmental Fluid Systems</strong>
+        <span>Research Group</span>
+        <p>Science-driven solutions for water and environmental challenges.</p>
+      </div>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p><i class="fa-regular fa-envelope"></i> info@efsrgroup.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> Worldwide Collaboration</p>
+    </div>
+
+    <div>
+      <h4>Follow</h4>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-researchgate"></i></a>
+      </div>
+    </div>
+
+    <p class="copyright">
+      © 2024 Environmental Fluid Systems Research Group. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+  function filterPublications(category, button) {
+    const cards = document.querySelectorAll(".pub-card");
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    cards.forEach(card => {
+      if (category === "all" || card.dataset.category === category) {
+        card.style.display = "grid";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -50,39 +50,129 @@
       line-height: 1.8;
     }
 
-    .scope-compact-list {
+    .scope-click-grid {
       display: grid;
-      gap: 28px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
     }
 
-    .scope-compact {
+    .scope-click-card {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      border-radius: 24px;
+      padding: 26px 20px;
+      min-height: 280px;
+      box-shadow: 0 16px 36px rgba(7, 54, 111, .07);
+      cursor: pointer;
+      transition: .25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .scope-header {
+    .scope-click-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(11, 95, 179, .28);
+      box-shadow: 0 22px 48px rgba(7, 54, 111, .12);
+    }
+
+    .scope-click-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+
+    .scope-click-card h3 {
+      margin: 0 0 12px;
+      color: var(--primary-dark);
+      font-size: 1.22rem;
+      line-height: 1.25;
+    }
+
+    .scope-click-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .scope-click-more {
+      margin-top: 20px;
+      color: var(--primary);
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .92rem;
+    }
+
+    .scope-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(7, 20, 38, .76);
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .scope-modal.active {
+      display: block;
+    }
+
+    .scope-modal-content {
+      width: min(1180px, 96vw);
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 28px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.28);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .close-scope-modal {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      color: var(--primary-dark);
+      box-shadow: 0 10px 25px rgba(0,0,0,.18);
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .scope-popup-header {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
       gap: 18px;
-      padding: 26px;
+      padding: 34px;
       border-bottom: 1px solid var(--line);
       background:
         linear-gradient(90deg, rgba(233,245,255,.92), rgba(255,255,255,.98));
     }
 
-    .scope-title h3 {
+    .scope-popup-title h3 {
       margin: 0;
       color: var(--primary-dark);
-      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1.05;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.04em;
       text-transform: uppercase;
+      max-width: 560px;
     }
 
-    .scope-title p {
+    .scope-popup-title p {
       margin: 14px 0 0;
       color: var(--primary);
       font-size: 1.1rem;
@@ -126,11 +216,11 @@
       font-size: .95rem;
     }
 
-    .scope-main {
+    .scope-popup-main {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: .9fr 1.1fr;
       gap: 22px;
-      padding: 26px;
+      padding: 28px 34px;
     }
 
     .understand-box,
@@ -154,7 +244,6 @@
 
     .understand-list {
       display: grid;
-      gap: 0;
     }
 
     .understand-item {
@@ -231,7 +320,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
-      padding: 0 26px 22px;
+      padding: 0 34px 22px;
     }
 
     .process-step {
@@ -276,7 +365,7 @@
       grid-template-columns: 230px 1fr;
       gap: 18px;
       align-items: center;
-      padding: 18px 26px 26px;
+      padding: 18px 34px 28px;
     }
 
     .support-title {
@@ -316,7 +405,7 @@
     }
 
     .service-quote {
-      margin: 0 26px 26px;
+      margin: 0 34px 34px;
       padding: 20px 24px;
       border-radius: 20px;
       background: var(--primary-dark);
@@ -338,9 +427,20 @@
       font-weight: 700;
     }
 
-    @media (max-width: 980px) {
-      .scope-header,
-      .scope-main,
+    .services-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 1100px) {
+      .scope-click-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .scope-popup-header,
+      .scope-popup-main,
       .support-strip {
         grid-template-columns: 1fr;
       }
@@ -355,23 +455,16 @@
     }
 
     @media (max-width: 640px) {
-      .scope-header,
-      .scope-main {
-        padding: 20px;
-      }
-
-      .understand-item {
-        grid-template-columns: 42px 1fr;
-      }
-
-      .understand-item span {
-        grid-column: 2;
-      }
-
+      .scope-click-grid,
       .outputs-grid,
       .process-row,
       .support-icons {
         grid-template-columns: 1fr;
+      }
+
+      .scope-popup-header,
+      .scope-popup-main {
+        padding: 24px 20px;
       }
 
       .process-row,
@@ -383,6 +476,14 @@
       .service-quote {
         margin-left: 20px;
         margin-right: 20px;
+      }
+
+      .understand-item {
+        grid-template-columns: 42px 1fr;
+      }
+
+      .understand-item span {
+        grid-column: 2;
       }
     }
   </style>
@@ -442,406 +543,59 @@
   <div class="container">
     <div class="section-title">
       <h2>Our Business Scope</h2>
-      <p>Compact service overview showing what each modelling scope helps us understand, produce, and support.</p>
+      <p>Click each business scope to view detailed modelling purpose, outputs, process, and applications.</p>
     </div>
 
-    <div class="scope-compact-list">
+    <div class="scope-click-grid">
 
-      <!-- 1. HYDROLOGY -->
-      <article class="scope-compact">
-        <div class="scope-header">
-          <div class="scope-title">
-            <h3>Why Hydrology & Climate Analysis Matters</h3>
-            <p>Better rainfall understanding today. Better water decisions tomorrow.</p>
-          </div>
-
-          <div class="purpose-box">
-            <div class="purpose-icon"><i class="fa-solid fa-bullseye"></i></div>
-            <div>
-              <h4>The Purpose</h4>
-              <p>
-                Hydrological and climate analysis helps estimate runoff, water availability, flood frequency,
-                and future climate impacts for safer and more resilient infrastructure planning.
-              </p>
-            </div>
-          </div>
+      <article class="scope-click-card" onclick="openScope('hydrology')">
+        <div>
+          <div class="scope-click-icon"><i class="fa-solid fa-cloud-rain"></i></div>
+          <h3>Hydrology & Climate Analysis</h3>
+          <p>Rainfall, runoff, watershed response, flood frequency, and climate impact assessment.</p>
         </div>
-
-        <div class="scope-main">
-          <div class="understand-box">
-            <div class="mini-heading">Models help us understand</div>
-            <div class="understand-list">
-              <div class="understand-item">
-                <i class="fa-solid fa-cloud-showers-heavy"></i>
-                <strong>Rainfall</strong>
-                <span>Rainfall pattern, intensity, duration, and design storm conditions.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-route"></i>
-                <strong>Runoff</strong>
-                <span>How rainfall becomes surface flow in a watershed system.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-water"></i>
-                <strong>Flood Discharge</strong>
-                <span>Peak flow and return-period-based flood estimation.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-temperature-half"></i>
-                <strong>Climate Impact</strong>
-                <span>Possible future changes in rainfall, runoff, and water risk.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="outputs-box">
-            <div class="mini-heading">Examples of service outputs</div>
-            <div class="outputs-grid">
-              <div class="output-card"><i class="fa-solid fa-chart-area"></i><strong>Rainfall-runoff hydrograph</strong></div>
-              <div class="output-card"><i class="fa-solid fa-table"></i><strong>Flood frequency analysis</strong></div>
-              <div class="output-card"><i class="fa-solid fa-map"></i><strong>Watershed response map</strong></div>
-              <div class="output-card"><i class="fa-solid fa-earth-asia"></i><strong>Climate scenario assessment</strong></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-row">
-          <div class="process-step"><div class="num">1</div><div><strong>The Problem</strong><span>Uncertain rainfall and runoff response.</span></div></div>
-          <div class="process-step"><div class="num">2</div><div><strong>The Process</strong><span>Collect data, build model, test scenarios.</span></div></div>
-          <div class="process-step"><div class="num">3</div><div><strong>The Decision</strong><span>Estimate design flood and water risk.</span></div></div>
-          <div class="process-step"><div class="num">4</div><div><strong>The Outcome</strong><span>Resilient water planning and design.</span></div></div>
-        </div>
-
-        <div class="support-strip">
-          <div class="support-title">Hydrology supports</div>
-          <div class="support-icons">
-            <div><i class="fa-solid fa-house-flood-water"></i>Flood Risk</div>
-            <div><i class="fa-solid fa-dam"></i>Reservoir Planning</div>
-            <div><i class="fa-solid fa-seedling"></i>Water Resources</div>
-            <div><i class="fa-solid fa-road"></i>Infrastructure</div>
-            <div><i class="fa-solid fa-cloud-sun-rain"></i>Climate Adaptation</div>
-          </div>
-        </div>
+        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
       </article>
 
-      <!-- 2. FLOOD -->
-      <article class="scope-compact">
-        <div class="scope-header">
-          <div class="scope-title">
-            <h3>Why Flood & River Engineering Matters</h3>
-            <p>Understand river behaviour before flood problems become costly failures.</p>
-          </div>
-
-          <div class="purpose-box">
-            <div class="purpose-icon"><i class="fa-solid fa-bullseye"></i></div>
-            <div>
-              <h4>The Purpose</h4>
-              <p>
-                Hydraulic models help evaluate river capacity, floodplain extent, water levels,
-                velocity patterns, and mitigation alternatives for flood-risk reduction.
-              </p>
-            </div>
-          </div>
+      <article class="scope-click-card" onclick="openScope('flood')">
+        <div>
+          <div class="scope-click-icon"><i class="fa-solid fa-house-flood-water"></i></div>
+          <h3>Flood & River Engineering</h3>
+          <p>River flow, flood inundation, drainage systems, hydraulic structures, and mitigation scenarios.</p>
         </div>
-
-        <div class="scope-main">
-          <div class="understand-box">
-            <div class="mini-heading">Models help us understand</div>
-            <div class="understand-list">
-              <div class="understand-item">
-                <i class="fa-solid fa-water"></i>
-                <strong>River Flow</strong>
-                <span>Flow distribution, water levels, and river capacity.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-house-flood-water"></i>
-                <strong>Flood Extent</strong>
-                <span>Inundation depth, spread, and affected areas.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-bridge-water"></i>
-                <strong>Structures</strong>
-                <span>Bridge, culvert, channel, and drainage performance.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <strong>Mitigation</strong>
-                <span>Diversion, river improvement, and protection scenarios.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="outputs-box">
-            <div class="mini-heading">Examples of service outputs</div>
-            <div class="outputs-grid">
-              <div class="output-card"><i class="fa-solid fa-map"></i><strong>Flood inundation map</strong></div>
-              <div class="output-card"><i class="fa-solid fa-chart-line"></i><strong>Water level profile</strong></div>
-              <div class="output-card"><i class="fa-solid fa-gauge-high"></i><strong>Velocity distribution</strong></div>
-              <div class="output-card"><i class="fa-solid fa-diagram-project"></i><strong>Scenario comparison</strong></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-row">
-          <div class="process-step"><div class="num">1</div><div><strong>The Problem</strong><span>Overflow risk and limited river capacity.</span></div></div>
-          <div class="process-step"><div class="num">2</div><div><strong>The Process</strong><span>Set geometry, boundary, and design flood.</span></div></div>
-          <div class="process-step"><div class="num">3</div><div><strong>The Decision</strong><span>Compare mitigation alternatives.</span></div></div>
-          <div class="process-step"><div class="num">4</div><div><strong>The Outcome</strong><span>Reduced flood risk and safer infrastructure.</span></div></div>
-        </div>
-
-        <div class="support-strip">
-          <div class="support-title">Flood modelling supports</div>
-          <div class="support-icons">
-            <div><i class="fa-solid fa-city"></i>Urban Flooding</div>
-            <div><i class="fa-solid fa-water"></i>River Capacity</div>
-            <div><i class="fa-solid fa-road-bridge"></i>Bridge Design</div>
-            <div><i class="fa-solid fa-arrow-right-arrow-left"></i>Diversion Channel</div>
-            <div><i class="fa-solid fa-triangle-exclamation"></i>Flood Mitigation</div>
-          </div>
-        </div>
+        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
       </article>
 
-      <!-- 3. COASTAL -->
-      <article class="scope-compact">
-        <div class="scope-header">
-          <div class="scope-title">
-            <h3>Why Coastal Modelling Matters</h3>
-            <p>Better understanding today. Better decisions for our coasts tomorrow.</p>
-          </div>
-
-          <div class="purpose-box">
-            <div class="purpose-icon"><i class="fa-solid fa-bullseye"></i></div>
-            <div>
-              <h4>The Purpose</h4>
-              <p>
-                Coastal areas are dynamic and complex. Numerical models help evaluate how the coast responds
-                to waves, tides, currents, sediment movement, tsunami, and human interventions.
-              </p>
-            </div>
-          </div>
+      <article class="scope-click-card" onclick="openScope('coastal')">
+        <div>
+          <div class="scope-click-icon"><i class="fa-solid fa-water"></i></div>
+          <h3>Coastal & Marine Engineering</h3>
+          <p>Waves, tides, storm surge, currents, sediment transport, tsunami, and shoreline response.</p>
         </div>
-
-        <div class="scope-main">
-          <div class="understand-box">
-            <div class="mini-heading">Models help us understand</div>
-            <div class="understand-list">
-              <div class="understand-item">
-                <i class="fa-solid fa-water"></i>
-                <strong>Waves</strong>
-                <span>Wave climate, nearshore transformation, and design conditions.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-arrow-up-from-water-pump"></i>
-                <strong>Tides & Water Levels</strong>
-                <span>Tidal variation, storm surge, and extreme water levels.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-arrows-left-right"></i>
-                <strong>Currents</strong>
-                <span>Coastal circulation, navigation condition, and transport pathways.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-layer-group"></i>
-                <strong>Sediment Transport</strong>
-                <span>Erosion, deposition, shoreline change, and seabed response.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="outputs-box">
-            <div class="mini-heading">Examples of service outputs</div>
-            <div class="outputs-grid">
-              <div class="output-card"><i class="fa-solid fa-wave-square"></i><strong>Wave height distribution</strong></div>
-              <div class="output-card"><i class="fa-solid fa-compass"></i><strong>Current vector field</strong></div>
-              <div class="output-card"><i class="fa-solid fa-water"></i><strong>Water level map</strong></div>
-              <div class="output-card"><i class="fa-solid fa-layer-group"></i><strong>Sediment transport map</strong></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-row">
-          <div class="process-step"><div class="num">1</div><div><strong>The Problem</strong><span>Coasts face natural hazards and development pressure.</span></div></div>
-          <div class="process-step"><div class="num">2</div><div><strong>The Process</strong><span>Build, calibrate, and test coastal models.</span></div></div>
-          <div class="process-step"><div class="num">3</div><div><strong>The Decision</strong><span>Compare alternatives and assess risks.</span></div></div>
-          <div class="process-step"><div class="num">4</div><div><strong>The Outcome</strong><span>Smarter investment and resilient coasts.</span></div></div>
-        </div>
-
-        <div class="support-strip">
-          <div class="support-title">Coastal modelling supports</div>
-          <div class="support-icons">
-            <div><i class="fa-solid fa-ship"></i>Port Development</div>
-            <div><i class="fa-solid fa-shield-halved"></i>Coastal Protection</div>
-            <div><i class="fa-solid fa-umbrella-beach"></i>Beach Nourishment</div>
-            <div><i class="fa-solid fa-anchor"></i>Navigation Channel</div>
-            <div><i class="fa-solid fa-earth-asia"></i>Climate Adaptation</div>
-          </div>
-        </div>
+        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
       </article>
 
-      <!-- 4. GROUNDWATER -->
-      <article class="scope-compact">
-        <div class="scope-header">
-          <div class="scope-title">
-            <h3>Why Groundwater Modelling Matters</h3>
-            <p>Invisible water systems need clear numerical interpretation.</p>
-          </div>
-
-          <div class="purpose-box">
-            <div class="purpose-icon"><i class="fa-solid fa-bullseye"></i></div>
-            <div>
-              <h4>The Purpose</h4>
-              <p>
-                Groundwater models help understand aquifer behaviour, pumping impact, recharge processes,
-                seepage, and contaminant migration before they affect water security.
-              </p>
-            </div>
-          </div>
+      <article class="scope-click-card" onclick="openScope('groundwater')">
+        <div>
+          <div class="scope-click-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h3>Groundwater & Subsurface Flow</h3>
+          <p>Aquifer assessment, pumping impact, recharge, seepage, and contaminant migration.</p>
         </div>
-
-        <div class="scope-main">
-          <div class="understand-box">
-            <div class="mini-heading">Models help us understand</div>
-            <div class="understand-list">
-              <div class="understand-item">
-                <i class="fa-solid fa-layer-group"></i>
-                <strong>Aquifer System</strong>
-                <span>Subsurface layers, groundwater table, and flow direction.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-well-pump"></i>
-                <strong>Pumping Wells</strong>
-                <span>Drawdown, production impact, and sustainable abstraction.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-recycle"></i>
-                <strong>Recharge</strong>
-                <span>Rainfall infiltration, injection wells, and managed recharge.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-biohazard"></i>
-                <strong>Contaminants</strong>
-                <span>Pollutant transport, plume migration, and concentration changes.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="outputs-box">
-            <div class="mini-heading">Examples of service outputs</div>
-            <div class="outputs-grid">
-              <div class="output-card"><i class="fa-solid fa-water"></i><strong>Groundwater head map</strong></div>
-              <div class="output-card"><i class="fa-solid fa-arrow-trend-down"></i><strong>Drawdown assessment</strong></div>
-              <div class="output-card"><i class="fa-solid fa-location-dot"></i><strong>Flow path interpretation</strong></div>
-              <div class="output-card"><i class="fa-solid fa-vial-circle-check"></i><strong>Contaminant plume map</strong></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-row">
-          <div class="process-step"><div class="num">1</div><div><strong>The Problem</strong><span>Groundwater condition is difficult to observe directly.</span></div></div>
-          <div class="process-step"><div class="num">2</div><div><strong>The Process</strong><span>Build flow and transport model.</span></div></div>
-          <div class="process-step"><div class="num">3</div><div><strong>The Decision</strong><span>Evaluate wells, recharge, and contamination risk.</span></div></div>
-          <div class="process-step"><div class="num">4</div><div><strong>The Outcome</strong><span>Sustainable and protected groundwater use.</span></div></div>
-        </div>
-
-        <div class="support-strip">
-          <div class="support-title">Groundwater modelling supports</div>
-          <div class="support-icons">
-            <div><i class="fa-solid fa-well-pump"></i>Production Wells</div>
-            <div><i class="fa-solid fa-recycle"></i>Recharge System</div>
-            <div><i class="fa-solid fa-industry"></i>Industrial Area</div>
-            <div><i class="fa-solid fa-vial-virus"></i>Contamination</div>
-            <div><i class="fa-solid fa-seedling"></i>Water Security</div>
-          </div>
-        </div>
+        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
       </article>
 
-      <!-- 5. CFD -->
-      <article class="scope-compact">
-        <div class="scope-header">
-          <div class="scope-title">
-            <h3>Why CFD & Environmental Fluid Dynamics Matters</h3>
-            <p>Complex flow behaviour can be tested virtually before physical implementation.</p>
-          </div>
-
-          <div class="purpose-box">
-            <div class="purpose-icon"><i class="fa-solid fa-bullseye"></i></div>
-            <div>
-              <h4>The Purpose</h4>
-              <p>
-                CFD helps analyse turbulence, recirculation, dispersion, mixing, and fluid-structure interaction
-                in hydraulic, coastal, and environmental engineering systems.
-              </p>
-            </div>
-          </div>
+      <article class="scope-click-card" onclick="openScope('cfd')">
+        <div>
+          <div class="scope-click-icon"><i class="fa-solid fa-wind"></i></div>
+          <h3>CFD & Environmental Fluid Dynamics</h3>
+          <p>Turbulence, dispersion, mixing, recirculation, and fluid-structure interaction.</p>
         </div>
-
-        <div class="scope-main">
-          <div class="understand-box">
-            <div class="mini-heading">Models help us understand</div>
-            <div class="understand-list">
-              <div class="understand-item">
-                <i class="fa-solid fa-arrows-spin"></i>
-                <strong>Turbulence</strong>
-                <span>Flow separation, vortices, eddies, and recirculation zones.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-bridge-water"></i>
-                <strong>Structures</strong>
-                <span>Flow interaction around piers, gates, channels, and barriers.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-smog"></i>
-                <strong>Dispersion</strong>
-                <span>Mixing, pollutant transport, scalar movement, and spreading.</span>
-              </div>
-              <div class="understand-item">
-                <i class="fa-solid fa-cubes"></i>
-                <strong>Numerics</strong>
-                <span>Mesh, boundary conditions, validation, and model interpretation.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="outputs-box">
-            <div class="mini-heading">Examples of service outputs</div>
-            <div class="outputs-grid">
-              <div class="output-card"><i class="fa-solid fa-gauge-high"></i><strong>Velocity contour</strong></div>
-              <div class="output-card"><i class="fa-solid fa-arrow-right-long"></i><strong>Streamline pattern</strong></div>
-              <div class="output-card"><i class="fa-solid fa-circle-nodes"></i><strong>Turbulence field</strong></div>
-              <div class="output-card"><i class="fa-solid fa-cloud"></i><strong>Dispersion plume</strong></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-row">
-          <div class="process-step"><div class="num">1</div><div><strong>The Problem</strong><span>Complex local flow cannot be explained by simple methods.</span></div></div>
-          <div class="process-step"><div class="num">2</div><div><strong>The Process</strong><span>Create geometry, mesh, and simulation setup.</span></div></div>
-          <div class="process-step"><div class="num">3</div><div><strong>The Decision</strong><span>Compare design and flow alternatives.</span></div></div>
-          <div class="process-step"><div class="num">4</div><div><strong>The Outcome</strong><span>Safer design and better flow performance.</span></div></div>
-        </div>
-
-        <div class="support-strip">
-          <div class="support-title">CFD modelling supports</div>
-          <div class="support-icons">
-            <div><i class="fa-solid fa-bridge-water"></i>Bridge Pier Flow</div>
-            <div><i class="fa-solid fa-dam"></i>Hydraulic Structure</div>
-            <div><i class="fa-solid fa-water"></i>Coastal Flow</div>
-            <div><i class="fa-solid fa-flask"></i>Pollutant Mixing</div>
-            <div><i class="fa-solid fa-gears"></i>Design Testing</div>
-          </div>
-        </div>
+        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
       </article>
 
     </div>
 
-    <div class="service-quote">
-      <i class="fa-solid fa-quote-left"></i>
-      <p>
-        Engineering decisions should be tested virtually before they are built physically.
-      </p>
-    </div>
-
-    <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;">
+    <div class="services-actions">
       <a class="btn btn-primary" href="projects.html">
         <i class="fa-solid fa-folder-open"></i> View Project Experience
       </a>
@@ -851,6 +605,16 @@
     </div>
   </div>
 </section>
+
+<div id="scopeModal" class="scope-modal" onclick="closeScope(event)">
+  <div class="scope-modal-content">
+    <button class="close-scope-modal" onclick="closeScope(event)">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div id="scopeModalBody"></div>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="container footer-grid">
@@ -885,5 +649,280 @@
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+  const scopes = {
+    hydrology: {
+      title: "Why Hydrology & Climate Analysis Matters",
+      subtitle: "Better rainfall understanding today. Better water decisions tomorrow.",
+      purpose: "Hydrological and climate analysis helps estimate runoff, water availability, flood frequency, and future climate impacts for safer and more resilient infrastructure planning.",
+      understandTitle: "Models help us understand",
+      understand: [
+        ["fa-cloud-showers-heavy", "Rainfall", "Rainfall pattern, intensity, duration, and design storm conditions."],
+        ["fa-route", "Runoff", "How rainfall becomes surface flow in a watershed system."],
+        ["fa-water", "Flood Discharge", "Peak flow and return-period-based flood estimation."],
+        ["fa-temperature-half", "Climate Impact", "Possible future changes in rainfall, runoff, and water risk."]
+      ],
+      outputs: [
+        ["fa-chart-area", "Rainfall-runoff hydrograph"],
+        ["fa-table", "Flood frequency analysis"],
+        ["fa-map", "Watershed response map"],
+        ["fa-earth-asia", "Climate scenario assessment"]
+      ],
+      process: [
+        ["The Problem", "Uncertain rainfall and runoff response."],
+        ["The Process", "Collect data, build model, test scenarios."],
+        ["The Decision", "Estimate design flood and water risk."],
+        ["The Outcome", "Resilient water planning and design."]
+      ],
+      supportTitle: "Hydrology supports",
+      support: [
+        ["fa-house-flood-water", "Flood Risk"],
+        ["fa-dam", "Reservoir Planning"],
+        ["fa-seedling", "Water Resources"],
+        ["fa-road", "Infrastructure"],
+        ["fa-cloud-sun-rain", "Climate Adaptation"]
+      ],
+      quote: "Hydrological decisions become stronger when rainfall, runoff, and climate uncertainty are tested through model-based scenarios."
+    },
+
+    flood: {
+      title: "Why Flood & River Engineering Matters",
+      subtitle: "Understand river behaviour before flood problems become costly failures.",
+      purpose: "Hydraulic models help evaluate river capacity, floodplain extent, water levels, velocity patterns, and mitigation alternatives for flood-risk reduction.",
+      understandTitle: "Models help us understand",
+      understand: [
+        ["fa-water", "River Flow", "Flow distribution, water levels, and river capacity."],
+        ["fa-house-flood-water", "Flood Extent", "Inundation depth, spread, and affected areas."],
+        ["fa-bridge-water", "Structures", "Bridge, culvert, channel, and drainage performance."],
+        ["fa-screwdriver-wrench", "Mitigation", "Diversion, river improvement, and protection scenarios."]
+      ],
+      outputs: [
+        ["fa-map", "Flood inundation map"],
+        ["fa-chart-line", "Water level profile"],
+        ["fa-gauge-high", "Velocity distribution"],
+        ["fa-diagram-project", "Scenario comparison"]
+      ],
+      process: [
+        ["The Problem", "Overflow risk and limited river capacity."],
+        ["The Process", "Set geometry, boundary, and design flood."],
+        ["The Decision", "Compare mitigation alternatives."],
+        ["The Outcome", "Reduced flood risk and safer infrastructure."]
+      ],
+      supportTitle: "Flood modelling supports",
+      support: [
+        ["fa-city", "Urban Flooding"],
+        ["fa-water", "River Capacity"],
+        ["fa-road-bridge", "Bridge Design"],
+        ["fa-arrow-right-arrow-left", "Diversion Channel"],
+        ["fa-triangle-exclamation", "Flood Mitigation"]
+      ],
+      quote: "Flood mitigation options should be compared virtually before they are implemented physically."
+    },
+
+    coastal: {
+      title: "Why Coastal Modelling Matters",
+      subtitle: "Better understanding today. Better decisions for our coasts tomorrow.",
+      purpose: "Coastal areas are dynamic and complex. Numerical models help evaluate how the coast responds to waves, tides, currents, sediment movement, tsunami, and human interventions.",
+      understandTitle: "Models help us understand",
+      understand: [
+        ["fa-water", "Waves", "Wave climate, nearshore transformation, and design conditions."],
+        ["fa-arrow-up-from-water-pump", "Tides & Water Levels", "Tidal variation, storm surge, and extreme water levels."],
+        ["fa-arrows-left-right", "Currents", "Coastal circulation, navigation condition, and transport pathways."],
+        ["fa-layer-group", "Sediment Transport", "Erosion, deposition, shoreline change, and seabed response."]
+      ],
+      outputs: [
+        ["fa-wave-square", "Wave height distribution"],
+        ["fa-compass", "Current vector field"],
+        ["fa-water", "Water level map"],
+        ["fa-layer-group", "Sediment transport map"]
+      ],
+      process: [
+        ["The Problem", "Coasts face natural hazards and development pressure."],
+        ["The Process", "Build, calibrate, and test coastal models."],
+        ["The Decision", "Compare alternatives and assess risks."],
+        ["The Outcome", "Smarter investment and resilient coasts."]
+      ],
+      supportTitle: "Coastal modelling supports",
+      support: [
+        ["fa-ship", "Port Development"],
+        ["fa-shield-halved", "Coastal Protection"],
+        ["fa-umbrella-beach", "Beach Nourishment"],
+        ["fa-anchor", "Navigation Channel"],
+        ["fa-earth-asia", "Climate Adaptation"]
+      ],
+      quote: "Engineering decisions for coastal areas should be tested virtually before they are built physically."
+    },
+
+    groundwater: {
+      title: "Why Groundwater Modelling Matters",
+      subtitle: "Invisible water systems need clear numerical interpretation.",
+      purpose: "Groundwater models help understand aquifer behaviour, pumping impact, recharge processes, seepage, and contaminant migration before they affect water security.",
+      understandTitle: "Models help us understand",
+      understand: [
+        ["fa-layer-group", "Aquifer System", "Subsurface layers, groundwater table, and flow direction."],
+        ["fa-well-pump", "Pumping Wells", "Drawdown, production impact, and sustainable abstraction."],
+        ["fa-recycle", "Recharge", "Rainfall infiltration, injection wells, and managed recharge."],
+        ["fa-biohazard", "Contaminants", "Pollutant transport, plume migration, and concentration changes."]
+      ],
+      outputs: [
+        ["fa-water", "Groundwater head map"],
+        ["fa-arrow-trend-down", "Drawdown assessment"],
+        ["fa-location-dot", "Flow path interpretation"],
+        ["fa-vial-circle-check", "Contaminant plume map"]
+      ],
+      process: [
+        ["The Problem", "Groundwater condition is difficult to observe directly."],
+        ["The Process", "Build flow and transport model."],
+        ["The Decision", "Evaluate wells, recharge, and contamination risk."],
+        ["The Outcome", "Sustainable and protected groundwater use."]
+      ],
+      supportTitle: "Groundwater modelling supports",
+      support: [
+        ["fa-well-pump", "Production Wells"],
+        ["fa-recycle", "Recharge System"],
+        ["fa-industry", "Industrial Area"],
+        ["fa-vial-virus", "Contamination"],
+        ["fa-seedling", "Water Security"]
+      ],
+      quote: "Subsurface flow decisions need model-based interpretation because groundwater behaviour is often invisible from the surface."
+    },
+
+    cfd: {
+      title: "Why CFD & Environmental Fluid Dynamics Matters",
+      subtitle: "Complex flow behaviour can be tested virtually before physical implementation.",
+      purpose: "CFD helps analyse turbulence, recirculation, dispersion, mixing, and fluid-structure interaction in hydraulic, coastal, and environmental engineering systems.",
+      understandTitle: "Models help us understand",
+      understand: [
+        ["fa-arrows-spin", "Turbulence", "Flow separation, vortices, eddies, and recirculation zones."],
+        ["fa-bridge-water", "Structures", "Flow interaction around piers, gates, channels, and barriers."],
+        ["fa-smog", "Dispersion", "Mixing, pollutant transport, scalar movement, and spreading."],
+        ["fa-cubes", "Numerics", "Mesh, boundary conditions, validation, and model interpretation."]
+      ],
+      outputs: [
+        ["fa-gauge-high", "Velocity contour"],
+        ["fa-arrow-right-long", "Streamline pattern"],
+        ["fa-circle-nodes", "Turbulence field"],
+        ["fa-cloud", "Dispersion plume"]
+      ],
+      process: [
+        ["The Problem", "Complex local flow cannot be explained by simple methods."],
+        ["The Process", "Create geometry, mesh, and simulation setup."],
+        ["The Decision", "Compare design and flow alternatives."],
+        ["The Outcome", "Safer design and better flow performance."]
+      ],
+      supportTitle: "CFD modelling supports",
+      support: [
+        ["fa-bridge-water", "Bridge Pier Flow"],
+        ["fa-dam", "Hydraulic Structure"],
+        ["fa-water", "Coastal Flow"],
+        ["fa-flask", "Pollutant Mixing"],
+        ["fa-gears", "Design Testing"]
+      ],
+      quote: "Complex flow behaviour should be tested numerically before engineering decisions are finalized."
+    }
+  };
+
+  function openScope(scopeKey) {
+    const data = scopes[scopeKey];
+    const modal = document.getElementById("scopeModal");
+    const body = document.getElementById("scopeModalBody");
+
+    body.innerHTML = `
+      <div class="scope-popup-header">
+        <div class="scope-popup-title">
+          <h3>${data.title}</h3>
+          <p>${data.subtitle}</p>
+        </div>
+
+        <div class="purpose-box">
+          <div class="purpose-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <div>
+            <h4>The Purpose</h4>
+            <p>${data.purpose}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scope-popup-main">
+        <div class="understand-box">
+          <div class="mini-heading">${data.understandTitle}</div>
+          <div class="understand-list">
+            ${data.understand.map(item => `
+              <div class="understand-item">
+                <i class="fa-solid ${item[0]}"></i>
+                <strong>${item[1]}</strong>
+                <span>${item[2]}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="outputs-box">
+          <div class="mini-heading">Examples of service outputs</div>
+          <div class="outputs-grid">
+            ${data.outputs.map(item => `
+              <div class="output-card">
+                <i class="fa-solid ${item[0]}"></i>
+                <strong>${item[1]}</strong>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+
+      <div class="process-row">
+        ${data.process.map((item, index) => `
+          <div class="process-step">
+            <div class="num">${index + 1}</div>
+            <div>
+              <strong>${item[0]}</strong>
+              <span>${item[1]}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+
+      <div class="support-strip">
+        <div class="support-title">${data.supportTitle}</div>
+        <div class="support-icons">
+          ${data.support.map(item => `
+            <div>
+              <i class="fa-solid ${item[0]}"></i>
+              ${item[1]}
+            </div>
+          `).join("")}
+        </div>
+      </div>
+
+      <div class="service-quote">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>${data.quote}</p>
+      </div>
+    `;
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeScope(event) {
+    if (
+      event.target.classList.contains("scope-modal") ||
+      event.target.classList.contains("close-scope-modal") ||
+      event.target.closest(".close-scope-modal")
+    ) {
+      document.getElementById("scopeModal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      document.getElementById("scopeModal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+</script>
+
 </body>
 </html>

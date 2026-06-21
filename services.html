@@ -1,12 +1,926 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Services | EFSRG</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/logo.svg" alt="EFSRG logo"><div><strong>Environmental Fluid Systems</strong><span>Research Group</span></div></a><nav class="nav"><ul><li><a href="index.html">Home</a></li><li><a class="active" href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav><a class="btn btn-primary header-cta" href="contact.html"><i class="fa-regular fa-envelope"></i> Contact Us</a><button class="menu-btn"><i class="fa-solid fa-bars"></i></button></div></header>
-<section class="page-hero"><div class="container"><div class="eyebrow">Service areas</div><h1>Engineering analysis and numerical modelling across water, climate, coastal, and fluid systems.</h1><div class="accent-line"></div><p>Our services are organised into five integrated clusters so clients can easily identify the most relevant technical support for their project.</p></div></section>
-<section class="section"><div class="container grid-2">
-<div class="card service-detail"><div class="icon"><i class="fa-solid fa-cloud-rain"></i></div><div><h3>Hydrology & Climate Analysis</h3><p>Analysis for rainfall, runoff, watershed response, design flood estimation, water availability, drought, and climate-change impact assessment.</p><div class="tag-list"><span class="tag">Rainfall analysis</span><span class="tag">Flood frequency</span><span class="tag">HEC-HMS</span><span class="tag">Climate impact</span><span class="tag">Watershed GIS</span></div></div></div>
-<div class="card service-detail"><div class="icon"><i class="fa-solid fa-water"></i></div><div><h3>Hydraulic & Flood Modelling</h3><p>1D/2D modelling for rivers, floodplains, drainage systems, channel capacity, and hydraulic structures to support risk assessment and design evaluation.</p><div class="tag-list"><span class="tag">HEC-RAS 1D/2D</span><span class="tag">Flood maps</span><span class="tag">River capacity</span><span class="tag">Drainage</span><span class="tag">Spillway flow</span></div></div></div>
-<div class="card service-detail"><div class="icon"><i class="fa-solid fa-wave-square"></i></div><div><h3>Coastal & Marine Modelling</h3><p>Hydrodynamic, wave, sediment, tsunami, and coastal inundation modelling for coastal planning, hazard reduction, and infrastructure assessment.</p><div class="tag-list"><span class="tag">Delft3D FM</span><span class="tag">Tides & waves</span><span class="tag">Tsunami</span><span class="tag">Sediment transport</span><span class="tag">Coastal inundation</span></div></div></div>
-<div class="card service-detail"><div class="icon"><i class="fa-solid fa-droplet"></i></div><div><h3>Hydrogeology & Groundwater</h3><p>Groundwater assessment for aquifer systems, pumping impacts, seepage processes, river-groundwater interaction, and contaminant transport.</p><div class="tag-list"><span class="tag">MODFLOW</span><span class="tag">Aquifer assessment</span><span class="tag">Seepage</span><span class="tag">Pumping impact</span><span class="tag">Contaminant transport</span></div></div></div>
-<div class="card service-detail"><div class="icon"><i class="fa-solid fa-wind"></i></div><div><h3>CFD & Environmental Fluid Dynamics</h3><p>Detailed simulation of complex flow behaviour around structures, channels, coastal systems, and engineered environments.</p><div class="tag-list"><span class="tag">CFD</span><span class="tag">Turbulence</span><span class="tag">Dispersion</span><span class="tag">Fluid-structure interaction</span><span class="tag">Validation</span></div></div></div>
-<div class="card service-detail"><div class="icon"><i class="fa-solid fa-database"></i></div><div><h3>Data Processing & Decision Support</h3><p>Data preparation, spatial analysis, visualization, and technical reporting to make numerical modelling outputs useful for engineering decisions.</p><div class="tag-list"><span class="tag">Python</span><span class="tag">QGIS</span><span class="tag">Remote sensing</span><span class="tag">Maps</span><span class="tag">Reporting</span></div></div></div>
-</div></section>
-<footer class="footer"><div class="container footer-grid"><div class="brand"><img src="assets/logo.svg" alt="EFSRG logo"><div><strong>Environmental Fluid Systems</strong><span>Research Group</span><p>Science-driven solutions for water and environmental challenges.</p></div></div><div><h4>Contact</h4><p>info@efsrgroup.com</p><p>Worldwide Collaboration</p></div><div><h4>Follow</h4><div class="socials"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-github"></i></a><a href="#"><i class="fa-brands fa-researchgate"></i></a></div></div></div><p class="container copyright">© 2024 Environmental Fluid Systems Research Group. All rights reserved.</p></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Environmental Fluid Systems Research Group</title>
+
+    <!-- Main website CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Additional CSS for expandable service/project cards -->
+    <style>
+        .page-hero {
+            padding: 72px 0 40px;
+            background: linear-gradient(135deg, #eef8ff 0%, #ffffff 60%);
+        }
+
+        .page-hero .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #0b5fb3;
+            margin-bottom: 12px;
+        }
+
+        .page-hero h1 {
+            max-width: 900px;
+            font-size: clamp(2rem, 4vw, 3.8rem);
+            line-height: 1.12;
+            margin: 0 0 18px;
+            color: #07366f;
+        }
+
+        .page-hero p {
+            max-width: 860px;
+            color: #607284;
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .services-section {
+            width: min(1180px, 92%);
+            margin: 48px auto 80px;
+        }
+
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+        .section-heading h2 {
+            color: #07366f;
+            margin-bottom: 10px;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+        }
+
+        .section-heading p {
+            color: #607284;
+            max-width: 780px;
+            line-height: 1.75;
+        }
+
+        .services-vertical {
+            display: grid;
+            gap: 22px;
+        }
+
+        .service-item {
+            background: #ffffff;
+            border: 1px solid #d8e8f5;
+            border-radius: 24px;
+            box-shadow: 0 18px 45px rgba(7, 54, 111, 0.08);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 55px rgba(7, 54, 111, 0.13);
+            border-color: #b9dcf5;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 24px 26px;
+        }
+
+        .service-header h3 {
+            margin: 0;
+            color: #07366f;
+            font-size: 1.18rem;
+            line-height: 1.45;
+        }
+
+        .service-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: #e9f5ff;
+            color: #0b5fb3;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-toggle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #e9f5ff;
+            position: relative;
+            flex: 0 0 auto;
+        }
+
+        .service-toggle::before,
+        .service-toggle::after {
+            content: "";
+            position: absolute;
+            background: #0b5fb3;
+            border-radius: 2px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.25s ease;
+        }
+
+        .service-toggle::before {
+            width: 16px;
+            height: 2px;
+        }
+
+        .service-toggle::after {
+            width: 2px;
+            height: 16px;
+        }
+
+        .service-item.expanded .service-toggle::after {
+            opacity: 0;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        .service-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .service-item.expanded .service-details {
+            max-height: 2200px;
+        }
+
+        .service-details-inner {
+            padding: 0 26px 28px;
+            border-top: 1px solid #edf5fb;
+        }
+
+        .service-details-inner > p {
+            color: #607284;
+            line-height: 1.75;
+            margin: 22px 0;
+        }
+
+        .service-img {
+            width: 100%;
+            max-height: 430px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid #d8e8f5;
+            margin: 14px 0 20px;
+            background: #f6fbff;
+        }
+
+        .video-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 12px 0 24px;
+        }
+
+        .video-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border-radius: 999px;
+            background: #0b5fb3;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .video-btn:hover {
+            background: #07366f;
+            transform: translateY(-1px);
+        }
+
+        .service-docs {
+            margin: 20px 0;
+            padding: 18px;
+            border-radius: 18px;
+            background: #f6fbff;
+            border: 1px solid #d8e8f5;
+        }
+
+        .service-docs-title,
+        .service-project-title {
+            font-weight: 800;
+            color: #07366f;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .service-doc-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .service-doc {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: #ffffff;
+            border: 1px solid #d8e8f5;
+            color: #0b5fb3;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .service-project {
+            margin-top: 22px;
+            padding: 22px;
+            border-radius: 20px;
+            background: #f6fbff;
+            border: 1px solid #d8e8f5;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px 18px;
+            color: #17324d;
+            line-height: 1.6;
+        }
+
+        .project-meta span {
+            font-weight: 800;
+            color: #07366f;
+        }
+
+        .cluster-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 24px 0 36px;
+        }
+
+        .cluster-strip span {
+            padding: 9px 14px;
+            border-radius: 999px;
+            background: #e9f5ff;
+            color: #0b5fb3;
+            font-weight: 700;
+            font-size: 0.86rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 20, 38, 0.72);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            width: min(960px, 96vw);
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 18px;
+            position: relative;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+        }
+
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 18px;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: -12px;
+            top: -12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #07366f;
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 720px) {
+            .service-header {
+                padding: 20px;
+                align-items: flex-start;
+            }
+
+            .service-details-inner {
+                padding: 0 20px 24px;
+            }
+
+            .project-meta {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .project-meta div:nth-child(odd) {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="Environmental Fluid Systems Research Group">
+            <span>Environmental Fluid Systems Research Group</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="nav-btn">Contact Us</a>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="page-hero">
+    <div class="container">
+        <div class="eyebrow">Service areas</div>
+        <h1>Engineering analysis and numerical modelling across water, climate, coastal, and fluid systems.</h1>
+        <p>
+            We provide science-based modelling, data processing, and technical reporting services for hydrology,
+            hydraulics, hydrogeology, coastal systems, sediment transport, and environmental fluid dynamics.
+        </p>
+
+        <div class="cluster-strip">
+            <span>Hydrology & Climate</span>
+            <span>Hydraulic & Flood Modelling</span>
+            <span>Coastal & Marine</span>
+            <span>Hydrogeology & Groundwater</span>
+            <span>CFD & Fluid Dynamics</span>
+            <span>Decision Support</span>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SERVICES / PROJECT EXPERIENCE ================= -->
+<section class="services-section">
+    <div class="section-heading">
+        <h2>Project-Based Services & Experience</h2>
+        <p>
+            The following service cards present selected modelling experience, technical capabilities,
+            software tools, and supporting media from completed and ongoing projects.
+        </p>
+    </div>
+
+    <div class="services-vertical">
+
+        <!-- Service 1 -->
+        <div class="service-item collapsed" onclick="toggleService(this)">
+            <div class="service-header">
+                <div>
+                    <div class="service-tag">Hydrogeology · Groundwater</div>
+                    <h3>[Academic Modelling Training] Contaminant Transport Using Simcore Processing MODFLOW</h3>
+                </div>
+                <div class="service-toggle"></div>
+            </div>
+
+            <div class="service-details">
+                <div class="service-details-inner">
+                    <p>
+                        Integrated groundwater flow and contaminant transport modelling training using
+                        <b>Simcore Processing MODFLOW</b>, with practical applications for production wells,
+                        injection wells, recharge systems, and contaminant migration.
+                    </p>
+
+                    <img src="modflow.png"
+                         alt="Contaminant transport modelling using MODFLOW"
+                         class="service-img">
+
+                    <div class="video-list">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('F26OrJ9ojZo');">
+                            ▶ Overview Result
+                        </span>
+                    </div>
+
+                    <div class="service-project">
+                        <div class="service-project-title">Project Information</div>
+                        <div class="project-meta">
+                            <div><span>Project Name</span></div>
+                            <div>[Academic Modelling Training] Contaminant Transport Using Simcore Processing MODFLOW</div>
+
+                            <div><span>Team</span></div>
+                            <div>Rahim (NU)</div>
+
+                            <div><span>Location</span></div>
+                            <div>Online via Zoom Meeting</div>
+
+                            <div><span>Client</span></div>
+                            <div>PT Saumy Gemilang Indonesia</div>
+
+                            <div><span>Category</span></div>
+                            <div>Hydrogeology · Groundwater · Contaminant Transport</div>
+
+                            <div><span>Main Software Used</span></div>
+                            <div>MODFLOW · MT3DMS/SEAWAT</div>
+
+                            <div><span>Status</span></div>
+                            <div>Completed (Apr 2026)</div>
+
+                            <div><span>Description</span></div>
+                            <div>
+                                The training focused on groundwater modelling using MODFLOW, including production wells,
+                                injection wells, rainwater infiltration and recharge systems, and contaminant transport
+                                processes from injection wells and surface spreading.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-item collapsed" onclick="toggleService(this)">
+            <div class="service-header">
+                <div>
+                    <div class="service-tag">Hydrology · Hydraulic · Climate Impact</div>
+                    <h3>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
+                </div>
+                <div class="service-toggle"></div>
+            </div>
+
+            <div class="service-details">
+                <div class="service-details-inner">
+                    <p>
+                        Integrated hydrology and hydraulic modelling for climate-change-related hazard assessment
+                        of the Pakil Pumped Storage Plant and Laguna de Bay system using
+                        <b>HEC-HMS, HEC-RAS, and Delft Dashboard</b>.
+                    </p>
+
+                    <img src="climate.png"
+                         alt="Climate change hazard assessment for Pakil Pumped Storage Power Plant"
+                         class="service-img">
+
+                    <div class="video-list">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('dhtppSgsAlQ');">
+                            ▶ Project Overview
+                        </span>
+                    </div>
+
+                    <div class="service-project">
+                        <div class="service-project-title">Project Information</div>
+                        <div class="project-meta">
+                            <div><span>Project Name</span></div>
+                            <div>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant</div>
+
+                            <div><span>Team</span></div>
+                            <div>Rahim (NU), Oriandra (ITB), Defasha (TUD)</div>
+
+                            <div><span>Location</span></div>
+                            <div>Laguna de Bay, Philippines</div>
+
+                            <div><span>Client</span></div>
+                            <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
+
+                            <div><span>Category</span></div>
+                            <div>Hydrology · Hydraulic · Climate Impact Assessment</div>
+
+                            <div><span>Main Software Used</span></div>
+                            <div>HEC-HMS · HEC-RAS · Delft Dashboard</div>
+
+                            <div><span>Status</span></div>
+                            <div>On-going</div>
+
+                            <div><span>Description</span></div>
+                            <div>
+                                Rainfall–runoff and hydrodynamic modelling of Laguna de Bay were conducted to support
+                                hydrological and hydraulic hazard assessment under climate change scenarios.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-item collapsed" onclick="toggleService(this)">
+            <div class="service-header">
+                <div>
+                    <div class="service-tag">Hydrology · Hydrodynamic · Sediment</div>
+                    <h3>Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
+                </div>
+                <div class="service-toggle"></div>
+            </div>
+
+            <div class="service-details">
+                <div class="service-details-inner">
+                    <p>
+                        Integrated hydrology, hydraulic, hydrodynamic, and sediment transport modelling for the
+                        Pakil Pumped Storage Plant–Laguna de Bay system using
+                        <b>HEC-HMS, HEC-RAS, and Delft3D FM</b>.
+                    </p>
+
+                    <img src="pakil.png"
+                         alt="Hydrology and sediment modelling for Pakil Pumped Storage Power Plant"
+                         class="service-img">
+
+                    <div class="video-list">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('Xwq_5V9uk7o');">
+                            ▶ Project Overview
+                        </span>
+                    </div>
+
+                    <div class="service-project">
+                        <div class="service-project-title">Project Information</div>
+                        <div class="project-meta">
+                            <div><span>Project Name</span></div>
+                            <div>Hydrology and Sedimentation Simulation of Pakil Pumped Storage Plant</div>
+
+                            <div><span>Team</span></div>
+                            <div>Rahim (NU), Maulvi (TUD), Defasha (TUD), Farhan (ITB)</div>
+
+                            <div><span>Location</span></div>
+                            <div>Laguna de Bay, Philippines</div>
+
+                            <div><span>Client</span></div>
+                            <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
+
+                            <div><span>Category</span></div>
+                            <div>Hydrology · Hydraulic · Hydrodynamic · Morphodynamic/Sediment</div>
+
+                            <div><span>Main Software Used</span></div>
+                            <div>HEC-HMS · HEC-RAS · Delft3D FM</div>
+
+                            <div><span>Status</span></div>
+                            <div>On-going</div>
+
+                            <div><span>Description</span></div>
+                            <div>
+                                Rainfall–runoff, hydrodynamic, and sediment transport modelling of Laguna de Bay
+                                under existing and future climate change scenarios to assess sediment processes
+                                and pumped storage system performance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-item collapsed" onclick="toggleService(this)">
+            <div class="service-header">
+                <div>
+                    <div class="service-tag">Hydrology · Hydraulic · Flood Modelling</div>
+                    <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 110 – Borneo, Indonesia</h3>
+                </div>
+                <div class="service-toggle"></div>
+            </div>
+
+            <div class="service-details">
+                <div class="service-details-inner">
+                    <p>
+                        Numerical flood modelling and engineering analysis of river systems and alternative diversion
+                        channel designs using <b>HEC-HMS and HEC-RAS</b>.
+                    </p>
+
+                    <img src="jmb.jpg"
+                         alt="River flood assessment PIT 110"
+                         class="service-img">
+
+                    <div class="video-list">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('rFTdmlR0mfY');">
+                            ▶ Existing River Simulation (HEC-RAS 1D)
+                        </span>
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('VemRWIw6Tn0');">
+                            ▶ Diversion River Simulation (HEC-RAS 1D)
+                        </span>
+                    </div>
+
+                    <div class="service-project">
+                        <div class="service-project-title">Project Information</div>
+                        <div class="project-meta">
+                            <div><span>Project Name</span></div>
+                            <div>River Flood Assessment PIT 110</div>
+
+                            <div><span>Team</span></div>
+                            <div>Rahim (NU), Djelia (ITB)</div>
+
+                            <div><span>Location</span></div>
+                            <div>Borneo, Indonesia</div>
+
+                            <div><span>Client</span></div>
+                            <div>PT Tectona Mitra Utama</div>
+
+                            <div><span>Category</span></div>
+                            <div>Hydrology · Hydraulic</div>
+
+                            <div><span>Main Software Used</span></div>
+                            <div>HEC-HMS · HEC-RAS</div>
+
+                            <div><span>Status</span></div>
+                            <div>Completed (Dec 2025)</div>
+
+                            <div><span>Description</span></div>
+                            <div>
+                                Rainfall–runoff and river hydraulic simulations were performed to assess flood
+                                inundation extent and overflow risk under multiple design flood scenarios, including
+                                evaluation of existing river conditions and alternative diversion channel designs.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-item collapsed" onclick="toggleService(this)">
+            <div class="service-header">
+                <div>
+                    <div class="service-tag">Hydrology · Hydraulic · Flood Modelling</div>
+                    <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 131 – Borneo, Indonesia</h3>
+                </div>
+                <div class="service-toggle"></div>
+            </div>
+
+            <div class="service-details">
+                <div class="service-details-inner">
+                    <p>
+                        Numerical flood modelling and engineering analysis of river systems, including evaluation of
+                        existing river hydraulics and development of riverbank channel designs for capacity enhancement,
+                        using <b>HEC-HMS and HEC-RAS</b>.
+                    </p>
+
+                    <img src="jmb131.jpg"
+                         alt="River flood assessment PIT 131"
+                         class="service-img">
+
+                    <div class="video-list">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('BMxMmWokVcs');">
+                            ▶ Existing River Simulation (HEC-RAS 2D)
+                        </span>
+                    </div>
+
+                    <div class="service-project">
+                        <div class="service-project-title">Project Information</div>
+                        <div class="project-meta">
+                            <div><span>Project Name</span></div>
+                            <div>River Flood Assessment PIT 131</div>
+
+                            <div><span>Team</span></div>
+                            <div>Imam (ITB), Rahim (NU), Djelia (ITB)</div>
+
+                            <div><span>Location</span></div>
+                            <div>Borneo, Indonesia</div>
+
+                            <div><span>Client</span></div>
+                            <div>PT Tectona Mitra Utama</div>
+
+                            <div><span>Category</span></div>
+                            <div>Hydrology · Hydraulic</div>
+
+                            <div><span>Main Software Used</span></div>
+                            <div>HEC-HMS · HEC-RAS</div>
+
+                            <div><span>Status</span></div>
+                            <div>Completed (Dec 2025)</div>
+
+                            <div><span>Description</span></div>
+                            <div>
+                                Rainfall–runoff and river hydraulic simulations were performed to assess flood
+                                inundation extent and overflow risk under multiple design flood scenarios, including
+                                riverbank channel design evaluation for improved flow capacity.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-item collapsed" onclick="toggleService(this)">
+            <div class="service-header">
+                <div>
+                    <div class="service-tag">Training · Hydrology · Hydraulic</div>
+                    <h3>[Academic Modelling Training] HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</h3>
+                </div>
+                <div class="service-toggle"></div>
+            </div>
+
+            <div class="service-details">
+                <div class="service-details-inner">
+                    <p>
+                        Academic and professional training support for hydrological and hydraulic modelling,
+                        including drainage systems, river analysis, and 1D/2D flood simulation using
+                        <b>HEC-HMS and HEC-RAS</b>.
+                    </p>
+
+                    <img src="saumy.png"
+                         alt="HEC-HMS and HEC-RAS training"
+                         class="service-img">
+
+                    <div class="video-list">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('UTPwySG7-8g');">
+                            ▶ Training Session
+                        </span>
+                    </div>
+
+                    <div class="service-project">
+                        <div class="service-project-title">Project Information</div>
+                        <div class="project-meta">
+                            <div><span>Project Name</span></div>
+                            <div>[Academic Modelling Training] HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</div>
+
+                            <div><span>Team</span></div>
+                            <div>Rahim (NU), Andhika (ITB)</div>
+
+                            <div><span>Location</span></div>
+                            <div>Online via Zoom Meeting</div>
+
+                            <div><span>Client</span></div>
+                            <div>PT Saumy Gemilang Indonesia</div>
+
+                            <div><span>Category</span></div>
+                            <div>Hydrology · Hydraulic · Training</div>
+
+                            <div><span>Main Software Used</span></div>
+                            <div>HEC-HMS · HEC-RAS</div>
+
+                            <div><span>Status</span></div>
+                            <div>Completed (Aug 2025)</div>
+
+                            <div><span>Description</span></div>
+                            <div>
+                                The training provided practical modelling support for HEC-HMS and HEC-RAS workflows,
+                                including 1D and 2D flow simulation for drainage and flood assessment applications.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-item collapsed" onclick="toggleService(this)">
+            <div class="service-header">
+                <div>
+                    <div class="service-tag">Water Resources · Technical Guideline</div>
+                    <h3>Guidelines for Sustainable Water Supply Management</h3>
+                </div>
+                <div class="service-toggle"></div>
+            </div>
+
+            <div class="service-details">
+                <div class="service-details-inner">
+                    <p>
+                        Technical guideline preparation for sustainable water supply management, including integrated
+                        planning, efficient water allocation, infrastructure optimization, and environmental protection.
+                    </p>
+
+                    <img src="jasatirta.jpg"
+                         alt="Guidelines for sustainable water supply management"
+                         class="service-img">
+
+                    <div class="service-docs">
+                        <div class="service-docs-title">Supporting Evidence</div>
+                        <div class="service-doc-list">
+                            <a href="jasatirta.pdf"
+                               target="_blank"
+                               class="service-doc"
+                               onclick="event.stopPropagation();">
+                                📄 Report Summary (PDF)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-project">
+                        <div class="service-project-title">Project Information</div>
+                        <div class="project-meta">
+                            <div><span>Project Name</span></div>
+                            <div>Guidelines for Sustainable Water Supply Management – Jasa Tirta II</div>
+
+                            <div><span>Team</span></div>
+                            <div>Andhika (ITB), Rahim (NU)</div>
+
+                            <div><span>Location</span></div>
+                            <div>Purwakarta, Indonesia</div>
+
+                            <div><span>Client</span></div>
+                            <div>Perum Jasa Tirta II</div>
+
+                            <div><span>Category</span></div>
+                            <div>Water Resources · Hydrology · Hydraulic</div>
+
+                            <div><span>Main Software Used</span></div>
+                            <div>—</div>
+
+                            <div><span>Status</span></div>
+                            <div>Completed (Aug 2025)</div>
+
+                            <div><span>Description</span></div>
+                            <div>
+                                These guidelines outline Jasa Tirta II’s approach to sustainable water supply management
+                                through integrated planning, efficient water allocation, infrastructure optimization,
+                                and environmental protection to support long-term water security.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= VIDEO MODAL ================= -->
+<div id="videoModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal(event)">✕</span>
+        <iframe id="videoFrame" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="container">
+        <div class="footer-brand">
+            <img src="assets/logo.png" alt="EFSRG logo">
+            <div>
+                <h3>Environmental Fluid Systems Research Group</h3>
+                <p>Science-driven solutions for water and environmental challenges.</p>
+            </div>
+        </div>
+
+        <div class="footer-info">
+            <div>
+                <h4>Contact</h4>
+                <p>info@efsrgroup.com</p>
+                <p>Worldwide Collaboration</p>
+            </div>
+            <div>
+                <h4>Follow</h4>
+                <p>© <span id="year"></span> Environmental Fluid Systems Research Group. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function openModal(videoId) {
+        if (!videoId) return;
+
+        document.getElementById("videoFrame").src =
+            "https://www.youtube.com/embed/" + videoId;
+
+        document.getElementById("videoModal").style.display = "flex";
+    }
+
+    function closeModal(e) {
+        if (
+            e.target.classList.contains("modal") ||
+            e.target.classList.contains("close-modal")
+        ) {
+            document.getElementById("videoFrame").src = "";
+            document.getElementById("videoModal").style.display = "none";
+        }
+    }
+
+    function toggleService(element) {
+        const isExpanded = element.classList.contains("expanded");
+
+        if (isExpanded) {
+            element.classList.remove("expanded");
+            element.classList.add("collapsed");
+        } else {
+            element.classList.remove("collapsed");
+            element.classList.add("expanded");
+        }
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

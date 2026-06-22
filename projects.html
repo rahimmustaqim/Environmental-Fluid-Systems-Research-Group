@@ -13,43 +13,6 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .projects-hero {
-      padding: 90px 0 56px;
-      background:
-        radial-gradient(circle at top left, rgba(37, 184, 90, 0.13), transparent 34%),
-        linear-gradient(135deg, #eef8ff 0%, #ffffff 64%);
-    }
-
-    .projects-hero .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: .82rem;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .projects-hero h1 {
-      max-width: 980px;
-      margin: 0;
-      color: var(--primary-dark);
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
-
-    .projects-hero p {
-      max-width: 760px;
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
-
     .project-list {
       display: grid;
       gap: 48px;
@@ -265,10 +228,6 @@
       .project-meta div:nth-child(odd) {
         margin-top: 10px;
       }
-
-      .projects-hero {
-        padding: 70px 0 44px;
-      }
     }
   </style>
 </head>
@@ -305,21 +264,105 @@
   </div>
 </header>
 
-<section class="projects-hero">
-  <div class="container">
-    <div class="eyebrow">
-      <i class="fa-solid fa-folder-open"></i>
-      Selected Project Experience
+<section class="projects-hero-slider">
+  <div class="hero-slider">
+
+    <div class="hero-slide active">
+      <img src="assets/project-flood.png" alt="Flood modelling project">
+      <div class="hero-slide-overlay">
+        <div class="hero-slide-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+          </span>
+          <h1>Flood Modelling and River Capacity Analysis</h1>
+          <p>
+            Hydrological and hydraulic assessment for inundation analysis,
+            overflow risk evaluation, and river capacity improvement scenarios.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <h1>Project experience in water, coastal, groundwater, climate, and environmental fluid systems.</h1>
+    <div class="hero-slide">
+      <img src="assets/project-groundwater.png" alt="Groundwater flow and contaminant transport project">
+      <div class="hero-slide-overlay">
+        <div class="hero-slide-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+          </span>
+          <h1>Groundwater Flow and Contaminant Transport</h1>
+          <p>
+            Groundwater modelling using MODFLOW-based tools for flow systems,
+            recharge, production wells, injection wells, and contaminant migration.
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <div class="accent-line"></div>
+    <div class="hero-slide">
+      <img src="assets/project-coastal.png" alt="Coastal and marine modelling project">
+      <div class="hero-slide-overlay">
+        <div class="hero-slide-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+          </span>
+          <h1>Coastal and Marine Modelling</h1>
+          <p>
+            Coastal hydrodynamic modelling for tides, waves, tsunami,
+            sediment movement, and coastal inundation.
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <p>
-      Representative modelling, analysis, training, and technical-support works involving hydrology,
-      hydraulic modelling, groundwater flow, sediment transport, climate impact assessment, and CFD-related applications.
-    </p>
+    <div class="hero-slide">
+      <img src="assets/project-hydroclimate.png" alt="Hydrology and climate analysis project">
+      <div class="hero-slide-overlay">
+        <div class="hero-slide-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+          </span>
+          <h1>Hydrology and Climate Analysis</h1>
+          <p>
+            Rainfall-runoff analysis, watershed modelling, flood frequency estimation,
+            and climate impact assessment for water resources planning.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="assets/project-cfd.png" alt="CFD and environmental fluid dynamics project">
+      <div class="hero-slide-overlay">
+        <div class="hero-slide-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+          </span>
+          <h1>CFD and Environmental Fluid Dynamics</h1>
+          <p>
+            Computational fluid dynamics simulation for complex flow behaviour,
+            turbulence, dispersion, and fluid–structure interaction.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button class="hero-slider-btn prev" onclick="changeHeroSlide(-1)">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <button class="hero-slider-btn next" onclick="changeHeroSlide(1)">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <div class="hero-slider-dots">
+      <span class="hero-dot active" onclick="goToHeroSlide(0)"></span>
+      <span class="hero-dot" onclick="goToHeroSlide(1)"></span>
+      <span class="hero-dot" onclick="goToHeroSlide(2)"></span>
+      <span class="hero-dot" onclick="goToHeroSlide(3)"></span>
+      <span class="hero-dot" onclick="goToHeroSlide(4)"></span>
+    </div>
+
   </div>
 </section>
 
@@ -333,83 +376,36 @@
       Choose a project category below, or view all selected works.
     </p>
 
-    <!-- Creative Filter Tabs -->
     <div class="project-filter-wrap">
       <div class="project-filter">
         <button class="filter-btn active" data-filter="all">
-          <i class="fa-solid fa-border-all"></i> All Projects
+          All Projects
         </button>
 
         <button class="filter-btn" data-filter="hydrology-climate">
-          <i class="fa-solid fa-cloud-sun-rain"></i> Hydrology–Climate
+          Hydrology–Climate
         </button>
 
         <button class="filter-btn" data-filter="hydraulic-flood">
-          <i class="fa-solid fa-house-flood-water"></i> Hydraulic & Flood
+          Hydraulic & Flood
         </button>
 
         <button class="filter-btn" data-filter="coastal">
-          <i class="fa-solid fa-water"></i> Coastal
+          Coastal
         </button>
 
         <button class="filter-btn" data-filter="groundwater">
-          <i class="fa-solid fa-mountain-sun"></i> Groundwater
+          Groundwater
         </button>
 
         <button class="filter-btn" data-filter="cfd">
-          <i class="fa-solid fa-wind"></i> CFD
+          CFD
         </button>
-      </div>
-    </div>
-
-    <!-- Category Mini Cards -->
-    <div class="category-showcase">
-      <div class="category-mini-card" data-filter="hydrology-climate">
-        <i class="fa-solid fa-cloud-sun-rain"></i>
-        <div>
-          <h4>Hydrology–Climate</h4>
-          <span>Climate & water resources</span>
-        </div>
-      </div>
-
-      <div class="category-mini-card" data-filter="hydraulic-flood">
-        <i class="fa-solid fa-house-flood-water"></i>
-        <div>
-          <h4>Hydraulic & Flood</h4>
-          <span>Flood and river modelling</span>
-        </div>
-      </div>
-
-      <div class="category-mini-card" data-filter="coastal">
-        <i class="fa-solid fa-water"></i>
-        <div>
-          <h4>Coastal</h4>
-          <span>Hydrodynamic & sediment</span>
-        </div>
-      </div>
-
-      <div class="category-mini-card" data-filter="groundwater">
-        <i class="fa-solid fa-mountain-sun"></i>
-        <div>
-          <h4>Groundwater</h4>
-          <span>MODFLOW & transport</span>
-        </div>
-      </div>
-
-      <div class="category-mini-card" data-filter="cfd">
-        <i class="fa-solid fa-wind"></i>
-        <div>
-          <h4>CFD</h4>
-          <span>Environmental fluid dynamics</span>
-        </div>
       </div>
     </div>
 
     <div class="project-list">
 
-      <!-- =========================
-           HYDROLOGY - CLIMATE
-      ========================== -->
       <div class="project-category hydrology-climate active-category">
         <div class="category-heading">
           <div class="category-icon">
@@ -545,9 +541,6 @@
         </div>
       </div>
 
-      <!-- =========================
-           HYDRAULIC & FLOOD MODELLING
-      ========================== -->
       <div class="project-category hydraulic-flood active-category">
         <div class="category-heading">
           <div class="category-icon">
@@ -746,9 +739,6 @@
         </div>
       </div>
 
-      <!-- =========================
-           COASTAL
-      ========================== -->
       <div class="project-category coastal active-category">
         <div class="category-heading">
           <div class="category-icon">
@@ -825,9 +815,6 @@
         </div>
       </div>
 
-      <!-- =========================
-           GROUNDWATER
-      ========================== -->
       <div class="project-category groundwater active-category">
         <div class="category-heading">
           <div class="category-icon">
@@ -904,9 +891,6 @@
         </div>
       </div>
 
-      <!-- =========================
-           CFD
-      ========================== -->
       <div class="project-category cfd active-category">
         <div class="category-heading">
           <div class="category-icon">
@@ -1056,7 +1040,6 @@
   }
 
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const miniCards = document.querySelectorAll(".category-mini-card");
   const projectCategories = document.querySelectorAll(".project-category");
 
   function filterProjects(filterValue) {
@@ -1082,20 +1065,54 @@
     });
   });
 
-  miniCards.forEach(card => {
-    card.addEventListener("click", () => {
-      const filterValue = card.dataset.filter;
-      filterProjects(filterValue);
+  let heroSlideIndex = 0;
+  const heroSlides = document.querySelectorAll(".hero-slide");
+  const heroDots = document.querySelectorAll(".hero-dot");
+  let heroAutoSlide;
 
-      const filterWrap = document.querySelector(".project-filter-wrap");
-      if (filterWrap) {
-        filterWrap.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
+  function showHeroSlide(index) {
+    if (!heroSlides.length) return;
+
+    if (index >= heroSlides.length) {
+      heroSlideIndex = 0;
+    } else if (index < 0) {
+      heroSlideIndex = heroSlides.length - 1;
+    } else {
+      heroSlideIndex = index;
+    }
+
+    heroSlides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === heroSlideIndex);
     });
-  });
+
+    heroDots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === heroSlideIndex);
+    });
+  }
+
+  function changeHeroSlide(step) {
+    showHeroSlide(heroSlideIndex + step);
+    resetHeroAutoSlide();
+  }
+
+  function goToHeroSlide(index) {
+    showHeroSlide(index);
+    resetHeroAutoSlide();
+  }
+
+  function startHeroAutoSlide() {
+    heroAutoSlide = setInterval(() => {
+      showHeroSlide(heroSlideIndex + 1);
+    }, 4000);
+  }
+
+  function resetHeroAutoSlide() {
+    clearInterval(heroAutoSlide);
+    startHeroAutoSlide();
+  }
+
+  showHeroSlide(0);
+  startHeroAutoSlide();
 </script>
 
 </body>

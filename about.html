@@ -1,6 +1,667 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About | EFSRG</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/logo.svg" alt="EFSRG logo"><div><strong>Environmental Fluid Systems</strong><span>Research Group</span></div></a><nav class="nav"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a class="active" href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav><a class="btn btn-primary header-cta" href="contact.html"><i class="fa-regular fa-envelope"></i> Contact Us</a><button class="menu-btn"><i class="fa-solid fa-bars"></i></button></div></header>
-<section class="page-hero"><div class="container"><div class="eyebrow">About the group</div><h1>A research-led engineering group focused on environmental fluid systems.</h1><div class="accent-line"></div><p>Environmental Fluid Systems Research Group combines numerical modelling, field and geospatial data analysis, and engineering interpretation to support science-based decision making.</p></div></section>
-<section class="section"><div class="container about-grid"><div class="content"><h2>Our Focus</h2><p>We work across hydrology, hydraulics, hydrogeology, climate analysis, coastal engineering, and computational fluid dynamics. The goal is to provide reliable technical analysis for water-related engineering and environmental challenges.</p><p>The group is suitable for academic collaboration, engineering consulting support, technical analysis, modelling assistance, and research-oriented project development.</p><ul class="check-list"><li>Numerical modelling for complex water and fluid systems</li><li>GIS and data-driven analysis for engineering decisions</li><li>Clear reporting, visualization, and technical communication</li><li>Research-based approach with practical engineering outputs</li></ul></div><div class="card"><h3>Core Values</h3><p><strong>Scientific accuracy.</strong> Model assumptions, input data, and limitations should be communicated transparently.</p><p><strong>Engineering relevance.</strong> Outputs should support real decision making, not only visual results.</p><p><strong>Collaboration.</strong> We aim to work with researchers, consultants, agencies, and project stakeholders.</p><p><strong>Resilience.</strong> Our work supports water, coastal, and environmental infrastructure planning under changing conditions.</p></div></div></section>
-<section class="section section-soft"><div class="container"><div class="section-title"><h2>Development Roadmap</h2></div><div class="timeline"><div class="card timeline-item"><div class="timeline-date">Current</div><div><h3>Research and technical portfolio development</h3><p>Building a strong project portfolio in numerical modelling, hydrology, hydraulics, coastal systems, groundwater, climate analysis, and CFD.</p></div></div><div class="card timeline-item"><div class="timeline-date">Near future</div><div><h3>Collaboration network</h3><p>Strengthening collaboration with researchers, consultants, public institutions, and water-related engineering projects.</p></div></div><div class="card timeline-item"><div class="timeline-date">Long term</div><div><h3>Professional engineering consulting platform</h3><p>Developing the group into a professional platform for environmental fluid systems analysis and science-based engineering solutions.</p></div></div></div></div></section>
-<footer class="footer"><div class="container footer-grid"><div class="brand"><img src="assets/logo.svg" alt="EFSRG logo"><div><strong>Environmental Fluid Systems</strong><span>Research Group</span><p>Science-driven solutions for water and environmental challenges.</p></div></div><div><h4>Contact</h4><p>info@efsrgroup.com</p><p>Worldwide Collaboration</p></div><div><h4>Follow</h4><div class="socials"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-github"></i></a><a href="#"><i class="fa-brands fa-researchgate"></i></a></div></div></div><p class="container copyright">© 2024 Environmental Fluid Systems Research Group. All rights reserved.</p></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Environmental Fluid Systems Research Group</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    .about-hero {
+      padding: 90px 0 60px;
+      background:
+        linear-gradient(135deg, rgba(7,54,111,.92), rgba(11,95,179,.86)),
+        url("assets/about-bg.jpg") center/cover no-repeat;
+      color: #fff;
+    }
+
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    .about-hero p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(255,255,255,.88);
+      max-width: 720px;
+    }
+
+    .about-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 10px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .director-card {
+      background: #fff;
+      color: var(--text);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.22);
+    }
+
+    .director-photo {
+      width: 100%;
+      aspect-ratio: 4 / 4.2;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #eaf4ff;
+      margin-bottom: 22px;
+    }
+
+    .director-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .director-card h3 {
+      font-size: 26px;
+      margin-bottom: 6px;
+      font-weight: 900;
+      color: var(--primary-dark);
+    }
+
+    .director-role {
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .director-card p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .profile-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .profile-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      background: var(--primary);
+      color: #fff;
+      transition: .25s;
+    }
+
+    .profile-btn.secondary {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+    }
+
+    .profile-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 46px;
+    }
+
+    .section-header span {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 13px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: var(--primary-dark);
+      font-weight: 900;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .about-text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .info-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-card .icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .info-card h3 {
+      font-size: 23px;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-card i {
+      font-size: 30px;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .org-wrapper {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+
+    .org-chart {
+      min-width: 760px;
+      text-align: center;
+    }
+
+    .org-box {
+      display: inline-block;
+      background: var(--primary-soft);
+      border: 2px solid var(--line);
+      padding: 18px 24px;
+      border-radius: 20px;
+      min-width: 220px;
+      margin: 10px;
+    }
+
+    .org-box.main {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      border: none;
+      min-width: 280px;
+      box-shadow: 0 18px 45px rgba(7,54,111,.18);
+    }
+
+    .org-box h4 {
+      font-size: 17px;
+      margin-bottom: 5px;
+      font-weight: 900;
+    }
+
+    .org-box p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .org-box.main p {
+      color: rgba(255,255,255,.85);
+    }
+
+    .org-line {
+      width: 2px;
+      height: 28px;
+      background: var(--line);
+      margin: 0 auto;
+    }
+
+    .org-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: nowrap;
+    }
+
+    .cta-about {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      border-radius: 34px;
+      padding: 52px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-about h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      margin-bottom: 16px;
+      font-weight: 900;
+    }
+
+    .cta-about p {
+      color: rgba(255,255,255,.86);
+      max-width: 760px;
+      margin: 0 auto 28px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .about-hero-grid,
+      .about-text-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero {
+        padding: 70px 0 50px;
+      }
+
+      .cta-about {
+        padding: 36px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-water"></i></span>
+        <span>EFSRG</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="project.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="about.html" class="active">About</a>
+      </nav>
+
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container about-hero-grid">
+
+      <div>
+        <div class="about-hero-badge">
+          <i class="fa-solid fa-building"></i>
+          Research-Based Environmental Engineering Company
+        </div>
+
+        <h1>About Environmental Fluid Systems Research Group</h1>
+
+        <p>
+          Environmental Fluid Systems Research Group is a research-based company focusing on
+          environmental fluid dynamics, hydrological analysis, coastal engineering, climate-related
+          studies, and computational modelling. We support academic, governmental, and industrial
+          projects through data-driven analysis, numerical modelling, and practical engineering insight.
+        </p>
+      </div>
+
+      <div class="director-card">
+        <div class="director-photo">
+          <img src="assets/rahim-profile.jpg" alt="Rahim Mustaqim - Director of EFSRG">
+        </div>
+
+        <h3>Rahim Mustaqim</h3>
+        <div class="director-role">Director & Founder</div>
+
+        <p>
+          Rahim Mustaqim leads the company’s technical direction in environmental fluid systems,
+          hydrodynamic modelling, coastal processes, hydrology, and computational analysis.
+        </p>
+
+        <div class="profile-buttons">
+          <a href="https://rahimmustaqim.github.io/MYPortofolio/" target="_blank" class="profile-btn">
+            <i class="fa-solid fa-user"></i>
+            Personal Profile
+          </a>
+
+          <a href="project.html" class="profile-btn secondary">
+            <i class="fa-solid fa-diagram-project"></i>
+            View Projects
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span>Company Information</span>
+        <h2>Who We Are</h2>
+        <p>
+          We combine engineering knowledge, numerical simulation, field data interpretation,
+          and scientific communication to provide reliable support for water, coastal, and
+          environmental projects.
+        </p>
+      </div>
+
+      <div class="about-text-grid">
+        <div class="info-card">
+          <div class="icon">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3>Our Vision</h3>
+          <p>
+            To become a trusted research and consulting partner in environmental fluid systems,
+            supporting sustainable infrastructure, coastal resilience, and water-related decision making.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <h3>Our Mission</h3>
+          <p>
+            To deliver high-quality modelling, analysis, and scientific interpretation for projects
+            related to hydrodynamics, hydrology, flooding, sediment transport, climate impacts,
+            and environmental engineering.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What The Company Does -->
+  <section class="section" style="background: var(--soft);">
+    <div class="container">
+
+      <div class="section-header">
+        <span>What We Do</span>
+        <h2>Core Business Scope</h2>
+        <p>
+          Our work focuses on applying scientific and engineering methods to understand,
+          simulate, and solve environmental fluid-related problems.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <i class="fa-solid fa-water"></i>
+          <h3>Coastal & Hydrodynamic Modelling</h3>
+          <p>
+            Simulation and analysis of coastal flows, waves, currents, tsunami-related processes,
+            inundation, and hydrodynamic interactions with coastal structures or floating objects.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-cloud-rain"></i>
+          <h3>Hydrology & Flood Analysis</h3>
+          <p>
+            Rainfall-runoff analysis, flood risk assessment, watershed evaluation, river flow
+            modelling, and water-related hazard interpretation for planning and engineering studies.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-wind"></i>
+          <h3>CFD & Environmental Fluid Dynamics</h3>
+          <p>
+            Computational Fluid Dynamics analysis for water, air, sediment, and environmental
+            transport processes using numerical simulation and visualization.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-mountain-sun"></i>
+          <h3>Climate & Environmental Analysis</h3>
+          <p>
+            Climate data interpretation, environmental impact analysis, rainfall trend evaluation,
+            and support for adaptation-related studies.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Data Processing & Visualization</h3>
+          <p>
+            Processing of scientific and engineering datasets into clear graphs, maps, reports,
+            and visual outputs for technical communication and decision support.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-file-lines"></i>
+          <h3>Technical Reports & Research Support</h3>
+          <p>
+            Preparation of technical reports, research manuscripts, project documentation,
+            scientific figures, and publication-ready materials.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Organization Structure -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span>Organization</span>
+        <h2>Company Structure</h2>
+        <p>
+          The organization is designed to connect research, engineering analysis, project execution,
+          and communication in one integrated workflow.
+        </p>
+      </div>
+
+      <div class="org-wrapper">
+        <div class="org-chart">
+
+          <div class="org-box main">
+            <h4>Rahim Mustaqim</h4>
+            <p>Director & Founder</p>
+          </div>
+
+          <div class="org-line"></div>
+
+          <div class="org-row">
+            <div class="org-box">
+              <h4>Technical Modelling Division</h4>
+              <p>CFD, hydrodynamics, coastal modelling, numerical simulation</p>
+            </div>
+
+            <div class="org-box">
+              <h4>Hydrology & Climate Division</h4>
+              <p>Flood analysis, watershed study, rainfall, climate data</p>
+            </div>
+
+            <div class="org-box">
+              <h4>Research & Publication Division</h4>
+              <p>Reports, papers, visualization, scientific communication</p>
+            </div>
+          </div>
+
+          <div class="org-line"></div>
+
+          <div class="org-row">
+            <div class="org-box">
+              <h4>Project Support Team</h4>
+              <p>Data preparation, documentation, mapping, and project coordination</p>
+            </div>
+
+            <div class="org-box">
+              <h4>External Collaborators</h4>
+              <p>Academic, industry, and government research partners</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Director Profile -->
+  <section class="section" style="background: var(--soft);">
+    <div class="container">
+
+      <div class="section-header">
+        <span>Leadership</span>
+        <h2>Director Profile</h2>
+        <p>
+          The company is directed by Rahim Mustaqim, whose work focuses on environmental fluid
+          systems, coastal engineering, hydrodynamic modelling, and computational analysis.
+        </p>
+      </div>
+
+      <div class="about-text-grid">
+        <div class="info-card">
+          <div class="icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <h3>Professional Focus</h3>
+          <p>
+            Rahim’s technical interests include coastal hydrodynamics, tsunami-related flow analysis,
+            sediment transport, CFD, hydrology, and the application of numerical modelling for
+            environmental engineering problems.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">
+            <i class="fa-solid fa-link"></i>
+          </div>
+          <h3>Personal Profile Access</h3>
+          <p>
+            Further details about the director’s academic background, research experience, technical
+            skills, and selected projects can be accessed through his personal profile page.
+          </p>
+
+          <br>
+
+          <a href="https://rahimmustaqim.github.io/MYPortofolio/" target="_blank" class="profile-btn">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Visit Personal Profile
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-about">
+        <h2>Collaborate With Us</h2>
+        <p>
+          We are open to collaboration in research, consulting, modelling, environmental analysis,
+          and technical project support related to water, coastal, climate, and fluid systems.
+        </p>
+
+        <a href="contact.html" class="profile-btn secondary">
+          <i class="fa-solid fa-envelope"></i>
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Environmental Fluid Systems Research Group. All rights reserved.</p>
+      <p>Research-based environmental engineering and modelling services.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

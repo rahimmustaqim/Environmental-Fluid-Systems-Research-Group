@@ -475,6 +475,110 @@ img {
 }
 
 /* =========================
+   PROJECT CATEGORIES
+========================= */
+
+.project-category {
+  margin-bottom: 50px;
+}
+
+.project-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.category-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.category-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 16px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 1.45rem;
+  box-shadow: 0 10px 24px rgba(7, 54, 111, 0.08);
+}
+
+.category-heading h3 {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.category-heading p {
+  margin: 4px 0 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.category-projects {
+  display: grid;
+  gap: 22px;
+}
+
+/* Category color accents */
+.project-category.hydrology-climate .category-icon {
+  background: #e8f7ff;
+  color: #0b5fb3;
+}
+
+.project-category.hydraulic-flood .category-icon {
+  background: #e9f5ff;
+  color: #0067b8;
+}
+
+.project-category.coastal .category-icon {
+  background: #e6fbff;
+  color: #0089b8;
+}
+
+.project-category.groundwater .category-icon {
+  background: #ecfbf1;
+  color: var(--green-dark);
+}
+
+.project-category.cfd .category-icon {
+  background: #f0f4ff;
+  color: #3454d1;
+}
+
+/* Optional compact category label inside project cards */
+.project-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.project-label i {
+  color: inherit;
+}
+
+/* =========================
    PARTNERS
 ========================= */
 
@@ -826,6 +930,14 @@ img {
   .section-title::after {
     width: 60px;
   }
+
+  .category-heading {
+    align-items: flex-start;
+  }
+
+  .category-heading::after {
+    display: none;
+  }
 }
 
 @media (max-width: 560px) {
@@ -916,5 +1028,24 @@ img {
 
   .tool {
     width: 100%;
+  }
+
+  .category-heading {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .category-heading h3 {
+    font-size: 1.25rem;
+  }
+
+  .category-heading p {
+    font-size: 0.9rem;
   }
 }

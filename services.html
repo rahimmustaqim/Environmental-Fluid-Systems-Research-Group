@@ -13,14 +13,68 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .services-hero {
-      padding: 78px 0 44px;
+    .services-main {
+      padding: 44px 0 30px;
       background:
-        radial-gradient(circle at top left, rgba(37, 184, 90, 0.13), transparent 34%),
+        radial-gradient(circle at top left, rgba(37, 184, 90, 0.10), transparent 32%),
         linear-gradient(135deg, #eef8ff 0%, #ffffff 64%);
+      border-bottom: 1px solid var(--line);
     }
 
-    .services-hero .eyebrow {
+    .services-intro {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .services-intro-img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      min-height: 440px;
+      box-shadow: 0 24px 60px rgba(7, 54, 111, 0.15);
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .services-intro-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+    }
+
+    .services-intro-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(7, 54, 111, 0.02) 0%,
+          rgba(7, 54, 111, 0.18) 100%
+        );
+    }
+
+    .services-intro-badge {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--primary-dark);
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(7, 54, 111, 0.14);
+      backdrop-filter: blur(10px);
+    }
+
+    .services-intro-text .eyebrow-service {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -33,8 +87,8 @@
       margin-bottom: 18px;
     }
 
-    .services-hero h1 {
-      max-width: 980px;
+    .services-intro-text h1 {
+      max-width: 860px;
       margin: 0;
       color: var(--primary-dark);
       font-size: clamp(2.2rem, 5vw, 4.1rem);
@@ -42,448 +96,222 @@
       letter-spacing: -0.04em;
     }
 
-    .services-hero p {
-      max-width: 780px;
+    .services-intro-text p {
+      max-width: 760px;
       margin-top: 20px;
       color: var(--muted);
       font-size: 1.05rem;
       line-height: 1.8;
     }
 
-    .scope-click-grid {
+    .service-highlights {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
     }
 
-    .scope-click-card {
+    .service-highlight {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 26px 20px;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(7, 54, 111, 0.07);
+    }
+
+    .service-highlight i {
+      color: var(--green);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .service-highlight strong {
+      display: block;
+      color: var(--primary-dark);
+      font-weight: 900;
+      line-height: 1.3;
+      font-size: .95rem;
+    }
+
+    .services-simple-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .service-simple-card {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 28px;
+      align-items: stretch;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(7, 54, 111, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .service-simple-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(11, 95, 179, 0.24);
+      box-shadow: 0 22px 50px rgba(7, 54, 111, 0.12);
+    }
+
+    .service-simple-img {
       min-height: 280px;
-      box-shadow: 0 16px 36px rgba(7, 54, 111, .07);
-      cursor: pointer;
-      transition: .25s ease;
+      background: var(--soft);
+      overflow: hidden;
+    }
+
+    .service-simple-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .service-simple-body {
+      padding: 32px 32px 32px 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
     }
 
-    .scope-click-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(11, 95, 179, .28);
-      box-shadow: 0 22px 48px rgba(7, 54, 111, .12);
-    }
-
-    .scope-click-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 1.7rem;
-      margin-bottom: 20px;
-    }
-
-    .scope-click-card h3 {
-      margin: 0 0 12px;
-      color: var(--primary-dark);
-      font-size: 1.22rem;
-      line-height: 1.25;
-    }
-
-    .scope-click-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem;
-      line-height: 1.6;
-    }
-
-    .scope-click-more {
-      margin-top: 20px;
-      color: var(--primary);
-      font-weight: 900;
+    .service-simple-label {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: .92rem;
-    }
-
-    .scope-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(7, 20, 38, .76);
-      padding: 24px;
-      overflow-y: auto;
-    }
-
-    .scope-modal.active {
-      display: block;
-    }
-
-    .scope-modal-content {
-      width: min(1180px, 96vw);
-      margin: 20px auto;
-      background: #fff;
-      border-radius: 28px;
-      box-shadow: 0 30px 90px rgba(0,0,0,.28);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .close-scope-modal {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: none;
-      background: #fff;
-      color: var(--primary-dark);
-      box-shadow: 0 10px 25px rgba(0,0,0,.18);
-      font-size: 1.1rem;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .scope-popup-header {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 18px;
-      padding: 34px;
-      border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(90deg, rgba(233,245,255,.92), rgba(255,255,255,.98));
-    }
-
-    .scope-popup-title h3 {
-      margin: 0;
-      color: var(--primary-dark);
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      max-width: 560px;
-    }
-
-    .scope-popup-title p {
-      margin: 14px 0 0;
-      color: var(--primary);
-      font-size: 1.1rem;
-      line-height: 1.45;
-      font-weight: 800;
-    }
-
-    .purpose-box {
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 16px;
-      align-items: center;
-      padding: 18px;
-      border-radius: 20px;
-      background: #eef8ff;
-      border: 1px solid var(--line);
-    }
-
-    .purpose-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--primary-dark);
-      color: #fff;
-      font-size: 1.6rem;
-    }
-
-    .purpose-box h4 {
-      margin: 0 0 6px;
-      color: var(--primary-dark);
-      font-size: .95rem;
-      text-transform: uppercase;
-    }
-
-    .purpose-box p {
-      margin: 0;
-      color: var(--text);
-      line-height: 1.55;
-      font-size: .95rem;
-    }
-
-    .scope-popup-main {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 22px;
-      padding: 28px 34px;
-    }
-
-    .understand-box,
-    .outputs-box {
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      overflow: hidden;
-      background: var(--bg);
-    }
-
-    .mini-heading {
-      background: var(--primary-dark);
-      color: #fff;
-      padding: 11px 16px;
-      font-size: .92rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-      text-align: center;
-    }
-
-    .understand-list {
-      display: grid;
-    }
-
-    .understand-item {
-      display: grid;
-      grid-template-columns: 52px 145px 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 13px 16px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .understand-item:last-child {
-      border-bottom: none;
-    }
-
-    .understand-item i {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
       background: var(--primary-soft);
       color: var(--primary);
-      font-size: 1rem;
+      font-size: .82rem;
+      font-weight: 900;
+      margin-bottom: 14px;
     }
 
-    .understand-item strong {
+    .service-simple-body h3 {
+      margin: 0 0 12px;
       color: var(--primary-dark);
-      font-size: .92rem;
-      line-height: 1.25;
-      text-transform: uppercase;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.18;
+      font-weight: 900;
+      letter-spacing: -0.02em;
     }
 
-    .understand-item span {
+    .service-simple-body p {
       color: var(--muted);
-      font-size: .9rem;
+      line-height: 1.75;
+      margin-bottom: 18px;
+      max-width: 760px;
+    }
+
+    .service-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+      margin-top: 4px;
+    }
+
+    .service-points span {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--text);
+      font-size: .93rem;
       line-height: 1.45;
+      font-weight: 650;
     }
 
-    .outputs-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      padding: 14px;
-      background: #fff;
+    .service-points i {
+      color: var(--green);
+      margin-top: 3px;
+      flex: 0 0 auto;
     }
 
-    .output-card {
-      min-height: 120px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
+    .service-cta {
+      margin-top: 36px;
+      padding: 42px;
+      border-radius: 30px;
       background:
-        linear-gradient(135deg, rgba(233,245,255,.95), rgba(255,255,255,.98));
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .output-card i {
-      color: var(--primary);
-      font-size: 1.45rem;
-      margin-bottom: 12px;
-    }
-
-    .output-card strong {
-      color: var(--primary-dark);
-      font-size: .95rem;
-      line-height: 1.3;
-    }
-
-    .process-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      padding: 0 34px 22px;
-    }
-
-    .process-step {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 14px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .process-step .num {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--green);
+        linear-gradient(135deg, rgba(7, 54, 111, 0.96), rgba(11, 95, 179, 0.90), rgba(37, 184, 90, 0.72)),
+        url("assets/project-coastal.png") center/cover no-repeat;
       color: #fff;
-      font-weight: 900;
-      font-size: .9rem;
-    }
-
-    .process-step strong {
-      display: block;
-      color: var(--primary-dark);
-      font-size: .9rem;
-      margin-bottom: 3px;
-    }
-
-    .process-step span {
-      display: block;
-      color: var(--muted);
-      font-size: .82rem;
-      line-height: 1.35;
-    }
-
-    .support-strip {
-      display: grid;
-      grid-template-columns: 230px 1fr;
-      gap: 18px;
-      align-items: center;
-      padding: 18px 34px 28px;
-    }
-
-    .support-title {
-      background: var(--primary-dark);
-      color: #fff;
-      border-radius: 16px;
-      padding: 16px;
-      font-weight: 900;
-      text-transform: uppercase;
+      box-shadow: var(--shadow);
       text-align: center;
-      line-height: 1.35;
     }
 
-    .support-icons {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+    .service-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      font-weight: 900;
     }
 
-    .support-icons div {
-      padding: 13px 8px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--bg);
-      text-align: center;
-      color: var(--primary-dark);
-      font-size: .82rem;
-      font-weight: 800;
-      line-height: 1.25;
+    .service-cta p {
+      max-width: 760px;
+      margin: 0 auto 26px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.75;
     }
 
-    .support-icons i {
-      display: block;
-      color: var(--primary);
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-    }
-
-    .service-quote {
-      margin: 0 34px 34px;
-      padding: 20px 24px;
-      border-radius: 20px;
-      background: var(--primary-dark);
-      color: #fff;
+    .service-cta-actions {
       display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .service-quote i {
-      font-size: 2rem;
-      color: #7fe0a0;
-    }
-
-    .service-quote p {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      font-weight: 700;
-    }
-
-    .services-actions {
-      display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
+      gap: 14px;
     }
 
-    @media (max-width: 1100px) {
-      .scope-click-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .scope-popup-header,
-      .scope-popup-main,
-      .support-strip {
+    @media (max-width: 1020px) {
+      .services-intro {
         grid-template-columns: 1fr;
       }
 
-      .process-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .support-icons {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .scope-click-grid,
-      .outputs-grid,
-      .process-row,
-      .support-icons {
+      .service-highlights {
         grid-template-columns: 1fr;
       }
 
-      .scope-popup-header,
-      .scope-popup-main {
-        padding: 24px 20px;
+      .service-simple-card {
+        grid-template-columns: 1fr;
       }
 
-      .process-row,
-      .support-strip {
-        padding-left: 20px;
-        padding-right: 20px;
+      .service-simple-body {
+        padding: 28px;
       }
 
-      .service-quote {
-        margin-left: 20px;
-        margin-right: 20px;
+      .service-simple-img,
+      .service-simple-img img {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .services-main {
+        padding: 28px 0 22px;
       }
 
-      .understand-item {
-        grid-template-columns: 42px 1fr;
+      .services-intro-img,
+      .services-intro-img img {
+        min-height: 320px;
       }
 
-      .understand-item span {
-        grid-column: 2;
+      .services-intro-badge {
+        left: 16px;
+        bottom: 16px;
+        font-size: .86rem;
+      }
+
+      .service-points {
+        grid-template-columns: 1fr;
+      }
+
+      .service-cta {
+        padding: 32px 22px;
+      }
+
+      .service-cta-actions .btn {
+        width: 100%;
       }
     }
   </style>
@@ -521,100 +349,231 @@
   </div>
 </header>
 
-<section class="services-hero">
+<section class="services-main">
   <div class="container">
-    <div class="eyebrow">
-      <i class="fa-solid fa-layer-group"></i>
-      Business Scope
+    <div class="services-intro">
+
+      <div class="services-intro-img">
+        <img src="assets/project-coastal.png" alt="Environmental fluid systems modelling services">
+        <div class="services-intro-badge">
+          <i class="fa-solid fa-water"></i>
+          Water · Coastal · Climate · CFD
+        </div>
+      </div>
+
+      <div class="services-intro-text">
+        <div class="eyebrow-service">
+          <i class="fa-solid fa-layer-group"></i>
+          Services
+        </div>
+
+        <h1>Engineering modelling services for environmental fluid systems.</h1>
+
+        <div class="accent-line"></div>
+
+        <p>
+          We provide practical modelling and data analysis support for water resources,
+          flood risk, coastal processes, groundwater systems, climate impact, and CFD-based
+          environmental flow problems.
+        </p>
+
+        <div class="service-highlights">
+          <div class="service-highlight">
+            <i class="fa-solid fa-chart-line"></i>
+            <strong>Data-driven engineering analysis</strong>
+          </div>
+
+          <div class="service-highlight">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <strong>Maps, figures, and decision support outputs</strong>
+          </div>
+
+          <div class="service-highlight">
+            <i class="fa-solid fa-file-lines"></i>
+            <strong>Technical reports and project documentation</strong>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="projects.html">
+            <i class="fa-solid fa-folder-open"></i> View Projects
+          </a>
+
+          <a class="btn btn-green" href="contact.html">
+            <i class="fa-regular fa-handshake"></i> Discuss Collaboration
+          </a>
+        </div>
+      </div>
+
     </div>
-
-    <h1>Engineering modelling services for water, coastal, and environmental systems.</h1>
-
-    <div class="accent-line"></div>
-
-    <p>
-      We translate numerical models, field data, climate information, and engineering analysis into practical
-      decision-support outputs for planning, design, risk assessment, and infrastructure evaluation.
-    </p>
   </div>
 </section>
 
 <section class="section section-soft">
   <div class="container">
     <div class="section-title">
-      <h2>Our Business Scope</h2>
-      <p>Click each business scope to view detailed modelling purpose, outputs, process, and applications.</p>
+      <h2>Our Services</h2>
     </div>
 
-    <div class="scope-click-grid">
+    <div class="services-simple-list">
 
-      <article class="scope-click-card" onclick="openScope('hydrology')">
-        <div>
-          <div class="scope-click-icon"><i class="fa-solid fa-cloud-rain"></i></div>
-          <h3>Hydrology & Climate Analysis</h3>
-          <p>Rainfall, runoff, watershed response, flood frequency, and climate impact assessment.</p>
+      <article class="service-simple-card">
+        <div class="service-simple-img">
+          <img src="assets/project-hydroclimate.png" alt="Hydrology and climate analysis">
         </div>
-        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="service-simple-body">
+          <div class="service-simple-label">
+            <i class="fa-solid fa-cloud-rain"></i>
+            Hydrology · Climate
+          </div>
+
+          <h3>Hydrology and Climate Analysis</h3>
+
+          <p>
+            Analysis of rainfall, runoff, watershed response, flood frequency, and climate-related
+            water risks for planning and infrastructure evaluation.
+          </p>
+
+          <div class="service-points">
+            <span><i class="fa-solid fa-check"></i> Rainfall-runoff analysis</span>
+            <span><i class="fa-solid fa-check"></i> Watershed modelling</span>
+            <span><i class="fa-solid fa-check"></i> Flood frequency estimation</span>
+            <span><i class="fa-solid fa-check"></i> Climate impact scenarios</span>
+          </div>
+        </div>
       </article>
 
-      <article class="scope-click-card" onclick="openScope('flood')">
-        <div>
-          <div class="scope-click-icon"><i class="fa-solid fa-house-flood-water"></i></div>
-          <h3>Flood & River Engineering</h3>
-          <p>River flow, flood inundation, drainage systems, hydraulic structures, and mitigation scenarios.</p>
+      <article class="service-simple-card">
+        <div class="service-simple-img">
+          <img src="assets/project-flood.png" alt="Flood and river hydraulic modelling">
         </div>
-        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="service-simple-body">
+          <div class="service-simple-label">
+            <i class="fa-solid fa-house-flood-water"></i>
+            Hydraulic · Flood
+          </div>
+
+          <h3>Flood and River Engineering</h3>
+
+          <p>
+            River hydraulic modelling to evaluate flood extent, water level, velocity,
+            overflow risk, river capacity, and mitigation alternatives.
+          </p>
+
+          <div class="service-points">
+            <span><i class="fa-solid fa-check"></i> Flood inundation mapping</span>
+            <span><i class="fa-solid fa-check"></i> River capacity assessment</span>
+            <span><i class="fa-solid fa-check"></i> HEC-RAS 1D/2D modelling</span>
+            <span><i class="fa-solid fa-check"></i> Mitigation scenario comparison</span>
+          </div>
+        </div>
       </article>
 
-      <article class="scope-click-card" onclick="openScope('coastal')">
-        <div>
-          <div class="scope-click-icon"><i class="fa-solid fa-water"></i></div>
-          <h3>Coastal & Marine Engineering</h3>
-          <p>Waves, tides, storm surge, currents, sediment transport, tsunami, and shoreline response.</p>
+      <article class="service-simple-card">
+        <div class="service-simple-img">
+          <img src="assets/project-coastal.png" alt="Coastal and marine modelling">
         </div>
-        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="service-simple-body">
+          <div class="service-simple-label">
+            <i class="fa-solid fa-water"></i>
+            Coastal · Marine
+          </div>
+
+          <h3>Coastal and Marine Modelling</h3>
+
+          <p>
+            Numerical modelling for waves, tides, currents, tsunami-related processes,
+            sediment transport, shoreline response, and coastal hazard assessment.
+          </p>
+
+          <div class="service-points">
+            <span><i class="fa-solid fa-check"></i> Hydrodynamic modelling</span>
+            <span><i class="fa-solid fa-check"></i> Wave and current analysis</span>
+            <span><i class="fa-solid fa-check"></i> Sediment transport modelling</span>
+            <span><i class="fa-solid fa-check"></i> Coastal hazard assessment</span>
+          </div>
+        </div>
       </article>
 
-      <article class="scope-click-card" onclick="openScope('groundwater')">
-        <div>
-          <div class="scope-click-icon"><i class="fa-solid fa-droplet"></i></div>
-          <h3>Groundwater & Subsurface Flow</h3>
-          <p>Aquifer assessment, pumping impact, recharge, seepage, and contaminant migration.</p>
+      <article class="service-simple-card">
+        <div class="service-simple-img">
+          <img src="assets/project-groundwater.png" alt="Groundwater and subsurface flow modelling">
         </div>
-        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="service-simple-body">
+          <div class="service-simple-label">
+            <i class="fa-solid fa-droplet"></i>
+            Groundwater · Subsurface
+          </div>
+
+          <h3>Groundwater and Subsurface Flow</h3>
+
+          <p>
+            Groundwater flow and contaminant transport modelling for aquifer assessment,
+            pumping impact, recharge systems, seepage, and water security studies.
+          </p>
+
+          <div class="service-points">
+            <span><i class="fa-solid fa-check"></i> MODFLOW-based modelling</span>
+            <span><i class="fa-solid fa-check"></i> Groundwater flow analysis</span>
+            <span><i class="fa-solid fa-check"></i> Contaminant transport</span>
+            <span><i class="fa-solid fa-check"></i> Recharge and well assessment</span>
+          </div>
+        </div>
       </article>
 
-      <article class="scope-click-card" onclick="openScope('cfd')">
-        <div>
-          <div class="scope-click-icon"><i class="fa-solid fa-wind"></i></div>
-          <h3>CFD & Environmental Fluid Dynamics</h3>
-          <p>Turbulence, dispersion, mixing, recirculation, and fluid-structure interaction.</p>
+      <article class="service-simple-card">
+        <div class="service-simple-img">
+          <img src="assets/project-cfd.png" alt="CFD and environmental fluid dynamics">
         </div>
-        <div class="scope-click-more">View Details <i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="service-simple-body">
+          <div class="service-simple-label">
+            <i class="fa-solid fa-wind"></i>
+            CFD · Fluid Dynamics
+          </div>
+
+          <h3>CFD and Environmental Fluid Dynamics</h3>
+
+          <p>
+            CFD-based analysis for complex flow behaviour, turbulence, dispersion,
+            mixing, recirculation, and interaction between flow and engineering structures.
+          </p>
+
+          <div class="service-points">
+            <span><i class="fa-solid fa-check"></i> Flow and turbulence simulation</span>
+            <span><i class="fa-solid fa-check"></i> Dispersion and mixing analysis</span>
+            <span><i class="fa-solid fa-check"></i> Fluid-structure interaction</span>
+            <span><i class="fa-solid fa-check"></i> Design performance testing</span>
+          </div>
+        </div>
       </article>
 
     </div>
 
-    <div class="services-actions">
-      <a class="btn btn-primary" href="projects.html">
-        <i class="fa-solid fa-folder-open"></i> View Project Experience
-      </a>
-      <a class="btn btn-green" href="contact.html">
-        <i class="fa-regular fa-handshake"></i> Discuss Collaboration
-      </a>
+    <div class="service-cta">
+      <h2>Need modelling support for your project?</h2>
+      <p>
+        We can support project-based studies, technical reports, numerical simulation,
+        data visualization, and research collaboration in water and environmental engineering.
+      </p>
+
+      <div class="service-cta-actions">
+        <a class="btn btn-green" href="contact.html">
+          <i class="fa-regular fa-envelope"></i> Contact Us
+        </a>
+
+        <a class="btn btn-outline" href="projects.html">
+          <i class="fa-solid fa-folder"></i> View Project Experience
+        </a>
+      </div>
     </div>
+
   </div>
 </section>
-
-<div id="scopeModal" class="scope-modal" onclick="closeScope(event)">
-  <div class="scope-modal-content">
-    <button class="close-scope-modal" onclick="closeScope(event)">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <div id="scopeModalBody"></div>
-  </div>
-</div>
 
 <footer class="footer">
   <div class="container footer-grid">
@@ -651,276 +610,8 @@
 <script src="script.js"></script>
 
 <script>
-  const scopes = {
-    hydrology: {
-      title: "Why Hydrology & Climate Analysis Matters",
-      subtitle: "Better rainfall understanding today. Better water decisions tomorrow.",
-      purpose: "Hydrological and climate analysis helps estimate runoff, water availability, flood frequency, and future climate impacts for safer and more resilient infrastructure planning.",
-      understandTitle: "Models help us understand",
-      understand: [
-        ["fa-cloud-showers-heavy", "Rainfall", "Rainfall pattern, intensity, duration, and design storm conditions."],
-        ["fa-route", "Runoff", "How rainfall becomes surface flow in a watershed system."],
-        ["fa-water", "Flood Discharge", "Peak flow and return-period-based flood estimation."],
-        ["fa-temperature-half", "Climate Impact", "Possible future changes in rainfall, runoff, and water risk."]
-      ],
-      outputs: [
-        ["fa-chart-area", "Rainfall-runoff hydrograph"],
-        ["fa-table", "Flood frequency analysis"],
-        ["fa-map", "Watershed response map"],
-        ["fa-earth-asia", "Climate scenario assessment"]
-      ],
-      process: [
-        ["The Problem", "Uncertain rainfall and runoff response."],
-        ["The Process", "Collect data, build model, test scenarios."],
-        ["The Decision", "Estimate design flood and water risk."],
-        ["The Outcome", "Resilient water planning and design."]
-      ],
-      supportTitle: "Hydrology supports",
-      support: [
-        ["fa-house-flood-water", "Flood Risk"],
-        ["fa-dam", "Reservoir Planning"],
-        ["fa-seedling", "Water Resources"],
-        ["fa-road", "Infrastructure"],
-        ["fa-cloud-sun-rain", "Climate Adaptation"]
-      ],
-      quote: "Hydrological decisions become stronger when rainfall, runoff, and climate uncertainty are tested through model-based scenarios."
-    },
-
-    flood: {
-      title: "Why Flood & River Engineering Matters",
-      subtitle: "Understand river behaviour before flood problems become costly failures.",
-      purpose: "Hydraulic models help evaluate river capacity, floodplain extent, water levels, velocity patterns, and mitigation alternatives for flood-risk reduction.",
-      understandTitle: "Models help us understand",
-      understand: [
-        ["fa-water", "River Flow", "Flow distribution, water levels, and river capacity."],
-        ["fa-house-flood-water", "Flood Extent", "Inundation depth, spread, and affected areas."],
-        ["fa-bridge-water", "Structures", "Bridge, culvert, channel, and drainage performance."],
-        ["fa-screwdriver-wrench", "Mitigation", "Diversion, river improvement, and protection scenarios."]
-      ],
-      outputs: [
-        ["fa-map", "Flood inundation map"],
-        ["fa-chart-line", "Water level profile"],
-        ["fa-gauge-high", "Velocity distribution"],
-        ["fa-diagram-project", "Scenario comparison"]
-      ],
-      process: [
-        ["The Problem", "Overflow risk and limited river capacity."],
-        ["The Process", "Set geometry, boundary, and design flood."],
-        ["The Decision", "Compare mitigation alternatives."],
-        ["The Outcome", "Reduced flood risk and safer infrastructure."]
-      ],
-      supportTitle: "Flood modelling supports",
-      support: [
-        ["fa-city", "Urban Flooding"],
-        ["fa-water", "River Capacity"],
-        ["fa-road-bridge", "Bridge Design"],
-        ["fa-arrow-right-arrow-left", "Diversion Channel"],
-        ["fa-triangle-exclamation", "Flood Mitigation"]
-      ],
-      quote: "Flood mitigation options should be compared virtually before they are implemented physically."
-    },
-
-    coastal: {
-      title: "Why Coastal Modelling Matters",
-      subtitle: "Better understanding today. Better decisions for our coasts tomorrow.",
-      purpose: "Coastal areas are dynamic and complex. Numerical models help evaluate how the coast responds to waves, tides, currents, sediment movement, tsunami, and human interventions.",
-      understandTitle: "Models help us understand",
-      understand: [
-        ["fa-water", "Waves", "Wave climate, nearshore transformation, and design conditions."],
-        ["fa-arrow-up-from-water-pump", "Tides & Water Levels", "Tidal variation, storm surge, and extreme water levels."],
-        ["fa-arrows-left-right", "Currents", "Coastal circulation, navigation condition, and transport pathways."],
-        ["fa-layer-group", "Sediment Transport", "Erosion, deposition, shoreline change, and seabed response."]
-      ],
-      outputs: [
-        ["fa-wave-square", "Wave height distribution"],
-        ["fa-compass", "Current vector field"],
-        ["fa-water", "Water level map"],
-        ["fa-layer-group", "Sediment transport map"]
-      ],
-      process: [
-        ["The Problem", "Coasts face natural hazards and development pressure."],
-        ["The Process", "Build, calibrate, and test coastal models."],
-        ["The Decision", "Compare alternatives and assess risks."],
-        ["The Outcome", "Smarter investment and resilient coasts."]
-      ],
-      supportTitle: "Coastal modelling supports",
-      support: [
-        ["fa-ship", "Port Development"],
-        ["fa-shield-halved", "Coastal Protection"],
-        ["fa-umbrella-beach", "Beach Nourishment"],
-        ["fa-anchor", "Navigation Channel"],
-        ["fa-earth-asia", "Climate Adaptation"]
-      ],
-      quote: "Engineering decisions for coastal areas should be tested virtually before they are built physically."
-    },
-
-    groundwater: {
-      title: "Why Groundwater Modelling Matters",
-      subtitle: "Invisible water systems need clear numerical interpretation.",
-      purpose: "Groundwater models help understand aquifer behaviour, pumping impact, recharge processes, seepage, and contaminant migration before they affect water security.",
-      understandTitle: "Models help us understand",
-      understand: [
-        ["fa-layer-group", "Aquifer System", "Subsurface layers, groundwater table, and flow direction."],
-        ["fa-well-pump", "Pumping Wells", "Drawdown, production impact, and sustainable abstraction."],
-        ["fa-recycle", "Recharge", "Rainfall infiltration, injection wells, and managed recharge."],
-        ["fa-biohazard", "Contaminants", "Pollutant transport, plume migration, and concentration changes."]
-      ],
-      outputs: [
-        ["fa-water", "Groundwater head map"],
-        ["fa-arrow-trend-down", "Drawdown assessment"],
-        ["fa-location-dot", "Flow path interpretation"],
-        ["fa-vial-circle-check", "Contaminant plume map"]
-      ],
-      process: [
-        ["The Problem", "Groundwater condition is difficult to observe directly."],
-        ["The Process", "Build flow and transport model."],
-        ["The Decision", "Evaluate wells, recharge, and contamination risk."],
-        ["The Outcome", "Sustainable and protected groundwater use."]
-      ],
-      supportTitle: "Groundwater modelling supports",
-      support: [
-        ["fa-well-pump", "Production Wells"],
-        ["fa-recycle", "Recharge System"],
-        ["fa-industry", "Industrial Area"],
-        ["fa-vial-virus", "Contamination"],
-        ["fa-seedling", "Water Security"]
-      ],
-      quote: "Subsurface flow decisions need model-based interpretation because groundwater behaviour is often invisible from the surface."
-    },
-
-    cfd: {
-      title: "Why CFD & Environmental Fluid Dynamics Matters",
-      subtitle: "Complex flow behaviour can be tested virtually before physical implementation.",
-      purpose: "CFD helps analyse turbulence, recirculation, dispersion, mixing, and fluid-structure interaction in hydraulic, coastal, and environmental engineering systems.",
-      understandTitle: "Models help us understand",
-      understand: [
-        ["fa-arrows-spin", "Turbulence", "Flow separation, vortices, eddies, and recirculation zones."],
-        ["fa-bridge-water", "Structures", "Flow interaction around piers, gates, channels, and barriers."],
-        ["fa-smog", "Dispersion", "Mixing, pollutant transport, scalar movement, and spreading."],
-        ["fa-cubes", "Numerics", "Mesh, boundary conditions, validation, and model interpretation."]
-      ],
-      outputs: [
-        ["fa-gauge-high", "Velocity contour"],
-        ["fa-arrow-right-long", "Streamline pattern"],
-        ["fa-circle-nodes", "Turbulence field"],
-        ["fa-cloud", "Dispersion plume"]
-      ],
-      process: [
-        ["The Problem", "Complex local flow cannot be explained by simple methods."],
-        ["The Process", "Create geometry, mesh, and simulation setup."],
-        ["The Decision", "Compare design and flow alternatives."],
-        ["The Outcome", "Safer design and better flow performance."]
-      ],
-      supportTitle: "CFD modelling supports",
-      support: [
-        ["fa-bridge-water", "Bridge Pier Flow"],
-        ["fa-dam", "Hydraulic Structure"],
-        ["fa-water", "Coastal Flow"],
-        ["fa-flask", "Pollutant Mixing"],
-        ["fa-gears", "Design Testing"]
-      ],
-      quote: "Complex flow behaviour should be tested numerically before engineering decisions are finalized."
-    }
-  };
-
-  function openScope(scopeKey) {
-    const data = scopes[scopeKey];
-    const modal = document.getElementById("scopeModal");
-    const body = document.getElementById("scopeModalBody");
-
-    body.innerHTML = `
-      <div class="scope-popup-header">
-        <div class="scope-popup-title">
-          <h3>${data.title}</h3>
-          <p>${data.subtitle}</p>
-        </div>
-
-        <div class="purpose-box">
-          <div class="purpose-icon"><i class="fa-solid fa-bullseye"></i></div>
-          <div>
-            <h4>The Purpose</h4>
-            <p>${data.purpose}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="scope-popup-main">
-        <div class="understand-box">
-          <div class="mini-heading">${data.understandTitle}</div>
-          <div class="understand-list">
-            ${data.understand.map(item => `
-              <div class="understand-item">
-                <i class="fa-solid ${item[0]}"></i>
-                <strong>${item[1]}</strong>
-                <span>${item[2]}</span>
-              </div>
-            `).join("")}
-          </div>
-        </div>
-
-        <div class="outputs-box">
-          <div class="mini-heading">Examples of service outputs</div>
-          <div class="outputs-grid">
-            ${data.outputs.map(item => `
-              <div class="output-card">
-                <i class="fa-solid ${item[0]}"></i>
-                <strong>${item[1]}</strong>
-              </div>
-            `).join("")}
-          </div>
-        </div>
-      </div>
-
-      <div class="process-row">
-        ${data.process.map((item, index) => `
-          <div class="process-step">
-            <div class="num">${index + 1}</div>
-            <div>
-              <strong>${item[0]}</strong>
-              <span>${item[1]}</span>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-
-      <div class="support-strip">
-        <div class="support-title">${data.supportTitle}</div>
-        <div class="support-icons">
-          ${data.support.map(item => `
-            <div>
-              <i class="fa-solid ${item[0]}"></i>
-              ${item[1]}
-            </div>
-          `).join("")}
-        </div>
-      </div>
-
-      <div class="service-quote">
-        <i class="fa-solid fa-quote-left"></i>
-        <p>${data.quote}</p>
-      </div>
-    `;
-
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeScope(event) {
-    if (
-      event.target.classList.contains("scope-modal") ||
-      event.target.classList.contains("close-scope-modal") ||
-      event.target.closest(".close-scope-modal")
-    ) {
-      document.getElementById("scopeModal").classList.remove("active");
-      document.body.style.overflow = "";
-    }
-  }
-
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-      document.getElementById("scopeModal").classList.remove("active");
-      document.body.style.overflow = "";
-    }
+  document.querySelector(".menu-btn")?.addEventListener("click", function () {
+    document.querySelector(".nav")?.classList.toggle("open");
   });
 </script>
 

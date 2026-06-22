@@ -52,7 +52,85 @@
 
     .project-list {
       display: grid;
+      gap: 48px;
+    }
+
+    .project-category {
+      display: grid;
+      gap: 20px;
+    }
+
+    .category-heading {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 2px;
+    }
+
+    .category-heading::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .category-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 16px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 1.45rem;
+      box-shadow: 0 10px 24px rgba(7, 54, 111, 0.08);
+    }
+
+    .category-heading h3 {
+      margin: 0;
+      color: var(--primary-dark);
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .category-heading p {
+      margin: 4px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .category-projects {
+      display: grid;
       gap: 22px;
+    }
+
+    .project-category.hydrology-climate .category-icon {
+      background: #e8f7ff;
+      color: #0b5fb3;
+    }
+
+    .project-category.hydraulic-flood .category-icon {
+      background: #e9f5ff;
+      color: #0067b8;
+    }
+
+    .project-category.coastal .category-icon {
+      background: #e6fbff;
+      color: #0089b8;
+    }
+
+    .project-category.groundwater .category-icon {
+      background: #ecfbf1;
+      color: var(--green-dark);
+    }
+
+    .project-category.cfd .category-icon {
+      background: #f0f4ff;
+      color: #3454d1;
     }
 
     .project-accordion {
@@ -282,6 +360,35 @@
       .projects-hero {
         padding: 70px 0 44px;
       }
+
+      .category-heading {
+        align-items: flex-start;
+      }
+
+      .category-heading::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .category-heading {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .category-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+      }
+
+      .category-heading h3 {
+        font-size: 1.25rem;
+      }
+
+      .category-heading p {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -345,426 +452,575 @@
 
     <div class="project-list">
 
-      <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-        <div class="project-head">
-          <div>
-            <div class="project-label">
-              <i class="fa-solid fa-layer-group"></i> Hydrogeology · Groundwater
-            </div>
-            <h3>Contaminant Transport Using Simcore Processing MODFLOW</h3>
+      <!-- =========================
+           HYDROLOGY - CLIMATE
+      ========================== -->
+      <div class="project-category hydrology-climate">
+        <div class="category-heading">
+          <div class="category-icon">
+            <i class="fa-solid fa-cloud-sun-rain"></i>
           </div>
-          <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+          <div>
+            <h3>Hydrology–Climate</h3>
+            <p>Climate impact assessment, rainfall–runoff analysis, water resources planning, and hydrological support studies.</p>
+          </div>
         </div>
 
-        <div class="project-detail">
-          <div class="project-detail-inner">
-            <p>
-              Integrated groundwater flow and contaminant transport modelling training using
-              <b>Simcore Processing MODFLOW</b>, with practical applications for production wells,
-              injection wells, recharge systems, and contaminant migration.
-            </p>
+        <div class="category-projects">
 
-            <img class="project-main-img" src="assets/modflow.png" alt="Contaminant transport modelling using MODFLOW">
-
-            <div class="video-wrap">
-              <span class="video-btn" onclick="event.stopPropagation(); openModal('F26OrJ9ojZo');">
-                <i class="fa-brands fa-youtube"></i> Overview Result
-              </span>
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-cloud-rain"></i> Hydrology · Hydraulic · Climate Impact
+                </div>
+                <h3>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
-            <div class="project-info">
-              <h4>Project Information</h4>
-              <div class="project-meta">
-                <div><strong>Project Name</strong></div>
-                <div>Contaminant Transport Using Simcore Processing MODFLOW</div>
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Integrated hydrology and hydraulic modelling for climate-change-related hazard assessment
+                  of the Pakil Pumped Storage Plant and Laguna de Bay system using
+                  <b>HEC-HMS, HEC-RAS, and Delft Dashboard</b>.
+                </p>
 
-                <div><strong>Location</strong></div>
-                <div>Online via Zoom Meeting</div>
+                <img class="project-main-img" src="assets/climate.png" alt="Climate change hazard assessment for Pakil Pumped Storage Power Plant">
 
-                <div><strong>Client</strong></div>
-                <div>PT Saumy Gemilang Indonesia</div>
+                <div class="video-wrap">
+                  <span class="video-btn" onclick="event.stopPropagation(); openModal('dhtppSgsAlQ');">
+                    <i class="fa-brands fa-youtube"></i> Project Overview
+                  </span>
+                </div>
 
-                <div><strong>Category</strong></div>
-                <div>Hydrogeology · Groundwater · Contaminant Transport</div>
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant</div>
 
-                <div><strong>Main Software Used</strong></div>
-                <div>MODFLOW · MT3DMS/SEAWAT</div>
+                    <div><strong>Location</strong></div>
+                    <div>Laguna de Bay, Philippines</div>
 
-                <div><strong>Status</strong></div>
-                <div>Completed (Apr 2026)</div>
+                    <div><strong>Client</strong></div>
+                    <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
 
-                <div><strong>Description</strong></div>
-                <div>
-                  The training focused on groundwater modelling using MODFLOW, including production wells,
-                  injection wells, rainwater infiltration and recharge systems, and contaminant transport
-                  processes from injection wells and surface spreading.
+                    <div><strong>Category</strong></div>
+                    <div>Hydrology · Hydraulic · Climate Impact Assessment</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>HEC-HMS · HEC-RAS · Delft Dashboard</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>On-going</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      Rainfall–runoff and hydrodynamic modelling of Laguna de Bay were conducted to support
+                      hydrological and hydraulic hazard assessment under climate change scenarios.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-        <div class="project-head">
-          <div>
-            <div class="project-label">
-              <i class="fa-solid fa-cloud-rain"></i> Hydrology · Hydraulic · Climate Impact
-            </div>
-            <h3>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
-          </div>
-          <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-        </div>
-
-        <div class="project-detail">
-          <div class="project-detail-inner">
-            <p>
-              Integrated hydrology and hydraulic modelling for climate-change-related hazard assessment
-              of the Pakil Pumped Storage Plant and Laguna de Bay system using
-              <b>HEC-HMS, HEC-RAS, and Delft Dashboard</b>.
-            </p>
-
-            <img class="project-main-img" src="assets/climate.png" alt="Climate change hazard assessment for Pakil Pumped Storage Power Plant">
-
-            <div class="video-wrap">
-              <span class="video-btn" onclick="event.stopPropagation(); openModal('dhtppSgsAlQ');">
-                <i class="fa-brands fa-youtube"></i> Project Overview
-              </span>
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-file-lines"></i> Water Resources · Technical Guideline
+                </div>
+                <h3>Guidelines for Sustainable Water Supply Management</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
-            <div class="project-info">
-              <h4>Project Information</h4>
-              <div class="project-meta">
-                <div><strong>Project Name</strong></div>
-                <div>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant</div>
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Technical guideline preparation for sustainable water supply management, including integrated
+                  planning, efficient water allocation, infrastructure optimization, and environmental protection.
+                </p>
 
-                <div><strong>Location</strong></div>
-                <div>Laguna de Bay, Philippines</div>
+                <img class="project-main-img" src="assets/jasatirta.jpg" alt="Guidelines for sustainable water supply management">
 
-                <div><strong>Client</strong></div>
-                <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
+                <div class="doc-box">
+                  <h4>Supporting Evidence</h4>
+                  <a class="doc-link" href="assets/jasatirta.pdf" target="_blank" onclick="event.stopPropagation();">
+                    <i class="fa-regular fa-file-pdf"></i> Report Summary (PDF)
+                  </a>
+                </div>
 
-                <div><strong>Category</strong></div>
-                <div>Hydrology · Hydraulic · Climate Impact Assessment</div>
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>Guidelines for Sustainable Water Supply Management – Jasa Tirta II</div>
 
-                <div><strong>Main Software Used</strong></div>
-                <div>HEC-HMS · HEC-RAS · Delft Dashboard</div>
+                    <div><strong>Location</strong></div>
+                    <div>Purwakarta, Indonesia</div>
 
-                <div><strong>Status</strong></div>
-                <div>On-going</div>
+                    <div><strong>Client</strong></div>
+                    <div>Perum Jasa Tirta II</div>
 
-                <div><strong>Description</strong></div>
-                <div>
-                  Rainfall–runoff and hydrodynamic modelling of Laguna de Bay were conducted to support
-                  hydrological and hydraulic hazard assessment under climate change scenarios.
+                    <div><strong>Category</strong></div>
+                    <div>Water Resources · Hydrology · Hydraulic</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>—</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>Completed (Aug 2025)</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      These guidelines outline Jasa Tirta II’s approach to sustainable water supply management
+                      through integrated planning, efficient water allocation, infrastructure optimization,
+                      and environmental protection to support long-term water security.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-        <div class="project-head">
+        </div>
+      </div>
+
+      <!-- =========================
+           HYDRAULIC & FLOOD MODELLING
+      ========================== -->
+      <div class="project-category hydraulic-flood">
+        <div class="category-heading">
+          <div class="category-icon">
+            <i class="fa-solid fa-house-flood-water"></i>
+          </div>
           <div>
-            <div class="project-label">
-              <i class="fa-solid fa-water"></i> Hydrology · Hydrodynamic · Sediment
-            </div>
-            <h3>Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
+            <h3>Hydraulic & Flood Modelling</h3>
+            <p>River hydraulics, flood inundation, drainage simulation, capacity assessment, and HEC-HMS/HEC-RAS training.</p>
           </div>
-          <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
         </div>
 
-        <div class="project-detail">
-          <div class="project-detail-inner">
-            <p>
-              Integrated hydrology, hydraulic, hydrodynamic, and sediment transport modelling for the
-              Pakil Pumped Storage Plant–Laguna de Bay system using
-              <b>HEC-HMS, HEC-RAS, and Delft3D FM</b>.
-            </p>
+        <div class="category-projects">
 
-            <img class="project-main-img" src="assets/pakil.png" alt="Hydrology and sediment modelling for Pakil Pumped Storage Power Plant">
-
-            <div class="video-wrap">
-              <span class="video-btn" onclick="event.stopPropagation(); openModal('Xwq_5V9uk7o');">
-                <i class="fa-brands fa-youtube"></i> Project Overview
-              </span>
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-house-flood-water"></i> Hydrology · Hydraulic · Flood Modelling
+                </div>
+                <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 110 – Borneo, Indonesia</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
-            <div class="project-info">
-              <h4>Project Information</h4>
-              <div class="project-meta">
-                <div><strong>Project Name</strong></div>
-                <div>Hydrology and Sedimentation Simulation of Pakil Pumped Storage Plant</div>
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Numerical flood modelling and engineering analysis of river systems and alternative diversion
+                  channel designs using <b>HEC-HMS and HEC-RAS</b>.
+                </p>
 
-                <div><strong>Location</strong></div>
-                <div>Laguna de Bay, Philippines</div>
+                <img class="project-main-img" src="assets/jmb.jpg" alt="River flood assessment PIT 110">
 
-                <div><strong>Client</strong></div>
-                <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
+                <div class="video-wrap">
+                  <span class="video-btn" onclick="event.stopPropagation(); openModal('rFTdmlR0mfY');">
+                    <i class="fa-brands fa-youtube"></i> Existing River Simulation (HEC-RAS 1D)
+                  </span>
 
-                <div><strong>Category</strong></div>
-                <div>Hydrology · Hydraulic · Hydrodynamic · Morphodynamic/Sediment</div>
+                  <span class="video-btn" onclick="event.stopPropagation(); openModal('VemRWIw6Tn0');">
+                    <i class="fa-brands fa-youtube"></i> Diversion River Simulation (HEC-RAS 1D)
+                  </span>
+                </div>
 
-                <div><strong>Main Software Used</strong></div>
-                <div>HEC-HMS · HEC-RAS · Delft3D FM</div>
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>River Flood Assessment PIT 110</div>
 
-                <div><strong>Status</strong></div>
-                <div>On-going</div>
+                    <div><strong>Location</strong></div>
+                    <div>Borneo, Indonesia</div>
 
-                <div><strong>Description</strong></div>
-                <div>
-                  Rainfall–runoff, hydrodynamic, and sediment transport modelling of Laguna de Bay
-                  under existing and future climate change scenarios to assess sediment processes
-                  and pumped storage system performance.
+                    <div><strong>Client</strong></div>
+                    <div>PT Tectona Mitra Utama</div>
+
+                    <div><strong>Category</strong></div>
+                    <div>Hydrology · Hydraulic</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>HEC-HMS · HEC-RAS</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>Completed (Dec 2025)</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      Rainfall–runoff and river hydraulic simulations were performed to assess flood
+                      inundation extent and overflow risk under multiple design flood scenarios, including
+                      evaluation of existing river conditions and alternative diversion channel designs.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-        <div class="project-head">
-          <div>
-            <div class="project-label">
-              <i class="fa-solid fa-house-flood-water"></i> Hydrology · Hydraulic · Flood Modelling
-            </div>
-            <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 110 – Borneo, Indonesia</h3>
-          </div>
-          <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-        </div>
-
-        <div class="project-detail">
-          <div class="project-detail-inner">
-            <p>
-              Numerical flood modelling and engineering analysis of river systems and alternative diversion
-              channel designs using <b>HEC-HMS and HEC-RAS</b>.
-            </p>
-
-            <img class="project-main-img" src="assets/jmb.jpg" alt="River flood assessment PIT 110">
-
-            <div class="video-wrap">
-              <span class="video-btn" onclick="event.stopPropagation(); openModal('rFTdmlR0mfY');">
-                <i class="fa-brands fa-youtube"></i> Existing River Simulation (HEC-RAS 1D)
-              </span>
-
-              <span class="video-btn" onclick="event.stopPropagation(); openModal('VemRWIw6Tn0');">
-                <i class="fa-brands fa-youtube"></i> Diversion River Simulation (HEC-RAS 1D)
-              </span>
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-house-flood-water"></i> Hydrology · Hydraulic · Flood Modelling
+                </div>
+                <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 131 – Borneo, Indonesia</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
-            <div class="project-info">
-              <h4>Project Information</h4>
-              <div class="project-meta">
-                <div><strong>Project Name</strong></div>
-                <div>River Flood Assessment PIT 110</div>
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Numerical flood modelling and engineering analysis of river systems, including evaluation of
+                  existing river hydraulics and development of riverbank channel designs for capacity enhancement,
+                  using <b>HEC-HMS and HEC-RAS</b>.
+                </p>
 
-                <div><strong>Location</strong></div>
-                <div>Borneo, Indonesia</div>
+                <img class="project-main-img" src="assets/jmb131.jpg" alt="River flood assessment PIT 131">
 
-                <div><strong>Client</strong></div>
-                <div>PT Tectona Mitra Utama</div>
+                <div class="video-wrap">
+                  <span class="video-btn" onclick="event.stopPropagation(); openModal('BMxMmWokVcs');">
+                    <i class="fa-brands fa-youtube"></i> Existing River Simulation (HEC-RAS 2D)
+                  </span>
+                </div>
 
-                <div><strong>Category</strong></div>
-                <div>Hydrology · Hydraulic</div>
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>River Flood Assessment PIT 131</div>
 
-                <div><strong>Main Software Used</strong></div>
-                <div>HEC-HMS · HEC-RAS</div>
+                    <div><strong>Location</strong></div>
+                    <div>Borneo, Indonesia</div>
 
-                <div><strong>Status</strong></div>
-                <div>Completed (Dec 2025)</div>
+                    <div><strong>Client</strong></div>
+                    <div>PT Tectona Mitra Utama</div>
 
-                <div><strong>Description</strong></div>
-                <div>
-                  Rainfall–runoff and river hydraulic simulations were performed to assess flood
-                  inundation extent and overflow risk under multiple design flood scenarios, including
-                  evaluation of existing river conditions and alternative diversion channel designs.
+                    <div><strong>Category</strong></div>
+                    <div>Hydrology · Hydraulic</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>HEC-HMS · HEC-RAS</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>Completed (Dec 2025)</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      Rainfall–runoff and river hydraulic simulations were performed to assess flood
+                      inundation extent and overflow risk under multiple design flood scenarios, including
+                      riverbank channel design evaluation for improved flow capacity.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-        <div class="project-head">
-          <div>
-            <div class="project-label">
-              <i class="fa-solid fa-house-flood-water"></i> Hydrology · Hydraulic · Flood Modelling
-            </div>
-            <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 131 – Borneo, Indonesia</h3>
-          </div>
-          <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-        </div>
-
-        <div class="project-detail">
-          <div class="project-detail-inner">
-            <p>
-              Numerical flood modelling and engineering analysis of river systems, including evaluation of
-              existing river hydraulics and development of riverbank channel designs for capacity enhancement,
-              using <b>HEC-HMS and HEC-RAS</b>.
-            </p>
-
-            <img class="project-main-img" src="assets/jmb131.jpg" alt="River flood assessment PIT 131">
-
-            <div class="video-wrap">
-              <span class="video-btn" onclick="event.stopPropagation(); openModal('BMxMmWokVcs');">
-                <i class="fa-brands fa-youtube"></i> Existing River Simulation (HEC-RAS 2D)
-              </span>
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-chalkboard-user"></i> Training · Hydrology · Hydraulic
+                </div>
+                <h3>HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
-            <div class="project-info">
-              <h4>Project Information</h4>
-              <div class="project-meta">
-                <div><strong>Project Name</strong></div>
-                <div>River Flood Assessment PIT 131</div>
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Academic and professional training support for hydrological and hydraulic modelling,
+                  including drainage systems, river analysis, and 1D/2D flood simulation using
+                  <b>HEC-HMS and HEC-RAS</b>.
+                </p>
 
-                <div><strong>Location</strong></div>
-                <div>Borneo, Indonesia</div>
+                <img class="project-main-img" src="assets/saumy.png" alt="HEC-HMS and HEC-RAS training">
 
-                <div><strong>Client</strong></div>
-                <div>PT Tectona Mitra Utama</div>
+                <div class="video-wrap">
+                  <span class="video-btn" onclick="event.stopPropagation(); openModal('UTPwySG7-8g');">
+                    <i class="fa-brands fa-youtube"></i> Training Session
+                  </span>
+                </div>
 
-                <div><strong>Category</strong></div>
-                <div>Hydrology · Hydraulic</div>
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</div>
 
-                <div><strong>Main Software Used</strong></div>
-                <div>HEC-HMS · HEC-RAS</div>
+                    <div><strong>Location</strong></div>
+                    <div>Online via Zoom Meeting</div>
 
-                <div><strong>Status</strong></div>
-                <div>Completed (Dec 2025)</div>
+                    <div><strong>Client</strong></div>
+                    <div>PT Saumy Gemilang Indonesia</div>
 
-                <div><strong>Description</strong></div>
-                <div>
-                  Rainfall–runoff and river hydraulic simulations were performed to assess flood
-                  inundation extent and overflow risk under multiple design flood scenarios, including
-                  riverbank channel design evaluation for improved flow capacity.
+                    <div><strong>Category</strong></div>
+                    <div>Hydrology · Hydraulic · Training</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>HEC-HMS · HEC-RAS</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>Completed (Aug 2025)</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      The training provided practical modelling support for HEC-HMS and HEC-RAS workflows,
+                      including 1D and 2D flow simulation for drainage and flood assessment applications.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-        <div class="project-head">
+        </div>
+      </div>
+
+      <!-- =========================
+           COASTAL
+      ========================== -->
+      <div class="project-category coastal">
+        <div class="category-heading">
+          <div class="category-icon">
+            <i class="fa-solid fa-water"></i>
+          </div>
           <div>
-            <div class="project-label">
-              <i class="fa-solid fa-chalkboard-user"></i> Training · Hydrology · Hydraulic
-            </div>
-            <h3>HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</h3>
+            <h3>Coastal, Hydrodynamic & Sediment Modelling</h3>
+            <p>Coastal hydrodynamics, lake circulation, sediment transport, morphodynamic simulation, and marine-related modelling.</p>
           </div>
-          <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
         </div>
 
-        <div class="project-detail">
-          <div class="project-detail-inner">
-            <p>
-              Academic and professional training support for hydrological and hydraulic modelling,
-              including drainage systems, river analysis, and 1D/2D flood simulation using
-              <b>HEC-HMS and HEC-RAS</b>.
-            </p>
+        <div class="category-projects">
 
-            <img class="project-main-img" src="assets/saumy.png" alt="HEC-HMS and HEC-RAS training">
-
-            <div class="video-wrap">
-              <span class="video-btn" onclick="event.stopPropagation(); openModal('UTPwySG7-8g');">
-                <i class="fa-brands fa-youtube"></i> Training Session
-              </span>
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-water"></i> Hydrology · Hydrodynamic · Sediment
+                </div>
+                <h3>Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
-            <div class="project-info">
-              <h4>Project Information</h4>
-              <div class="project-meta">
-                <div><strong>Project Name</strong></div>
-                <div>HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</div>
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Integrated hydrology, hydraulic, hydrodynamic, and sediment transport modelling for the
+                  Pakil Pumped Storage Plant–Laguna de Bay system using
+                  <b>HEC-HMS, HEC-RAS, and Delft3D FM</b>.
+                </p>
 
-                <div><strong>Location</strong></div>
-                <div>Online via Zoom Meeting</div>
+                <img class="project-main-img" src="assets/pakil.png" alt="Hydrology and sediment modelling for Pakil Pumped Storage Power Plant">
 
-                <div><strong>Client</strong></div>
-                <div>PT Saumy Gemilang Indonesia</div>
+                <div class="video-wrap">
+                  <span class="video-btn" onclick="event.stopPropagation(); openModal('Xwq_5V9uk7o');">
+                    <i class="fa-brands fa-youtube"></i> Project Overview
+                  </span>
+                </div>
 
-                <div><strong>Category</strong></div>
-                <div>Hydrology · Hydraulic · Training</div>
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>Hydrology and Sedimentation Simulation of Pakil Pumped Storage Plant</div>
 
-                <div><strong>Main Software Used</strong></div>
-                <div>HEC-HMS · HEC-RAS</div>
+                    <div><strong>Location</strong></div>
+                    <div>Laguna de Bay, Philippines</div>
 
-                <div><strong>Status</strong></div>
-                <div>Completed (Aug 2025)</div>
+                    <div><strong>Client</strong></div>
+                    <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
 
-                <div><strong>Description</strong></div>
-                <div>
-                  The training provided practical modelling support for HEC-HMS and HEC-RAS workflows,
-                  including 1D and 2D flow simulation for drainage and flood assessment applications.
+                    <div><strong>Category</strong></div>
+                    <div>Hydrology · Hydraulic · Hydrodynamic · Morphodynamic/Sediment</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>HEC-HMS · HEC-RAS · Delft3D FM</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>On-going</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      Rainfall–runoff, hydrodynamic, and sediment transport modelling of Laguna de Bay
+                      under existing and future climate change scenarios to assess sediment processes
+                      and pumped storage system performance.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-        <div class="project-head">
+        </div>
+      </div>
+
+      <!-- =========================
+           GROUNDWATER
+      ========================== -->
+      <div class="project-category groundwater">
+        <div class="category-heading">
+          <div class="category-icon">
+            <i class="fa-solid fa-mountain-sun"></i>
+          </div>
           <div>
-            <div class="project-label">
-              <i class="fa-solid fa-file-lines"></i> Water Resources · Technical Guideline
-            </div>
-            <h3>Guidelines for Sustainable Water Supply Management</h3>
+            <h3>Groundwater</h3>
+            <p>Groundwater flow, recharge systems, wells, subsurface transport, and contaminant migration modelling.</p>
           </div>
-          <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
         </div>
 
-        <div class="project-detail">
-          <div class="project-detail-inner">
-            <p>
-              Technical guideline preparation for sustainable water supply management, including integrated
-              planning, efficient water allocation, infrastructure optimization, and environmental protection.
-            </p>
+        <div class="category-projects">
 
-            <img class="project-main-img" src="assets/jasatirta.jpg" alt="Guidelines for sustainable water supply management">
-
-            <div class="doc-box">
-              <h4>Supporting Evidence</h4>
-              <a class="doc-link" href="assets/jasatirta.pdf" target="_blank" onclick="event.stopPropagation();">
-                <i class="fa-regular fa-file-pdf"></i> Report Summary (PDF)
-              </a>
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-layer-group"></i> Hydrogeology · Groundwater
+                </div>
+                <h3>Contaminant Transport Using Simcore Processing MODFLOW</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
-            <div class="project-info">
-              <h4>Project Information</h4>
-              <div class="project-meta">
-                <div><strong>Project Name</strong></div>
-                <div>Guidelines for Sustainable Water Supply Management – Jasa Tirta II</div>
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Integrated groundwater flow and contaminant transport modelling training using
+                  <b>Simcore Processing MODFLOW</b>, with practical applications for production wells,
+                  injection wells, recharge systems, and contaminant migration.
+                </p>
 
-                <div><strong>Location</strong></div>
-                <div>Purwakarta, Indonesia</div>
+                <img class="project-main-img" src="assets/modflow.png" alt="Contaminant transport modelling using MODFLOW">
 
-                <div><strong>Client</strong></div>
-                <div>Perum Jasa Tirta II</div>
+                <div class="video-wrap">
+                  <span class="video-btn" onclick="event.stopPropagation(); openModal('F26OrJ9ojZo');">
+                    <i class="fa-brands fa-youtube"></i> Overview Result
+                  </span>
+                </div>
 
-                <div><strong>Category</strong></div>
-                <div>Water Resources · Hydrology · Hydraulic</div>
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>Contaminant Transport Using Simcore Processing MODFLOW</div>
 
-                <div><strong>Main Software Used</strong></div>
-                <div>—</div>
+                    <div><strong>Location</strong></div>
+                    <div>Online via Zoom Meeting</div>
 
-                <div><strong>Status</strong></div>
-                <div>Completed (Aug 2025)</div>
+                    <div><strong>Client</strong></div>
+                    <div>PT Saumy Gemilang Indonesia</div>
 
-                <div><strong>Description</strong></div>
-                <div>
-                  These guidelines outline Jasa Tirta II’s approach to sustainable water supply management
-                  through integrated planning, efficient water allocation, infrastructure optimization,
-                  and environmental protection to support long-term water security.
+                    <div><strong>Category</strong></div>
+                    <div>Hydrogeology · Groundwater · Contaminant Transport</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>MODFLOW · MT3DMS/SEAWAT</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>Completed (Apr 2026)</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      The training focused on groundwater modelling using MODFLOW, including production wells,
+                      injection wells, rainwater infiltration and recharge systems, and contaminant transport
+                      processes from injection wells and surface spreading.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- =========================
+           CFD
+      ========================== -->
+      <div class="project-category cfd">
+        <div class="category-heading">
+          <div class="category-icon">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <div>
+            <h3>CFD</h3>
+            <p>Computational fluid dynamics applications for complex flow behaviour, turbulence, dispersion, and fluid–structure interaction.</p>
           </div>
         </div>
-      </article>
+
+        <div class="category-projects">
+
+          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
+            <div class="project-head">
+              <div>
+                <div class="project-label">
+                  <i class="fa-solid fa-wind"></i> CFD · Environmental Fluid Dynamics
+                </div>
+                <h3>CFD and Environmental Fluid Dynamics Applications</h3>
+              </div>
+              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+
+            <div class="project-detail">
+              <div class="project-detail-inner">
+                <p>
+                  Computational fluid dynamics support for environmental and engineering flow problems,
+                  including turbulence, flow circulation, dispersion processes, and interaction between
+                  fluid motion and engineering structures.
+                </p>
+
+                <img class="project-main-img" src="assets/project-cfd.png" alt="CFD and environmental fluid dynamics">
+
+                <div class="project-info">
+                  <h4>Project Information</h4>
+                  <div class="project-meta">
+                    <div><strong>Project Name</strong></div>
+                    <div>CFD and Environmental Fluid Dynamics Applications</div>
+
+                    <div><strong>Location</strong></div>
+                    <div>Project-based / Research Collaboration</div>
+
+                    <div><strong>Client</strong></div>
+                    <div>Research and Engineering Collaboration</div>
+
+                    <div><strong>Category</strong></div>
+                    <div>CFD · Environmental Fluid Dynamics</div>
+
+                    <div><strong>Main Software Used</strong></div>
+                    <div>CFD-based numerical tools</div>
+
+                    <div><strong>Status</strong></div>
+                    <div>Available for collaboration</div>
+
+                    <div><strong>Description</strong></div>
+                    <div>
+                      CFD-based analysis can be applied to evaluate complex flow behaviour, turbulence,
+                      dispersion, and interaction between fluid motion and engineering structures in water,
+                      coastal, and environmental systems.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
 
     </div>
   </div>

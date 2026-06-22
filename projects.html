@@ -55,84 +55,6 @@
       gap: 48px;
     }
 
-    .project-category {
-      display: grid;
-      gap: 20px;
-    }
-
-    .category-heading {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 2px;
-    }
-
-    .category-heading::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--line);
-    }
-
-    .category-icon {
-      width: 56px;
-      height: 56px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      border-radius: 16px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 1.45rem;
-      box-shadow: 0 10px 24px rgba(7, 54, 111, 0.08);
-    }
-
-    .category-heading h3 {
-      margin: 0;
-      color: var(--primary-dark);
-      font-size: clamp(1.35rem, 2vw, 1.8rem);
-      font-weight: 900;
-      line-height: 1.25;
-    }
-
-    .category-heading p {
-      margin: 4px 0 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .category-projects {
-      display: grid;
-      gap: 22px;
-    }
-
-    .project-category.hydrology-climate .category-icon {
-      background: #e8f7ff;
-      color: #0b5fb3;
-    }
-
-    .project-category.hydraulic-flood .category-icon {
-      background: #e9f5ff;
-      color: #0067b8;
-    }
-
-    .project-category.coastal .category-icon {
-      background: #e6fbff;
-      color: #0089b8;
-    }
-
-    .project-category.groundwater .category-icon {
-      background: #ecfbf1;
-      color: var(--green-dark);
-    }
-
-    .project-category.cfd .category-icon {
-      background: #f0f4ff;
-      color: #3454d1;
-    }
-
     .project-accordion {
       overflow: hidden;
       cursor: pointer;
@@ -150,19 +72,6 @@
       align-items: flex-start;
       gap: 20px;
       padding: 26px;
-    }
-
-    .project-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: .82rem;
-      font-weight: 800;
-      margin-bottom: 12px;
     }
 
     .project-head h3 {
@@ -360,35 +269,6 @@
       .projects-hero {
         padding: 70px 0 44px;
       }
-
-      .category-heading {
-        align-items: flex-start;
-      }
-
-      .category-heading::after {
-        display: none;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .category-heading {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .category-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.25rem;
-      }
-
-      .category-heading h3 {
-        font-size: 1.25rem;
-      }
-
-      .category-heading p {
-        font-size: 0.9rem;
-      }
     }
   </style>
 </head>
@@ -447,7 +327,82 @@
   <div class="container">
     <div class="section-title">
       <h2>Selected Projects</h2>
-      <p>Click each item to view project details, software used, supporting media, and project information.</p>
+    </div>
+
+    <p class="lead">
+      Choose a project category below, or view all selected works.
+    </p>
+
+    <!-- Creative Filter Tabs -->
+    <div class="project-filter-wrap">
+      <div class="project-filter">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fa-solid fa-border-all"></i> All Projects
+        </button>
+
+        <button class="filter-btn" data-filter="hydrology-climate">
+          <i class="fa-solid fa-cloud-sun-rain"></i> Hydrology–Climate
+        </button>
+
+        <button class="filter-btn" data-filter="hydraulic-flood">
+          <i class="fa-solid fa-house-flood-water"></i> Hydraulic & Flood
+        </button>
+
+        <button class="filter-btn" data-filter="coastal">
+          <i class="fa-solid fa-water"></i> Coastal
+        </button>
+
+        <button class="filter-btn" data-filter="groundwater">
+          <i class="fa-solid fa-mountain-sun"></i> Groundwater
+        </button>
+
+        <button class="filter-btn" data-filter="cfd">
+          <i class="fa-solid fa-wind"></i> CFD
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Mini Cards -->
+    <div class="category-showcase">
+      <div class="category-mini-card" data-filter="hydrology-climate">
+        <i class="fa-solid fa-cloud-sun-rain"></i>
+        <div>
+          <h4>Hydrology–Climate</h4>
+          <span>Climate & water resources</span>
+        </div>
+      </div>
+
+      <div class="category-mini-card" data-filter="hydraulic-flood">
+        <i class="fa-solid fa-house-flood-water"></i>
+        <div>
+          <h4>Hydraulic & Flood</h4>
+          <span>Flood and river modelling</span>
+        </div>
+      </div>
+
+      <div class="category-mini-card" data-filter="coastal">
+        <i class="fa-solid fa-water"></i>
+        <div>
+          <h4>Coastal</h4>
+          <span>Hydrodynamic & sediment</span>
+        </div>
+      </div>
+
+      <div class="category-mini-card" data-filter="groundwater">
+        <i class="fa-solid fa-mountain-sun"></i>
+        <div>
+          <h4>Groundwater</h4>
+          <span>MODFLOW & transport</span>
+        </div>
+      </div>
+
+      <div class="category-mini-card" data-filter="cfd">
+        <i class="fa-solid fa-wind"></i>
+        <div>
+          <h4>CFD</h4>
+          <span>Environmental fluid dynamics</span>
+        </div>
+      </div>
     </div>
 
     <div class="project-list">
@@ -455,7 +410,7 @@
       <!-- =========================
            HYDROLOGY - CLIMATE
       ========================== -->
-      <div class="project-category hydrology-climate">
+      <div class="project-category hydrology-climate active-category">
         <div class="category-heading">
           <div class="category-icon">
             <i class="fa-solid fa-cloud-sun-rain"></i>
@@ -593,7 +548,7 @@
       <!-- =========================
            HYDRAULIC & FLOOD MODELLING
       ========================== -->
-      <div class="project-category hydraulic-flood">
+      <div class="project-category hydraulic-flood active-category">
         <div class="category-heading">
           <div class="category-icon">
             <i class="fa-solid fa-house-flood-water"></i>
@@ -794,7 +749,7 @@
       <!-- =========================
            COASTAL
       ========================== -->
-      <div class="project-category coastal">
+      <div class="project-category coastal active-category">
         <div class="category-heading">
           <div class="category-icon">
             <i class="fa-solid fa-water"></i>
@@ -873,7 +828,7 @@
       <!-- =========================
            GROUNDWATER
       ========================== -->
-      <div class="project-category groundwater">
+      <div class="project-category groundwater active-category">
         <div class="category-heading">
           <div class="category-icon">
             <i class="fa-solid fa-mountain-sun"></i>
@@ -952,7 +907,7 @@
       <!-- =========================
            CFD
       ========================== -->
-      <div class="project-category cfd">
+      <div class="project-category cfd active-category">
         <div class="category-heading">
           <div class="category-icon">
             <i class="fa-solid fa-wind"></i>
@@ -1099,6 +1054,48 @@
       element.classList.add("expanded");
     }
   }
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const miniCards = document.querySelectorAll(".category-mini-card");
+  const projectCategories = document.querySelectorAll(".project-category");
+
+  function filterProjects(filterValue) {
+    filterButtons.forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.filter === filterValue);
+    });
+
+    projectCategories.forEach(category => {
+      if (filterValue === "all") {
+        category.classList.add("active-category");
+      } else {
+        category.classList.toggle(
+          "active-category",
+          category.classList.contains(filterValue)
+        );
+      }
+    });
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterProjects(button.dataset.filter);
+    });
+  });
+
+  miniCards.forEach(card => {
+    card.addEventListener("click", () => {
+      const filterValue = card.dataset.filter;
+      filterProjects(filterValue);
+
+      const filterWrap = document.querySelector(".project-filter-wrap");
+      if (filterWrap) {
+        filterWrap.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
 </script>
 
 </body>

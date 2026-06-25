@@ -1940,3 +1940,13 @@ body.scope-modal-open {
     flex: 0 0 44px;
   }
 }
+
+.logo-disclaimer {
+  max-width: 900px;
+  margin: 12px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  opacity: 0.82;
+}

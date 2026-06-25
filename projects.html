@@ -18,6 +18,35 @@
       gap: 48px;
     }
 
+
+    .category-heading {
+      align-items: flex-start;
+      padding: 0 0 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .category-heading h3 {
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .category-heading p {
+      max-width: 780px;
+    }
+
+    .project-label {
+      display: inline-block;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(11, 95, 179, 0.08);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
     .project-accordion {
       overflow: hidden;
       cursor: pointer;
@@ -211,6 +240,21 @@
       box-shadow: 0 12px 30px rgba(0,0,0,.22);
     }
 
+
+    .portfolio-note {
+      margin: 22px 0 28px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(11, 95, 179, 0.07);
+      border: 1px solid rgba(11, 95, 179, 0.13);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .portfolio-note strong {
+      color: var(--primary-dark);
+    }
+
     @media (max-width: 760px) {
       .project-head {
         padding: 22px;
@@ -247,7 +291,6 @@
     <nav class="nav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a class="active" href="projects.html">Projects</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="about.html">About</a></li>
@@ -272,7 +315,7 @@
       <div class="hero-slide-overlay">
         <div class="hero-slide-content">
           <span class="hero-badge">
-            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+            Selected Project Experience
           </span>
           <h1>Flood Modelling and River Capacity Analysis</h1>
           <p>
@@ -284,27 +327,11 @@
     </div>
 
     <div class="hero-slide">
-      <img src="assets/project-groundwater.png" alt="Groundwater flow and contaminant transport project">
-      <div class="hero-slide-overlay">
-        <div class="hero-slide-content">
-          <span class="hero-badge">
-            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
-          </span>
-          <h1>Groundwater Flow and Contaminant Transport</h1>
-          <p>
-            Groundwater modelling using MODFLOW-based tools for flow systems,
-            recharge, production wells, injection wells, and contaminant migration.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-slide">
       <img src="assets/project-coastal.png" alt="Coastal and marine modelling project">
       <div class="hero-slide-overlay">
         <div class="hero-slide-content">
           <span class="hero-badge">
-            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+            Selected Project Experience
           </span>
           <h1>Coastal and Marine Modelling</h1>
           <p>
@@ -320,7 +347,7 @@
       <div class="hero-slide-overlay">
         <div class="hero-slide-content">
           <span class="hero-badge">
-            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+            Selected Project Experience
           </span>
           <h1>Hydrology and Climate Analysis</h1>
           <p>
@@ -336,7 +363,7 @@
       <div class="hero-slide-overlay">
         <div class="hero-slide-content">
           <span class="hero-badge">
-            <i class="fa-solid fa-folder-open"></i> Selected Project Experience
+            Selected Project Experience
           </span>
           <h1>CFD and Environmental Fluid Dynamics</h1>
           <p>
@@ -360,7 +387,6 @@
       <span class="hero-dot" onclick="goToHeroSlide(1)"></span>
       <span class="hero-dot" onclick="goToHeroSlide(2)"></span>
       <span class="hero-dot" onclick="goToHeroSlide(3)"></span>
-      <span class="hero-dot" onclick="goToHeroSlide(4)"></span>
     </div>
 
   </div>
@@ -373,8 +399,12 @@
     </div>
 
     <p class="lead">
-      Choose a project category below, or view all selected works.
+      Selected work is grouped into core capabilities with clearer boundaries: hydrology–climate, hydraulic/flood, coastal–sediment, and CFD/environmental fluid dynamics.
     </p>
+
+    <div class="portfolio-note">
+      <strong>Note:</strong> Groundwater is not listed as a main capability at this stage, so the project page stays focused on services that can be explained and supported more confidently.
+    </div>
 
     <div class="project-filter-wrap">
       <div class="project-filter">
@@ -394,9 +424,6 @@
           Coastal
         </button>
 
-        <button class="filter-btn" data-filter="groundwater">
-          Groundwater
-        </button>
 
         <button class="filter-btn" data-filter="cfd">
           CFD
@@ -408,9 +435,6 @@
 
       <div class="project-category hydrology-climate active-category">
         <div class="category-heading">
-          <div class="category-icon">
-            <i class="fa-solid fa-cloud-sun-rain"></i>
-          </div>
           <div>
             <h3>Hydrology–Climate</h3>
             <p>Climate impact assessment, rainfall–runoff analysis, water resources planning, and hydrological support studies.</p>
@@ -423,7 +447,7 @@
             <div class="project-head">
               <div>
                 <div class="project-label">
-                  <i class="fa-solid fa-cloud-rain"></i> Hydrology · Hydraulic · Climate Impact
+                  Hydrology · Hydraulic · Climate Impact
                 </div>
                 <h3>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
               </div>
@@ -482,7 +506,7 @@
             <div class="project-head">
               <div>
                 <div class="project-label">
-                  <i class="fa-solid fa-file-lines"></i> Water Resources · Technical Guideline
+                  Water Resources · Technical Guideline
                 </div>
                 <h3>Guidelines for Sustainable Water Supply Management</h3>
               </div>
@@ -543,9 +567,6 @@
 
       <div class="project-category hydraulic-flood active-category">
         <div class="category-heading">
-          <div class="category-icon">
-            <i class="fa-solid fa-house-flood-water"></i>
-          </div>
           <div>
             <h3>Hydraulic & Flood Modelling</h3>
             <p>River hydraulics, flood inundation, drainage simulation, capacity assessment, and HEC-HMS/HEC-RAS training.</p>
@@ -558,7 +579,7 @@
             <div class="project-head">
               <div>
                 <div class="project-label">
-                  <i class="fa-solid fa-house-flood-water"></i> Hydrology · Hydraulic · Flood Modelling
+                  Hydrology · Hydraulic · Flood Modelling
                 </div>
                 <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 110 – Borneo, Indonesia</h3>
               </div>
@@ -621,7 +642,7 @@
             <div class="project-head">
               <div>
                 <div class="project-label">
-                  <i class="fa-solid fa-house-flood-water"></i> Hydrology · Hydraulic · Flood Modelling
+                  Hydrology · Hydraulic · Flood Modelling
                 </div>
                 <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 131 – Borneo, Indonesia</h3>
               </div>
@@ -681,7 +702,7 @@
             <div class="project-head">
               <div>
                 <div class="project-label">
-                  <i class="fa-solid fa-chalkboard-user"></i> Training · Hydrology · Hydraulic
+                  Training · Hydrology · Hydraulic
                 </div>
                 <h3>HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</h3>
               </div>
@@ -741,12 +762,9 @@
 
       <div class="project-category coastal active-category">
         <div class="category-heading">
-          <div class="category-icon">
-            <i class="fa-solid fa-water"></i>
-          </div>
           <div>
             <h3>Coastal, Hydrodynamic & Sediment Modelling</h3>
-            <p>Coastal hydrodynamics, lake circulation, sediment transport, morphodynamic simulation, and marine-related modelling.</p>
+            <p>Coastal and lake hydrodynamics, sediment transport, morphodynamic simulation, and marine hazard-related modelling.</p>
           </div>
         </div>
 
@@ -756,7 +774,7 @@
             <div class="project-head">
               <div>
                 <div class="project-label">
-                  <i class="fa-solid fa-water"></i> Hydrology · Hydrodynamic · Sediment
+                  Hydrology · Hydrodynamic · Sediment
                 </div>
                 <h3>Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
               </div>
@@ -815,87 +833,8 @@
         </div>
       </div>
 
-      <div class="project-category groundwater active-category">
-        <div class="category-heading">
-          <div class="category-icon">
-            <i class="fa-solid fa-mountain-sun"></i>
-          </div>
-          <div>
-            <h3>Groundwater</h3>
-            <p>Groundwater flow, recharge systems, wells, subsurface transport, and contaminant migration modelling.</p>
-          </div>
-        </div>
-
-        <div class="category-projects">
-
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  <i class="fa-solid fa-layer-group"></i> Hydrogeology · Groundwater
-                </div>
-                <h3>Contaminant Transport Using Simcore Processing MODFLOW</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Integrated groundwater flow and contaminant transport modelling training using
-                  <b>Simcore Processing MODFLOW</b>, with practical applications for production wells,
-                  injection wells, recharge systems, and contaminant migration.
-                </p>
-
-                <img class="project-main-img" src="assets/modflow.png" alt="Contaminant transport modelling using MODFLOW">
-
-                <div class="video-wrap">
-                  <span class="video-btn" onclick="event.stopPropagation(); openModal('F26OrJ9ojZo');">
-                    <i class="fa-brands fa-youtube"></i> Overview Result
-                  </span>
-                </div>
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>Contaminant Transport Using Simcore Processing MODFLOW</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Online via Zoom Meeting</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>PT Saumy Gemilang Indonesia</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>Hydrogeology · Groundwater · Contaminant Transport</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>MODFLOW · MT3DMS/SEAWAT</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>Completed (Apr 2026)</div>
-
-                    <div><strong>Description</strong></div>
-                    <div>
-                      The training focused on groundwater modelling using MODFLOW, including production wells,
-                      injection wells, rainwater infiltration and recharge systems, and contaminant transport
-                      processes from injection wells and surface spreading.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
       <div class="project-category cfd active-category">
         <div class="category-heading">
-          <div class="category-icon">
-            <i class="fa-solid fa-wind"></i>
-          </div>
           <div>
             <h3>CFD</h3>
             <p>Computational fluid dynamics applications for complex flow behaviour, turbulence, dispersion, and fluid–structure interaction.</p>
@@ -908,7 +847,7 @@
             <div class="project-head">
               <div>
                 <div class="project-label">
-                  <i class="fa-solid fa-wind"></i> CFD · Environmental Fluid Dynamics
+                  CFD · Environmental Fluid Dynamics
                 </div>
                 <h3>CFD and Environmental Fluid Dynamics Applications</h3>
               </div>

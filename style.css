@@ -1732,3 +1732,211 @@ img {
   }
 }
 
+/* =========================
+   BUSINESS SCOPE MODAL
+========================= */
+
+.scope-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.scope-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(11, 95, 179, 0.24);
+  box-shadow: 0 18px 45px rgba(7, 54, 111, 0.16);
+}
+
+.scope-card:hover img {
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.scope-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  font-weight: 850;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-top: 16px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.scope-btn i {
+  transition: transform 0.25s ease;
+}
+
+.scope-card:hover .scope-btn i {
+  transform: translateX(4px);
+}
+
+.scope-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.scope-modal.active {
+  display: block;
+}
+
+.scope-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 20, 43, 0.58);
+  backdrop-filter: blur(5px);
+}
+
+.scope-modal-box {
+  position: relative;
+  width: min(1080px, calc(100% - 32px));
+  height: min(88vh, 920px);
+  margin: 5vh auto;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  animation: scopeModalIn 0.28s ease;
+}
+
+@keyframes scopeModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scope-modal-header {
+  padding: 22px 28px;
+  border-bottom: 1px solid #e5eef7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(37, 184, 90, 0.12), transparent 34%),
+    linear-gradient(135deg, #f7fbff, #eef7ff);
+}
+
+.scope-modal-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.scope-modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--primary-dark);
+  font-weight: 900;
+}
+
+.scope-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scope-print-btn,
+.scope-close-btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 850;
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.scope-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 12px 16px;
+  box-shadow: 0 10px 24px rgba(11, 95, 179, 0.22);
+}
+
+.scope-print-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.scope-close-btn {
+  width: 44px;
+  height: 44px;
+  background: #e8f1fa;
+  color: var(--primary-dark);
+  font-size: 18px;
+}
+
+.scope-close-btn:hover {
+  background: #d7e9fa;
+}
+
+.scope-modal-content {
+  flex: 1;
+  min-height: 0;
+  background: #ffffff;
+}
+
+.scope-modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+body.scope-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .scope-modal-box {
+    width: calc(100% - 18px);
+    height: 92vh;
+    margin: 4vh auto;
+    border-radius: 18px;
+  }
+
+  .scope-modal-header {
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scope-modal-header h2 {
+    font-size: 20px;
+  }
+
+  .scope-modal-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .scope-print-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .scope-close-btn {
+    flex: 0 0 44px;
+  }
+}

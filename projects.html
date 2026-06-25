@@ -255,6 +255,180 @@
       color: var(--primary-dark);
     }
 
+
+    .works-intro {
+      max-width: 880px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .works-panel {
+      display: grid;
+      gap: 34px;
+      margin-top: 32px;
+    }
+
+    .project-category {
+      display: none;
+    }
+
+    .project-category.active-category {
+      display: block;
+    }
+
+    .works-category-head {
+      margin: 0 0 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .works-category-head h3 {
+      margin: 0 0 6px;
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .works-category-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 880px;
+    }
+
+    .works-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: 0 18px 45px rgba(7, 20, 38, 0.06);
+    }
+
+    .works-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+      color: var(--text);
+    }
+
+    .works-table th {
+      padding: 16px 18px;
+      background: rgba(11, 95, 179, 0.07);
+      color: var(--primary-dark);
+      font-size: .82rem;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+
+    .works-table td {
+      padding: 17px 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .works-table tbody tr.work-row {
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .works-table tbody tr.work-row:hover {
+      background: rgba(11, 95, 179, 0.04);
+    }
+
+    .works-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .work-year {
+      white-space: nowrap;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .work-title {
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .work-scope {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(11, 95, 179, 0.08);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .work-action {
+      color: var(--primary);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .project-detail-row {
+      display: none;
+      background: var(--bg);
+    }
+
+    .project-detail-row.expanded {
+      display: table-row;
+    }
+
+    .project-detail-card {
+      display: grid;
+      grid-template-columns: minmax(220px, 340px) 1fr;
+      gap: 22px;
+      padding: 8px 0;
+      color: var(--muted);
+    }
+
+    .project-detail-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .project-detail-card h4 {
+      margin: 0 0 10px;
+      color: var(--primary-dark);
+      font-size: 1.08rem;
+    }
+
+    .project-detail-card p {
+      margin: 0 0 12px;
+      line-height: 1.75;
+    }
+
+    .detail-meta {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 16px;
+      margin-top: 14px;
+      line-height: 1.55;
+    }
+
+    .detail-meta strong {
+      color: var(--primary-dark);
+    }
+
+    .video-btn.secondary {
+      background: var(--white);
+      color: var(--primary);
+      border: 1px solid var(--line);
+    }
+
+
     @media (max-width: 760px) {
       .project-head {
         padding: 22px;
@@ -273,6 +447,26 @@
         margin-top: 10px;
       }
     }
+
+    @media (max-width: 760px) {
+      .works-intro {
+        text-align: left;
+      }
+
+      .works-table {
+        min-width: 760px;
+      }
+
+      .project-detail-card {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-meta {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
   </style>
 </head>
 
@@ -395,508 +589,301 @@
 <section class="section section-soft">
   <div class="container">
     <div class="section-title">
-      <h2>Selected Projects</h2>
+      <h2>Project Experience</h2>
     </div>
 
-    <p class="lead">
-      Selected work is grouped into core capabilities with clearer boundaries: hydrology–climate, hydraulic/flood, coastal–sediment, and CFD/environmental fluid dynamics.
+    <p class="works-intro">
+      Selected work is presented in a concise list so visitors can quickly understand the project name, client, location, year, and technical scope. Click a project row to view the summary, tools, and supporting media.
     </p>
-
-    <div class="portfolio-note">
-      <strong>Note:</strong> Groundwater is not listed as a main capability at this stage, so the project page stays focused on services that can be explained and supported more confidently.
-    </div>
 
     <div class="project-filter-wrap">
       <div class="project-filter">
-        <button class="filter-btn active" data-filter="all">
-          All Projects
-        </button>
-
-        <button class="filter-btn" data-filter="hydrology-climate">
-          Hydrology–Climate
-        </button>
-
-        <button class="filter-btn" data-filter="hydraulic-flood">
-          Hydraulic & Flood
-        </button>
-
-        <button class="filter-btn" data-filter="coastal">
-          Coastal
-        </button>
-
-
-        <button class="filter-btn" data-filter="cfd">
-          CFD
-        </button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="hydrology-climate">Hydrology–Climate</button>
+        <button class="filter-btn" data-filter="hydraulic-flood">Hydraulic & Flood</button>
+        <button class="filter-btn" data-filter="coastal">Coastal & Sediment</button>
+        <button class="filter-btn" data-filter="cfd">CFD</button>
       </div>
     </div>
 
-    <div class="project-list">
+    <div class="works-panel">
 
       <div class="project-category hydrology-climate active-category">
-        <div class="category-heading">
-          <div>
-            <h3>Hydrology–Climate</h3>
-            <p>Climate impact assessment, rainfall–runoff analysis, water resources planning, and hydrological support studies.</p>
-          </div>
+        <div class="works-category-head">
+          <h3>Hydrology–Climate</h3>
+          <p>Rainfall–runoff analysis, climate impact assessment, water resources planning, and hydrological support studies.</p>
         </div>
 
-        <div class="category-projects">
-
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  Hydrology · Hydraulic · Climate Impact
-                </div>
-                <h3>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Integrated hydrology and hydraulic modelling for climate-change-related hazard assessment
-                  of the Pakil Pumped Storage Plant and Laguna de Bay system using
-                  <b>HEC-HMS, HEC-RAS, and Delft Dashboard</b>.
-                </p>
-
-                <img class="project-main-img" src="assets/climate.png" alt="Climate change hazard assessment for Pakil Pumped Storage Power Plant">
-
-                <div class="video-wrap">
-                  <span class="video-btn" onclick="event.stopPropagation(); openModal('dhtppSgsAlQ');">
-                    <i class="fa-brands fa-youtube"></i> Project Overview
-                  </span>
-                </div>
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Laguna de Bay, Philippines</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>Hydrology · Hydraulic · Climate Impact Assessment</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>HEC-HMS · HEC-RAS · Delft Dashboard</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>On-going</div>
-
-                    <div><strong>Description</strong></div>
+        <div class="works-table-wrap">
+          <table class="works-table">
+            <thead>
+              <tr>
+                <th>Scope</th>
+                <th>Project name</th>
+                <th>Client</th>
+                <th>Location</th>
+                <th>Status / Year</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="work-row" onclick="toggleProject(this)">
+                <td><span class="work-scope">Hydrology · Climate</span></td>
+                <td><span class="work-title">Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage Power Plant</span></td>
+                <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
+                <td>Laguna de Bay, Philippines</td>
+                <td><span class="work-year">On-going</span></td>
+                <td><span class="work-action">View</span></td>
+              </tr>
+              <tr class="project-detail-row">
+                <td colspan="6">
+                  <div class="project-detail-card">
+                    <img src="assets/climate.png" alt="Climate change hazard assessment for Pakil Pumped Storage Power Plant">
                     <div>
-                      Rainfall–runoff and hydrodynamic modelling of Laguna de Bay were conducted to support
-                      hydrological and hydraulic hazard assessment under climate change scenarios.
+                      <h4>Project summary</h4>
+                      <p>Integrated hydrology and hydraulic modelling for climate-change-related hazard assessment of the Pakil Pumped Storage Plant and Laguna de Bay system.</p>
+                      <div class="video-wrap">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('dhtppSgsAlQ');">Project Overview</span>
+                      </div>
+                      <div class="detail-meta">
+                        <strong>Main tools</strong><span>HEC-HMS · HEC-RAS · Delft Dashboard</span>
+                        <strong>Technical scope</strong><span>Rainfall–runoff modelling, hydrodynamic assessment, and climate scenario evaluation.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
+                </td>
+              </tr>
 
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  Water Resources · Technical Guideline
-                </div>
-                <h3>Guidelines for Sustainable Water Supply Management</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Technical guideline preparation for sustainable water supply management, including integrated
-                  planning, efficient water allocation, infrastructure optimization, and environmental protection.
-                </p>
-
-                <img class="project-main-img" src="assets/jasatirta.jpg" alt="Guidelines for sustainable water supply management">
-
-                <div class="doc-box">
-                  <h4>Supporting Evidence</h4>
-                  <a class="doc-link" href="assets/jasatirta.pdf" target="_blank" onclick="event.stopPropagation();">
-                    <i class="fa-regular fa-file-pdf"></i> Report Summary (PDF)
-                  </a>
-                </div>
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>Guidelines for Sustainable Water Supply Management – Jasa Tirta II</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Purwakarta, Indonesia</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>Perum Jasa Tirta II</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>Water Resources · Hydrology · Hydraulic</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>—</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>Completed (Aug 2025)</div>
-
-                    <div><strong>Description</strong></div>
+              <tr class="work-row" onclick="toggleProject(this)">
+                <td><span class="work-scope">Water Resources</span></td>
+                <td><span class="work-title">Guidelines for Sustainable Water Supply Management</span></td>
+                <td>Perum Jasa Tirta II</td>
+                <td>Purwakarta, Indonesia</td>
+                <td><span class="work-year">Aug 2025</span></td>
+                <td><span class="work-action">View</span></td>
+              </tr>
+              <tr class="project-detail-row">
+                <td colspan="6">
+                  <div class="project-detail-card">
+                    <img src="assets/jasatirta.jpg" alt="Guidelines for sustainable water supply management">
                     <div>
-                      These guidelines outline Jasa Tirta II’s approach to sustainable water supply management
-                      through integrated planning, efficient water allocation, infrastructure optimization,
-                      and environmental protection to support long-term water security.
+                      <h4>Project summary</h4>
+                      <p>Technical guideline preparation for sustainable water supply management, including integrated planning, efficient water allocation, infrastructure optimization, and environmental protection.</p>
+                      <div class="video-wrap">
+                        <a class="video-btn secondary" href="assets/jasatirta.pdf" target="_blank" onclick="event.stopPropagation();">Report Summary PDF</a>
+                      </div>
+                      <div class="detail-meta">
+                        <strong>Main tools</strong><span>Technical review and water resources planning framework</span>
+                        <strong>Technical scope</strong><span>Sustainable water supply, allocation planning, and infrastructure management support.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
       <div class="project-category hydraulic-flood active-category">
-        <div class="category-heading">
-          <div>
-            <h3>Hydraulic & Flood Modelling</h3>
-            <p>River hydraulics, flood inundation, drainage simulation, capacity assessment, and HEC-HMS/HEC-RAS training.</p>
-          </div>
+        <div class="works-category-head">
+          <h3>Hydraulic & Flood Modelling</h3>
+          <p>River hydraulics, flood inundation, drainage simulation, river capacity assessment, and HEC-HMS/HEC-RAS training.</p>
         </div>
 
-        <div class="category-projects">
-
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  Hydrology · Hydraulic · Flood Modelling
-                </div>
-                <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 110 – Borneo, Indonesia</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Numerical flood modelling and engineering analysis of river systems and alternative diversion
-                  channel designs using <b>HEC-HMS and HEC-RAS</b>.
-                </p>
-
-                <img class="project-main-img" src="assets/jmb.jpg" alt="River flood assessment PIT 110">
-
-                <div class="video-wrap">
-                  <span class="video-btn" onclick="event.stopPropagation(); openModal('rFTdmlR0mfY');">
-                    <i class="fa-brands fa-youtube"></i> Existing River Simulation (HEC-RAS 1D)
-                  </span>
-
-                  <span class="video-btn" onclick="event.stopPropagation(); openModal('VemRWIw6Tn0');">
-                    <i class="fa-brands fa-youtube"></i> Diversion River Simulation (HEC-RAS 1D)
-                  </span>
-                </div>
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>River Flood Assessment PIT 110</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Borneo, Indonesia</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>PT Tectona Mitra Utama</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>Hydrology · Hydraulic</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>HEC-HMS · HEC-RAS</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>Completed (Dec 2025)</div>
-
-                    <div><strong>Description</strong></div>
+        <div class="works-table-wrap">
+          <table class="works-table">
+            <thead>
+              <tr>
+                <th>Scope</th>
+                <th>Project name</th>
+                <th>Client</th>
+                <th>Location</th>
+                <th>Status / Year</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="work-row" onclick="toggleProject(this)">
+                <td><span class="work-scope">Flood Modelling</span></td>
+                <td><span class="work-title">Hydrology & Hydraulic Modelling for River Flood Assessment PIT 110</span></td>
+                <td>PT Tectona Mitra Utama</td>
+                <td>Borneo, Indonesia</td>
+                <td><span class="work-year">Dec 2025</span></td>
+                <td><span class="work-action">View</span></td>
+              </tr>
+              <tr class="project-detail-row">
+                <td colspan="6">
+                  <div class="project-detail-card">
+                    <img src="assets/jmb.jpg" alt="River flood assessment PIT 110">
                     <div>
-                      Rainfall–runoff and river hydraulic simulations were performed to assess flood
-                      inundation extent and overflow risk under multiple design flood scenarios, including
-                      evaluation of existing river conditions and alternative diversion channel designs.
+                      <h4>Project summary</h4>
+                      <p>Numerical flood modelling and engineering analysis of river systems and alternative diversion channel designs.</p>
+                      <div class="video-wrap">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('rFTdmlR0mfY');">Existing River Simulation</span>
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('VemRWIw6Tn0');">Diversion River Simulation</span>
+                      </div>
+                      <div class="detail-meta">
+                        <strong>Main tools</strong><span>HEC-HMS · HEC-RAS</span>
+                        <strong>Technical scope</strong><span>Flood inundation extent, overflow risk, and diversion channel alternative assessment.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
+                </td>
+              </tr>
 
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  Hydrology · Hydraulic · Flood Modelling
-                </div>
-                <h3>Hydrology & Hydraulic Modelling for River Flood Assessment PIT 131 – Borneo, Indonesia</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Numerical flood modelling and engineering analysis of river systems, including evaluation of
-                  existing river hydraulics and development of riverbank channel designs for capacity enhancement,
-                  using <b>HEC-HMS and HEC-RAS</b>.
-                </p>
-
-                <img class="project-main-img" src="assets/jmb131.jpg" alt="River flood assessment PIT 131">
-
-                <div class="video-wrap">
-                  <span class="video-btn" onclick="event.stopPropagation(); openModal('BMxMmWokVcs');">
-                    <i class="fa-brands fa-youtube"></i> Existing River Simulation (HEC-RAS 2D)
-                  </span>
-                </div>
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>River Flood Assessment PIT 131</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Borneo, Indonesia</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>PT Tectona Mitra Utama</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>Hydrology · Hydraulic</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>HEC-HMS · HEC-RAS</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>Completed (Dec 2025)</div>
-
-                    <div><strong>Description</strong></div>
+              <tr class="work-row" onclick="toggleProject(this)">
+                <td><span class="work-scope">Flood Modelling</span></td>
+                <td><span class="work-title">Hydrology & Hydraulic Modelling for River Flood Assessment PIT 131</span></td>
+                <td>PT Tectona Mitra Utama</td>
+                <td>Borneo, Indonesia</td>
+                <td><span class="work-year">Dec 2025</span></td>
+                <td><span class="work-action">View</span></td>
+              </tr>
+              <tr class="project-detail-row">
+                <td colspan="6">
+                  <div class="project-detail-card">
+                    <img src="assets/jmb131.jpg" alt="River flood assessment PIT 131">
                     <div>
-                      Rainfall–runoff and river hydraulic simulations were performed to assess flood
-                      inundation extent and overflow risk under multiple design flood scenarios, including
-                      riverbank channel design evaluation for improved flow capacity.
+                      <h4>Project summary</h4>
+                      <p>Numerical flood modelling and riverbank channel design evaluation for improving river flow capacity.</p>
+                      <div class="video-wrap">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('BMxMmWokVcs');">Existing River Simulation</span>
+                      </div>
+                      <div class="detail-meta">
+                        <strong>Main tools</strong><span>HEC-HMS · HEC-RAS</span>
+                        <strong>Technical scope</strong><span>Rainfall–runoff modelling, river hydraulics, flood risk assessment, and capacity improvement scenarios.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
+                </td>
+              </tr>
 
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  Training · Hydrology · Hydraulic
-                </div>
-                <h3>HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Academic and professional training support for hydrological and hydraulic modelling,
-                  including drainage systems, river analysis, and 1D/2D flood simulation using
-                  <b>HEC-HMS and HEC-RAS</b>.
-                </p>
-
-                <img class="project-main-img" src="assets/saumy.png" alt="HEC-HMS and HEC-RAS training">
-
-                <div class="video-wrap">
-                  <span class="video-btn" onclick="event.stopPropagation(); openModal('UTPwySG7-8g');">
-                    <i class="fa-brands fa-youtube"></i> Training Session
-                  </span>
-                </div>
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Online via Zoom Meeting</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>PT Saumy Gemilang Indonesia</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>Hydrology · Hydraulic · Training</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>HEC-HMS · HEC-RAS</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>Completed (Aug 2025)</div>
-
-                    <div><strong>Description</strong></div>
+              <tr class="work-row" onclick="toggleProject(this)">
+                <td><span class="work-scope">Training</span></td>
+                <td><span class="work-title">HEC-HMS & HEC-RAS 1D + 2D Flow Simulation</span></td>
+                <td>PT Saumy Gemilang Indonesia</td>
+                <td>Online via Zoom Meeting</td>
+                <td><span class="work-year">Aug 2025</span></td>
+                <td><span class="work-action">View</span></td>
+              </tr>
+              <tr class="project-detail-row">
+                <td colspan="6">
+                  <div class="project-detail-card">
+                    <img src="assets/saumy.png" alt="HEC-HMS and HEC-RAS training">
                     <div>
-                      The training provided practical modelling support for HEC-HMS and HEC-RAS workflows,
-                      including 1D and 2D flow simulation for drainage and flood assessment applications.
+                      <h4>Project summary</h4>
+                      <p>Academic and professional training support for hydrological and hydraulic modelling, drainage systems, river analysis, and 1D/2D flood simulation.</p>
+                      <div class="video-wrap">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('UTPwySG7-8g');">Training Session</span>
+                      </div>
+                      <div class="detail-meta">
+                        <strong>Main tools</strong><span>HEC-HMS · HEC-RAS</span>
+                        <strong>Technical scope</strong><span>Practical modelling workflow for hydrology and hydraulic simulation.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
       <div class="project-category coastal active-category">
-        <div class="category-heading">
-          <div>
-            <h3>Coastal, Hydrodynamic & Sediment Modelling</h3>
-            <p>Coastal and lake hydrodynamics, sediment transport, morphodynamic simulation, and marine hazard-related modelling.</p>
-          </div>
+        <div class="works-category-head">
+          <h3>Coastal, Hydrodynamic & Sediment Modelling</h3>
+          <p>Coastal hydrodynamics, lake circulation, sediment transport, morphodynamic simulation, and marine-related modelling.</p>
         </div>
 
-        <div class="category-projects">
-
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  Hydrology · Hydrodynamic · Sediment
-                </div>
-                <h3>Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant – Laguna de Bay, Philippines</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Integrated hydrology, hydraulic, hydrodynamic, and sediment transport modelling for the
-                  Pakil Pumped Storage Plant–Laguna de Bay system using
-                  <b>HEC-HMS, HEC-RAS, and Delft3D FM</b>.
-                </p>
-
-                <img class="project-main-img" src="assets/pakil.png" alt="Hydrology and sediment modelling for Pakil Pumped Storage Power Plant">
-
-                <div class="video-wrap">
-                  <span class="video-btn" onclick="event.stopPropagation(); openModal('Xwq_5V9uk7o');">
-                    <i class="fa-brands fa-youtube"></i> Project Overview
-                  </span>
-                </div>
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>Hydrology and Sedimentation Simulation of Pakil Pumped Storage Plant</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Laguna de Bay, Philippines</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>Hydrology · Hydraulic · Hydrodynamic · Morphodynamic/Sediment</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>HEC-HMS · HEC-RAS · Delft3D FM</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>On-going</div>
-
-                    <div><strong>Description</strong></div>
+        <div class="works-table-wrap">
+          <table class="works-table">
+            <thead>
+              <tr>
+                <th>Scope</th>
+                <th>Project name</th>
+                <th>Client</th>
+                <th>Location</th>
+                <th>Status / Year</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="work-row" onclick="toggleProject(this)">
+                <td><span class="work-scope">Hydrodynamic · Sediment</span></td>
+                <td><span class="work-title">Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant</span></td>
+                <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
+                <td>Laguna de Bay, Philippines</td>
+                <td><span class="work-year">On-going</span></td>
+                <td><span class="work-action">View</span></td>
+              </tr>
+              <tr class="project-detail-row">
+                <td colspan="6">
+                  <div class="project-detail-card">
+                    <img src="assets/pakil.png" alt="Hydrology and sediment modelling for Pakil Pumped Storage Power Plant">
                     <div>
-                      Rainfall–runoff, hydrodynamic, and sediment transport modelling of Laguna de Bay
-                      under existing and future climate change scenarios to assess sediment processes
-                      and pumped storage system performance.
+                      <h4>Project summary</h4>
+                      <p>Integrated hydrology, hydraulic, hydrodynamic, and sediment transport modelling for the Pakil Pumped Storage Plant–Laguna de Bay system.</p>
+                      <div class="video-wrap">
+                        <span class="video-btn" onclick="event.stopPropagation(); openModal('Xwq_5V9uk7o');">Project Overview</span>
+                      </div>
+                      <div class="detail-meta">
+                        <strong>Main tools</strong><span>HEC-HMS · HEC-RAS · Delft3D FM</span>
+                        <strong>Technical scope</strong><span>Rainfall–runoff, hydrodynamic, and sediment transport modelling under existing and climate change scenarios.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
       <div class="project-category cfd active-category">
-        <div class="category-heading">
-          <div>
-            <h3>CFD</h3>
-            <p>Computational fluid dynamics applications for complex flow behaviour, turbulence, dispersion, and fluid–structure interaction.</p>
-          </div>
+        <div class="works-category-head">
+          <h3>CFD & Environmental Fluid Dynamics</h3>
+          <p>Computational fluid dynamics applications for complex flow behaviour, turbulence, dispersion, and fluid–structure interaction.</p>
         </div>
 
-        <div class="category-projects">
-
-          <article class="card project-accordion collapsed" onclick="toggleProject(this)">
-            <div class="project-head">
-              <div>
-                <div class="project-label">
-                  CFD · Environmental Fluid Dynamics
-                </div>
-                <h3>CFD and Environmental Fluid Dynamics Applications</h3>
-              </div>
-              <div class="project-arrow"><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
-
-            <div class="project-detail">
-              <div class="project-detail-inner">
-                <p>
-                  Computational fluid dynamics support for environmental and engineering flow problems,
-                  including turbulence, flow circulation, dispersion processes, and interaction between
-                  fluid motion and engineering structures.
-                </p>
-
-                <img class="project-main-img" src="assets/project-cfd.png" alt="CFD and environmental fluid dynamics">
-
-                <div class="project-info">
-                  <h4>Project Information</h4>
-                  <div class="project-meta">
-                    <div><strong>Project Name</strong></div>
-                    <div>CFD and Environmental Fluid Dynamics Applications</div>
-
-                    <div><strong>Location</strong></div>
-                    <div>Project-based / Research Collaboration</div>
-
-                    <div><strong>Client</strong></div>
-                    <div>Research and Engineering Collaboration</div>
-
-                    <div><strong>Category</strong></div>
-                    <div>CFD · Environmental Fluid Dynamics</div>
-
-                    <div><strong>Main Software Used</strong></div>
-                    <div>CFD-based numerical tools</div>
-
-                    <div><strong>Status</strong></div>
-                    <div>Available for collaboration</div>
-
-                    <div><strong>Description</strong></div>
+        <div class="works-table-wrap">
+          <table class="works-table">
+            <thead>
+              <tr>
+                <th>Scope</th>
+                <th>Project name</th>
+                <th>Client</th>
+                <th>Location</th>
+                <th>Status / Year</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="work-row" onclick="toggleProject(this)">
+                <td><span class="work-scope">CFD</span></td>
+                <td><span class="work-title">CFD and Environmental Fluid Dynamics Applications</span></td>
+                <td>Research and Engineering Collaboration</td>
+                <td>Project-based / Collaboration</td>
+                <td><span class="work-year">Available</span></td>
+                <td><span class="work-action">View</span></td>
+              </tr>
+              <tr class="project-detail-row">
+                <td colspan="6">
+                  <div class="project-detail-card">
+                    <img src="assets/project-cfd.png" alt="CFD and environmental fluid dynamics">
                     <div>
-                      CFD-based analysis can be applied to evaluate complex flow behaviour, turbulence,
-                      dispersion, and interaction between fluid motion and engineering structures in water,
-                      coastal, and environmental systems.
+                      <h4>Project summary</h4>
+                      <p>CFD-based analysis for environmental and engineering flow problems, including turbulence, flow circulation, dispersion processes, and interaction between fluid motion and engineering structures.</p>
+                      <div class="detail-meta">
+                        <strong>Main tools</strong><span>CFD-based numerical tools</span>
+                        <strong>Technical scope</strong><span>Complex flow behaviour, turbulence, dispersion, and fluid–structure interaction in water, coastal, and environmental systems.</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -966,15 +953,17 @@
     }
   }
 
-  function toggleProject(element) {
-    const isExpanded = element.classList.contains("expanded");
+  function toggleProject(row) {
+    const detailRow = row.nextElementSibling;
+    if (!detailRow || !detailRow.classList.contains("project-detail-row")) return;
 
-    if (isExpanded) {
-      element.classList.remove("expanded");
-      element.classList.add("collapsed");
-    } else {
-      element.classList.remove("collapsed");
-      element.classList.add("expanded");
+    const isExpanded = detailRow.classList.contains("expanded");
+    document.querySelectorAll(".project-detail-row.expanded").forEach(item => item.classList.remove("expanded"));
+    document.querySelectorAll(".work-row.active").forEach(item => item.classList.remove("active"));
+
+    if (!isExpanded) {
+      detailRow.classList.add("expanded");
+      row.classList.add("active");
     }
   }
 
@@ -996,6 +985,9 @@
         );
       }
     });
+
+    document.querySelectorAll(".project-detail-row.expanded").forEach(item => item.classList.remove("expanded"));
+    document.querySelectorAll(".work-row.active").forEach(item => item.classList.remove("active"));
   }
 
   filterButtons.forEach(button => {

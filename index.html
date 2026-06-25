@@ -87,7 +87,7 @@
     </div>
 
     <div class="project-grid">
-      <article class="card project-card">
+      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/flood.html', 'Flood Modelling and River Capacity Analysis')">
         <img src="assets/project-flood.png" alt="Flood modelling and river capacity analysis">
         <div class="project-body">
           <h3>Flood Modelling and River Capacity Analysis</h3>
@@ -95,11 +95,13 @@
             River flood assessment using rainfall-runoff and hydraulic modelling to evaluate inundation extent,
             overflow risk, and river capacity improvement scenarios.
           </p>
-          <a href="projects.html">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="scope-btn" type="button">
+            Why this matters <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </article>
 
-      <article class="card project-card">
+      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/groundwater.html', 'Groundwater Flow and Contaminant Transport')">
         <img src="assets/project-groundwater.png" alt="Groundwater flow and contaminant transport modelling">
         <div class="project-body">
           <h3>Groundwater Flow and Contaminant Transport</h3>
@@ -107,11 +109,13 @@
             Groundwater modelling using MODFLOW-based tools to simulate flow systems, recharge, production wells,
             injection wells, and contaminant migration processes.
           </p>
-          <a href="projects.html">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="scope-btn" type="button">
+            Why this matters <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </article>
 
-      <article class="card project-card">
+      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/coastal.html', 'Coastal and Marine Modelling')">
         <img src="assets/project-coastal.png" alt="Coastal and marine modelling">
         <div class="project-body">
           <h3>Coastal and Marine Modelling</h3>
@@ -119,11 +123,13 @@
             Coastal hydrodynamic modelling for tides, waves, tsunami, sediment movement, and coastal inundation
             to support coastal planning and marine hazard assessment.
           </p>
-          <a href="projects.html">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="scope-btn" type="button">
+            Why this matters <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </article>
 
-      <article class="card project-card">
+      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/hydroclimate.html', 'Hydrology and Climate Analysis')">
         <img src="assets/project-hydroclimate.png" alt="Hydrology and climate analysis">
         <div class="project-body">
           <h3>Hydrology and Climate Analysis</h3>
@@ -131,11 +137,13 @@
             Rainfall-runoff analysis, watershed modelling, flood frequency estimation, and climate impact assessment
             to support water resources planning and infrastructure evaluation.
           </p>
-          <a href="projects.html">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="scope-btn" type="button">
+            Why this matters <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </article>
 
-      <article class="card project-card">
+      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/cfd.html', 'CFD and Environmental Fluid Dynamics')">
         <img src="assets/project-cfd.png" alt="CFD and environmental fluid dynamics">
         <div class="project-body">
           <h3>CFD and Environmental Fluid Dynamics</h3>
@@ -143,7 +151,9 @@
             Computational fluid dynamics simulation for complex flow behaviour, turbulence, dispersion,
             and interaction between fluid motion and engineering structures.
           </p>
-          <a href="projects.html">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="scope-btn" type="button">
+            Why this matters <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </article>
     </div>
@@ -159,7 +169,6 @@
     <div class="logo-marquee">
       <div class="logo-track">
 
-        <!-- SET 1 -->
         <div class="logo-item">
           <img src="assets/hdec.png" alt="HDEC China">
         </div>
@@ -188,7 +197,6 @@
           <img src="assets/amreta.png" alt="Government and Water Resources Agencies">
         </div>
 
-        <!-- SET 2 - duplicate for smooth infinite loop -->        
         <div class="logo-item">
           <img src="assets/hdec.png" alt="HDEC China">
         </div>
@@ -259,13 +267,34 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<div class="scope-modal" id="scopeModal">
+  <div class="scope-modal-overlay" onclick="closeScopeModal()"></div>
 
-<script>
-  document.querySelector(".menu-btn")?.addEventListener("click", function () {
-    document.querySelector(".nav")?.classList.toggle("open");
-  });
-</script>
+  <div class="scope-modal-box">
+    <div class="scope-modal-header">
+      <div>
+        <span class="scope-modal-label">Business Scope</span>
+        <h2 id="scopeModalTitle">Scope Detail</h2>
+      </div>
+
+      <div class="scope-modal-actions">
+        <button type="button" onclick="printScopeContent()" class="scope-print-btn">
+          <i class="fa-solid fa-print"></i> Print / Save PDF
+        </button>
+
+        <button type="button" onclick="closeScopeModal()" class="scope-close-btn" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="scope-modal-content">
+      <iframe id="scopeFrame" src="" title="Business scope detail"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

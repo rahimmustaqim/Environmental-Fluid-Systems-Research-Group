@@ -1631,3 +1631,104 @@ img {
     width: 36px;
   }
 }
+
+/* =========================
+   COLLABORATION EXPERIENCE - LOGO ONLY
+========================= */
+
+.collaboration-section {
+  background: #f4fbff;
+}
+
+.collaboration-section .section-title {
+  margin-bottom: 34px;
+}
+
+.collaboration-section .section-title h2 {
+  color: var(--primary-dark);
+  letter-spacing: 0.08em;
+}
+
+.collaboration-section .section-title h2::before,
+.collaboration-section .section-title h2::after {
+  background: var(--green);
+}
+
+.collaboration-section .logo-marquee {
+  margin-top: 0;
+  padding: 18px 0 22px;
+}
+
+.collaboration-section .logo-marquee::before {
+  background: linear-gradient(to right, #f4fbff, rgba(244, 251, 255, 0));
+}
+
+.collaboration-section .logo-marquee::after {
+  background: linear-gradient(to left, #f4fbff, rgba(244, 251, 255, 0));
+}
+
+.collaboration-section .logo-track {
+  gap: 26px;
+  animation: scrollLogosRight 30s linear infinite;
+}
+
+.collaboration-section .logo-item {
+  width: 275px;
+  height: 136px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #d8e8f5;
+  box-shadow: 0 14px 34px rgba(7, 54, 111, 0.08);
+  padding: 28px 38px;
+}
+
+.collaboration-section .logo-item img {
+  max-width: 100%;
+  max-height: 78px;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+}
+
+.collaboration-section .logo-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(11, 95, 179, 0.20);
+  box-shadow: 0 20px 45px rgba(7, 54, 111, 0.13);
+}
+
+.collaboration-section .logo-item:hover img {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+@media (max-width: 1100px) {
+  .collaboration-section .logo-item {
+    width: 235px;
+    height: 118px;
+    padding: 24px 30px;
+  }
+
+  .collaboration-section .logo-item img {
+    max-height: 66px;
+  }
+}
+
+@media (max-width: 560px) {
+  .collaboration-section .logo-track {
+    gap: 16px;
+    animation-duration: 24s;
+  }
+
+  .collaboration-section .logo-item {
+    width: 180px;
+    height: 96px;
+    border-radius: 18px;
+    padding: 18px 20px;
+  }
+
+  .collaboration-section .logo-item img {
+    max-height: 52px;
+  }
+}
+

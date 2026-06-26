@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,219 +12,6 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .works-intro {
-      max-width: 880px;
-      margin: 0 auto 30px;
-      color: var(--muted);
-      line-height: 1.75;
-      text-align: center;
-    }
-
-    .works-table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--white);
-      box-shadow: 0 18px 45px rgba(7, 20, 38, 0.06);
-    }
-
-    .works-table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 980px;
-      color: var(--text);
-    }
-
-    .works-table th {
-      padding: 16px 18px;
-      background: rgba(11, 95, 179, 0.07);
-      color: var(--primary-dark);
-      font-size: .82rem;
-      text-align: left;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      border-bottom: 1px solid var(--line);
-      white-space: nowrap;
-    }
-
-    .works-table td {
-      padding: 17px 18px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-      line-height: 1.55;
-    }
-
-    .works-table tbody tr.work-row {
-      cursor: pointer;
-      transition: background .2s ease;
-    }
-
-    .works-table tbody tr.work-row:hover,
-    .works-table tbody tr.work-row.active {
-      background: rgba(11, 95, 179, 0.045);
-    }
-
-    .work-title {
-      font-weight: 800;
-      color: var(--primary-dark);
-    }
-
-    .work-type {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(11, 95, 179, 0.08);
-      color: var(--primary);
-      font-size: .78rem;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .work-year {
-      white-space: nowrap;
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-
-    .work-action {
-      color: var(--primary);
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .project-detail-row {
-      display: none;
-      background: var(--bg);
-    }
-
-    .project-detail-row.expanded {
-      display: table-row;
-    }
-
-    .project-detail-row td {
-      padding: 26px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .project-summary-card {
-      display: grid;
-      grid-template-columns: minmax(240px, 420px) 1fr;
-      gap: 28px;
-      align-items: start;
-      color: var(--muted);
-    }
-
-    .project-summary-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: var(--soft);
-    }
-
-    .project-summary-content h4 {
-      margin: 0 0 12px;
-      color: var(--primary-dark);
-      font-size: 1.2rem;
-    }
-
-    .project-summary-content p {
-      margin: 0 0 20px;
-      line-height: 1.8;
-      font-size: 1.02rem;
-    }
-
-    .overview-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: var(--primary);
-      color: var(--white);
-      font-weight: 800;
-      font-size: .95rem;
-      cursor: pointer;
-      transition: .2s ease;
-      border: 0;
-    }
-
-    .overview-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .overview-btn.light {
-      background: var(--white);
-      color: var(--primary);
-      border: 1px solid var(--line);
-    }
-
-    .video-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(7, 20, 38, .74);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .video-modal-content {
-      width: min(960px, 96vw);
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 20px;
-      position: relative;
-      box-shadow: 0 30px 90px rgba(0,0,0,.35);
-    }
-
-    .video-modal-content iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      border-radius: 20px;
-    }
-
-    .close-modal {
-      position: absolute;
-      right: -12px;
-      top: -12px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--white);
-      color: var(--primary-dark);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 12px 30px rgba(0,0,0,.22);
-    }
-
-    @media (max-width: 760px) {
-      .works-intro {
-        text-align: left;
-      }
-
-      .works-table {
-        min-width: 780px;
-      }
-
-      .project-summary-card {
-        grid-template-columns: 1fr;
-      }
-
-      .project-summary-card img {
-        height: 220px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -238,96 +26,118 @@
       </div>
     </a>
 
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="projects.html">Projects</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+```
+<nav class="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
 
-    <a class="btn btn-primary header-cta" href="contact.html">
-      <i class="fa-regular fa-envelope"></i> Contact Us
-    </a>
+<a class="btn btn-primary header-cta" href="contact.html">
+  <i class="fa-regular fa-envelope"></i> Contact Us
+</a>
 
-    <button class="menu-btn" aria-label="Open menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+<button class="menu-btn" aria-label="Open menu">
+  <i class="fa-solid fa-bars"></i>
+</button>
+```
+
   </div>
 </header>
 
 <section class="projects-hero-slider">
   <div class="hero-slider">
 
-    <div class="hero-slide active">
-      <img src="assets/project-flood.png" alt="Flood modelling project">
-      <div class="hero-slide-overlay">
-        <div class="hero-slide-content">
-          <span class="hero-badge">Selected Project Experience</span>
-          <h1>Selected Project Experience</h1>
-          <p>
-            Technical modelling support, training, and engineering analysis for water, flood, coastal, and environmental fluid systems.
-          </p>
-        </div>
-      </div>
+```
+<div class="hero-slide active">
+  <img src="assets/project-hydroclimate.png" alt="Hydrology and climate risk analysis">
+  <div class="hero-slide-overlay">
+    <div class="hero-slide-content">
+      <span class="hero-badge">Selected Project Experience</span>
+      <h1>Hydrology & Climate Risk Analysis</h1>
+      <p>
+        Rainfall-runoff analysis, watershed modelling, flood frequency estimation,
+        and climate impact assessment for water resources planning and infrastructure evaluation.
+      </p>
     </div>
+  </div>
+</div>
 
-    <div class="hero-slide">
-      <img src="assets/project-coastal.png" alt="Coastal and marine modelling project">
-      <div class="hero-slide-overlay">
-        <div class="hero-slide-content">
-          <span class="hero-badge">Selected Project Experience</span>
-          <h1>Water and Environmental Modelling</h1>
-          <p>
-            Science-based support for flood risk, water resources, coastal processes, infrastructure resilience, and environmental assessment.
-          </p>
-        </div>
-      </div>
+<div class="hero-slide">
+  <img src="assets/project-flood.png" alt="Hydraulic modelling and flood risk analysis">
+  <div class="hero-slide-overlay">
+    <div class="hero-slide-content">
+      <span class="hero-badge">Selected Project Experience</span>
+      <h1>Hydraulic Modelling & Flood Risk Analysis</h1>
+      <p>
+        Hydraulic and flow modelling for rivers, dams, spillways, drainage systems,
+        scouring, sediment movement, and infrastructure performance.
+      </p>
     </div>
+  </div>
+</div>
 
-    <div class="hero-slide">
-      <img src="assets/project-hydroclimate.png" alt="Hydrology and climate analysis project">
-      <div class="hero-slide-overlay">
-        <div class="hero-slide-content">
-          <span class="hero-badge">Selected Project Experience</span>
-          <h1>Hydrology and Climate Analysis</h1>
-          <p>
-            Rainfall-runoff analysis, watershed modelling, flood frequency estimation,
-            and climate impact assessment for water resources planning.
-          </p>
-        </div>
-      </div>
+<div class="hero-slide">
+  <img src="assets/project-coastal.png" alt="Coastal and marine modelling">
+  <div class="hero-slide-overlay">
+    <div class="hero-slide-content">
+      <span class="hero-badge">Selected Project Experience</span>
+      <h1>Coastal & Marine Modelling</h1>
+      <p>
+        Coastal hydrodynamic modelling for tides, waves, tsunami, sediment movement,
+        coastal inundation, and marine hazard assessment.
+      </p>
     </div>
+  </div>
+</div>
 
-    <div class="hero-slide">
-      <img src="assets/project-cfd.png" alt="CFD and environmental fluid dynamics project">
-      <div class="hero-slide-overlay">
-        <div class="hero-slide-content">
-          <span class="hero-badge">Selected Project Experience</span>
-          <h1>CFD and Environmental Fluid Dynamics</h1>
-          <p>
-            Computational fluid dynamics simulation for complex flow behaviour,
-            turbulence, dispersion, and fluid–structure interaction.
-          </p>
-        </div>
-      </div>
+<div class="hero-slide">
+  <img src="assets/hydropower.png" alt="Hydropower support">
+  <div class="hero-slide-overlay">
+    <div class="hero-slide-content">
+      <span class="hero-badge">Selected Project Experience</span>
+      <h1>Hydropower Support</h1>
+      <p>
+        Technical modelling and assessment support for hydropower infrastructure,
+        including water availability, river flow, sedimentation, flood hazard, and environmental flow.
+      </p>
     </div>
+  </div>
+</div>
 
-    <button class="hero-slider-btn prev" onclick="changeHeroSlide(-1)">
-      <i class="fa-solid fa-chevron-left"></i>
-    </button>
-
-    <button class="hero-slider-btn next" onclick="changeHeroSlide(1)">
-      <i class="fa-solid fa-chevron-right"></i>
-    </button>
-
-    <div class="hero-slider-dots">
-      <span class="hero-dot active" onclick="goToHeroSlide(0)"></span>
-      <span class="hero-dot" onclick="goToHeroSlide(1)"></span>
-      <span class="hero-dot" onclick="goToHeroSlide(2)"></span>
-      <span class="hero-dot" onclick="goToHeroSlide(3)"></span>
+<div class="hero-slide">
+  <img src="assets/windturbine.png" alt="Wind energy support">
+  <div class="hero-slide-overlay">
+    <div class="hero-slide-content">
+      <span class="hero-badge">Selected Project Experience</span>
+      <h1>Wind Energy Support</h1>
+      <p>
+        Wind-flow analysis, turbine site assessment, turbulence and wake evaluation,
+        and environmental condition review for wind turbine and wind farm planning.
+      </p>
     </div>
+  </div>
+</div>
+
+<button class="hero-slider-btn prev" onclick="changeHeroSlide(-1)">
+  <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+<button class="hero-slider-btn next" onclick="changeHeroSlide(1)">
+  <i class="fa-solid fa-chevron-right"></i>
+</button>
+
+<div class="hero-slider-dots">
+  <span class="hero-dot active" onclick="goToHeroSlide(0)"></span>
+  <span class="hero-dot" onclick="goToHeroSlide(1)"></span>
+  <span class="hero-dot" onclick="goToHeroSlide(2)"></span>
+  <span class="hero-dot" onclick="goToHeroSlide(3)"></span>
+  <span class="hero-dot" onclick="goToHeroSlide(4)"></span>
+</div>
+```
 
   </div>
 </section>
@@ -338,179 +148,164 @@
       <h2>Project Experience</h2>
     </div>
 
-    <p class="works-intro">
-      Selected project experience is listed in a concise format. The role/scope column clarifies the type of contribution, while each project row provides a short summary and available overview material.
-    </p>
+```
+<p class="works-intro">
+  Selected project experience is listed in a concise format. The role and scope column clarifies the type of technical contribution across hydrology, hydraulics, coastal systems, hydropower, and wind energy support.
+</p>
 
-    <div class="works-table-wrap">
-      <table class="works-table">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Project name</th>
-            <th>Role / Scope</th>
-            <th>Partner / Client</th>
-            <th>Location</th>
-            <th>Status / Year</th>
-            <th>Detail</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="work-row" onclick="toggleProject(this)">
-            <td>01</td>
-            <td><span class="work-title">Pakil Climate Hazard Assessment</span></td>
-            <td><span class="work-type">Technical Modelling Support</span></td>
-            <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
-            <td>Laguna de Bay, Philippines</td>
-            <td><span class="work-year">On-going</span></td>
-            <td><span class="work-action">View</span></td>
-          </tr>
-          <tr class="project-detail-row">
-            <td colspan="7">
-              <div class="project-summary-card">
-                <img src="assets/climate.png" alt="Climate change hazard assessment for Pakil Pumped Storage Power Plant">
-                <div class="project-summary-content">
-                  <h4>Project summary</h4>
-                  <p>
-                    Technical modelling support for climate-change-related hazard assessment of the Pakil Pumped Storage Plant and the Laguna de Bay system.
-                  </p>
-                  <button class="overview-btn" onclick="event.stopPropagation(); openModal('dhtppSgsAlQ');">Open Overview</button>
-                </div>
-              </div>
-            </td>
-          </tr>
+<div class="scope-filter">
+  <span class="scope-pill"><i class="fa-solid fa-cloud-rain"></i> Hydrology</span>
+  <span class="scope-pill"><i class="fa-solid fa-water"></i> Hydraulic</span>
+  <span class="scope-pill"><i class="fa-solid fa-water-ladder"></i> Coastal</span>
+  <span class="scope-pill"><i class="fa-solid fa-bolt"></i> Hydropower</span>
+  <span class="scope-pill"><i class="fa-solid fa-fan"></i> Wind Energy</span>
+</div>
 
-          <tr class="work-row" onclick="toggleProject(this)">
-            <td>02</td>
-            <td><span class="work-title">Sustainable Water Supply Guidelines</span></td>
-            <td><span class="work-type">Guideline Support</span></td>
-            <td>Perum Jasa Tirta II</td>
-            <td>Purwakarta, Indonesia</td>
-            <td><span class="work-year">Aug 2025</span></td>
-            <td><span class="work-action">View</span></td>
-          </tr>
-          <tr class="project-detail-row">
-            <td colspan="7">
-              <div class="project-summary-card">
-                <img src="assets/jasatirta.jpg" alt="Guidelines for sustainable water supply management">
-                <div class="project-summary-content">
-                  <h4>Project summary</h4>
-                  <p>
-                    Preparation of a technical guideline for sustainable water supply management, including planning, water allocation, infrastructure operation, and environmental protection.
-                  </p>
-                  <a class="overview-btn light" href="assets/jasatirta.pdf" target="_blank" onclick="event.stopPropagation();">Open Overview</a>
-                </div>
-              </div>
-            </td>
-          </tr>
+<div class="works-table-wrap">
+  <table class="works-table">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Project name</th>
+        <th>Business scope</th>
+        <th>Role / Contribution</th>
+        <th>Partner / Client</th>
+        <th>Location</th>
+        <th>Status / Year</th>
+      </tr>
+    </thead>
 
-          <tr class="work-row" onclick="toggleProject(this)">
-            <td>03</td>
-            <td><span class="work-title">PIT 110 River Flood Assessment</span></td>
-            <td><span class="work-type">Flood Modelling Support</span></td>
-            <td>PT Tectona Mitra Utama</td>
-            <td>Borneo, Indonesia</td>
-            <td><span class="work-year">Dec 2025</span></td>
-            <td><span class="work-action">View</span></td>
-          </tr>
-          <tr class="project-detail-row">
-            <td colspan="7">
-              <div class="project-summary-card">
-                <img src="assets/jmb.jpg" alt="River flood assessment PIT 110">
-                <div class="project-summary-content">
-                  <h4>Project summary</h4>
-                  <p>
-                    Numerical flood modelling support for river capacity assessment, overflow risk evaluation, and alternative diversion channel planning.
-                  </p>
-                  <button class="overview-btn" onclick="event.stopPropagation(); openModal('rFTdmlR0mfY');">Open Overview</button>
-                </div>
-              </div>
-            </td>
-          </tr>
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td>
+          <span class="work-title">Pakil Climate Hazard Assessment</span>
+          <span class="work-summary">
+            Climate-change-related hazard assessment for the Pakil Pumped Storage Plant and Laguna de Bay system.
+          </span>
+        </td>
+        <td><span class="work-type hydrology">Hydrology & Climate Risk</span></td>
+        <td>Technical modelling support for rainfall, climate impact, and water-related hazard assessment.</td>
+        <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
+        <td>Laguna de Bay, Philippines</td>
+        <td><span class="work-year">On-going</span></td>
+      </tr>
 
-          <tr class="work-row" onclick="toggleProject(this)">
-            <td>04</td>
-            <td><span class="work-title">PIT 131 River Flood Assessment</span></td>
-            <td><span class="work-type">Flood Modelling Support</span></td>
-            <td>PT Tectona Mitra Utama</td>
-            <td>Borneo, Indonesia</td>
-            <td><span class="work-year">Dec 2025</span></td>
-            <td><span class="work-action">View</span></td>
-          </tr>
-          <tr class="project-detail-row">
-            <td colspan="7">
-              <div class="project-summary-card">
-                <img src="assets/jmb131.jpg" alt="River flood assessment PIT 131">
-                <div class="project-summary-content">
-                  <h4>Project summary</h4>
-                  <p>
-                    Numerical flood modelling support for riverbank channel evaluation, flow capacity improvement, and overflow risk assessment.
-                  </p>
-                  <button class="overview-btn" onclick="event.stopPropagation(); openModal('BMxMmWokVcs');">Open Overview</button>
-                </div>
-              </div>
-            </td>
-          </tr>
+      <tr>
+        <td>02</td>
+        <td>
+          <span class="work-title">Pakil Hydrodynamic and Sediment Study</span>
+          <span class="work-summary">
+            Hydrodynamic and sediment transport assessment for the Pakil Pumped Storage Plant–Laguna de Bay system.
+          </span>
+        </td>
+        <td><span class="work-type coastal">Coastal & Marine Modelling</span></td>
+        <td>Hydrodynamic and sediment transport modelling support for lake/coastal water system assessment.</td>
+        <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
+        <td>Laguna de Bay, Philippines</td>
+        <td><span class="work-year">On-going</span></td>
+      </tr>
 
-          <tr class="work-row" onclick="toggleProject(this)">
-            <td>05</td>
-            <td><span class="work-title">HEC-HMS & HEC-RAS Training</span></td>
-            <td><span class="work-type">Training Provider</span></td>
-            <td>PT Saumy Gemilang Indonesia</td>
-            <td>Online via Zoom Meeting</td>
-            <td><span class="work-year">Aug 2025</span></td>
-            <td><span class="work-action">View</span></td>
-          </tr>
-          <tr class="project-detail-row">
-            <td colspan="7">
-              <div class="project-summary-card">
-                <img src="assets/saumy.png" alt="HEC-HMS and HEC-RAS training">
-                <div class="project-summary-content">
-                  <h4>Project summary</h4>
-                  <p>
-                    Professional training support for HEC-HMS and HEC-RAS workflows, including rainfall–runoff modelling, river analysis, and 1D/2D flood simulation.
-                  </p>
-                  <button class="overview-btn" onclick="event.stopPropagation(); openModal('UTPwySG7-8g');">Open Overview</button>
-                </div>
-              </div>
-            </td>
-          </tr>
+      <tr>
+        <td>03</td>
+        <td>
+          <span class="work-title">PIT 110 River Flood Assessment</span>
+          <span class="work-summary">
+            River capacity assessment, overflow risk evaluation, and alternative diversion channel planning.
+          </span>
+        </td>
+        <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
+        <td>Numerical hydraulic modelling support for river flood assessment and capacity improvement scenarios.</td>
+        <td>PT Tectona Mitra Utama</td>
+        <td>Borneo, Indonesia</td>
+        <td><span class="work-year">Dec 2025</span></td>
+      </tr>
 
-          <tr class="work-row" onclick="toggleProject(this)">
-            <td>06</td>
-            <td><span class="work-title">Pakil Hydrodynamic and Sediment Study</span></td>
-            <td><span class="work-type">Hydrodynamic Modelling Support</span></td>
-            <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
-            <td>Laguna de Bay, Philippines</td>
-            <td><span class="work-year">On-going</span></td>
-            <td><span class="work-action">View</span></td>
-          </tr>
-          <tr class="project-detail-row">
-            <td colspan="7">
-              <div class="project-summary-card">
-                <img src="assets/pakil.png" alt="Hydrology and sediment modelling for Pakil Pumped Storage Power Plant">
-                <div class="project-summary-content">
-                  <h4>Project summary</h4>
-                  <p>
-                    Technical modelling support for hydrodynamic and sediment transport assessment of the Pakil Pumped Storage Plant–Laguna de Bay system.
-                  </p>
-                  <button class="overview-btn" onclick="event.stopPropagation(); openModal('Xwq_5V9uk7o');">Open Overview</button>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <tr>
+        <td>04</td>
+        <td>
+          <span class="work-title">PIT 131 River Flood Assessment</span>
+          <span class="work-summary">
+            Riverbank channel evaluation, flow capacity improvement, and overflow risk assessment.
+          </span>
+        </td>
+        <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
+        <td>Hydraulic modelling support for river flow evaluation, channel performance, and flood risk assessment.</td>
+        <td>PT Tectona Mitra Utama</td>
+        <td>Borneo, Indonesia</td>
+        <td><span class="work-year">Dec 2025</span></td>
+      </tr>
+
+      <tr>
+        <td>05</td>
+        <td>
+          <span class="work-title">HEC-HMS & HEC-RAS Training</span>
+          <span class="work-summary">
+            Professional training for rainfall-runoff modelling, river analysis, and 1D/2D flood simulation workflows.
+          </span>
+        </td>
+        <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
+        <td>Training provider for HEC-HMS and HEC-RAS modelling workflow and practical simulation setup.</td>
+        <td>PT Saumy Gemilang Indonesia</td>
+        <td>Online via Zoom Meeting</td>
+        <td><span class="work-year">Aug 2025</span></td>
+      </tr>
+
+      <tr>
+        <td>06</td>
+        <td>
+          <span class="work-title">Sustainable Water Supply Guidelines</span>
+          <span class="work-summary">
+            Technical guideline support for sustainable water supply management, infrastructure operation, and environmental protection.
+          </span>
+        </td>
+        <td><span class="work-type hydrology">Hydrology & Water Resources</span></td>
+        <td>Guideline support for water allocation, planning, infrastructure operation, and sustainability review.</td>
+        <td>Perum Jasa Tirta II</td>
+        <td>Purwakarta, Indonesia</td>
+        <td><span class="work-year">Aug 2025</span></td>
+      </tr>
+
+      <tr>
+        <td>07</td>
+        <td>
+          <span class="work-title">Hydropower Infrastructure Support</span>
+          <span class="work-summary">
+            Technical support related to water availability, river flow conditions, sedimentation, and flood hazard for hydropower planning.
+          </span>
+        </td>
+        <td><span class="work-type energy">Hydropower Support</span></td>
+        <td>Hydrological and hydraulic assessment support for hydropower-related infrastructure and environmental flow considerations.</td>
+        <td>Project-based / Collaboration-based</td>
+        <td>Indonesia / International</td>
+        <td><span class="work-year">Available Scope</span></td>
+      </tr>
+
+      <tr>
+        <td>08</td>
+        <td>
+          <span class="work-title">Wind Energy Technical Support</span>
+          <span class="work-summary">
+            Wind-flow analysis, turbine site assessment, turbulence and wake evaluation, and environmental condition review.
+          </span>
+        </td>
+        <td><span class="work-type energy">Wind Energy Support</span></td>
+        <td>Specialist-supported wind energy analysis for turbine and wind farm planning.</td>
+        <td>Specialist Collaboration</td>
+        <td>Indonesia / International</td>
+        <td><span class="work-year">Available Scope</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="note-box">
+  <strong>Note:</strong> Project names, partners, and scopes are presented to describe previous project, institutional, or collaboration experience. They do not imply endorsement, sponsorship, or official partnership unless explicitly stated.
+</div>
+```
+
   </div>
 </section>
-
-<div id="videoModal" class="video-modal" onclick="closeModal(event)">
-  <div class="video-modal-content">
-    <span class="close-modal" onclick="closeModal(event)">✕</span>
-    <iframe id="videoFrame" allowfullscreen></iframe>
-  </div>
-</div>
 
 <footer class="footer">
   <div class="container footer-grid">
@@ -523,119 +318,31 @@
       </div>
     </div>
 
-    <div>
-      <h4>Contact</h4>
-      <p><i class="fa-regular fa-envelope"></i> info@efsrgroup.com</p>
-      <p><i class="fa-solid fa-location-dot"></i> Worldwide Collaboration</p>
-    </div>
+```
+<div>
+  <h4>Contact</h4>
+  <p><i class="fa-regular fa-envelope"></i> info@efsrgroup.com</p>
+  <p><i class="fa-solid fa-location-dot"></i> Worldwide Collaboration</p>
+</div>
 
-    <div>
-      <h4>Follow</h4>
-      <div class="socials">
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-researchgate"></i></a>
-      </div>
-    </div>
+<div>
+  <h4>Follow</h4>
+  <div class="socials">
+    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="#"><i class="fa-brands fa-github"></i></a>
+    <a href="#"><i class="fa-brands fa-researchgate"></i></a>
+  </div>
+</div>
 
-    <p class="copyright">
-      © 2024 Environmental Fluid Systems Research Group. All rights reserved.
-    </p>
+<p class="copyright">
+  © 2024 Environmental Fluid Systems Research Group. All rights reserved.
+</p>
+```
+
   </div>
 </footer>
 
 <script src="script.js"></script>
-
-<script>
-  function openModal(videoId) {
-    if (!videoId) return;
-
-    const videoFrame = document.getElementById("videoFrame");
-    const videoModal = document.getElementById("videoModal");
-
-    videoFrame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-    videoModal.style.display = "flex";
-  }
-
-  function closeModal(e) {
-    if (
-      e.target.classList.contains("video-modal") ||
-      e.target.classList.contains("close-modal")
-    ) {
-      document.getElementById("videoFrame").src = "";
-      document.getElementById("videoModal").style.display = "none";
-    }
-  }
-
-  function toggleProject(row) {
-    const detailRow = row.nextElementSibling;
-    if (!detailRow || !detailRow.classList.contains("project-detail-row")) return;
-
-    const isExpanded = detailRow.classList.contains("expanded");
-
-    document.querySelectorAll(".project-detail-row.expanded").forEach(item => {
-      item.classList.remove("expanded");
-    });
-
-    document.querySelectorAll(".work-row.active").forEach(item => {
-      item.classList.remove("active");
-    });
-
-    if (!isExpanded) {
-      detailRow.classList.add("expanded");
-      row.classList.add("active");
-    }
-  }
-
-  let heroSlideIndex = 0;
-  const heroSlides = document.querySelectorAll(".hero-slide");
-  const heroDots = document.querySelectorAll(".hero-dot");
-  let heroAutoSlide;
-
-  function showHeroSlide(index) {
-    if (!heroSlides.length) return;
-
-    if (index >= heroSlides.length) {
-      heroSlideIndex = 0;
-    } else if (index < 0) {
-      heroSlideIndex = heroSlides.length - 1;
-    } else {
-      heroSlideIndex = index;
-    }
-
-    heroSlides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === heroSlideIndex);
-    });
-
-    heroDots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === heroSlideIndex);
-    });
-  }
-
-  function changeHeroSlide(step) {
-    showHeroSlide(heroSlideIndex + step);
-    resetHeroAutoSlide();
-  }
-
-  function goToHeroSlide(index) {
-    showHeroSlide(index);
-    resetHeroAutoSlide();
-  }
-
-  function startHeroAutoSlide() {
-    heroAutoSlide = setInterval(() => {
-      showHeroSlide(heroSlideIndex + 1);
-    }, 4000);
-  }
-
-  function resetHeroAutoSlide() {
-    clearInterval(heroAutoSlide);
-    startHeroAutoSlide();
-  }
-
-  showHeroSlide(0);
-  startHeroAutoSlide();
-</script>
 
 </body>
 </html>

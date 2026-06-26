@@ -1,305 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Environmental Fluid Systems Research Group</title>
+<div class="pub-list">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
+  <article class="pub-card" data-category="conference">
+    <div class="pub-year">
       <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
+        <strong>2024</strong>
+        <span>Conference</span>
       </div>
+    </div>
+
+```
+<div class="pub-content">
+  <div class="pub-meta">
+    <span class="pub-tag green"><i class="fa-solid fa-dam"></i> Dam Safety</span>
+    <span class="pub-tag"><i class="fa-solid fa-water"></i> Hydraulic</span>
+    <span class="pub-tag"><i class="fa-solid fa-shield-halved"></i> Mitigation</span>
+  </div>
+
+  <h3>Kajian Upaya Mitigasi Keruntuhan Bendungan Jatigede</h3>
+
+  <div class="pub-authors">
+    Taufik, S.R., Radita, Elkayoan., Mustaqim, R.
+  </div>
+
+  <div class="pub-source">
+    PIT-HATHI-41, pp. 152–162. Conference Paper.
+  </div>
+
+  <div class="pub-actions">
+    <a class="pub-link" href="https://www.researchgate.net/publication/393512660_Kajian_Upaya_Mitigasi_Keruntuhan_Bendungan_Dambreak_Jatigede" target="_blank">
+      <i class="fa-solid fa-link"></i> Open ResearchGate
     </a>
-
-    <nav class="nav">
-      <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-
-    <a class="btn btn-primary header-cta" href="contact.html">
-      <i class="fa-regular fa-envelope"></i> Contact Us
+    <a class="pub-link" href="assets/publications/kajian-upaya-mitigasi-keruntuhan-bendungan-jatigede.pdf" target="_blank">
+      <i class="fa-regular fa-file-pdf"></i> View PDF
     </a>
-
-    <button class="menu-btn" aria-label="Open menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container hero-content">
-    <div class="hero-text">
-      <h1>Environmental Fluid<br>Systems Research Group</h1>
-
-      <div class="accent-line"></div>
-
-      <h2>
-        Numerical Modelling and Data-Driven Solutions
-      </h2>
-
-      <p>
-        We support engineering consultants, researchers, and public institutions
-        through science-based analysis in hydrology, hydraulics, coastal systems,
-        hydropower, wind energy, and environmental infrastructure.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#business-scope">
-          <i class="fa-solid fa-water"></i> Explore Business Scope
-        </a>
-
-        <a class="btn btn-outline" href="projects.html">
-          <i class="fa-solid fa-folder"></i> View Projects
-        </a>
-
-        <a class="btn btn-green" href="contact.html">
-          <i class="fa-regular fa-handshake"></i> Contact for Collaboration
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="business-scope">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Business Scope</h2>
-    </div>
-
-    <div class="project-grid">
-
-      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/hydroclimate.html', 'Hydrology & Climate Risk Analysis')">
-        <img src="assets/project-hydroclimate.png" alt="Hydrology and climate risk analysis">
-        <div class="project-body">
-          <h3>Hydrology & Climate Risk Analysis</h3>
-          <p>
-            Rainfall-runoff analysis, watershed modelling, flood frequency estimation, and climate impact assessment
-            to support water resources planning and infrastructure evaluation.
-          </p>
-          <button class="scope-btn" type="button">
-            Why this matters <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </article>
-
-      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/flood.html', 'Hydraulic Modelling & Flood Risk Analysis')">
-        <img src="assets/project-flood.png" alt="Hydraulic modelling and flood risk analysis">
-        <div class="project-body">
-          <h3>Hydraulic Modelling & Flood Risk Analysis</h3>
-          <p>
-            Hydraulic and flow modelling for rivers, dams, spillways, drainage systems, and engineering structures
-            to assess flood risk, flow capacity, scouring, sediment movement, and infrastructure performance.
-          </p>
-          <button class="scope-btn" type="button">
-            Why this matters <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </article>
-
-      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/coastal.html', 'Coastal & Marine Modelling')">
-        <img src="assets/project-coastal.png" alt="Coastal and marine modelling">
-        <div class="project-body">
-          <h3>Coastal & Marine Modelling</h3>
-          <p>
-            Coastal hydrodynamic modelling for tides, waves, tsunami, sediment movement, and coastal inundation
-            to support coastal planning and marine hazard assessment.
-          </p>
-          <button class="scope-btn" type="button">
-            Why this matters <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </article>
-
-      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/hydropower.html', 'Hydropower Support')">
-        <img src="assets/hydropower.png" alt="Hydropower support">
-        <div class="project-body">
-          <h3>Hydropower Support</h3>
-          <p>
-            Technical modelling and assessment support for hydropower infrastructure, including water availability,
-            river flow conditions, intake performance, sedimentation risk, flood hazard, and environmental flow.
-          </p>
-          <button class="scope-btn" type="button">
-            Why this matters <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </article>
-
-      <article class="card project-card scope-card" onclick="openScopeModal('business-scope/wind-energy.html', 'Wind Energy Support')">
-        <img src="assets/windturbine.png" alt="Wind energy support">
-        <div class="project-body">
-          <h3>Wind Energy Support</h3>
-          <p>
-            Wind energy support through wind-flow analysis, turbine site assessment, turbulence and wake evaluation,
-            and environmental condition review for wind turbine and wind farm planning.
-          </p>
-          <button class="scope-btn" type="button">
-            Why this matters <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<section class="section section-soft collaboration-section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Selected Project Experience</h2>
-    </div>
-
-    <div class="logo-marquee">
-      <div class="logo-track">
-
-        <div class="logo-item">
-          <img src="assets/hdec.png" alt="HDEC China">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/tectona.jpg" alt="PT Tectona Mitra Utama">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/saumy.png" alt="PT Saumy Gemilang Indonesia">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/freeport.png" alt="PT Freeport Indonesia">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/lapi.png" alt="PT LAPI ITB">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/jasatirta.png" alt="Perum Jasa Tirta II">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/amreta.png" alt="Government and Water Resources Agencies">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/hdec.png" alt="HDEC China">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/tectona.jpg" alt="PT Tectona Mitra Utama">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/saumy.png" alt="PT Saumy Gemilang Indonesia">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/freeport.png" alt="PT Freeport Indonesia">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/lapi.png" alt="PT LAPI ITB">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/jasatirta.png" alt="Perum Jasa Tirta II">
-        </div>
-
-        <div class="logo-item">
-          <img src="assets/amreta.png" alt="Government and Water Resources Agencies">
-        </div>
-
-      </div>
-    </div>
-
-    <p class="commit">
-      <i class="fa-regular fa-circle-check"></i>
-      Experience across public, private, and research-sector projects.
-    </p>
-
-    <p class="logo-disclaimer">
-      Names and logos are shown only to indicate previous project, institutional, or collaboration experience.
-      They do not imply endorsement, sponsorship, or official partnership unless explicitly stated.
-    </p>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="brand">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
-      <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
-        <p>Science-driven solutions for water and environmental challenges.</p>
-      </div>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p><i class="fa-regular fa-envelope"></i> info@efsrgroup.com</p>
-      <p><i class="fa-solid fa-location-dot"></i> Worldwide Collaboration</p>
-    </div>
-
-    <div>
-      <h4>Follow</h4>
-      <div class="socials">
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-researchgate"></i></a>
-      </div>
-    </div>
-
-    <p class="copyright">
-      © 2024 Environmental Fluid Systems Research Group. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-<div class="scope-modal" id="scopeModal">
-  <div class="scope-modal-overlay" onclick="closeScopeModal()"></div>
-
-  <div class="scope-modal-box">
-    <div class="scope-modal-header">
-      <div>
-        <span class="scope-modal-label">Business Scope</span>
-        <h2 id="scopeModalTitle">Scope Detail</h2>
-      </div>
-
-      <div class="scope-modal-actions">
-        <button type="button" onclick="printScopeContent()" class="scope-print-btn">
-          <i class="fa-solid fa-print"></i> Print / Save PDF
-        </button>
-
-        <button type="button" onclick="closeScopeModal()" class="scope-close-btn" aria-label="Close modal">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="scope-modal-content">
-      <iframe id="scopeFrame" src="" title="Business scope detail"></iframe>
-    </div>
   </div>
 </div>
+```
 
-<script src="script.js"></script>
+  </article>
 
-</body>
-</html>
+  <article class="pub-card" data-category="journal">
+    <div class="pub-year">
+      <div>
+        <strong>2022</strong>
+        <span>Journal</span>
+      </div>
+    </div>
+
+```
+<div class="pub-content">
+  <div class="pub-meta">
+    <span class="pub-tag blue"><i class="fa-solid fa-water"></i> Coastal</span>
+    <span class="pub-tag"><i class="fa-solid fa-computer"></i> Modelling</span>
+    <span class="pub-tag green"><i class="fa-solid fa-wave-square"></i> Hydrodynamics</span>
+  </div>
+
+  <h3>Hydrodynamics Analysis in Bedono Beach Demak Regency, Central Java Indonesia: Open Resource Processing for Modeling</h3>
+
+  <div class="pub-authors">
+    Mustaqim, R., Widyaningtias., Bumi, I.S., Suryadi, Y., Nugroho, E.O., Kardhana, H., Adityawan, M.N.
+  </div>
+
+  <div class="pub-source">
+    Jurnal Teknik Sipil ITB, Vol. 29 No. 3. DOI: 10.5614/jts.2022.29.3.3.
+  </div>
+
+  <div class="pub-actions">
+    <a class="pub-link" href="https://doi.org/10.5614/jts.2022.29.3.3" target="_blank">
+      <i class="fa-solid fa-link"></i> Open DOI
+    </a>
+    <a class="pub-link" href="assets/publications/hydrodynamics-analysis-bedono-beach-demak.pdf" target="_blank">
+      <i class="fa-regular fa-file-pdf"></i> View PDF
+    </a>
+  </div>
+</div>
+```
+
+  </article>
+
+  <article class="pub-card" data-category="conference">
+    <div class="pub-year">
+      <div>
+        <strong>2021</strong>
+        <span>Conference</span>
+      </div>
+    </div>
+
+```
+<div class="pub-content">
+  <div class="pub-meta">
+    <span class="pub-tag blue"><i class="fa-solid fa-water"></i> Coastal</span>
+    <span class="pub-tag"><i class="fa-solid fa-layer-group"></i> Sedimentation</span>
+    <span class="pub-tag green"><i class="fa-solid fa-seedling"></i> Permeable Structure</span>
+  </div>
+
+  <h3>Analisis Sedimentasi Dengan Penerapan Permeable Structure di Pantai Bedono, Kabupaten Demak, Jawa Tengah</h3>
+
+  <div class="pub-authors">
+    Mustaqim, R., Widyaningtias., Pratama, M.B., Suryadi, Y., Nugroho, E.O., Kardhana, H., Bumi, I.S.
+  </div>
+
+  <div class="pub-source">
+    PIT-HATHI-38, pp. 461–470. Conference Paper.
+  </div>
+
+  <div class="pub-actions">
+    <a class="pub-link" href="https://www.researchgate.net/publication/358904362_ANALISIS_SEDIMENTASI_DENGAN_PENERAPAN_PERMEABLE_STRUCTURE_DI_PANTAI_BEDONO_KABUPATEN_DEMAK_JAWA_TENGAH" target="_blank">
+      <i class="fa-solid fa-link"></i> Open ResearchGate
+    </a>
+    <a class="pub-link" href="assets/publications/analisis-sedimentasi-permeable-structure-pantai-bedono.pdf" target="_blank">
+      <i class="fa-regular fa-file-pdf"></i> View PDF
+    </a>
+  </div>
+</div>
+```
+
+  </article>
+
+  <article class="pub-card" data-category="training">
+    <div class="pub-year">
+      <div>
+        <strong>2025</strong>
+        <span>Training</span>
+      </div>
+    </div>
+
+```
+<div class="pub-content">
+  <div class="pub-meta">
+    <span class="pub-tag"><i class="fa-solid fa-map-location-dot"></i> QGIS</span>
+    <span class="pub-tag"><i class="fa-solid fa-cloud-rain"></i> Hydrology</span>
+    <span class="pub-tag green"><i class="fa-solid fa-graduation-cap"></i> Training Material</span>
+  </div>
+
+  <h3>Catchment Delineation Using QGIS</h3>
+
+  <div class="pub-authors">
+    Training material
+  </div>
+
+  <div class="pub-source">
+    Practical training material for watershed and catchment delineation using QGIS to support hydrological analysis and spatial water resources assessment.
+  </div>
+
+  <div class="pub-actions">
+    <a class="pub-link" href="assets/training/catchment-delineation-using-qgis.pdf" target="_blank">
+      <i class="fa-regular fa-file-pdf"></i> View PDF
+    </a>
+  </div>
+</div>
+```
+
+  </article>
+
+  <article class="pub-card" data-category="training">
+    <div class="pub-year">
+      <div>
+        <strong>2025</strong>
+        <span>Training</span>
+      </div>
+    </div>
+
+```
+<div class="pub-content">
+  <div class="pub-meta">
+    <span class="pub-tag"><i class="fa-solid fa-house-flood-water"></i> Flood Modelling</span>
+    <span class="pub-tag"><i class="fa-solid fa-cloud-rain"></i> HEC-HMS</span>
+    <span class="pub-tag green"><i class="fa-solid fa-graduation-cap"></i> Training Material</span>
+  </div>
+
+  <h3>Pemodelan Banjir Menggunakan HEC-HMS</h3>
+
+  <div class="pub-authors">
+    Training material
+  </div>
+
+  <div class="pub-source">
+    Practical training material for rainfall-runoff simulation and flood modelling using HEC-HMS to support hydrological and hydraulic analysis.
+  </div>
+
+  <div class="pub-actions">
+    <a class="pub-link" href="assets/training/pemodelan-banjir-menggunakan-hec-hms.pdf" target="_blank">
+      <i class="fa-regular fa-file-pdf"></i> View PDF
+    </a>
+  </div>
+</div>
+```
+
+  </article>
+
+</div>

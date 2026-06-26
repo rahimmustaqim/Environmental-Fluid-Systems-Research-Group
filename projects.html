@@ -12,6 +12,110 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .works-intro {
+      max-width: 880px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .works-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 18px 45px rgba(7, 20, 38, 0.06);
+    }
+
+    .works-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+      color: var(--text);
+    }
+
+    .works-table th {
+      padding: 16px 18px;
+      background: rgba(11, 95, 179, 0.07);
+      color: var(--primary-dark);
+      font-size: .82rem;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+
+    .works-table td {
+      padding: 17px 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .works-table tbody tr {
+      transition: background .2s ease;
+    }
+
+    .works-table tbody tr:hover {
+      background: rgba(11, 95, 179, 0.035);
+    }
+
+    .works-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .work-title {
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .work-type {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(11, 95, 179, 0.08);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .work-type.hydrology {
+      background: rgba(83, 144, 217, 0.13);
+      color: #245b9f;
+    }
+
+    .work-type.hydraulic {
+      background: rgba(2, 62, 138, 0.10);
+      color: #023e8a;
+    }
+
+    .work-type.coastal {
+      background: rgba(0, 119, 182, 0.11);
+      color: #006ca8;
+    }
+
+    .work-year {
+      white-space: nowrap;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    @media (max-width: 760px) {
+      .works-intro {
+        text-align: left;
+      }
+
+      .works-table {
+        min-width: 780px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -53,41 +157,41 @@
 
 ```
 <div class="hero-slide active">
-  <img src="assets/project-hydroclimate.png" alt="Hydrology and climate risk analysis">
+  <img src="assets/project-hydroclimate.png" alt="Hydrology and climate risk analysis project">
   <div class="hero-slide-overlay">
     <div class="hero-slide-content">
       <span class="hero-badge">Selected Project Experience</span>
       <h1>Hydrology & Climate Risk Analysis</h1>
       <p>
         Rainfall-runoff analysis, watershed modelling, flood frequency estimation,
-        and climate impact assessment for water resources planning and infrastructure evaluation.
+        and climate impact assessment for water resources planning.
       </p>
     </div>
   </div>
 </div>
 
 <div class="hero-slide">
-  <img src="assets/project-flood.png" alt="Hydraulic modelling and flood risk analysis">
+  <img src="assets/project-flood.png" alt="Hydraulic modelling and flood risk analysis project">
   <div class="hero-slide-overlay">
     <div class="hero-slide-content">
       <span class="hero-badge">Selected Project Experience</span>
       <h1>Hydraulic Modelling & Flood Risk Analysis</h1>
       <p>
-        Hydraulic and flow modelling for rivers, dams, spillways, drainage systems,
-        scouring, sediment movement, and infrastructure performance.
+        Technical modelling support for rivers, dams, spillways, drainage systems,
+        scouring, sediment movement, and flood-prone infrastructure.
       </p>
     </div>
   </div>
 </div>
 
 <div class="hero-slide">
-  <img src="assets/project-coastal.png" alt="Coastal and marine modelling">
+  <img src="assets/project-coastal.png" alt="Coastal and marine modelling project">
   <div class="hero-slide-overlay">
     <div class="hero-slide-content">
       <span class="hero-badge">Selected Project Experience</span>
       <h1>Coastal & Marine Modelling</h1>
       <p>
-        Coastal hydrodynamic modelling for tides, waves, tsunami, sediment movement,
+        Science-based support for tides, waves, tsunami, sediment transport,
         coastal inundation, and marine hazard assessment.
       </p>
     </div>
@@ -95,21 +199,21 @@
 </div>
 
 <div class="hero-slide">
-  <img src="assets/hydropower.png" alt="Hydropower support">
+  <img src="assets/hydropower.png" alt="Hydropower support project">
   <div class="hero-slide-overlay">
     <div class="hero-slide-content">
       <span class="hero-badge">Selected Project Experience</span>
       <h1>Hydropower Support</h1>
       <p>
-        Technical modelling and assessment support for hydropower infrastructure,
-        including water availability, river flow, sedimentation, flood hazard, and environmental flow.
+        Technical support for hydropower infrastructure, including water availability,
+        river flow conditions, sedimentation risk, flood hazard, and environmental flow.
       </p>
     </div>
   </div>
 </div>
 
 <div class="hero-slide">
-  <img src="assets/windturbine.png" alt="Wind energy support">
+  <img src="assets/windturbine.png" alt="Wind energy support project">
   <div class="hero-slide-overlay">
     <div class="hero-slide-content">
       <span class="hero-badge">Selected Project Experience</span>
@@ -150,16 +254,8 @@
 
 ```
 <p class="works-intro">
-  Selected project experience is listed in a concise format. The role and scope column clarifies the type of technical contribution across hydrology, hydraulics, coastal systems, hydropower, and wind energy support.
+  Selected project experience is listed in a concise format. The role/scope column clarifies the type of contribution across hydrology, hydraulic modelling, coastal systems, hydropower, and wind energy support.
 </p>
-
-<div class="scope-filter">
-  <span class="scope-pill"><i class="fa-solid fa-cloud-rain"></i> Hydrology</span>
-  <span class="scope-pill"><i class="fa-solid fa-water"></i> Hydraulic</span>
-  <span class="scope-pill"><i class="fa-solid fa-water-ladder"></i> Coastal</span>
-  <span class="scope-pill"><i class="fa-solid fa-bolt"></i> Hydropower</span>
-  <span class="scope-pill"><i class="fa-solid fa-fan"></i> Wind Energy</span>
-</div>
 
 <div class="works-table-wrap">
   <table class="works-table">
@@ -167,8 +263,7 @@
       <tr>
         <th>No.</th>
         <th>Project name</th>
-        <th>Business scope</th>
-        <th>Role / Contribution</th>
+        <th>Role / Scope</th>
         <th>Partner / Client</th>
         <th>Location</th>
         <th>Status / Year</th>
@@ -178,14 +273,8 @@
     <tbody>
       <tr>
         <td>01</td>
-        <td>
-          <span class="work-title">Pakil Climate Hazard Assessment</span>
-          <span class="work-summary">
-            Climate-change-related hazard assessment for the Pakil Pumped Storage Plant and Laguna de Bay system.
-          </span>
-        </td>
+        <td><span class="work-title">Pakil Climate Hazard Assessment</span></td>
         <td><span class="work-type hydrology">Hydrology & Climate Risk</span></td>
-        <td>Technical modelling support for rainfall, climate impact, and water-related hazard assessment.</td>
         <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
         <td>Laguna de Bay, Philippines</td>
         <td><span class="work-year">On-going</span></td>
@@ -193,29 +282,17 @@
 
       <tr>
         <td>02</td>
-        <td>
-          <span class="work-title">Pakil Hydrodynamic and Sediment Study</span>
-          <span class="work-summary">
-            Hydrodynamic and sediment transport assessment for the Pakil Pumped Storage Plant–Laguna de Bay system.
-          </span>
-        </td>
-        <td><span class="work-type coastal">Coastal & Marine Modelling</span></td>
-        <td>Hydrodynamic and sediment transport modelling support for lake/coastal water system assessment.</td>
-        <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
-        <td>Laguna de Bay, Philippines</td>
-        <td><span class="work-year">On-going</span></td>
+        <td><span class="work-title">Sustainable Water Supply Guidelines</span></td>
+        <td><span class="work-type hydrology">Guideline Support</span></td>
+        <td>Perum Jasa Tirta II</td>
+        <td>Purwakarta, Indonesia</td>
+        <td><span class="work-year">Aug 2025</span></td>
       </tr>
 
       <tr>
         <td>03</td>
-        <td>
-          <span class="work-title">PIT 110 River Flood Assessment</span>
-          <span class="work-summary">
-            River capacity assessment, overflow risk evaluation, and alternative diversion channel planning.
-          </span>
-        </td>
+        <td><span class="work-title">PIT 110 River Flood Assessment</span></td>
         <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
-        <td>Numerical hydraulic modelling support for river flood assessment and capacity improvement scenarios.</td>
         <td>PT Tectona Mitra Utama</td>
         <td>Borneo, Indonesia</td>
         <td><span class="work-year">Dec 2025</span></td>
@@ -223,14 +300,8 @@
 
       <tr>
         <td>04</td>
-        <td>
-          <span class="work-title">PIT 131 River Flood Assessment</span>
-          <span class="work-summary">
-            Riverbank channel evaluation, flow capacity improvement, and overflow risk assessment.
-          </span>
-        </td>
+        <td><span class="work-title">PIT 131 River Flood Assessment</span></td>
         <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
-        <td>Hydraulic modelling support for river flow evaluation, channel performance, and flood risk assessment.</td>
         <td>PT Tectona Mitra Utama</td>
         <td>Borneo, Indonesia</td>
         <td><span class="work-year">Dec 2025</span></td>
@@ -238,14 +309,8 @@
 
       <tr>
         <td>05</td>
-        <td>
-          <span class="work-title">HEC-HMS & HEC-RAS Training</span>
-          <span class="work-summary">
-            Professional training for rainfall-runoff modelling, river analysis, and 1D/2D flood simulation workflows.
-          </span>
-        </td>
-        <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
-        <td>Training provider for HEC-HMS and HEC-RAS modelling workflow and practical simulation setup.</td>
+        <td><span class="work-title">HEC-HMS & HEC-RAS Training</span></td>
+        <td><span class="work-type hydraulic">Training Provider</span></td>
         <td>PT Saumy Gemilang Indonesia</td>
         <td>Online via Zoom Meeting</td>
         <td><span class="work-year">Aug 2025</span></td>
@@ -253,54 +318,14 @@
 
       <tr>
         <td>06</td>
-        <td>
-          <span class="work-title">Sustainable Water Supply Guidelines</span>
-          <span class="work-summary">
-            Technical guideline support for sustainable water supply management, infrastructure operation, and environmental protection.
-          </span>
-        </td>
-        <td><span class="work-type hydrology">Hydrology & Water Resources</span></td>
-        <td>Guideline support for water allocation, planning, infrastructure operation, and sustainability review.</td>
-        <td>Perum Jasa Tirta II</td>
-        <td>Purwakarta, Indonesia</td>
-        <td><span class="work-year">Aug 2025</span></td>
-      </tr>
-
-      <tr>
-        <td>07</td>
-        <td>
-          <span class="work-title">Hydropower Infrastructure Support</span>
-          <span class="work-summary">
-            Technical support related to water availability, river flow conditions, sedimentation, and flood hazard for hydropower planning.
-          </span>
-        </td>
-        <td><span class="work-type energy">Hydropower Support</span></td>
-        <td>Hydrological and hydraulic assessment support for hydropower-related infrastructure and environmental flow considerations.</td>
-        <td>Project-based / Collaboration-based</td>
-        <td>Indonesia / International</td>
-        <td><span class="work-year">Available Scope</span></td>
-      </tr>
-
-      <tr>
-        <td>08</td>
-        <td>
-          <span class="work-title">Wind Energy Technical Support</span>
-          <span class="work-summary">
-            Wind-flow analysis, turbine site assessment, turbulence and wake evaluation, and environmental condition review.
-          </span>
-        </td>
-        <td><span class="work-type energy">Wind Energy Support</span></td>
-        <td>Specialist-supported wind energy analysis for turbine and wind farm planning.</td>
-        <td>Specialist Collaboration</td>
-        <td>Indonesia / International</td>
-        <td><span class="work-year">Available Scope</span></td>
+        <td><span class="work-title">Pakil Hydrodynamic and Sediment Study</span></td>
+        <td><span class="work-type coastal">Coastal & Marine Modelling</span></td>
+        <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
+        <td>Laguna de Bay, Philippines</td>
+        <td><span class="work-year">On-going</span></td>
       </tr>
     </tbody>
   </table>
-</div>
-
-<div class="note-box">
-  <strong>Note:</strong> Project names, partners, and scopes are presented to describe previous project, institutional, or collaboration experience. They do not imply endorsement, sponsorship, or official partnership unless explicitly stated.
 </div>
 ```
 
@@ -343,6 +368,57 @@
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+  let heroSlideIndex = 0;
+  const heroSlides = document.querySelectorAll(".hero-slide");
+  const heroDots = document.querySelectorAll(".hero-dot");
+  let heroAutoSlide;
+
+  function showHeroSlide(index) {
+    if (!heroSlides.length) return;
+
+    if (index >= heroSlides.length) {
+      heroSlideIndex = 0;
+    } else if (index < 0) {
+      heroSlideIndex = heroSlides.length - 1;
+    } else {
+      heroSlideIndex = index;
+    }
+
+    heroSlides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === heroSlideIndex);
+    });
+
+    heroDots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === heroSlideIndex);
+    });
+  }
+
+  function changeHeroSlide(step) {
+    showHeroSlide(heroSlideIndex + step);
+    resetHeroAutoSlide();
+  }
+
+  function goToHeroSlide(index) {
+    showHeroSlide(index);
+    resetHeroAutoSlide();
+  }
+
+  function startHeroAutoSlide() {
+    heroAutoSlide = setInterval(() => {
+      showHeroSlide(heroSlideIndex + 1);
+    }, 4000);
+  }
+
+  function resetHeroAutoSlide() {
+    clearInterval(heroAutoSlide);
+    startHeroAutoSlide();
+  }
+
+  showHeroSlide(0);
+  startHeroAutoSlide();
+</script>
 
 </body>
 </html>

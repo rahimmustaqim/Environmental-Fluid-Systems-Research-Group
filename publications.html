@@ -211,6 +211,11 @@
       border-color: var(--primary);
     }
 
+    .pub-link.disabled {
+      pointer-events: none;
+      opacity: .65;
+    }
+
     .pub-note {
       margin-top: 30px;
       padding: 22px;
@@ -309,14 +314,13 @@
     </div>
 
 ```
-<h1>Selected research outputs, technical reports, and professional contributions.</h1>
+<h1>Selected publications, conference papers, and training materials.</h1>
 
 <div class="accent-line"></div>
 
 <p>
-  This page presents selected publications, technical outputs, guidelines, and research-related materials
-  produced through academic, professional, and collaborative activities in hydrology, hydraulics, coastal systems,
-  hydropower, and wind energy support.
+  This page presents selected academic publications, conference papers, and technical training materials
+  related to hydrology, hydraulic modelling, coastal systems, sediment processes, hydropower, and wind energy support.
 </p>
 ```
 
@@ -331,189 +335,113 @@
 
 ```
 <p class="pub-intro">
-  The list below includes selected technical documents, project-related outputs, and publication records.
-  Formal journal and conference publications can be added as they become available.
+  The list below includes selected publications and training materials. Additional technical reports,
+  downloadable PDFs, and updated publication links can be added as they become available.
 </p>
 
 <div class="pub-filter">
   <button class="filter-btn active" onclick="filterPublications('all', this)">All</button>
-  <button class="filter-btn" onclick="filterPublications('report', this)">Technical Report</button>
-  <button class="filter-btn" onclick="filterPublications('guideline', this)">Guideline</button>
+  <button class="filter-btn" onclick="filterPublications('journal', this)">Journal</button>
+  <button class="filter-btn" onclick="filterPublications('conference', this)">Conference Paper</button>
   <button class="filter-btn" onclick="filterPublications('training', this)">Training Material</button>
-  <button class="filter-btn" onclick="filterPublications('academic', this)">Academic Output</button>
 </div>
 
 <div class="pub-list">
 
-  <article class="pub-card" data-category="report">
+  <article class="pub-card" data-category="conference">
     <div class="pub-year">
       <div>
-        <strong>2026</strong>
-        <span>Technical Report</span>
+        <strong>2024</strong>
+        <span>Conference</span>
       </div>
     </div>
 
     <div class="pub-content">
       <div class="pub-meta">
-        <span class="pub-tag"><i class="fa-solid fa-cloud-rain"></i> Hydrology</span>
+        <span class="pub-tag green"><i class="fa-solid fa-dam"></i> Dam Safety</span>
         <span class="pub-tag"><i class="fa-solid fa-water"></i> Hydraulic</span>
-        <span class="pub-tag green"><i class="fa-solid fa-cloud-sun-rain"></i> Climate Risk</span>
+        <span class="pub-tag"><i class="fa-solid fa-shield-halved"></i> Mitigation</span>
       </div>
 
-      <h3>Climate-Change-Related Hazard Assessment for Pakil Pumped Storage Plant</h3>
+      <h3>Kajian Upaya Mitigasi Keruntuhan Bendungan Jatigede</h3>
 
       <div class="pub-authors">
-        Technical modelling support document
+        Taufik, S.R., Radita, Elkayoan., Mustaqim, R.
       </div>
 
       <div class="pub-source">
-        Project-related technical output covering rainfall, hydrology, water level assessment,
-        and climate-change-related hazard considerations for the Pakil Pumped Storage Plant
-        and Laguna de Bay system.
+        PIT-HATHI-41, pp. 152–162. Conference Paper.
       </div>
 
       <div class="pub-actions">
-        <a class="pub-link" href="projects.html">
-          <i class="fa-solid fa-folder-open"></i> Related Project
+        <a class="pub-link disabled" href="#">
+          <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
         </a>
       </div>
     </div>
   </article>
 
-  <article class="pub-card" data-category="report">
+  <article class="pub-card" data-category="journal">
     <div class="pub-year">
       <div>
-        <strong>2026</strong>
-        <span>Technical Report</span>
+        <strong>2022</strong>
+        <span>Journal</span>
       </div>
     </div>
 
     <div class="pub-content">
       <div class="pub-meta">
         <span class="pub-tag blue"><i class="fa-solid fa-water"></i> Coastal</span>
-        <span class="pub-tag"><i class="fa-solid fa-layer-group"></i> Sediment</span>
-        <span class="pub-tag green"><i class="fa-solid fa-bolt"></i> Hydropower</span>
+        <span class="pub-tag"><i class="fa-solid fa-computer"></i> Modelling</span>
+        <span class="pub-tag green"><i class="fa-solid fa-wave-square"></i> Hydrodynamics</span>
       </div>
 
-      <h3>Hydrodynamic and Sediment Transport Assessment for Pakil Pumped Storage Plant</h3>
+      <h3>Hydrodynamics Analysis in Bedono Beach Demak Regency, Central Java Indonesia: Open Resource Processing for Modeling</h3>
 
       <div class="pub-authors">
-        Technical modelling support document
+        Mustaqim, R., Widyaningtias., Bumi, I.S., Suryadi, Y., Nugroho, E.O., Kardhana, H., Adityawan, M.N.
       </div>
 
       <div class="pub-source">
-        Project-related technical output covering hydrodynamic simulation, sediment transport,
-        and water-system assessment for the Pakil Pumped Storage Plant and Laguna de Bay system.
+        Jurnal Teknik Sipil ITB, Vol. 29 No. 3. DOI: 10.5614/jts.2022.29.3.3.
       </div>
 
       <div class="pub-actions">
-        <a class="pub-link" href="projects.html">
-          <i class="fa-solid fa-folder-open"></i> Related Project
+        <a class="pub-link" href="https://doi.org/10.5614/jts.2022.29.3.3" target="_blank">
+          <i class="fa-solid fa-link"></i> Open DOI
         </a>
       </div>
     </div>
   </article>
 
-  <article class="pub-card" data-category="report">
+  <article class="pub-card" data-category="conference">
     <div class="pub-year">
       <div>
-        <strong>2025</strong>
-        <span>Technical Report</span>
+        <strong>2021</strong>
+        <span>Conference</span>
       </div>
     </div>
 
     <div class="pub-content">
       <div class="pub-meta">
-        <span class="pub-tag"><i class="fa-solid fa-house-flood-water"></i> Flood Risk</span>
-        <span class="pub-tag"><i class="fa-solid fa-water"></i> Hydraulic</span>
-        <span class="pub-tag green"><i class="fa-solid fa-map"></i> River Capacity</span>
+        <span class="pub-tag blue"><i class="fa-solid fa-water"></i> Coastal</span>
+        <span class="pub-tag"><i class="fa-solid fa-layer-group"></i> Sedimentation</span>
+        <span class="pub-tag green"><i class="fa-solid fa-seedling"></i> Permeable Structure</span>
       </div>
 
-      <h3>Hydrology and Hydraulic Modelling for River Flood Assessment PIT 110</h3>
+      <h3>Analisis Sedimentasi Dengan Penerapan Permeable Structure di Pantai Bedono, Kabupaten Demak, Jawa Tengah</h3>
 
       <div class="pub-authors">
-        Technical modelling support document
+        Mustaqim, R., Widyaningtias., Pratama, M.B., Suryadi, Y., Nugroho, E.O., Kardhana, H., Bumi, I.S.
       </div>
 
       <div class="pub-source">
-        Project-related technical output for rainfall-runoff analysis and river hydraulic simulation
-        to assess flood inundation, overflow risk, and alternative diversion channel planning.
+        PIT-HATHI-38, pp. 461–470. Conference Paper.
       </div>
 
       <div class="pub-actions">
-        <a class="pub-link" href="projects.html">
-          <i class="fa-solid fa-folder-open"></i> Related Project
-        </a>
-      </div>
-    </div>
-  </article>
-
-  <article class="pub-card" data-category="report">
-    <div class="pub-year">
-      <div>
-        <strong>2025</strong>
-        <span>Technical Report</span>
-      </div>
-    </div>
-
-    <div class="pub-content">
-      <div class="pub-meta">
-        <span class="pub-tag"><i class="fa-solid fa-house-flood-water"></i> Flood Assessment</span>
-        <span class="pub-tag"><i class="fa-solid fa-gauge-high"></i> Hydraulic</span>
-        <span class="pub-tag green"><i class="fa-solid fa-map-location-dot"></i> Inundation</span>
-      </div>
-
-      <h3>Hydrology and Hydraulic Modelling for River Flood Assessment PIT 131</h3>
-
-      <div class="pub-authors">
-        Technical modelling support document
-      </div>
-
-      <div class="pub-source">
-        Project-related technical output for river hydraulic assessment, flood inundation analysis,
-        riverbank channel design evaluation, and flow capacity improvement.
-      </div>
-
-      <div class="pub-actions">
-        <a class="pub-link" href="projects.html">
-          <i class="fa-solid fa-folder-open"></i> Related Project
-        </a>
-      </div>
-    </div>
-  </article>
-
-  <article class="pub-card" data-category="guideline">
-    <div class="pub-year">
-      <div>
-        <strong>2025</strong>
-        <span>Guideline</span>
-      </div>
-    </div>
-
-    <div class="pub-content">
-      <div class="pub-meta">
-        <span class="pub-tag"><i class="fa-solid fa-file-lines"></i> Guideline</span>
-        <span class="pub-tag"><i class="fa-solid fa-seedling"></i> Water Resources</span>
-        <span class="pub-tag green"><i class="fa-solid fa-droplet"></i> Water Supply</span>
-      </div>
-
-      <h3>Guidelines for Sustainable Water Supply Management</h3>
-
-      <div class="pub-authors">
-        Technical guideline document
-      </div>
-
-      <div class="pub-source">
-        Technical guideline output for integrated planning, efficient water allocation,
-        infrastructure operation, and environmental protection to support long-term water security.
-      </div>
-
-      <div class="pub-actions">
-        <a class="pub-link" href="assets/jasatirta.pdf" target="_blank">
-          <i class="fa-regular fa-file-pdf"></i> View PDF
-        </a>
-        <a class="pub-link" href="projects.html">
-          <i class="fa-solid fa-folder-open"></i> Related Project
+        <a class="pub-link disabled" href="#">
+          <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
         </a>
       </div>
     </div>
@@ -529,60 +457,57 @@
 
     <div class="pub-content">
       <div class="pub-meta">
-        <span class="pub-tag"><i class="fa-solid fa-cloud-rain"></i> HEC-HMS</span>
-        <span class="pub-tag"><i class="fa-solid fa-water"></i> HEC-RAS</span>
-        <span class="pub-tag green"><i class="fa-solid fa-chalkboard-user"></i> Training</span>
+        <span class="pub-tag"><i class="fa-solid fa-map-location-dot"></i> QGIS</span>
+        <span class="pub-tag"><i class="fa-solid fa-cloud-rain"></i> Hydrology</span>
+        <span class="pub-tag green"><i class="fa-solid fa-graduation-cap"></i> Training Material</span>
       </div>
 
-      <h3>HEC-HMS and HEC-RAS Modelling Training Material</h3>
+      <h3>Catchment Delineation Using QGIS</h3>
 
       <div class="pub-authors">
-        Professional training material
+        Training material
       </div>
 
       <div class="pub-source">
-        Training-related technical material covering rainfall-runoff modelling, river analysis,
-        and 1D/2D flood simulation workflows for practical engineering applications.
+        Practical training material for watershed and catchment delineation using QGIS to support hydrological analysis and spatial water resources assessment.
       </div>
 
       <div class="pub-actions">
-        <a class="pub-link" href="projects.html">
-          <i class="fa-solid fa-folder-open"></i> Related Project
+        <a class="pub-link disabled" href="#">
+          <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
         </a>
       </div>
     </div>
   </article>
 
-  <article class="pub-card" data-category="academic">
+  <article class="pub-card" data-category="training">
     <div class="pub-year">
       <div>
         <strong>2025</strong>
-        <span>Academic</span>
+        <span>Training</span>
       </div>
     </div>
 
     <div class="pub-content">
       <div class="pub-meta">
-        <span class="pub-tag blue"><i class="fa-solid fa-water"></i> Coastal</span>
-        <span class="pub-tag"><i class="fa-solid fa-house-tsunami"></i> Tsunami</span>
-        <span class="pub-tag green"><i class="fa-solid fa-cubes"></i> Numerical Model</span>
+        <span class="pub-tag"><i class="fa-solid fa-house-flood-water"></i> Flood Modelling</span>
+        <span class="pub-tag"><i class="fa-solid fa-cloud-rain"></i> HEC-HMS</span>
+        <span class="pub-tag green"><i class="fa-solid fa-graduation-cap"></i> Training Material</span>
       </div>
 
-      <h3>Numerical Modelling of Coastal and Tsunami-Driven Flow Processes</h3>
+      <h3>Pemodelan Banjir Menggunakan HEC-HMS</h3>
 
       <div class="pub-authors">
-        Academic research output
+        Training material
       </div>
 
       <div class="pub-source">
-        Academic output related to coastal hydrodynamics, tsunami-driven flow processes,
-        and numerical simulation of water-related hazards. Full publication details can be added
-        after journal or conference submission is finalized.
+        Practical training material for rainfall-runoff simulation and flood modelling using HEC-HMS to support hydrological and hydraulic analysis.
       </div>
 
       <div class="pub-actions">
-        <a class="pub-link" href="projects.html">
-          <i class="fa-solid fa-folder-open"></i> Related Project
+        <a class="pub-link disabled" href="#">
+          <i class="fa-regular fa-file-pdf"></i> PDF Coming Soon
         </a>
       </div>
     </div>
@@ -593,11 +518,10 @@
 <div class="pub-note">
   <i class="fa-solid fa-circle-info"></i>
   <div>
-    <h3>Technical outputs can be updated as the work develops.</h3>
+    <h3>PDF files can be added later.</h3>
     <p>
-      Formal journal articles, conference papers, DOI links, and downloadable summaries can be added later.
-      Until then, this page can present selected technical outputs, guidelines, training materials, and
-      project-related research contributions.
+      When the training PDFs are ready, upload them to the assets folder and replace the PDF Coming Soon links with the correct file paths.
+      This page is designed to remain credible even while the publication list is still growing.
     </p>
   </div>
 </div>

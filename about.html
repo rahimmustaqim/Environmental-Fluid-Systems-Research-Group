@@ -55,8 +55,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(5, 45, 88, .96), rgba(5, 95, 150, .78), rgba(10, 145, 120, .48)),
-        linear-gradient(180deg, rgba(5, 20, 38, .12), rgba(5, 20, 38, .58));
+        linear-gradient(90deg, rgba(5, 45, 88, .96), rgba(5, 95, 150, .80), rgba(10, 145, 120, .50)),
+        linear-gradient(180deg, rgba(5, 20, 38, .12), rgba(5, 20, 38, .62));
     }
 
     .about-hero-content {
@@ -81,7 +81,7 @@
     }
 
     .about-hero h1 {
-      font-size: clamp(38px, 5vw, 66px);
+      font-size: clamp(40px, 5vw, 66px);
       line-height: 1.05;
       letter-spacing: -1.8px;
       margin-bottom: 22px;
@@ -105,47 +105,80 @@
       margin-bottom: 22px;
     }
 
-    .sdg-inline {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 22px 0 18px;
+    .sdg-focus {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 34px 0 26px;
+      max-width: 720px;
     }
 
-    .sdg-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      color: #ffffff;
-      font-size: 0.84rem;
-      font-weight: 800;
-      backdrop-filter: blur(8px);
+    .sdg-card {
+      display: block;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .18);
+      border: 1px solid rgba(255, 255, 255, .35);
+      transition: .25s ease;
     }
 
-    .sdg-badge span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 28px;
-      height: 28px;
-      padding: 0 8px;
-      border-radius: 999px;
-      background: rgba(37, 184, 90, 0.95);
-      color: #ffffff;
-      font-size: 0.76rem;
+    .sdg-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 42px rgba(0, 0, 0, .22);
+    }
+
+    .sdg-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sdg-fallback {
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      text-align: left;
+      color: #fff;
+    }
+
+    .sdg-fallback strong {
+      display: block;
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 10px;
       font-weight: 900;
     }
 
+    .sdg-fallback span {
+      display: block;
+      font-size: .96rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .sdg-6 {
+      background: #26bde2;
+    }
+
+    .sdg-7 {
+      background: #fcc30b;
+      color: #fff;
+    }
+
+    .sdg-11 {
+      background: #fd9d24;
+    }
+
     .sdg-note {
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 30px;
       max-width: 760px;
+      color: rgba(255, 255, 255, .88);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 30px;
     }
 
     .about-slide-dots {
@@ -175,18 +208,10 @@
         linear-gradient(135deg, #f6fbff 0%, #ffffff 72%);
     }
 
-    .team-intro {
-      max-width: 880px;
-      margin: 0 auto 36px;
-      color: var(--muted);
-      line-height: 1.75;
-      text-align: center;
-    }
-
-    .leadership-card {
+    .founder-card {
       display: grid;
-      grid-template-columns: 350px 1fr;
-      gap: 36px;
+      grid-template-columns: 330px 1fr;
+      gap: 38px;
       align-items: center;
       background: #fff;
       border: 1px solid var(--line);
@@ -196,7 +221,7 @@
       margin-bottom: 36px;
     }
 
-    .leader-photo {
+    .founder-photo {
       width: 100%;
       aspect-ratio: 4 / 4.5;
       border-radius: 26px;
@@ -205,13 +230,22 @@
       border: 1px solid var(--line);
     }
 
-    .leader-photo img {
+    .founder-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .leader-content .leader-label {
+    .founder-content h3 {
+      color: var(--primary-dark);
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    .founder-role {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -221,45 +255,31 @@
       border-radius: 999px;
       font-weight: 850;
       font-size: .86rem;
-      margin-bottom: 16px;
+      margin-bottom: 22px;
     }
 
-    .leader-content h3 {
-      color: var(--primary-dark);
-      font-size: clamp(2rem, 3.4vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      margin-bottom: 14px;
-      font-weight: 900;
-    }
-
-    .leader-content p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 14px;
-    }
-
-    .expertise-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 20px 0 26px;
-    }
-
-    .expertise-tag {
-      padding: 7px 12px;
-      border-radius: 999px;
+    .founder-message {
+      position: relative;
+      padding: 28px 30px;
+      border-radius: 24px;
       background: var(--primary-soft);
-      color: var(--primary-dark);
       border: 1px solid var(--line);
-      font-weight: 750;
-      font-size: .84rem;
+      color: var(--primary-dark);
+      font-size: 1.12rem;
+      line-height: 1.8;
+      font-weight: 650;
     }
 
-    .profile-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .founder-message::before {
+      content: "“";
+      position: absolute;
+      top: -18px;
+      left: 20px;
+      color: var(--green);
+      font-size: 5rem;
+      line-height: 1;
+      font-weight: 900;
+      opacity: .45;
     }
 
     .technical-team-wrap {
@@ -360,11 +380,16 @@
         padding: 74px 0 56px;
       }
 
-      .leadership-card {
+      .sdg-focus {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 620px;
+      }
+
+      .founder-card {
         grid-template-columns: 1fr;
       }
 
-      .leader-photo {
+      .founder-photo {
         max-width: 420px;
       }
 
@@ -373,7 +398,25 @@
       }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
+      .sdg-focus {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .sdg-fallback {
+        min-height: 112px;
+        padding: 12px;
+      }
+
+      .sdg-fallback strong {
+        font-size: 2rem;
+      }
+
+      .sdg-fallback span {
+        font-size: .66rem;
+      }
+
       .technical-team-grid {
         grid-template-columns: 1fr;
       }
@@ -384,26 +427,14 @@
         font-size: 2.35rem;
       }
 
-      .sdg-inline {
-        gap: 8px;
-      }
-
-      .sdg-badge {
-        font-size: 0.78rem;
-        padding: 8px 12px;
-      }
-
-      .sdg-note {
-        font-size: 0.9rem;
-      }
-
-      .leadership-card {
+      .founder-card {
         padding: 22px;
         border-radius: 24px;
       }
 
-      .team-intro {
-        text-align: left;
+      .founder-message {
+        padding: 24px 22px;
+        font-size: 1rem;
       }
     }
   </style>
@@ -469,36 +500,60 @@
   <div class="container">
     <div class="about-hero-content">
       <div class="about-kicker">
-        <i class="fa-solid fa-flask"></i>
-        Research-Based Engineering Support
+        <i class="fa-solid fa-seedling"></i>
+        Sustainable Living Environment
       </div>
 
 ```
-  <h1>About Environmental Fluid Systems Research Group</h1>
+  <h1>Building a safer and more sustainable environment through science-based engineering.</h1>
 
   <div class="accent-line"></div>
 
   <h2>
-    Numerical Modelling, Data Analysis, and Technical Support for Water, Coastal, Hydropower, and Wind Energy Systems
+    We support water, energy, and environmental infrastructure toward communities that are safer, more resilient, and better to live in.
   </h2>
 
   <p>
-    Environmental Fluid Systems Research Group supports engineering consultants, researchers,
-    and public institutions through science-based analysis in hydrology, hydraulic modelling,
-    coastal systems, hydropower, wind energy, and environmental infrastructure.
+    Environmental Fluid Systems Research Group stands for practical research, numerical modelling,
+    and data-driven analysis to support sustainable water resources, renewable energy systems,
+    and resilient communities.
   </p>
 
-  <div class="sdg-inline">
-    <div class="sdg-badge"><span>SDG 6</span> Clean Water and Sanitation</div>
-    <div class="sdg-badge"><span>SDG 7</span> Affordable and Clean Energy</div>
-    <div class="sdg-badge"><span>SDG 9</span> Industry, Innovation and Infrastructure</div>
-    <div class="sdg-badge"><span>SDG 11</span> Sustainable Cities and Communities</div>
-    <div class="sdg-badge"><span>SDG 13</span> Climate Action</div>
+  <div class="sdg-focus">
+    <a class="sdg-card" href="https://sdgs.un.org/goals/goal6" target="_blank" aria-label="SDG 6 Clean Water and Sanitation">
+      <img src="assets/sdg-6.png" alt="SDG 6 Clean Water and Sanitation" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div class="sdg-fallback sdg-6" style="display:none;">
+        <div>
+          <strong>6</strong>
+          <span>Clean Water<br>and Sanitation</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="sdg-card" href="https://sdgs.un.org/goals/goal7" target="_blank" aria-label="SDG 7 Affordable and Clean Energy">
+      <img src="assets/sdg-7.png" alt="SDG 7 Affordable and Clean Energy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div class="sdg-fallback sdg-7" style="display:none;">
+        <div>
+          <strong>7</strong>
+          <span>Affordable and<br>Clean Energy</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="sdg-card" href="https://sdgs.un.org/goals/goal11" target="_blank" aria-label="SDG 11 Sustainable Cities and Communities">
+      <img src="assets/sdg-11.png" alt="SDG 11 Sustainable Cities and Communities" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div class="sdg-fallback sdg-11" style="display:none;">
+        <div>
+          <strong>11</strong>
+          <span>Sustainable Cities<br>and Communities</span>
+        </div>
+      </div>
+    </a>
   </div>
 
   <p class="sdg-note">
-    Our work is aligned with selected Sustainable Development Goals through research-based support
-    for water resources, resilient infrastructure, climate adaptation, and renewable energy systems.
+    Our work is aligned with SDG 6, SDG 7, and SDG 11 through technical support for clean water,
+    renewable energy, and sustainable communities.
   </p>
 
   <div class="hero-actions">
@@ -527,48 +582,26 @@
   <div class="container">
     <div class="section-title">
       <h2>Team</h2>
-      <p>
-        EFSRG is led by the CEO & Founder and supported by a technical team with project-based expertise.
-      </p>
     </div>
 
 ```
-<div class="leadership-card">
-  <div class="leader-photo">
+<div class="founder-card">
+  <div class="founder-photo">
     <img src="assets/rahim-profile.jpg" alt="Rahim Mustaqim">
   </div>
 
-  <div class="leader-content">
-    <div class="leader-label">
+  <div class="founder-content">
+    <div class="founder-role">
       <i class="fa-solid fa-user-tie"></i>
       CEO & Founder
     </div>
 
     <h3>Rahim Mustaqim</h3>
 
-    <p>
-      Leads the technical direction of Environmental Fluid Systems Research Group,
-      with focus on hydrodynamic analysis, hydraulic modelling, coastal systems,
-      sediment transport, hydrology, and water-related infrastructure assessment.
-    </p>
-
-    <div class="expertise-tags">
-      <span class="expertise-tag">Hydraulic Modelling</span>
-      <span class="expertise-tag">Coastal Systems</span>
-      <span class="expertise-tag">Hydrology</span>
-      <span class="expertise-tag">Sediment Transport</span>
-      <span class="expertise-tag">Hydropower Support</span>
-      <span class="expertise-tag">Technical Reporting</span>
-    </div>
-
-    <div class="profile-actions">
-      <a class="btn btn-primary" href="https://rahimmustaqim.github.io/MYPortofolio/" target="_blank">
-        <i class="fa-solid fa-user"></i> Personal Profile
-      </a>
-
-      <a class="btn btn-outline" href="publications.html">
-        <i class="fa-solid fa-book-open"></i> Publications
-      </a>
+    <div class="founder-message">
+      We believe that engineering analysis should not only solve technical problems,
+      but also help create a safer, more resilient, and more sustainable environment
+      for people to live in.
     </div>
   </div>
 </div>
@@ -616,36 +649,6 @@
       <div class="member-content">
         <h4>Team Member Name</h4>
         <p>Coastal & Marine Modelling</p>
-
-        <a href="#" target="_blank">
-          View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
-      </div>
-    </article>
-
-    <article class="technical-member-card">
-      <div class="member-photo">
-        <img src="assets/team-member-4.jpg" alt="Technical Team Member">
-      </div>
-
-      <div class="member-content">
-        <h4>Team Member Name</h4>
-        <p>Hydropower Support</p>
-
-        <a href="#" target="_blank">
-          View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
-      </div>
-    </article>
-
-    <article class="technical-member-card">
-      <div class="member-photo">
-        <img src="assets/team-member-5.jpg" alt="Technical Team Member">
-      </div>
-
-      <div class="member-content">
-        <h4>Team Member Name</h4>
-        <p>Wind Energy Support</p>
 
         <a href="#" target="_blank">
           View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i>

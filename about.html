@@ -229,6 +229,127 @@
       background: #fff;
     }
 
+
+    .video-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(11, 95, 179, .12), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(37, 184, 90, .10), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #f6fbff 100%);
+    }
+
+    .video-showcase {
+      display: grid;
+      grid-template-columns: .9fr 1.15fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .video-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+      border: 1px solid var(--line);
+      font-size: .82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 18px;
+    }
+
+    .video-content h2 {
+      color: var(--primary-dark);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .video-content p {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.85;
+      margin-bottom: 22px;
+      max-width: 600px;
+    }
+
+    .video-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .video-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--primary-dark);
+      font-weight: 750;
+      line-height: 1.55;
+    }
+
+    .video-point i {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--green));
+      font-size: .78rem;
+      margin-top: 1px;
+    }
+
+    .youtube-card {
+      position: relative;
+      border-radius: 32px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .youtube-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 24px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(5, 45, 88, .94), rgba(11, 95, 179, .82)),
+        url('assets/activity3.jpeg') center/cover;
+    }
+
+    .youtube-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 8px 4px;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    .video-caption i {
+      color: #ff0033;
+      font-size: 1.2rem;
+    }
+
     .team-section {
       background:
         radial-gradient(circle at top right, rgba(37, 184, 90, 0.10), transparent 30%),
@@ -409,6 +530,16 @@
     }
 
     @media (max-width: 980px) {
+
+      .video-showcase {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .video-content p {
+        max-width: none;
+      }
+
       .about-hero {
         min-height: auto;
         padding: 74px 0 56px;
@@ -440,6 +571,21 @@
     }
 
     @media (max-width: 560px) {
+
+      .youtube-card {
+        border-radius: 24px;
+        padding: 10px;
+      }
+
+      .youtube-frame {
+        border-radius: 18px;
+      }
+
+      .video-caption {
+        align-items: flex-start;
+        padding: 14px 4px 2px;
+      }
+
       .about-hero h1 {
         font-size: 2.35rem;
       }
@@ -642,6 +788,63 @@
   </div>
 </div>
 
+  </div>
+</section>
+
+
+<section class="section video-section">
+  <div class="container">
+    <div class="video-showcase">
+      <div class="video-content">
+        <div class="video-kicker">
+          <i class="fa-brands fa-youtube"></i>
+          Featured Video
+        </div>
+
+        <h2>Why Environmental Fluid Systems Matter</h2>
+
+        <p>
+          Water, sediment, climate, and environmental flow processes strongly influence
+          infrastructure safety, disaster risk, and sustainable development. Through
+          research-based modelling and technical analysis, EFSRG supports better planning
+          and decision-making for water and environmental systems.
+        </p>
+
+        <div class="video-points">
+          <div class="video-point">
+            <i class="fa-solid fa-check"></i>
+            <span>Explaining the importance of water, flood, sediment, coastal, and climate-related analysis.</span>
+          </div>
+
+          <div class="video-point">
+            <i class="fa-solid fa-check"></i>
+            <span>Helping visitors understand how modelling supports safer infrastructure and communities.</span>
+          </div>
+
+          <div class="video-point">
+            <i class="fa-solid fa-check"></i>
+            <span>Connecting EFSRG research expertise with practical environmental engineering problems.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="youtube-card">
+        <div class="youtube-frame">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+            title="EFSRG introduction video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="video-caption">
+          <i class="fa-brands fa-youtube"></i>
+          <span>Replace <strong>YOUR_YOUTUBE_VIDEO_ID</strong> with the ID of your uploaded YouTube video.</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

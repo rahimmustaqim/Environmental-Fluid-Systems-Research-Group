@@ -2481,118 +2481,162 @@ max-height: 40px;
 }
 }
 /* =========================
-OUR EXPERTISE - FULL IMAGE OVERLAY CARDS
+OUR EXPERTISE - SHOWCASE IMAGE CARDS
 ========================= */
 
-.expertise-grid {
+.expertise-showcase-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
-.expertise-grid .project-card,
-.expertise-grid .expertise-card {
+.expertise-showcase-card {
   position: relative;
-  display: block !important;
-  grid-template-columns: 1fr !important;
-  min-height: 310px;
-  padding: 0 !important;
+  min-height: 360px;
+  border-radius: 24px;
   overflow: hidden;
-  border-radius: var(--radius);
   cursor: pointer;
-  background: var(--primary-soft);
+  box-shadow: 0 18px 45px rgba(7, 54, 111, 0.14);
+  border: 1px solid var(--line);
+  background: var(--primary-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.expertise-grid .project-card img,
-.expertise-grid .expertise-card img {
-  width: 100%;
-  height: 100%;
-  min-height: 310px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.35s ease, filter 0.35s ease;
+.expertise-showcase-card:first-child {
+  grid-column: span 2;
+  min-height: 430px;
 }
 
-.expertise-grid .project-card:hover img,
-.expertise-grid .expertise-card:hover img {
-  transform: scale(1.05);
-  filter: saturate(1.08) contrast(1.03);
-}
-
-.expertise-grid .project-card .project-body {
-  display: none !important;
-}
-
-.expertise-card-overlay {
+.expertise-showcase-card img {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.expertise-showcase-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 25, 55, 0.86) 0%,
+      rgba(5, 45, 88, 0.62) 42%,
+      rgba(5, 45, 88, 0.20) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 20, 38, 0.10) 0%,
+      rgba(5, 20, 38, 0.58) 100%
+    );
+}
+
+.expertise-showcase-content {
+  position: relative;
+  z-index: 2;
+  min-height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px 22px;
-  background: linear-gradient(
-    to top,
-    rgba(7, 54, 111, 0.90) 0%,
-    rgba(7, 54, 111, 0.55) 42%,
-    rgba(7, 54, 111, 0.10) 100%
-  );
+  max-width: 720px;
+  padding: 42px;
+  color: #ffffff;
 }
 
-.expertise-card-overlay h3 {
-  margin: 0 0 8px !important;
-  color: #ffffff !important;
-  font-size: 1.28rem !important;
-  line-height: 1.25;
+.expertise-showcase-content span {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 850;
+  backdrop-filter: blur(8px);
+}
+
+.expertise-showcase-content h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 1.05;
   font-weight: 900;
-  max-width: 94%;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
+  letter-spacing: -0.05em;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
 }
 
-.expertise-card-overlay p {
-  margin: 0 !important;
-  color: rgba(255, 255, 255, 0.90) !important;
-  font-size: 0.9rem !important;
-  line-height: 1.45;
-  max-width: 94%;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+.expertise-showcase-card:not(:first-child) .expertise-showcase-content h3 {
+  font-size: clamp(1.6rem, 2.4vw, 2.55rem);
 }
 
-@media (max-width: 1100px) {
-  .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .expertise-grid .project-card,
-  .expertise-grid .expertise-card,
-  .expertise-grid .project-card img,
-  .expertise-grid .expertise-card img {
-    min-height: 285px;
-  }
+.expertise-showcase-content p {
+  margin: 0;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  line-height: 1.65;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 640px) {
-  .expertise-grid {
+.expertise-showcase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 58px rgba(7, 54, 111, 0.20);
+}
+
+.expertise-showcase-card:hover img {
+  transform: scale(1.05);
+  filter: saturate(1.08) contrast(1.04);
+}
+
+@media (max-width: 900px) {
+  .expertise-showcase-grid {
     grid-template-columns: 1fr;
   }
 
-  .expertise-grid .project-card,
-  .expertise-grid .expertise-card,
-  .expertise-grid .project-card img,
-  .expertise-grid .expertise-card img {
-    min-height: 240px;
+  .expertise-showcase-card:first-child {
+    grid-column: span 1;
+    min-height: 360px;
   }
 
-  .expertise-card-overlay {
-    padding: 20px 18px;
+  .expertise-showcase-card {
+    min-height: 330px;
   }
 
-  .expertise-card-overlay h3 {
-    font-size: 1.1rem !important;
-  }
-
-  .expertise-card-overlay p {
-    font-size: 0.84rem !important;
+  .expertise-showcase-content {
+    padding: 32px;
   }
 }
 
+@media (max-width: 560px) {
+  .expertise-showcase-card,
+  .expertise-showcase-card:first-child {
+    min-height: 300px;
+    border-radius: 20px;
+  }
+
+  .expertise-showcase-content {
+    padding: 24px;
+  }
+
+  .expertise-showcase-content span {
+    font-size: 0.74rem;
+    margin-bottom: 12px;
+  }
+
+  .expertise-showcase-content h3,
+  .expertise-showcase-card:not(:first-child) .expertise-showcase-content h3 {
+    font-size: 1.65rem;
+  }
+
+  .expertise-showcase-content p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+}

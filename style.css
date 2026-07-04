@@ -2486,25 +2486,26 @@ OUR EXPERTISE - SHOWCASE IMAGE CARDS
 
 .expertise-showcase-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
 .expertise-showcase-card {
   position: relative;
-  min-height: 360px;
-  border-radius: 24px;
+  min-height: 260px;
+  border-radius: 22px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 18px 45px rgba(7, 54, 111, 0.14);
+  box-shadow: 0 14px 34px rgba(7, 54, 111, 0.12);
   border: 1px solid var(--line);
   background: var(--primary-dark);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* card pertama tidak dibuat terlalu besar lagi */
 .expertise-showcase-card:first-child {
-  grid-column: span 2;
-  min-height: 430px;
+  grid-column: span 1;
+  min-height: 260px;
 }
 
 .expertise-showcase-card img {
@@ -2524,14 +2525,14 @@ OUR EXPERTISE - SHOWCASE IMAGE CARDS
   background:
     linear-gradient(
       90deg,
-      rgba(5, 25, 55, 0.86) 0%,
-      rgba(5, 45, 88, 0.62) 42%,
-      rgba(5, 45, 88, 0.20) 100%
+      rgba(5, 25, 55, 0.78) 0%,
+      rgba(5, 45, 88, 0.48) 48%,
+      rgba(5, 45, 88, 0.12) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(5, 20, 38, 0.10) 0%,
-      rgba(5, 20, 38, 0.58) 100%
+      rgba(5, 20, 38, 0.08) 0%,
+      rgba(5, 20, 38, 0.56) 100%
     );
 }
 
@@ -2542,8 +2543,8 @@ OUR EXPERTISE - SHOWCASE IMAGE CARDS
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  max-width: 720px;
-  padding: 42px;
+  max-width: 560px;
+  padding: 26px;
   color: #ffffff;
 }
 
@@ -2551,43 +2552,43 @@ OUR EXPERTISE - SHOWCASE IMAGE CARDS
   width: fit-content;
   display: inline-flex;
   align-items: center;
-  padding: 8px 15px;
-  margin-bottom: 18px;
+  padding: 6px 12px;
+  margin-bottom: 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.26);
   color: #ffffff;
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 850;
   backdrop-filter: blur(8px);
 }
 
 .expertise-showcase-content h3 {
-  margin: 0 0 14px;
+  margin: 0 0 8px;
   color: #ffffff;
-  font-size: clamp(2rem, 4vw, 4.2rem);
-  line-height: 1.05;
+  font-size: 1.65rem;
+  line-height: 1.08;
   font-weight: 900;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
 }
 
 .expertise-showcase-card:not(:first-child) .expertise-showcase-content h3 {
-  font-size: clamp(1.6rem, 2.4vw, 2.55rem);
+  font-size: 1.65rem;
 }
 
 .expertise-showcase-content p {
   margin: 0;
-  max-width: 760px;
+  max-width: 520px;
   color: rgba(255, 255, 255, 0.92);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.86rem;
+  line-height: 1.5;
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
 }
 
 .expertise-showcase-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 58px rgba(7, 54, 111, 0.20);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(7, 54, 111, 0.18);
 }
 
 .expertise-showcase-card:hover img {
@@ -2595,48 +2596,44 @@ OUR EXPERTISE - SHOWCASE IMAGE CARDS
   filter: saturate(1.08) contrast(1.04);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .expertise-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expertise-showcase-card,
+  .expertise-showcase-card:first-child {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 640px) {
   .expertise-showcase-grid {
     grid-template-columns: 1fr;
   }
 
-  .expertise-showcase-card:first-child {
-    grid-column: span 1;
-    min-height: 360px;
-  }
-
-  .expertise-showcase-card {
-    min-height: 330px;
-  }
-
-  .expertise-showcase-content {
-    padding: 32px;
-  }
-}
-
-@media (max-width: 560px) {
   .expertise-showcase-card,
   .expertise-showcase-card:first-child {
-    min-height: 300px;
-    border-radius: 20px;
+    min-height: 230px;
+    border-radius: 18px;
   }
 
   .expertise-showcase-content {
-    padding: 24px;
+    padding: 22px;
   }
 
   .expertise-showcase-content span {
-    font-size: 0.74rem;
-    margin-bottom: 12px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
   }
 
   .expertise-showcase-content h3,
   .expertise-showcase-card:not(:first-child) .expertise-showcase-content h3 {
-    font-size: 1.65rem;
+    font-size: 1.35rem;
   }
 
   .expertise-showcase-content p {
-    font-size: 0.9rem;
-    line-height: 1.55;
+    font-size: 0.82rem;
+    line-height: 1.45;
   }
 }

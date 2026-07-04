@@ -2484,43 +2484,46 @@ max-height: 40px;
 OUR EXPERTISE - 3 COLUMN FULL IMAGE CARDS
 ========================= */
 
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+#business-scope .expertise-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 22px;
 }
 
-.expertise-grid .expertise-card {
+#business-scope .expertise-card {
   position: relative;
   display: block !important;
   grid-template-columns: none !important;
-  height: 245px;
-  min-height: 245px;
+  width: 100%;
+  height: 245px !important;
+  min-height: 245px !important;
   padding: 0 !important;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--primary-dark);
 }
 
-.expertise-grid .expertise-card img {
-  width: 100%;
-  height: 100%;
+#business-scope .expertise-card img {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
   min-height: 0 !important;
   object-fit: cover;
   display: block;
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.expertise-grid .expertise-card:hover img {
+#business-scope .expertise-card:hover img {
   transform: scale(1.05);
   filter: saturate(1.08) contrast(1.03);
 }
 
-.expertise-card-content {
+#business-scope .expertise-card-content {
   position: absolute;
   inset: 0;
   z-index: 3;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: flex-end;
   padding: 22px;
@@ -2532,7 +2535,7 @@ OUR EXPERTISE - 3 COLUMN FULL IMAGE CARDS
   );
 }
 
-.expertise-card-content h3 {
+#business-scope .expertise-card-content h3 {
   margin: 0 0 7px !important;
   color: #ffffff !important;
   font-size: 1.18rem !important;
@@ -2542,7 +2545,7 @@ OUR EXPERTISE - 3 COLUMN FULL IMAGE CARDS
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
 }
 
-.expertise-card-content p {
+#business-scope .expertise-card-content p {
   margin: 0 !important;
   color: rgba(255, 255, 255, 0.90) !important;
   font-size: 0.84rem !important;
@@ -2551,48 +2554,47 @@ OUR EXPERTISE - 3 COLUMN FULL IMAGE CARDS
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
 }
 
-/* stop old project-card layout only inside expertise */
-.expertise-grid .project-card {
+#business-scope .project-card {
   display: block !important;
   grid-template-columns: none !important;
 }
 
-.expertise-grid .project-body,
-.expertise-grid .expertise-card-overlay,
-.expertise-grid .expertise-showcase-content {
+#business-scope .project-body,
+#business-scope .expertise-card-overlay,
+#business-scope .expertise-showcase-content {
   display: none !important;
 }
 
 @media (max-width: 1100px) {
-  .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
+  #business-scope .expertise-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .expertise-grid .expertise-card {
-    height: 235px;
-    min-height: 235px;
+  #business-scope .expertise-card {
+    height: 235px !important;
+    min-height: 235px !important;
   }
 }
 
 @media (max-width: 640px) {
-  .expertise-grid {
-    grid-template-columns: 1fr;
+  #business-scope .expertise-grid {
+    grid-template-columns: 1fr !important;
   }
 
-  .expertise-grid .expertise-card {
-    height: 220px;
-    min-height: 220px;
+  #business-scope .expertise-card {
+    height: 220px !important;
+    min-height: 220px !important;
   }
 
-  .expertise-card-content {
+  #business-scope .expertise-card-content {
     padding: 18px;
   }
 
-  .expertise-card-content h3 {
+  #business-scope .expertise-card-content h3 {
     font-size: 1.05rem !important;
   }
 
-  .expertise-card-content p {
+  #business-scope .expertise-card-content p {
     font-size: 0.8rem !important;
   }
 }

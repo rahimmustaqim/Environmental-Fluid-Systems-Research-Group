@@ -398,15 +398,11 @@
       margin: 0;
     }
 
-    .activity-stream {
+    .activity-slider {
+      position: relative;
       display: grid;
-      gap: 24px;
-    }
-
-    .activity-highlight {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 0;
+      grid-template-columns: 390px 1fr;
+      min-height: 420px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 30px;
@@ -414,20 +410,29 @@
       box-shadow: var(--shadow);
     }
 
-    .activity-photo {
-      min-height: 100%;
-      background: var(--primary-soft);
+    .activity-slider.is-fading .activity-slider-photo img,
+    .activity-slider.is-fading .activity-slider-content {
+      opacity: 0;
+      transform: translateY(8px);
     }
 
-    .activity-photo img {
+    .activity-slider-photo {
+      background: var(--primary-soft);
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .activity-slider-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: opacity .45s ease, transform .45s ease;
     }
 
-    .activity-details {
-      padding: 28px 30px;
+    .activity-slider-content {
+      padding: 34px 34px 30px;
+      transition: opacity .45s ease, transform .45s ease;
     }
 
     .activity-meta {
@@ -450,11 +455,11 @@
       font-weight: 800;
     }
 
-    .activity-details h3 {
+    .activity-slider-content h3 {
       color: var(--primary-dark);
-      font-size: clamp(1.7rem, 2.8vw, 2.35rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
       font-weight: 900;
       margin-bottom: 12px;
     }
@@ -491,93 +496,25 @@
       color: var(--primary-dark);
     }
 
-    .activity-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+    .activity-dots {
+      display: flex;
+      gap: 9px;
+      margin-top: 18px;
     }
 
-    .activity-card {
-      display: grid;
-      grid-template-columns: 156px 1fr;
-      gap: 18px;
-      align-items: start;
-      padding: 18px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: 0 14px 34px rgba(7, 54, 111, .07);
-      transition: .24s ease;
-    }
-
-    .activity-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 48px rgba(7, 54, 111, .11);
-      border-color: rgba(11, 95, 179, .24);
-    }
-
-    .activity-card-photo {
-      border-radius: 18px;
-      overflow: hidden;
-      background: var(--primary-soft);
-      aspect-ratio: 4 / 4.4;
-    }
-
-    .activity-card-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .activity-card-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 11px;
+    .activity-dot {
+      width: 10px;
+      height: 10px;
+      border: 0;
       border-radius: 999px;
-      background: rgba(37, 184, 90, .10);
-      color: var(--green-dark);
-      font-size: .75rem;
-      font-weight: 900;
-      margin-bottom: 10px;
+      background: rgba(11, 95, 179, .24);
+      cursor: pointer;
+      transition: .25s ease;
     }
 
-    .activity-card h4 {
-      color: var(--primary-dark);
-      font-size: 1.12rem;
-      line-height: 1.35;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .activity-card p {
-      color: var(--muted);
-      font-size: .93rem;
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-
-    .activity-card-note {
-      color: var(--primary-dark);
-      font-size: .88rem;
-      line-height: 1.65;
-      padding-top: 12px;
-      border-top: 1px dashed rgba(11, 95, 179, .18);
-    }
-
-    .activity-update-tip {
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: rgba(5, 45, 88, .06);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: .94rem;
-    }
-
-    .activity-update-tip strong {
-      color: var(--primary-dark);
+    .activity-dot.active {
+      width: 30px;
+      background: var(--primary);
     }
 
     .team-section {
@@ -586,17 +523,29 @@
         linear-gradient(135deg, #f6fbff 0%, #ffffff 72%);
     }
 
-    .founder-card {
+    .team-people {
+      display: grid;
+      gap: 36px;
+    }
+
+    .team-subtitle {
+      color: var(--primary-dark);
+      font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .founder-profile {
       display: grid;
       grid-template-columns: 300px 1fr;
       gap: 38px;
       align-items: center;
+      padding: 30px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 32px;
-      padding: 34px;
       box-shadow: var(--shadow);
-      margin-bottom: 36px;
     }
 
     .founder-photo {
@@ -660,7 +609,6 @@
       opacity: .45;
     }
 
-
     .profile-actions,
     .member-actions {
       display: flex;
@@ -675,17 +623,17 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 40px;
-      padding: 10px 14px;
+      min-height: 38px;
+      padding: 9px 13px;
       border-radius: 999px;
       border: 1px solid var(--line);
       background: #fff;
       color: var(--primary-dark);
-      font-size: .88rem;
+      font-size: .86rem;
       font-weight: 850;
       line-height: 1;
       transition: .22s ease;
-      box-shadow: 0 10px 24px rgba(7, 54, 111, .06);
+      box-shadow: 0 10px 24px rgba(7, 54, 111, .05);
     }
 
     .profile-link {
@@ -709,63 +657,30 @@
       color: #00ccbb;
     }
 
-    .member-role {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      color: var(--green-dark);
-      background: rgba(37, 184, 90, .10);
-      font-size: .76rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .technical-team-wrap {
-      margin-top: 10px;
-    }
-
-    .technical-team-wrap > h3 {
-      color: var(--primary-dark);
-      font-size: clamp(1.7rem, 3vw, 2.3rem);
-      font-weight: 900;
-      margin-bottom: 20px;
-      letter-spacing: -0.03em;
-    }
-
-    .technical-team-grid {
+    .technical-team-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      column-gap: 54px;
+      row-gap: 34px;
     }
 
-    .technical-member-card {
+    .technical-member {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 18px;
+      grid-template-columns: 138px 1fr;
+      gap: 20px;
       align-items: start;
-      padding: 18px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: 0 14px 34px rgba(7, 54, 111, .07);
-      transition: .25s ease;
-    }
-
-    .technical-member-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(11, 95, 179, .28);
-      box-shadow: 0 20px 48px rgba(7, 54, 111, .12);
+      padding-bottom: 26px;
+      border-bottom: 1px solid rgba(11, 95, 179, .14);
     }
 
     .member-photo {
-      width: 150px;
+      width: 138px;
       aspect-ratio: 4 / 4.8;
-      border-radius: 18px;
+      border-radius: 14px;
       background: var(--primary-soft);
       overflow: hidden;
       border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(7, 54, 111, .08);
     }
 
     .member-photo img {
@@ -774,13 +689,9 @@
       object-fit: cover;
     }
 
-    .member-content {
-      padding: 0;
-    }
-
     .member-content h4 {
       color: var(--primary-dark);
-      font-size: 1.22rem;
+      font-size: 1.24rem;
       font-weight: 900;
       margin-bottom: 8px;
       line-height: 1.3;
@@ -792,8 +703,9 @@
       font-size: .95rem;
       margin-bottom: 0;
     }
+
     .team-note {
-      margin-top: 26px;
+      margin-top: 4px;
       padding: 18px 20px;
       border-radius: 20px;
       background: var(--primary-soft);
@@ -842,12 +754,24 @@
         grid-template-columns: 1fr;
       }
 
-      .founder-card {
+      .activity-slider {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-slider-photo {
+        max-height: 360px;
+      }
+
+      .founder-profile {
         grid-template-columns: 1fr;
       }
 
       .founder-photo {
         max-width: 420px;
+      }
+
+      .technical-team-list {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -862,7 +786,7 @@
     }
 
     @media (max-width: 640px) {
-      .technical-team-grid {
+      .technical-team-list {
         grid-template-columns: 1fr;
       }
     }
@@ -915,7 +839,7 @@
         font-size: .58rem;
       }
 
-      .founder-card {
+      .founder-profile {
         padding: 22px;
         border-radius: 24px;
       }
@@ -1174,94 +1098,44 @@
       <h2>Recent Activities & Discussions</h2>
 
       <p>
-        This section is designed to be direct and easy to update. You can upload an activity photo,
-        add a short description, and write a brief discussion result so visitors can quickly see
-        what EFSRG has been doing.
+        A simple activity update area showing photos, discussion topics, and short outcomes.
+        The content changes automatically so visitors can see multiple activities without a long page.
       </p>
     </div>
 
-    <div class="activity-stream">
-      <article class="activity-highlight">
-        <div class="activity-photo">
-          <img src="assets/activity1.jpeg" alt="Indonesia Energy Transition Discussion">
-        </div>
-
-        <div class="activity-details">
-          <div class="activity-meta">
-            <span><i class="fa-regular fa-calendar"></i> Upcoming Discussion</span>
-            <span><i class="fa-solid fa-bolt"></i> Indonesia Energy Transition</span>
-          </div>
-
-          <h3>Indonesia Energy Transition Discussion</h3>
-
-          <p class="activity-summary">
-            A discussion session on Indonesia's transition from fossil-based energy to cleaner energy systems,
-            with attention to national challenges, renewable resource opportunities, and practical infrastructure needs.
-          </p>
-
-          <ul class="activity-points">
-            <li>Main focus: water energy, wind energy, and current transition challenges in Indonesia.</li>
-            <li>Can be updated later with the event date, participants, and supporting photo.</li>
-            <li>Suitable for adding 2–4 short key points from the discussion results.</li>
-          </ul>
-
-          <div class="activity-outcome">
-            <strong>Discussion result:</strong>
-            You can later replace this text with a short summary such as the key issues discussed,
-            proposed solutions, or next collaboration ideas.
-          </div>
-        </div>
-      </article>
-
-      <!-- Duplicate one .activity-card block below whenever you want to add more activities -->
-      <div class="activity-list">
-        <article class="activity-card">
-          <div class="activity-card-photo">
-            <img src="assets/activity2.jpeg" alt="Presentation activity">
-          </div>
-
-          <div>
-            <div class="activity-card-label">
-              <i class="fa-solid fa-users"></i>
-              Activity Update
-            </div>
-            <h4>Presentation / Sharing Session</h4>
-            <p>
-              Use this card to show one activity photo and a short explanation of what happened during the session.
-            </p>
-            <div class="activity-card-note">
-              Example: topic discussed, audience involved, and one main takeaway from the discussion.
-            </div>
-          </div>
-        </article>
-
-        <article class="activity-card">
-          <div class="activity-card-photo">
-            <img src="assets/activity3.jpeg" alt="Research discussion activity">
-          </div>
-
-          <div>
-            <div class="activity-card-label">
-              <i class="fa-solid fa-lightbulb"></i>
-              Discussion Note
-            </div>
-            <h4>Research Discussion & Follow-Up</h4>
-            <p>
-              This card can be used for smaller updates, such as a meeting, seminar discussion, or technical exchange.
-            </p>
-            <div class="activity-card-note">
-              Example: write 1–2 sentences about the result, future plan, or collaboration outcome.
-            </div>
-          </div>
-        </article>
+    <article class="activity-slider" id="activitySlider">
+      <div class="activity-slider-photo">
+        <img id="activityImage" src="assets/activity1.jpeg" alt="Indonesia Energy Transition Discussion">
       </div>
 
-      <div class="activity-update-tip">
-        <strong>Easy update tip:</strong>
-        just change the image, title, short description, and the discussion result text. If you have more activities,
-        duplicate one <code>.activity-card</code> block and edit the content.
+      <div class="activity-slider-content">
+        <div class="activity-meta">
+          <span id="activityStatus"><i class="fa-regular fa-calendar"></i> Upcoming Discussion</span>
+          <span id="activityTopic"><i class="fa-solid fa-bolt"></i> Indonesia Energy Transition</span>
+        </div>
+
+        <h3 id="activityTitle">Indonesia Energy Transition Discussion</h3>
+
+        <p class="activity-summary" id="activitySummary">
+          A discussion session on Indonesia's transition from fossil-based energy to cleaner energy systems,
+          with attention to national challenges, renewable resource opportunities, and practical infrastructure needs.
+        </p>
+
+        <ul class="activity-points" id="activityPoints">
+          <li>Main focus: water energy, wind energy, and current transition challenges in Indonesia.</li>
+          <li>Can be updated later with the event date, participants, and supporting photo.</li>
+          <li>Suitable for adding 2–4 short key points from the discussion results.</li>
+        </ul>
+
+        <div class="activity-outcome" id="activityOutcome">
+          <strong>Discussion result:</strong>
+          You can later replace this text with a short summary such as the key issues discussed,
+          proposed solutions, or next collaboration ideas.
+        </div>
+
+        <div class="activity-dots" id="activityDots" aria-label="Activity slider navigation"></div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
@@ -1271,124 +1145,115 @@
       <h2>Team</h2>
     </div>
 
-<div class="founder-card">
-  <div class="founder-photo">
-    <img src="assets/rahim.jpeg" alt="Rahim Mustaqim">
-  </div>
+    <div class="team-people">
+      <div class="founder-block">
+        <h3 class="team-subtitle">Founder</h3>
 
-  <div class="founder-content">
-    <div class="founder-role">
-      <i class="fa-solid fa-user-tie"></i>
-      CEO & Founder
+        <article class="founder-profile">
+          <div class="founder-photo">
+            <img src="assets/rahim.jpeg" alt="Rahim Mustaqim">
+          </div>
+
+          <div class="founder-content">
+            <div class="founder-role">
+              <i class="fa-solid fa-user-tie"></i>
+              CEO & Founder
+            </div>
+
+            <h3>Rahim Mustaqim</h3>
+
+            <div class="founder-message">
+              Engineering has a role beyond solving technical challenges. It can also contribute to safer communities and a more sustainable environment.
+            </div>
+
+            <div class="profile-actions">
+              <a class="profile-link" href="#" target="_blank" rel="noopener">
+                <i class="fa-solid fa-globe"></i>
+                Personal Webpage
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="technical-team-wrap">
+        <h3 class="team-subtitle">Technical Team</h3>
+
+        <div class="technical-team-list">
+          <article class="technical-member">
+            <div class="member-photo">
+              <img src="assets/XinLiu.jpg" alt="Xin Liu">
+            </div>
+
+            <div class="member-content">
+              <h4>Xin Liu</h4>
+              <p>CFD Modeler and Wind System Analysis</p>
+
+              <div class="member-actions">
+                <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Xin+Liu+CFD+Modeler+and+Wind+System+Analysis" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-google"></i>
+                  Google Scholar
+                </a>
+                <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Xin+Liu+CFD+Modeler+and+Wind+System+Analysis" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-researchgate"></i>
+                  ResearchGate
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="technical-member">
+            <div class="member-photo">
+              <img src="assets/Oriandra.jpg" alt="Dio Oriandra">
+            </div>
+
+            <div class="member-content">
+              <h4>Dio Oriandra</h4>
+              <p>Hydrology & Hydraulic Expert</p>
+
+              <div class="member-actions">
+                <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Dio+Oriandra+Hydrology+%26+Hydraulic+Expert" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-google"></i>
+                  Google Scholar
+                </a>
+                <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Dio+Oriandra+Hydrology+%26+Hydraulic+Expert" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-researchgate"></i>
+                  ResearchGate
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="technical-member">
+            <div class="member-photo">
+              <img src="assets/Maulvi.jpg" alt="Maulvi">
+            </div>
+
+            <div class="member-content">
+              <h4>Maulvi</h4>
+              <p>Coastal Engineering Expert</p>
+
+              <div class="member-actions">
+                <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Maulvi+Coastal+Engineering+Expert" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-google"></i>
+                  Google Scholar
+                </a>
+                <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Maulvi+Coastal+Engineering+Expert" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-researchgate"></i>
+                  ResearchGate
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="team-note">
+        <strong>Team model:</strong>
+        Technical team members and collaborators are assigned based on project scope,
+        expertise, and collaboration needs.
+      </div>
     </div>
-
-    <h3>Rahim Mustaqim</h3>
-
-    <div class="founder-message">
-      Engineering has a role beyond solving technical challenges. It can also contribute to safer communities and a more sustainable environment.
-    </div>
-
-    <div class="profile-actions">
-      <a class="profile-link" href="#" target="_blank" rel="noopener">
-        <i class="fa-solid fa-globe"></i>
-        Personal Webpage
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="technical-team-wrap">
-  <h3>Technical Team</h3>
-
-  <div class="technical-team-grid">
-
-    <article class="technical-member-card">
-      <div class="member-photo">
-        <img src="assets/XinLiu.jpg" alt="Xin Liu">
-      </div>
-
-      <div class="member-content">
-        <h4>Xin Liu</h4>
-        <div class="member-role">
-          <i class="fa-solid fa-water"></i>
-          Technical Team
-        </div>
-        <p>CFD Modeler and Wind System Analysis</p>
-
-        <div class="member-actions">
-          <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Xin+Liu+CFD+Modeler+and+Wind+System+Analysis" target="_blank" rel="noopener">
-            <i class="fa-brands fa-google"></i>
-            Google Scholar
-          </a>
-          <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Xin+Liu+CFD+Modeler+and+Wind+System+Analysis" target="_blank" rel="noopener">
-            <i class="fa-brands fa-researchgate"></i>
-            ResearchGate
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="technical-member-card">
-      <div class="member-photo">
-        <img src="assets/Oriandra.jpg" alt="Dio Oriandra">
-      </div>
-
-      <div class="member-content">
-        <h4>Dio Oriandra</h4>
-        <div class="member-role">
-          <i class="fa-solid fa-water"></i>
-          Technical Team
-        </div>
-        <p>Hydrology & Hydraulic Expert</p>
-
-        <div class="member-actions">
-          <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Dio+Oriandra+Hydrology+%26+Hydraulic+Expert" target="_blank" rel="noopener">
-            <i class="fa-brands fa-google"></i>
-            Google Scholar
-          </a>
-          <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Dio+Oriandra+Hydrology+%26+Hydraulic+Expert" target="_blank" rel="noopener">
-            <i class="fa-brands fa-researchgate"></i>
-            ResearchGate
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="technical-member-card">
-      <div class="member-photo">
-        <img src="assets/Maulvi.jpg" alt="Maulvi">
-      </div>
-
-      <div class="member-content">
-        <h4>Maulvi</h4>
-        <div class="member-role">
-          <i class="fa-solid fa-water"></i>
-          Technical Team
-        </div>
-        <p>Coastal Engineering Expert</p>
-
-        <div class="member-actions">
-          <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Maulvi+Coastal+Engineering+Expert" target="_blank" rel="noopener">
-            <i class="fa-brands fa-google"></i>
-            Google Scholar
-          </a>
-          <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Maulvi+Coastal+Engineering+Expert" target="_blank" rel="noopener">
-            <i class="fa-brands fa-researchgate"></i>
-            ResearchGate
-          </a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</div>
-
-<div class="team-note">
-  <strong>Team model:</strong>
-  Technical team members and collaborators are assigned based on project scope,
-  expertise, and collaboration needs.
-</div>
-
   </div>
 </section>
 
@@ -1471,6 +1336,128 @@
 
   showAboutSlide(0);
   startAboutAutoSlide();
+
+  const activityItems = [
+    {
+      image: "assets/activity1.jpeg",
+      alt: "Indonesia Energy Transition Discussion",
+      statusIcon: "fa-regular fa-calendar",
+      status: "Upcoming Discussion",
+      topicIcon: "fa-solid fa-bolt",
+      topic: "Indonesia Energy Transition",
+      title: "Indonesia Energy Transition Discussion",
+      summary: "A discussion session on Indonesia's transition from fossil-based energy to cleaner energy systems, with attention to national challenges, renewable resource opportunities, and practical infrastructure needs.",
+      points: [
+        "Main focus: water energy, wind energy, and current transition challenges in Indonesia.",
+        "Can be updated later with the event date, participants, and supporting photo.",
+        "Suitable for adding 2–4 short key points from the discussion results."
+      ],
+      outcome: "<strong>Discussion result:</strong> You can later replace this text with a short summary such as the key issues discussed, proposed solutions, or next collaboration ideas."
+    },
+    {
+      image: "assets/activity2.jpeg",
+      alt: "Presentation or sharing session",
+      statusIcon: "fa-solid fa-users",
+      status: "Activity Update",
+      topicIcon: "fa-solid fa-person-chalkboard",
+      topic: "Presentation / Sharing",
+      title: "Presentation & Sharing Session",
+      summary: "A space for documenting seminars, technical presentations, or sharing sessions conducted by EFSRG and collaborators.",
+      points: [
+        "Add the speaker name, event date, and audience later.",
+        "Use one short paragraph to explain the topic.",
+        "Write the main takeaway so visitors understand the discussion result quickly."
+      ],
+      outcome: "<strong>Discussion result:</strong> Replace this with the key takeaway from the presentation, follow-up idea, or collaboration opportunity."
+    },
+    {
+      image: "assets/activity3.jpeg",
+      alt: "Research discussion and follow-up",
+      statusIcon: "fa-solid fa-lightbulb",
+      status: "Discussion Note",
+      topicIcon: "fa-solid fa-diagram-project",
+      topic: "Research Follow-Up",
+      title: "Research Discussion & Follow-Up",
+      summary: "A short update area for meetings, research discussions, technical exchange, or project follow-up activities.",
+      points: [
+        "Summarize what was discussed in 2–3 bullets.",
+        "Mention the practical result or next step.",
+        "Keep the update short so the page remains clean."
+      ],
+      outcome: "<strong>Discussion result:</strong> Replace this with the agreed follow-up plan, project direction, or next technical task."
+    }
+  ];
+
+  let activityIndex = 0;
+  let activityAutoSlide;
+
+  function renderActivity(index) {
+    const slider = document.getElementById("activitySlider");
+    const image = document.getElementById("activityImage");
+    const status = document.getElementById("activityStatus");
+    const topic = document.getElementById("activityTopic");
+    const title = document.getElementById("activityTitle");
+    const summary = document.getElementById("activitySummary");
+    const points = document.getElementById("activityPoints");
+    const outcome = document.getElementById("activityOutcome");
+    const dots = document.querySelectorAll(".activity-dot");
+
+    if (!slider || !activityItems.length) return;
+
+    const item = activityItems[index];
+
+    slider.classList.add("is-fading");
+
+    setTimeout(() => {
+      image.src = item.image;
+      image.alt = item.alt;
+      status.innerHTML = `<i class="${item.statusIcon}"></i> ${item.status}`;
+      topic.innerHTML = `<i class="${item.topicIcon}"></i> ${item.topic}`;
+      title.textContent = item.title;
+      summary.textContent = item.summary;
+      points.innerHTML = item.points.map(point => `<li>${point}</li>`).join("");
+      outcome.innerHTML = item.outcome;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+
+      slider.classList.remove("is-fading");
+    }, 280);
+  }
+
+  function goToActivity(index) {
+    activityIndex = index;
+    renderActivity(activityIndex);
+    resetActivityAutoSlide();
+  }
+
+  function startActivityAutoSlide() {
+    activityAutoSlide = setInterval(() => {
+      activityIndex = (activityIndex + 1) % activityItems.length;
+      renderActivity(activityIndex);
+    }, 5000);
+  }
+
+  function resetActivityAutoSlide() {
+    clearInterval(activityAutoSlide);
+    startActivityAutoSlide();
+  }
+
+  function setupActivitySlider() {
+    const dotsWrap = document.getElementById("activityDots");
+    if (!dotsWrap || !activityItems.length) return;
+
+    dotsWrap.innerHTML = activityItems
+      .map((_, index) => `<button class="activity-dot${index === 0 ? " active" : ""}" onclick="goToActivity(${index})" aria-label="Show activity ${index + 1}"></button>`)
+      .join("");
+
+    renderActivity(0);
+    startActivityAutoSlide();
+  }
+
+  setupActivitySlider();
+
 </script>
 
 </body>

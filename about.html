@@ -350,6 +350,236 @@
       font-size: 1.2rem;
     }
 
+
+
+    .activity-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(11, 95, 179, .10), transparent 34%),
+        radial-gradient(circle at 92% 82%, rgba(37, 184, 90, .10), transparent 32%),
+        linear-gradient(135deg, #ffffff 0%, #f6fbff 58%, #eef9f3 100%);
+    }
+
+    .activity-header {
+      max-width: 860px;
+      margin-bottom: 28px;
+    }
+
+    .activity-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: rgba(37, 184, 90, .12);
+      border: 1px solid rgba(37, 184, 90, .22);
+      font-size: .82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+
+    .activity-header h2 {
+      color: var(--primary-dark);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .activity-header p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .activity-stream {
+      display: grid;
+      gap: 24px;
+    }
+
+    .activity-highlight {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .activity-photo {
+      min-height: 100%;
+      background: var(--primary-soft);
+    }
+
+    .activity-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .activity-details {
+      padding: 28px 30px;
+    }
+
+    .activity-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .activity-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      border: 1px solid var(--line);
+      color: var(--primary-dark);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .activity-details h3 {
+      color: var(--primary-dark);
+      font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .activity-summary {
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.78;
+      margin-bottom: 16px;
+    }
+
+    .activity-points {
+      margin: 0 0 18px;
+      padding-left: 20px;
+      color: var(--primary-dark);
+      line-height: 1.72;
+    }
+
+    .activity-points li + li {
+      margin-top: 6px;
+    }
+
+    .activity-outcome {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(5, 45, 88, .05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+
+    .activity-outcome strong {
+      color: var(--primary-dark);
+    }
+
+    .activity-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .activity-card {
+      display: grid;
+      grid-template-columns: 156px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 14px 34px rgba(7, 54, 111, .07);
+      transition: .24s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(7, 54, 111, .11);
+      border-color: rgba(11, 95, 179, .24);
+    }
+
+    .activity-card-photo {
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--primary-soft);
+      aspect-ratio: 4 / 4.4;
+    }
+
+    .activity-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .activity-card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(37, 184, 90, .10);
+      color: var(--green-dark);
+      font-size: .75rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .activity-card h4 {
+      color: var(--primary-dark);
+      font-size: 1.12rem;
+      line-height: 1.35;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .activity-card p {
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .activity-card-note {
+      color: var(--primary-dark);
+      font-size: .88rem;
+      line-height: 1.65;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(11, 95, 179, .18);
+    }
+
+    .activity-update-tip {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(5, 45, 88, .06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .94rem;
+    }
+
+    .activity-update-tip strong {
+      color: var(--primary-dark);
+    }
+
     .team-section {
       background:
         radial-gradient(circle at top right, rgba(37, 184, 90, 0.10), transparent 30%),
@@ -430,6 +660,68 @@
       opacity: .45;
     }
 
+
+    .profile-actions,
+    .member-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .profile-link,
+    .member-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--primary-dark);
+      font-size: .88rem;
+      font-weight: 850;
+      line-height: 1;
+      transition: .22s ease;
+      box-shadow: 0 10px 24px rgba(7, 54, 111, .06);
+    }
+
+    .profile-link {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--green));
+      border-color: transparent;
+      box-shadow: 0 14px 30px rgba(11, 95, 179, .18);
+    }
+
+    .profile-link:hover,
+    .member-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(7, 54, 111, .13);
+    }
+
+    .member-link.scholar i {
+      color: #4285f4;
+    }
+
+    .member-link.researchgate i {
+      color: #00ccbb;
+    }
+
+    .member-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: rgba(37, 184, 90, .10);
+      font-size: .76rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
     .technical-team-wrap {
       margin-top: 10px;
     }
@@ -444,15 +736,19 @@
 
     .technical-team-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .technical-member-card {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 18px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 24px;
-      overflow: hidden;
       box-shadow: 0 14px 34px rgba(7, 54, 111, .07);
       transition: .25s ease;
     }
@@ -464,10 +760,12 @@
     }
 
     .member-photo {
-      width: 100%;
-      aspect-ratio: 4 / 3.4;
+      width: 150px;
+      aspect-ratio: 4 / 4.8;
+      border-radius: 18px;
       background: var(--primary-soft);
       overflow: hidden;
+      border: 1px solid var(--line);
     }
 
     .member-photo img {
@@ -477,36 +775,23 @@
     }
 
     .member-content {
-      padding: 20px;
+      padding: 0;
     }
 
     .member-content h4 {
       color: var(--primary-dark);
-      font-size: 1.1rem;
+      font-size: 1.22rem;
       font-weight: 900;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      line-height: 1.3;
     }
 
     .member-content p {
       color: var(--muted);
-      line-height: 1.6;
-      font-size: .94rem;
-      margin-bottom: 14px;
+      line-height: 1.68;
+      font-size: .95rem;
+      margin-bottom: 0;
     }
-
-    .member-content a {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--primary);
-      font-weight: 850;
-      font-size: .9rem;
-    }
-
-    .member-content a:hover {
-      color: var(--primary-dark);
-    }
-
     .team-note {
       margin-top: 26px;
       padding: 18px 20px;
@@ -545,6 +830,18 @@
         padding: 74px 0 56px;
       }
 
+      .activity-highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-photo {
+        max-height: 360px;
+      }
+
+      .activity-list {
+        grid-template-columns: 1fr;
+      }
+
       .founder-card {
         grid-template-columns: 1fr;
       }
@@ -552,15 +849,15 @@
       .founder-photo {
         max-width: 420px;
       }
-
-      .technical-team-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width: 700px) {
       .sdg-scope-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .activity-card {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -621,6 +918,23 @@
       .founder-card {
         padding: 22px;
         border-radius: 24px;
+      }
+
+      .activity-details {
+        padding: 22px;
+      }
+
+      .activity-card {
+        padding: 16px;
+      }
+
+      .technical-member-card {
+        grid-template-columns: 1fr;
+      }
+
+      .member-photo {
+        width: 100%;
+        max-width: 180px;
       }
 
       .founder-message {
@@ -848,6 +1162,109 @@
   </div>
 </section>
 
+
+<section class="section activity-section">
+  <div class="container">
+    <div class="activity-header">
+      <div class="activity-kicker">
+        <i class="fa-solid fa-camera-retro"></i>
+        Activities
+      </div>
+
+      <h2>Recent Activities & Discussions</h2>
+
+      <p>
+        This section is designed to be direct and easy to update. You can upload an activity photo,
+        add a short description, and write a brief discussion result so visitors can quickly see
+        what EFSRG has been doing.
+      </p>
+    </div>
+
+    <div class="activity-stream">
+      <article class="activity-highlight">
+        <div class="activity-photo">
+          <img src="assets/activity1.jpeg" alt="Indonesia Energy Transition Discussion">
+        </div>
+
+        <div class="activity-details">
+          <div class="activity-meta">
+            <span><i class="fa-regular fa-calendar"></i> Upcoming Discussion</span>
+            <span><i class="fa-solid fa-bolt"></i> Indonesia Energy Transition</span>
+          </div>
+
+          <h3>Indonesia Energy Transition Discussion</h3>
+
+          <p class="activity-summary">
+            A discussion session on Indonesia's transition from fossil-based energy to cleaner energy systems,
+            with attention to national challenges, renewable resource opportunities, and practical infrastructure needs.
+          </p>
+
+          <ul class="activity-points">
+            <li>Main focus: water energy, wind energy, and current transition challenges in Indonesia.</li>
+            <li>Can be updated later with the event date, participants, and supporting photo.</li>
+            <li>Suitable for adding 2–4 short key points from the discussion results.</li>
+          </ul>
+
+          <div class="activity-outcome">
+            <strong>Discussion result:</strong>
+            You can later replace this text with a short summary such as the key issues discussed,
+            proposed solutions, or next collaboration ideas.
+          </div>
+        </div>
+      </article>
+
+      <!-- Duplicate one .activity-card block below whenever you want to add more activities -->
+      <div class="activity-list">
+        <article class="activity-card">
+          <div class="activity-card-photo">
+            <img src="assets/activity2.jpeg" alt="Presentation activity">
+          </div>
+
+          <div>
+            <div class="activity-card-label">
+              <i class="fa-solid fa-users"></i>
+              Activity Update
+            </div>
+            <h4>Presentation / Sharing Session</h4>
+            <p>
+              Use this card to show one activity photo and a short explanation of what happened during the session.
+            </p>
+            <div class="activity-card-note">
+              Example: topic discussed, audience involved, and one main takeaway from the discussion.
+            </div>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <div class="activity-card-photo">
+            <img src="assets/activity3.jpeg" alt="Research discussion activity">
+          </div>
+
+          <div>
+            <div class="activity-card-label">
+              <i class="fa-solid fa-lightbulb"></i>
+              Discussion Note
+            </div>
+            <h4>Research Discussion & Follow-Up</h4>
+            <p>
+              This card can be used for smaller updates, such as a meeting, seminar discussion, or technical exchange.
+            </p>
+            <div class="activity-card-note">
+              Example: write 1–2 sentences about the result, future plan, or collaboration outcome.
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="activity-update-tip">
+        <strong>Easy update tip:</strong>
+        just change the image, title, short description, and the discussion result text. If you have more activities,
+        duplicate one <code>.activity-card</code> block and edit the content.
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section team-section">
   <div class="container">
     <div class="section-title">
@@ -868,8 +1285,14 @@
     <h3>Rahim Mustaqim</h3>
 
     <div class="founder-message">
-     Engineering has a role beyond solving technical challenges. It can also contribute to safer communities and a more sustainable environment.
+      Engineering has a role beyond solving technical challenges. It can also contribute to safer communities and a more sustainable environment.
+    </div>
 
+    <div class="profile-actions">
+      <a class="profile-link" href="#" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i>
+        Personal Webpage
+      </a>
     </div>
   </div>
 </div>
@@ -881,35 +1304,79 @@
 
     <article class="technical-member-card">
       <div class="member-photo">
-        <img src="assets/XinLiu.jpg" alt="Technical Team Member">
+        <img src="assets/XinLiu.jpg" alt="Xin Liu">
       </div>
 
       <div class="member-content">
         <h4>Xin Liu</h4>
-        <p>CFD Modeler Expert</p>
+        <div class="member-role">
+          <i class="fa-solid fa-water"></i>
+          Technical Team
+        </div>
+        <p>CFD Modeler and Wind System Analysis</p>
+
+        <div class="member-actions">
+          <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Xin+Liu+CFD+Modeler+and+Wind+System+Analysis" target="_blank" rel="noopener">
+            <i class="fa-brands fa-google"></i>
+            Google Scholar
+          </a>
+          <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Xin+Liu+CFD+Modeler+and+Wind+System+Analysis" target="_blank" rel="noopener">
+            <i class="fa-brands fa-researchgate"></i>
+            ResearchGate
+          </a>
+        </div>
       </div>
     </article>
 
     <article class="technical-member-card">
       <div class="member-photo">
-        <img src="assets/Oriandra.jpg" alt="Technical Team Member">
+        <img src="assets/Oriandra.jpg" alt="Dio Oriandra">
       </div>
 
       <div class="member-content">
-        <h4>Oriandra</h4>
-        <p>Hydraulic Modelling & Flood Risk</p>
+        <h4>Dio Oriandra</h4>
+        <div class="member-role">
+          <i class="fa-solid fa-water"></i>
+          Technical Team
+        </div>
+        <p>Hydrology & Hydraulic Expert</p>
 
+        <div class="member-actions">
+          <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Dio+Oriandra+Hydrology+%26+Hydraulic+Expert" target="_blank" rel="noopener">
+            <i class="fa-brands fa-google"></i>
+            Google Scholar
+          </a>
+          <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Dio+Oriandra+Hydrology+%26+Hydraulic+Expert" target="_blank" rel="noopener">
+            <i class="fa-brands fa-researchgate"></i>
+            ResearchGate
+          </a>
+        </div>
       </div>
     </article>
 
     <article class="technical-member-card">
       <div class="member-photo">
-        <img src="assets/Maulvi.jpg" alt="Technical Team Member">
+        <img src="assets/Maulvi.jpg" alt="Maulvi">
       </div>
 
       <div class="member-content">
         <h4>Maulvi</h4>
-        <p>Coastal & Marine Modelling</p>
+        <div class="member-role">
+          <i class="fa-solid fa-water"></i>
+          Technical Team
+        </div>
+        <p>Coastal Engineering Expert</p>
+
+        <div class="member-actions">
+          <a class="member-link scholar" href="https://scholar.google.com/scholar?q=Maulvi+Coastal+Engineering+Expert" target="_blank" rel="noopener">
+            <i class="fa-brands fa-google"></i>
+            Google Scholar
+          </a>
+          <a class="member-link researchgate" href="https://www.researchgate.net/search/researcher?q=Maulvi+Coastal+Engineering+Expert" target="_blank" rel="noopener">
+            <i class="fa-brands fa-researchgate"></i>
+            ResearchGate
+          </a>
+        </div>
       </div>
     </article>
 

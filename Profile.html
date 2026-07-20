@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV | Rahim Mustaqim</title>
+
+  <style>
+    :root {
+      --primary: #0b6f9c;
+      --primary-dark: #084f70;
+      --text: #24313a;
+      --muted: #64727d;
+      --line: #d8e3ea;
+      --soft: #f5f9fb;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #edf3f6;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .cv-page {
+      width: min(980px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: 44px 52px 54px;
+      background: var(--white);
+      box-shadow: 0 16px 45px rgba(23, 58, 78, 0.12);
+    }
+
+    .cv-header {
+      padding-bottom: 22px;
+      border-bottom: 4px solid var(--primary);
+    }
+
+    .cv-name {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .cv-title {
+      margin: 8px 0 10px;
+      color: #2b3339;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .contact-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .contact-line span,
+    .contact-line a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .action-btn.primary {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    .action-btn.secondary {
+      color: var(--primary-dark);
+      background: #fff;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      padding-bottom: 7px;
+      color: var(--primary);
+      border-bottom: 1px solid var(--line);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .summary {
+      margin: 0;
+      text-align: justify;
+    }
+
+    .entry {
+      margin-bottom: 18px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .entry-title {
+      margin: 0;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .entry-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .entry-subtitle {
+      margin-top: 2px;
+      color: var(--muted);
+    }
+
+    .entry-details {
+      margin-top: 5px;
+      color: #4b5962;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 28px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 165px 1fr;
+      gap: 12px;
+      padding: 5px 0;
+      border-bottom: 1px dashed #e3eaee;
+    }
+
+    .skill-row strong {
+      color: #2f3940;
+    }
+
+    .project-meta {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .evidence-link {
+      display: block;
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+      line-height: 1.4;
+      transition: 0.2s ease;
+    }
+
+    .evidence-link:hover {
+      border-color: var(--primary);
+      background: #edf7fb;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .publication {
+      margin-bottom: 16px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .publication::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .collaboration-list {
+      margin: 0;
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 40px;
+    }
+
+    .collaboration-list li {
+      margin-bottom: 6px;
+      break-inside: avoid;
+    }
+
+    .footer-note {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        background: #fff;
+      }
+
+      .cv-page {
+        width: 100%;
+        margin: 0;
+        padding: 28px 20px 40px;
+        box-shadow: none;
+      }
+
+      .entry-head,
+      .skills-grid,
+      .evidence-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .entry-date {
+        text-align: left;
+      }
+
+      .skill-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .collaboration-list {
+        columns: 1;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        font-size: 11pt;
+      }
+
+      .cv-page {
+        width: 100%;
+        margin: 0;
+        padding: 18mm 16mm;
+        box-shadow: none;
+      }
+
+      .top-actions {
+        display: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .section,
+      .entry,
+      .publication,
+      .evidence-link {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cv-page">
+
+    <header class="cv-header">
+      <h1 class="cv-name">Rahim Mustaqim, MSc (Eng.)</h1>
+      <p class="cv-title">Hydraulic &amp; Coastal Engineering</p>
+
+      <div class="contact-line">
+        <span>📍 Japan </span>
+      </div>
+
+      <div class="top-actions">
+        <a
+          class="action-btn primary"
+          href="assets/CVrahim.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          View PDF CV
+        </a>
+
+        <button
+          class="action-btn secondary"
+          type="button"
+          onclick="window.print()"
+        >
+          Print This CV
+        </button>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+
+      <p class="summary">
+        Hydraulic and coastal engineer with expertise in numerical modelling,
+        data-driven analysis, and practical engineering judgement. Specialised
+        in river hydraulics, flood assessment, coastal hydrodynamics, sediment
+        transport, and groundwater modelling. Proficient in HEC-HMS, HEC-RAS,
+        Delft3D FM, MODFLOW, and related geospatial tools. Experienced in
+        delivering research-based consulting services to international clients
+        across Southeast Asia.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div>
+            <p class="entry-title">
+              Doctor of Engineering (Dr. Eng.) — Civil Engineering
+            </p>
+
+            <div class="entry-subtitle">
+              Nagoya University, Japan
+            </div>
+          </div>
+
+          <div class="entry-date">
+            Current (D1)
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div>
+            <p class="entry-title">
+              Master of Science in Engineering (MSc) — Water Resources
+              Engineering &amp; Management
+            </p>
+
+            <div class="entry-subtitle">
+              Bandung Institute of Technology (ITB), Indonesia
+            </div>
+          </div>
+
+          <div class="entry-date">
+            2023
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div>
+            <p class="entry-title">
+              Bachelor of Science in Engineering (BSc) — Water Resources
+              Engineering &amp; Management
+            </p>
+
+            <div class="entry-subtitle">
+              Bandung Institute of Technology (ITB), Indonesia
+            </div>
+          </div>
+
+          <div class="entry-date">
+            2021
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Academic Qualification Evidence</h2>
+
+      <div class="evidence-grid">
+        <a
+          href="assets/Nagoya.pdf"
+          target="_blank"
+          rel="noopener"
+          class="evidence-link"
+        >
+          🎓 Nagoya University Certificate of Admission — Dr. Eng.
+        </a>
+
+        <a
+          href="assets/Ijasah.png"
+          target="_blank"
+          rel="noopener"
+          class="evidence-link"
+        >
+          🎓 Certificate of Degree Completion — MSc (Eng.)
+        </a>
+
+        <a
+          href="assets/Ijasahb.png"
+          target="_blank"
+          rel="noopener"
+          class="evidence-link"
+        >
+          🎓 Certificate of Degree Completion — BSc (Eng.)
+        </a>
+
+        <a
+          href="assets/fastest.pdf"
+          target="_blank"
+          rel="noopener"
+          class="evidence-link"
+        >
+          📘 Academic Award 1
+        </a>
+
+        <a
+          href="assets/highest.pdf"
+          target="_blank"
+          rel="noopener"
+          class="evidence-link"
+        >
+          📘 Academic Award 2
+        </a>
+
+        <a
+          href="https://digilib.itb.ac.id/gdl/view/69909"
+          target="_blank"
+          rel="noopener"
+          class="evidence-link"
+        >
+          🔗 Thesis Repository — ITB
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Working Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div>
+            <p class="entry-title">
+              Management Trainee
+            </p>
+
+            <div class="entry-subtitle">
+              Brantas Abipraya Company, Indonesia
+            </div>
+          </div>
+
+          <div class="entry-date">
+            On Study Leave
+          </div>
+        </div>
+
+        <div class="entry-details">
+          Currently pursuing graduate study in Japan.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div>
+            <p class="entry-title">
+              Practicum Assistant
+            </p>
+
+            <div class="entry-subtitle">
+              Bandung Institute of Technology (ITB), Indonesia
+            </div>
+          </div>
+
+          <div class="entry-date">
+            2018–2022
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-row">
+          <strong>Hydrological Modelling</strong>
+          <span>HEC-HMS</span>
+        </div>
+
+        <div class="skill-row">
+          <strong>Hydraulic Modelling</strong>
+          <span>HEC-RAS 1D / 2D</span>
+        </div>
+
+        <div class="skill-row">
+          <strong>Hydrodynamic &amp; Sediment</strong>
+          <span>Delft3D FM</span>
+        </div>
+
+        <div class="skill-row">
+          <strong>Groundwater Modelling</strong>
+          <span>MODFLOW</span>
+        </div>
+
+        <div class="skill-row">
+          <strong>Data Analysis</strong>
+          <span>GIS, Remote Sensing</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Project Construction Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Residential Road Development of Golf Estate Cimanggis — West Java,
+            Indonesia
+          </p>
+
+          <div class="entry-date">
+            2024–2025
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: Karabha Digdaya Company
+        </div>
+
+        <div class="entry-details">
+          Managed cost control to support project efficiency and budget
+          compliance, oversaw supply chain management including procurement and
+          material coordination, and conducted site supervision.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Elevated Road and Bridge — West Java, Indonesia
+          </p>
+
+          <div class="entry-date">
+            2024–2025
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: Bank Indonesia
+        </div>
+
+        <div class="entry-details">
+          Supervised and managed logistics, and prepared technical reports and
+          project deliverables for an elevated road and bridge project in
+          Karawang, Indonesia.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Sidan Dam — Bali, Indonesia
+          </p>
+
+          <div class="entry-date">
+            2023–2024
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: Ministry of Public Works and Housing
+        </div>
+
+        <div class="entry-details">
+          Evaluated the effectiveness of heavy equipment used in the main dam
+          embankment construction at Sidan Dam, Bali Province, Indonesia.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Budong-Budong Dam — West Sulawesi, Indonesia
+          </p>
+
+          <div class="entry-date">
+            2023–2024
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: Ministry of Public Works and Housing
+        </div>
+
+        <div class="entry-details">
+          Assessed spillway excavation and lining works at Budong-Budong Dam,
+          Mamuju, West Sulawesi, Indonesia.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Bener Dam — Central Java, Indonesia
+          </p>
+
+          <div class="entry-date">
+            2022–2023
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: Ministry of Public Works and Housing
+        </div>
+
+        <div class="entry-details">
+          Evaluated cycle time and excavation methods for diversion tunnel
+          construction and developed effective tunnel concrete-lining methods.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Project Consulting Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Hazard Assessment for Climate Change Impacts on Pakil Pumped Storage
+            Power Plant
+          </p>
+
+          <div class="entry-date">
+            Ongoing
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: POWERCHINA HUADONG ENGINEERING (HDEC) · Laguna de Bay,
+          Philippines · Tools: HEC-HMS, HEC-RAS, DelftDashboard
+        </div>
+
+        <div class="entry-details">
+          Conducting rainfall–runoff and hydrodynamic modelling of Laguna de Bay
+          for hydrological and hydraulic hazard assessment under climate-change
+          scenarios.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Hydrology, Hydraulic, Hydrodynamic &amp; Sediment Modelling — Pakil
+            Pumped Storage Power Plant
+          </p>
+
+          <div class="entry-date">
+            Ongoing
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: POWERCHINA HUADONG ENGINEERING (HDEC) · Laguna de Bay,
+          Philippines · Tools: HEC-HMS, HEC-RAS, Delft3D FM
+        </div>
+
+        <div class="entry-details">
+          Performing rainfall–runoff, hydrodynamic, and sediment-transport
+          modelling under existing and future climate scenarios to assess
+          sediment processes and pumped-storage system performance.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Hydrology &amp; Hydraulic Modelling — River Flood Assessment PIT 110
+          </p>
+
+          <div class="entry-date">
+            Completed Dec 2025
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: PT Tectona Mitra Utama · Borneo, Indonesia · Tools: HEC-HMS,
+          HEC-RAS
+        </div>
+
+        <div class="entry-details">
+          Conducted rainfall–runoff and river hydraulic simulations to assess
+          flood inundation extent and overflow risk under multiple design-flood
+          scenarios, including testing alternative diversion-channel designs.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Hydrology &amp; Hydraulic Modelling — River Flood Assessment PIT 131
+          </p>
+
+          <div class="entry-date">
+            Completed Dec 2025
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: PT Tectona Mitra Utama · Borneo, Indonesia · Tools: HEC-HMS,
+          HEC-RAS
+        </div>
+
+        <div class="entry-details">
+          Evaluated existing river hydraulics and developed riverbank-channel
+          designs to improve capacity under multiple design-flood scenarios.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Academic Modelling Training — HEC-HMS &amp; HEC-RAS 1D + 2D Flow
+            Simulation
+          </p>
+
+          <div class="entry-date">
+            Completed Aug 2025
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: PT Saumy Gemilang Indonesia · Online · Tools: HEC-HMS,
+          HEC-RAS
+        </div>
+
+        <div class="entry-details">
+          Delivered professional training in rainfall–runoff modelling and
+          1D/2D hydraulic flood simulation for engineering practitioners.
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">
+            Guidelines for Sustainable Water Supply Management
+          </p>
+
+          <div class="entry-date">
+            Completed Aug 2025
+          </div>
+        </div>
+
+        <div class="project-meta">
+          Client: Perum Jasa Tirta II · Purwakarta, Indonesia
+        </div>
+
+        <div class="entry-details">
+          Developed guidelines covering integrated water-supply planning,
+          efficient water allocation, infrastructure optimisation, and
+          environmental protection.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Publications</h2>
+
+      <div class="publication">
+        Taufik, S.R., Radita, Elkayoan.,
+        <strong>Mustaqim, R.</strong> (2024).
+        <em>
+          Kajian Upaya Mitigasi Keruntuhan Bendungan Jatigede.
+        </em>
+        <strong>PIT-Hathi-41</strong>, pp. 152–162.
+
+        <a
+          href="https://www.researchgate.net/publication/393512660_Kajian_Upaya_Mitigasi_Keruntuhan_Bendungan_Dambreak_Jatigede"
+          target="_blank"
+          rel="noopener"
+        >
+          View conference paper
+        </a>.
+      </div>
+
+      <div class="publication">
+        <strong>Mustaqim, R.</strong>, Widyaningtias., Bumi, I.S., Suryadi,
+        Y., Nugroho, E.O., Kardhana, H., Adityawan, M.N. (2022).
+
+        <em>
+          Hydrodynamics Analysis in Bedono Beach Demak Regency, Central Java
+          Indonesia: Open Resource Processing for Modeling.
+        </em>
+
+        <strong>Jurnal Teknik Sipil ITB</strong>, Vol. 29 No. 3.
+
+        <a
+          href="https://doi.org/10.5614/jts.2022.29.3.3"
+          target="_blank"
+          rel="noopener"
+        >
+          DOI: 10.5614/jts.2022.29.3.3
+        </a>.
+      </div>
+
+      <div class="publication">
+        <strong>Mustaqim, R.</strong>, Widyaningtias., Pratama, M.B.,
+        Suryadi, Y., Nugroho, E.O., Kardhana, H., Bumi, I.S. (2021).
+
+        <em>
+          Analisis Sedimentasi dengan Penerapan Permeable Structure di Pantai
+          Bedono, Kabupaten Demak, Jawa Tengah.
+        </em>
+
+        <strong>PIT-Hathi-38</strong>, pp. 461–470.
+
+        <a
+          href="https://www.researchgate.net/publication/358904362_ANALISIS_SEDIMENTASI_DENGAN_PENERAPAN_PERMEABLE_STRUCTURE_DI_PANTAI_BEDONO_KABUPATEN_DEMAK_JAWA_TENGAH"
+          target="_blank"
+          rel="noopener"
+        >
+          View conference paper
+        </a>.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Industry Collaboration</h2>
+
+      <ul class="collaboration-list">
+        <li>
+          POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)
+        </li>
+        <li>Perum Jasa Tirta II</li>
+        <li>PT Saumy Gemilang Indonesia</li>
+        <li>PT Tectona Mitra Utama</li>
+      </ul>
+    </section>
+
+    <div class="footer-note">
+      © <span id="year"></span> Rahim Mustaqim · Hydraulic · Coastal · Water
+      Resources Engineering
+    </div>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>

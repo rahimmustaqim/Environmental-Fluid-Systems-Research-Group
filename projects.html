@@ -1,26 +1,93 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Projects | Environmental Fluid Systems Research Group</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* =========================================
+       PROJECT PAGE HEADER
+    ========================================= */
+
+    .projects-header {
+      padding: 90px 0 55px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(11, 95, 179, 0.09),
+          rgba(11, 95, 179, 0.02)
+        );
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .projects-header .container {
+      max-width: 900px;
+    }
+
+    .projects-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .projects-header h1 {
+      margin: 0 0 18px;
+      color: var(--primary-dark);
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .projects-header p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    /* =========================================
+       PROJECT SECTION
+    ========================================= */
+
+    .projects-section {
+      padding: 70px 0 90px;
+      background: var(--white);
+    }
+
     .works-intro {
       max-width: 880px;
-      margin: 0 auto 30px;
+      margin: 0 auto 35px;
       color: var(--muted);
       line-height: 1.75;
       text-align: center;
     }
+
+    /* =========================================
+       PROJECT TABLE
+    ========================================= */
 
     .works-table-wrap {
       overflow-x: auto;
@@ -41,10 +108,11 @@
       padding: 16px 18px;
       background: rgba(11, 95, 179, 0.07);
       color: var(--primary-dark);
-      font-size: .82rem;
+      font-size: 0.82rem;
+      font-weight: 800;
       text-align: left;
       text-transform: uppercase;
-      letter-spacing: .05em;
+      letter-spacing: 0.05em;
       border-bottom: 1px solid var(--line);
       white-space: nowrap;
     }
@@ -57,7 +125,7 @@
     }
 
     .works-table tbody tr {
-      transition: background .2s ease;
+      transition: background 0.2s ease;
     }
 
     .works-table tbody tr:hover {
@@ -79,7 +147,7 @@
       border-radius: 999px;
       background: rgba(11, 95, 179, 0.08);
       color: var(--primary);
-      font-size: .78rem;
+      font-size: 0.78rem;
       font-weight: 800;
       white-space: nowrap;
     }
@@ -99,15 +167,41 @@
       color: #006ca8;
     }
 
+    .work-type.training {
+      background: rgba(30, 136, 90, 0.10);
+      color: #16734e;
+    }
+
     .work-year {
       white-space: nowrap;
       font-weight: 700;
       color: var(--primary-dark);
     }
 
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
     @media (max-width: 760px) {
+      .projects-header {
+        padding: 65px 0 40px;
+        text-align: left;
+      }
+
+      .projects-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .projects-header p {
+        margin: 0;
+      }
+
       .works-intro {
         text-align: left;
+      }
+
+      .projects-section {
+        padding: 50px 0 70px;
       }
 
       .works-table {
@@ -120,265 +214,392 @@
 
 <body>
 
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
-      <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
+  <!-- =========================================
+       HEADER / NAVIGATION
+  ========================================== -->
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a class="brand" href="index.html">
+        <img src="assets/ourlogo.png" alt="EFSRG logo">
+
+        <div>
+          <strong>Environmental Fluid Systems</strong>
+          <span>Research Group</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a class="active" href="projects.html">Projects</a>
+          </li>
+
+          <li>
+            <a href="publications.html">Publications</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="contact.html">
+        <i class="fa-regular fa-envelope"></i>
+        Contact Us
+      </a>
+
+      <button class="menu-btn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- =========================================
+       SIMPLE PROJECT HEADER
+  ========================================== -->
+
+  <section class="projects-header">
+    <div class="container">
+
+      <span class="projects-kicker">
+        Selected Works
+      </span>
+
+      <h1>
+        Project Experience
+      </h1>
+
+      <p>
+        Selected professional and research experience across hydrology,
+        hydraulic modelling, flood risk, sediment transport, coastal systems,
+        water resources, and technical training.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       PROJECT EXPERIENCE TABLE
+  ========================================== -->
+
+  <section class="projects-section">
+    <div class="container">
+
+      <p class="works-intro">
+        Selected project experience is presented below, highlighting project
+        scope, collaboration, location, and period of involvement.
+      </p>
+
+      <div class="works-table-wrap">
+
+        <table class="works-table">
+
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Project Name</th>
+              <th>Role / Scope</th>
+              <th>Partner / Client</th>
+              <th>Location</th>
+              <th>Status / Year</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- PROJECT 07 -->
+
+            <tr>
+              <td>07</td>
+
+              <td>
+                <span class="work-title">
+                  HEC-HMS & HEC-RAS Training
+                </span>
+              </td>
+
+              <td>
+                <span class="work-type training">
+                  Training Support
+                </span>
+              </td>
+
+              <td>
+                EcoEdu.id Pusat Pelatihan Lingkungan
+              </td>
+
+              <td>
+                Online via Zoom Meeting
+              </td>
+
+              <td>
+                <span class="work-year">
+                  Aug 2026
+                </span>
+              </td>
+            </tr>
+
+
+            <!-- PROJECT 06 -->
+
+            <tr>
+              <td>06</td>
+
+              <td>
+                <span class="work-title">
+                  Pakil Hydrodynamic and Sediment Study
+                </span>
+              </td>
+
+              <td>
+                <span class="work-type coastal">
+                  Coastal & Marine Modelling
+                </span>
+              </td>
+
+              <td>
+                POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)
+              </td>
+
+              <td>
+                Laguna de Bay, Philippines
+              </td>
+
+              <td>
+                <span class="work-year">
+                  On-going
+                </span>
+              </td>
+            </tr>
+
+
+            <!-- PROJECT 05 -->
+
+            <tr>
+              <td>05</td>
+
+              <td>
+                <span class="work-title">
+                  Pakil Climate Hazard Assessment
+                </span>
+              </td>
+
+              <td>
+                <span class="work-type hydrology">
+                  Hydrology & Climate Risk
+                </span>
+              </td>
+
+              <td>
+                POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)
+              </td>
+
+              <td>
+                Laguna de Bay, Philippines
+              </td>
+
+              <td>
+                <span class="work-year">
+                  On-going
+                </span>
+              </td>
+            </tr>
+
+
+            <!-- PROJECT 04 -->
+
+            <tr>
+              <td>04</td>
+
+              <td>
+                <span class="work-title">
+                  PIT 110 River Flood Assessment
+                </span>
+              </td>
+
+              <td>
+                <span class="work-type hydraulic">
+                  Hydraulic & Flood Risk
+                </span>
+              </td>
+
+              <td>
+                PT Tectona Mitra Utama
+              </td>
+
+              <td>
+                Borneo, Indonesia
+              </td>
+
+              <td>
+                <span class="work-year">
+                  Dec 2025
+                </span>
+              </td>
+            </tr>
+
+
+            <!-- PROJECT 03 -->
+
+            <tr>
+              <td>03</td>
+
+              <td>
+                <span class="work-title">
+                  PIT 131 River Flood Assessment
+                </span>
+              </td>
+
+              <td>
+                <span class="work-type hydraulic">
+                  Hydraulic & Flood Risk
+                </span>
+              </td>
+
+              <td>
+                PT Tectona Mitra Utama
+              </td>
+
+              <td>
+                Borneo, Indonesia
+              </td>
+
+              <td>
+                <span class="work-year">
+                  Dec 2025
+                </span>
+              </td>
+            </tr>
+
+
+            <!-- PROJECT 02 -->
+
+            <tr>
+              <td>02</td>
+
+              <td>
+                <span class="work-title">
+                  HEC-HMS & HEC-RAS Training
+                </span>
+              </td>
+
+              <td>
+                <span class="work-type training">
+                  Training Provider
+                </span>
+              </td>
+
+              <td>
+                PT Saumy Gemilang Indonesia
+              </td>
+
+              <td>
+                Online via Zoom Meeting
+              </td>
+
+              <td>
+                <span class="work-year">
+                  Aug 2025
+                </span>
+              </td>
+            </tr>
+
+
+            <!-- PROJECT 01 -->
+
+            <tr>
+              <td>01</td>
+
+              <td>
+                <span class="work-title">
+                  Sustainable Water Supply Guidelines
+                </span>
+              </td>
+
+              <td>
+                <span class="work-type hydrology">
+                  Guideline Support
+                </span>
+              </td>
+
+              <td>
+                Perum Jasa Tirta II
+              </td>
+
+              <td>
+                Purwakarta, Indonesia
+              </td>
+
+              <td>
+                <span class="work-year">
+                  Aug 2025
+                </span>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
       </div>
-    </a>
-
-<nav class="nav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="active" href="projects.html">Projects</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-</nav>
-
-<a class="btn btn-primary header-cta" href="contact.html">
-  <i class="fa-regular fa-envelope"></i> Contact Us
-</a>
-
-<button class="menu-btn" aria-label="Open menu">
-  <i class="fa-solid fa-bars"></i>
-</button>
-
-  </div>
-</header>
-
-<section class="projects-hero-slider">
-  <div class="hero-slider">
-
-<div class="hero-slide active">
-  <img src="assets/climate.jpg" alt="Hydrology and climate risk analysis project">
-  <div class="hero-slide-overlay">
-    <div class="hero-slide-content">
-      <span class="hero-badge">Selected Project Experience</span>
-      <h1>Hydrology & Climate Risk Analysis</h1>
-      <p>
-        Rainfall-runoff analysis, watershed modelling, flood frequency estimation,
-        and climate impact assessment for water resources planning.
-      </p>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="hero-slide">
-  <img src="assets/sediment.png" alt="Hydraulic modelling and flood risk analysis project">
-  <div class="hero-slide-overlay">
-    <div class="hero-slide-content">
-      <span class="hero-badge">Selected Project Experience</span>
-      <h1>Hydraulic Modelling & Sediment Analysis</h1>
-      <p>
-       Technical modeling support for simulating sediment movement in pumping schemes.
-      </p>
-    </div>
-  </div>
-</div>
 
-<div class="hero-slide">
-  <img src="assets/river.jpg" alt="Coastal and marine modelling project">
-  <div class="hero-slide-overlay">
-    <div class="hero-slide-content">
-      <span class="hero-badge">Selected Project Experience</span>
-      <h1>River Capacity Analysis</h1>
-      <p>
-        Flood Protection Planning for Mining Areas.
-      </p>
-    </div>
-  </div>
-</div>
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
 
-</div>
+  <footer class="footer">
+    <div class="container footer-grid">
 
-<button class="hero-slider-btn prev" onclick="changeHeroSlide(-1)">
-  <i class="fa-solid fa-chevron-left"></i>
-</button>
+      <div class="brand">
 
-<button class="hero-slider-btn next" onclick="changeHeroSlide(1)">
-  <i class="fa-solid fa-chevron-right"></i>
-</button>
+        <img
+          src="assets/ourlogo.png"
+          alt="EFSRG logo"
+        >
 
-<div class="hero-slider-dots">
-  <span class="hero-dot active" onclick="goToHeroSlide(0)"></span>
-  <span class="hero-dot" onclick="goToHeroSlide(1)"></span>
-  <span class="hero-dot" onclick="goToHeroSlide(2)"></span>
-  <span class="hero-dot" onclick="goToHeroSlide(3)"></span>
-  <span class="hero-dot" onclick="goToHeroSlide(4)"></span>
-</div>
+        <div>
+          <strong>
+            Environmental Fluid Systems
+          </strong>
 
-  </div>
-</section>
+          <span>
+            Research Group
+          </span>
 
-<section class="section section-soft">
-  <div class="container">
-    <div class="section-title">
-      <h2>Project Experience</h2>
-    </div>
+          <p>
+            Science-driven solutions for water and environmental challenges.
+          </p>
+        </div>
 
-<p class="works-intro">
-  Selected project experience is listed in a concise format. The role/scope column clarifies the type of contribution across hydrology, hydraulic modelling, coastal systems, hydropower, and wind energy support.
-</p>
-
-<div class="works-table-wrap">
-  <table class="works-table">
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th>Project name</th>
-        <th>Role / Scope</th>
-        <th>Partner / Client</th>
-        <th>Location</th>
-        <th>Status / Year</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      
-      <tr>
-        <td>07</td>
-        <td><span class="work-title">HEC-HMS & HEC-RAS Training</span></td>
-        <td><span class="work-type coastal">Training Support</span></td>
-        <td>EcoEdu.id Pusat Pelatihan Lingkungan</td>
-        <td>Online via Zoom Meeting</td>
-        <td><span class="work-year">Aug 2026</span></td>
-      </tr>
-      
-      <tr>
-        <td>06</td>
-        <td><span class="work-title">Pakil Hydrodynamic and Sediment Study</span></td>
-        <td><span class="work-type coastal">Coastal & Marine Modelling</span></td>
-        <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
-        <td>Laguna de Bay, Philippines</td>
-        <td><span class="work-year">On-going</span></td>
-      </tr>
-      
-      <tr>
-        <td>05</td>
-        <td><span class="work-title">Pakil Climate Hazard Assessment</span></td>
-        <td><span class="work-type hydrology">Hydrology & Climate Risk</span></td>
-        <td>POWERCHINA HUADONG ENGINEERING CORPORATION LIMITED (HDEC)</td>
-        <td>Laguna de Bay, Philippines</td>
-        <td><span class="work-year">On-going</span></td>
-      </tr>
-
-      <tr>
-        <td>04</td>
-        <td><span class="work-title">PIT 110 River Flood Assessment</span></td>
-        <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
-        <td>PT Tectona Mitra Utama</td>
-        <td>Borneo, Indonesia</td>
-        <td><span class="work-year">Dec 2025</span></td>
-      </tr>
-
-      <tr>
-        <td>03</td>
-        <td><span class="work-title">PIT 131 River Flood Assessment</span></td>
-        <td><span class="work-type hydraulic">Hydraulic & Flood Risk</span></td>
-        <td>PT Tectona Mitra Utama</td>
-        <td>Borneo, Indonesia</td>
-        <td><span class="work-year">Dec 2025</span></td>
-      </tr>
-
-      <tr>
-        <td>02</td>
-        <td><span class="work-title">HEC-HMS & HEC-RAS Training</span></td>
-        <td><span class="work-type hydraulic">Training Provider</span></td>
-        <td>PT Saumy Gemilang Indonesia</td>
-        <td>Online via Zoom Meeting</td>
-        <td><span class="work-year">Aug 2025</span></td>
-      </tr>
-      
-      <tr>
-        <td>01</td>
-        <td><span class="work-title">Sustainable Water Supply Guidelines</span></td>
-        <td><span class="work-type hydrology">Guideline Support</span></td>
-        <td>Perum Jasa Tirta II</td>
-        <td>Purwakarta, Indonesia</td>
-        <td><span class="work-year">Aug 2025</span></td>
-      </tr>
-
-    </tbody>
-  </table>
-</div>
-
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="brand">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
-      <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
-        <p>Science-driven solutions for water and environmental challenges.</p>
       </div>
+
+      <p class="copyright">
+        © 2024 Environmental Fluid Systems Research Group.
+        All rights reserved.
+      </p>
+
     </div>
+  </footer>
 
-<p class="copyright">
-  © 2024 Environmental Fluid Systems Research Group. All rights reserved.
-</p>
 
-  </div>
-</footer>
+  <!-- =========================================
+       MAIN JAVASCRIPT
+  ========================================== -->
 
-<script src="script.js"></script>
-
-<script>
-  let heroSlideIndex = 0;
-  const heroSlides = document.querySelectorAll(".hero-slide");
-  const heroDots = document.querySelectorAll(".hero-dot");
-  let heroAutoSlide;
-
-  function showHeroSlide(index) {
-    if (!heroSlides.length) return;
-
-    if (index >= heroSlides.length) {
-      heroSlideIndex = 0;
-    } else if (index < 0) {
-      heroSlideIndex = heroSlides.length - 1;
-    } else {
-      heroSlideIndex = index;
-    }
-
-    heroSlides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === heroSlideIndex);
-    });
-
-    heroDots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === heroSlideIndex);
-    });
-  }
-
-  function changeHeroSlide(step) {
-    showHeroSlide(heroSlideIndex + step);
-    resetHeroAutoSlide();
-  }
-
-  function goToHeroSlide(index) {
-    showHeroSlide(index);
-    resetHeroAutoSlide();
-  }
-
-  function startHeroAutoSlide() {
-    heroAutoSlide = setInterval(() => {
-      showHeroSlide(heroSlideIndex + 1);
-    }, 4000);
-  }
-
-  function resetHeroAutoSlide() {
-    clearInterval(heroAutoSlide);
-    startHeroAutoSlide();
-  }
-
-  showHeroSlide(0);
-  startHeroAutoSlide();
-</script>
+  <script src="script.js"></script>
 
 </body>
 </html>

@@ -1,579 +1,1622 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Publications | Environmental Fluid Systems Research Group</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>
+    Publications | Environmental Fluid Systems Research Group
+  </title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- GOOGLE FONT -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+
+  <!-- MAIN CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
+
 
   <style>
-    .publications-hero {
-      padding: 78px 0 44px;
+
+
+    /* =====================================================
+       PUBLICATION SECTION
+    ====================================================== */
+
+    .publications-section {
+
+      padding: 70px 0 90px;
+
       background:
-        radial-gradient(circle at top left, rgba(37, 184, 90, 0.13), transparent 34%),
-        linear-gradient(135deg, #eef8ff 0%, #ffffff 64%);
+        linear-gradient(
+          180deg,
+          #f7fbff 0%,
+          #ffffff 100%
+        );
+
     }
 
-    .publications-hero .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: .82rem;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
 
-    .publications-hero h1 {
-      max-width: 980px;
-      margin: 0;
-      color: var(--primary-dark);
-      font-size: clamp(2.2rem, 5vw, 4.1rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
 
-    .publications-hero p {
-      max-width: 780px;
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
+    /* =====================================================
+       SECTION TITLE
+    ====================================================== */
 
-    .pub-intro {
-      max-width: 880px;
-      margin: 0 auto 28px;
+    .publications-heading {
+
       text-align: center;
-      color: var(--muted);
-      line-height: 1.75;
+
+      margin-bottom: 32px;
+
     }
+
+
+    .publications-heading h1 {
+
+      margin: 0 0 10px;
+
+      color: var(--primary-dark);
+
+      font-size:
+        clamp(2rem, 4vw, 3.2rem);
+
+      font-weight: 900;
+
+      letter-spacing: -0.035em;
+
+    }
+
+
+    .publications-heading p {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: .98rem;
+
+      line-height: 1.7;
+
+    }
+
+
+
+    /* =====================================================
+       FILTER
+    ====================================================== */
 
     .pub-filter {
+
       display: flex;
+
       flex-wrap: wrap;
+
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 28px;
+
+      gap: 9px;
+
+      margin-bottom: 32px;
+
     }
 
+
     .filter-btn {
-      border: 1px solid var(--line);
+
+      border:
+        1px solid var(--line);
+
       background: #fff;
-      color: var(--primary-dark);
+
+      color:
+        var(--primary-dark);
+
       border-radius: 999px;
-      padding: 10px 15px;
+
+      padding:
+        9px 14px;
+
       font-family: inherit;
+
       font-weight: 800;
-      font-size: .9rem;
+
+      font-size: .85rem;
+
       cursor: pointer;
+
       transition: .2s ease;
+
     }
+
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: var(--primary);
+
+      background:
+        var(--primary);
+
       color: #fff;
-      border-color: var(--primary);
+
+      border-color:
+        var(--primary);
+
     }
+
+
+
+    /* =====================================================
+       PUBLICATION LIST
+    ====================================================== */
 
     .pub-list {
+
       display: grid;
-      gap: 18px;
+
+      gap: 13px;
+
+      max-width: 1050px;
+
+      margin: 0 auto;
+
     }
+
+
+
+    /* =====================================================
+       COMPACT PUBLICATION CARD
+    ====================================================== */
 
     .pub-card {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 22px;
-      padding: 24px;
-      border-radius: 24px;
+
+      padding: 20px 22px;
+
       background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(7, 54, 111, .07);
-      transition: .25s ease;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 8px 24px
+        rgba(7, 54, 111, .055);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+
     }
+
 
     .pub-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(11, 95, 179, .28);
-      box-shadow: 0 20px 48px rgba(7, 54, 111, .12);
+
+      transform:
+        translateY(-2px);
+
+      border-color:
+        rgba(11, 95, 179, .25);
+
+      box-shadow:
+        0 13px 30px
+        rgba(7, 54, 111, .09);
+
     }
 
-    .pub-year {
-      border-radius: 20px;
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: #fff;
-      min-height: 120px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 14px;
-    }
 
-    .pub-year strong {
-      display: block;
-      font-size: 1.9rem;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
 
-    .pub-year span {
-      display: block;
-      font-size: .78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      opacity: .9;
-    }
+    /* =====================================================
+       TOP META
+       YEAR + TYPE
+    ====================================================== */
 
     .pub-meta {
+
       display: flex;
+
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
+
+      align-items: center;
+
+      gap: 7px;
+
+      margin-bottom: 10px;
+
     }
+
+
+
+    .pub-year-small {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      padding:
+        5px 9px;
+
+      border-radius: 999px;
+
+      background:
+        var(--primary);
+
+      color: #fff;
+
+      font-size: .74rem;
+
+      font-weight: 800;
+
+    }
+
+
 
     .pub-tag {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 6px;
-      padding: 6px 10px;
+
+      padding:
+        5px 9px;
+
       border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: .78rem;
+
+      background:
+        var(--primary-soft);
+
+      color:
+        var(--primary);
+
+      font-size: .74rem;
+
       font-weight: 800;
+
     }
+
+
 
     .pub-tag.green {
-      background: rgba(37, 184, 90, .12);
-      color: var(--green-dark);
+
+      background:
+        rgba(37, 184, 90, .12);
+
+      color:
+        var(--green-dark);
+
     }
+
+
 
     .pub-tag.blue {
-      background: rgba(0, 119, 182, .10);
+
+      background:
+        rgba(0, 119, 182, .10);
+
       color: #006ca8;
+
     }
+
+
+
+    /* =====================================================
+       TITLE
+    ====================================================== */
 
     .pub-content h3 {
-      margin: 0 0 10px;
-      color: var(--primary-dark);
-      font-size: 1.22rem;
-      line-height: 1.35;
+
+      margin:
+        0 0 7px;
+
+      color:
+        var(--primary-dark);
+
+      font-size: 1.08rem;
+
+      line-height: 1.4;
+
+      font-weight: 800;
+
     }
+
+
+
+    /* =====================================================
+       AUTHORS
+    ====================================================== */
 
     .pub-authors {
-      color: var(--text);
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.55;
+
+      color:
+        var(--text);
+
+      font-weight: 600;
+
+      font-size: .9rem;
+
+      margin-bottom: 6px;
+
+      line-height: 1.5;
+
     }
+
+
+
+    /* =====================================================
+       SOURCE / JOURNAL / CONFERENCE
+    ====================================================== */
 
     .pub-source {
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 14px;
+
+      color:
+        var(--muted);
+
+      line-height: 1.55;
+
+      font-size: .88rem;
+
+      margin-bottom: 11px;
+
     }
+
+
+
+    /* =====================================================
+       LINKS
+    ====================================================== */
 
     .pub-actions {
+
       display: flex;
+
       flex-wrap: wrap;
-      gap: 10px;
+
+      gap: 8px;
+
     }
+
+
 
     .pub-link {
+
       display: inline-flex;
+
       align-items: center;
-      gap: 8px;
-      padding: 10px 13px;
-      border-radius: 12px;
+
+      gap: 7px;
+
+      padding:
+        7px 10px;
+
+      border-radius: 9px;
+
       background: #fff;
-      border: 1px solid var(--line);
-      color: var(--primary);
+
+      border:
+        1px solid var(--line);
+
+      color:
+        var(--primary);
+
       font-weight: 800;
-      font-size: .88rem;
+
+      font-size: .78rem;
+
+      text-decoration: none;
+
       transition: .2s ease;
+
     }
+
 
     .pub-link:hover {
-      background: var(--primary);
+
+      background:
+        var(--primary);
+
       color: #fff;
-      border-color: var(--primary);
+
+      border-color:
+        var(--primary);
+
     }
 
-    .pub-note {
-      margin-top: 30px;
-      padding: 22px;
-      border-radius: 22px;
-      background: var(--primary-dark);
-      color: #fff;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
 
-    .pub-note i {
-      color: #7fe0a0;
-      font-size: 1.7rem;
-      margin-top: 4px;
-    }
 
-    .pub-note h3 {
-      margin: 0 0 8px;
-      color: #fff;
-    }
-
-    .pub-note p {
-      margin: 0;
-      line-height: 1.7;
-      opacity: .94;
-    }
+    /* =====================================================
+       MOBILE
+    ====================================================== */
 
     @media (max-width: 720px) {
-      .pub-intro {
-        text-align: left;
+
+
+      .publications-section {
+
+        padding:
+          48px 0 65px;
+
       }
+
+
+      .publications-heading {
+
+        text-align: left;
+
+      }
+
+
+      .publications-heading p {
+
+        margin: 0;
+
+      }
+
 
       .pub-filter {
+
         justify-content: flex-start;
+
       }
+
 
       .pub-card {
-        grid-template-columns: 1fr;
+
+        padding:
+          17px 16px;
+
       }
 
-      .pub-year {
-        min-height: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+      .pub-content h3 {
+
+        font-size: 1rem;
+
       }
 
-      .pub-year strong {
-        margin-bottom: 0;
-      }
+
     }
+
+
   </style>
+
 </head>
+
+
 
 <body>
 
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
 <header class="site-header">
+
   <div class="container nav-wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
+
+
+    <a
+      class="brand"
+      href="index.html"
+    >
+
+      <img
+        src="assets/ourlogo.png"
+        alt="EFSRG logo"
+      >
+
       <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
+
+        <strong>
+          Environmental Fluid Systems
+        </strong>
+
+        <span>
+          Research Group
+        </span>
+
       </div>
+
     </a>
+
+
 
     <nav class="nav">
+
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a class="active" href="publications.html">Publications</a></li>
-        <li><a href="about.html">About</a></li>
+
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+
+        <li>
+          <a href="projects.html">
+            Projects
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            class="active"
+            href="publications.html"
+          >
+            Publications
+          </a>
+        </li>
+
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
       </ul>
+
     </nav>
 
-    <a class="btn btn-primary header-cta" href="contact.html">
-      <i class="fa-regular fa-envelope"></i> Contact Us
+
+
+    <a
+      class="btn btn-primary header-cta"
+      href="contact.html"
+    >
+
+      <i class="fa-regular fa-envelope"></i>
+
+      Contact Us
+
     </a>
 
-    <button class="menu-btn" aria-label="Open menu">
+
+
+    <button
+      class="menu-btn"
+      aria-label="Open menu"
+    >
+
       <i class="fa-solid fa-bars"></i>
+
     </button>
+
+
   </div>
+
 </header>
 
-<section class="publications-hero">
+
+
+
+
+<!-- =====================================================
+     SELECTED OUTPUTS
+====================================================== -->
+
+<section class="publications-section">
+
   <div class="container">
-    <div class="eyebrow">
-      <i class="fa-solid fa-book-open"></i>
-      Publications & Technical Outputs
+
+
+
+    <!-- TITLE -->
+
+    <div class="publications-heading">
+
+      <h1>
+        Selected Outputs
+      </h1>
+
+      <p>
+        Selected journal publications,
+        conference papers,
+        and technical training materials.
+      </p>
+
     </div>
 
-    <h1>Selected publications, conference papers, and technical report.</h1>
 
-    <div class="accent-line"></div>
 
-  </div>
-</section>
 
-<section class="section section-soft">
-  <div class="container">
-    <div class="section-title">
-      <h2>Selected Outputs</h2>
-    </div>
+
+    <!-- FILTER -->
 
     <div class="pub-filter">
-      <button class="filter-btn active" onclick="filterPublications('all', this)">All</button>
-      <button class="filter-btn" onclick="filterPublications('journal', this)">Journal</button>
-      <button class="filter-btn" onclick="filterPublications('conference', this)">Conference Paper</button>
-      <button class="filter-btn" onclick="filterPublications('training', this)">Training Material</button>
+
+
+      <button
+        class="filter-btn active"
+        onclick="filterPublications('all', this)"
+      >
+        All
+      </button>
+
+
+
+      <button
+        class="filter-btn"
+        onclick="filterPublications('journal', this)"
+      >
+        Journal
+      </button>
+
+
+
+      <button
+        class="filter-btn"
+        onclick="filterPublications('conference', this)"
+      >
+        Conference Paper
+      </button>
+
+
+
+      <button
+        class="filter-btn"
+        onclick="filterPublications('training', this)"
+      >
+        Training Material
+      </button>
+
+
     </div>
+
+
+
+
+
+    <!-- =================================================
+         PUBLICATION LIST
+    ================================================== -->
 
     <div class="pub-list">
 
-      <article class="pub-card" data-category="conference">
-        <div class="pub-year">
-          <div>
-            <strong>2024</strong>
-            <span>Conference</span>
-          </div>
+
+
+
+
+      <!-- ===============================================
+           2026 JOURNAL
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="journal"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2026
+
+          </span>
+
+
+          <span class="pub-tag blue">
+
+            <i class="fa-regular fa-file-lines"></i>
+
+            Journal
+
+          </span>
+
+
         </div>
+
+
 
         <div class="pub-content">
 
-          <h3>Kajian Upaya Mitigasi Keruntuhan Bendungan Jatigede</h3>
+
+          <h3>
+
+            Prototype-scale simulation of key wave parameters
+            and force induced by black tsunamis
+
+          </h3>
+
+
 
           <div class="pub-authors">
-            Taufik, S.R., Radita, Elkayoan., Mustaqim, R.
+
+            Xin Liu,
+            Tomoaki Nakamura,
+            Yong-hwan Cho,
+            Norimi Mizutani.
+
           </div>
+
+
 
           <div class="pub-source">
-            PIT-HATHI-41, pp. 152–162. Conference Paper.
+
+            Ocean Engineering,
+            Vol. 353 Part. 1.
+            DOI: 10.1016/j.oceaneng.2026.124718
+
           </div>
+
+
 
           <div class="pub-actions">
-            <a class="pub-link" href="https://www.researchgate.net/publication/393512660_Kajian_Upaya_Mitigasi_Keruntuhan_Bendungan_Dambreak_Jatigede" target="_blank">
-              <i class="fa-solid fa-link"></i> Open ResearchGate
+
+
+            <a
+              class="pub-link"
+              href="https://doi.org/10.1016/j.oceaneng.2026.124718"
+              target="_blank"
+            >
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              Open DOI
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
 
-      <article class="pub-card" data-category="journal">
-        <div class="pub-year">
-          <div>
-            <strong>2022</strong>
-            <span>Journal</span>
-          </div>
+
+
+
+
+
+
+      <!-- ===============================================
+           2025 JOURNAL
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="journal"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2025
+
+          </span>
+
+
+          <span class="pub-tag blue">
+
+            <i class="fa-regular fa-file-lines"></i>
+
+            Journal
+
+          </span>
+
+
         </div>
 
+
+
         <div class="pub-content">
-          <h3>Hydrodynamics Analysis in Bedono Beach Demak Regency, Central Java Indonesia: Open Resource Processing for Modeling</h3>
+
+
+          <h3>
+
+            Three-dimensional simulation of quasi-steady wave
+            forces from black tsunamis:
+            implications for coastal hazard assessment
+
+          </h3>
+
+
 
           <div class="pub-authors">
-            Mustaqim, R., Widyaningtias., Bumi, I.S., Suryadi, Y., Nugroho, E.O., Kardhana, H., Adityawan, M.N.
+
+            Xin Liu,
+            Tomoaki Nakamura,
+            Yong-hwan Cho,
+            Norimi Mizutani.
+
           </div>
+
+
 
           <div class="pub-source">
-            Jurnal Teknik Sipil ITB, Vol. 29 No. 3. DOI: 10.5614/jts.2022.29.3.3.
+
+            Coastal Engineering Journal,
+            Vol. 67,
+            2025 – Issue 4.
+            DOI: 10.1080/21664250.2025.2556597
+
           </div>
+
+
 
           <div class="pub-actions">
-            <a class="pub-link" href="https://doi.org/10.5614/jts.2022.29.3.3" target="_blank">
-              <i class="fa-solid fa-link"></i> Open DOI
+
+
+            <a
+              class="pub-link"
+              href="https://doi.org/10.1080/21664250.2025.2556597"
+              target="_blank"
+            >
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              Open DOI
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
 
-     <article class="pub-card" data-category="journal">
-        <div class="pub-year">
-          <div>
-            <strong>2026</strong>
-            <span>Journal</span>
-          </div>
+
+
+
+
+
+
+      <!-- ===============================================
+           2024 JOURNAL
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="journal"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2024
+
+          </span>
+
+
+          <span class="pub-tag blue">
+
+            <i class="fa-regular fa-file-lines"></i>
+
+            Journal
+
+          </span>
+
+
         </div>
+
+
+
         <div class="pub-content">
-          <h3>Prototype-scale simulation of key wave parameters and force induced by black tsunamis</h3>
+
+
+          <h3>
+
+            Numerical Simulation of Wave-Induced Scour
+            in Front of Vertical and Inclined Breakwaters
+
+          </h3>
+
+
+
           <div class="pub-authors">
-            Xin Liu, Tomoaki Nakamura, Yong-hwan Cho, Norimi Mizutani.
+
+            Xin Liu,
+            Tomoaki Nakamura,
+            Yong-hwan Cho,
+            Norimi Mizutani.
+
           </div>
+
+
+
           <div class="pub-source">
-            Ocean Engineering, Vol. 353 Part. 1. DOI: 10.1016/j.oceaneng.2026.124718
+
+            J. Mar. Sci. Eng.
+            2024,
+            12(12),
+            2261.
+            DOI: 10.3390/jmse12122261
+
           </div>
+
+
+
           <div class="pub-actions">
-            <a class="pub-link" href="https://doi.org/10.1016/j.oceaneng.2026.124718" target="_blank">
-              <i class="fa-solid fa-link"></i> Open DOI
+
+
+            <a
+              class="pub-link"
+              href="https://doi.org/10.3390/jmse12122261"
+              target="_blank"
+            >
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              Open DOI
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
 
-    <article class="pub-card" data-category="journal">
-        <div class="pub-year">
-          <div>
-            <strong>2024</strong>
-            <span>Journal</span>
-          </div>
+
+
+
+
+
+
+      <!-- ===============================================
+           2024 CONFERENCE
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="conference"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2024
+
+          </span>
+
+
+          <span class="pub-tag green">
+
+            <i class="fa-solid fa-users"></i>
+
+            Conference
+
+          </span>
+
+
         </div>
+
+
+
         <div class="pub-content">
-          <h3>Numerical Simulation of Wave-Induced Scour in Front of Vertical and Inclined Breakwaters</h3>
+
+
+          <h3>
+
+            Kajian Upaya Mitigasi Keruntuhan Bendungan Jatigede
+
+          </h3>
+
+
+
           <div class="pub-authors">
-            Xin Liu, Tomoaki Nakamura, Yong-hwan Cho, Norimi Mizutani.
+
+            Taufik, S.R.,
+            Radita,
+            Elkayoan.,
+            Mustaqim, R.
+
           </div>
+
+
+
           <div class="pub-source">
-            J. Mar. Sci. Eng. 2024, 12(12), 2261 DOI: 10.3390/jmse12122261
+
+            PIT-HATHI-41,
+            pp. 152–162.
+            Conference Paper.
+
           </div>
+
+
+
           <div class="pub-actions">
-            <a class="pub-link" href="https://doi.org/10.3390/jmse12122261" target="_blank">
-              <i class="fa-solid fa-link"></i> Open DOI
+
+
+            <a
+              class="pub-link"
+              href="https://www.researchgate.net/publication/393512660_Kajian_Upaya_Mitigasi_Keruntuhan_Bendungan_Dambreak_Jatigede"
+              target="_blank"
+            >
+
+              <i class="fa-brands fa-researchgate"></i>
+
+              ResearchGate
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
 
-   <article class="pub-card" data-category="journal">
-        <div class="pub-year">
-          <div>
-            <strong>2025</strong>
-            <span>Journal</span>
-          </div>
+
+
+
+
+
+
+      <!-- ===============================================
+           2022 JOURNAL
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="journal"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2022
+
+          </span>
+
+
+          <span class="pub-tag blue">
+
+            <i class="fa-regular fa-file-lines"></i>
+
+            Journal
+
+          </span>
+
+
         </div>
+
+
+
         <div class="pub-content">
-          <h3>Three-dimensional simulation of quasi-steady wave forces from black tsunamis: implications for coastal hazard assessment</h3>
+
+
+          <h3>
+
+            Hydrodynamics Analysis in Bedono Beach Demak Regency,
+            Central Java Indonesia:
+            Open Resource Processing for Modeling
+
+          </h3>
+
+
+
           <div class="pub-authors">
-            Xin Liu, Tomoaki Nakamura, Yong-hwan Cho, Norimi Mizutani.
+
+            Mustaqim, R.,
+            Widyaningtias.,
+            Bumi, I.S.,
+            Suryadi, Y.,
+            Nugroho, E.O.,
+            Kardhana, H.,
+            Adityawan, M.N.
+
           </div>
+
+
+
           <div class="pub-source">
-            Coastal Engineering Journal, Vol. 67, 2025- Issue 4. DOI: 10.1080/21664250.2025.2556597
+
+            Jurnal Teknik Sipil ITB,
+            Vol. 29 No. 3.
+            DOI: 10.5614/jts.2022.29.3.3
+
           </div>
+
+
+
           <div class="pub-actions">
-            <a class="pub-link" href="https://doi.org/10.1080/21664250.2025.2556597" target="_blank">
-              <i class="fa-solid fa-link"></i> Open DOI
+
+
+            <a
+              class="pub-link"
+              href="https://doi.org/10.5614/jts.2022.29.3.3"
+              target="_blank"
+            >
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              Open DOI
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
 
-      <article class="pub-card" data-category="conference">
-        <div class="pub-year">
-          <div>
-            <strong>2021</strong>
-            <span>Conference</span>
-          </div>
+
+
+
+
+
+
+      <!-- ===============================================
+           2021 CONFERENCE
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="conference"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2021
+
+          </span>
+
+
+          <span class="pub-tag green">
+
+            <i class="fa-solid fa-users"></i>
+
+            Conference
+
+          </span>
+
+
         </div>
+
+
 
         <div class="pub-content">
 
-          <h3>Analisis Sedimentasi Dengan Penerapan Permeable Structure di Pantai Bedono, Kabupaten Demak, Jawa Tengah</h3>
+
+          <h3>
+
+            Analisis Sedimentasi Dengan Penerapan
+            Permeable Structure di Pantai Bedono,
+            Kabupaten Demak,
+            Jawa Tengah
+
+          </h3>
+
+
 
           <div class="pub-authors">
-            Mustaqim, R., Widyaningtias., Pratama, M.B., Suryadi, Y., Nugroho, E.O., Kardhana, H., Bumi, I.S.
+
+            Mustaqim, R.,
+            Widyaningtias.,
+            Pratama, M.B.,
+            Suryadi, Y.,
+            Nugroho, E.O.,
+            Kardhana, H.,
+            Bumi, I.S.
+
           </div>
+
+
 
           <div class="pub-source">
-            PIT-HATHI-38, pp. 461–470. Conference Paper.
+
+            PIT-HATHI-38,
+            pp. 461–470.
+            Conference Paper.
+
           </div>
+
+
 
           <div class="pub-actions">
-            <a class="pub-link" href="https://www.researchgate.net/publication/358904362_ANALISIS_SEDIMENTASI_DENGAN_PENERAPAN_PERMEABLE_STRUCTURE_DI_PANTAI_BEDONO_KABUPATEN_DEMAK_JAWA_TENGAH" target="_blank">
-              <i class="fa-solid fa-link"></i> Open ResearchGate
+
+
+            <a
+              class="pub-link"
+              href="https://www.researchgate.net/publication/358904362_ANALISIS_SEDIMENTASI_DENGAN_PENERAPAN_PERMEABLE_STRUCTURE_DI_PANTAI_BEDONO_KABUPATEN_DEMAK_JAWA_TENGAH"
+              target="_blank"
+            >
+
+              <i class="fa-brands fa-researchgate"></i>
+
+              ResearchGate
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
 
-      <article class="pub-card" data-category="training">
-        <div class="pub-year">
-          <div>
-            <strong>2025</strong>
-            <span>Training</span>
-          </div>
+
+
+
+
+
+
+      <!-- ===============================================
+           TRAINING 2025
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="training"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2025
+
+          </span>
+
+
+          <span class="pub-tag">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+
+            Training Material
+
+          </span>
+
+
         </div>
+
+
 
         <div class="pub-content">
 
-          <h3>Catchment Delineation Using QGIS</h3>
+
+          <h3>
+
+            Catchment Delineation Using QGIS
+
+          </h3>
+
+
 
           <div class="pub-authors">
+
             Training material
+
           </div>
+
+
 
           <div class="pub-source">
-            Practical training material for watershed and catchment delineation using QGIS to support hydrological analysis and spatial water resources assessment.
+
+            Practical training material for watershed
+            and catchment delineation using QGIS
+            to support hydrological analysis
+            and spatial water resources assessment.
+
           </div>
+
+
 
           <div class="pub-actions">
-            <a class="pub-link" href="assets/training/catchment-delineation-using-qgis.pdf" target="_blank">
-              <i class="fa-regular fa-file-pdf"></i> View PDF
+
+
+            <a
+              class="pub-link"
+              href="assets/training/catchment-delineation-using-qgis.pdf"
+              target="_blank"
+            >
+
+              <i class="fa-regular fa-file-pdf"></i>
+
+              View PDF
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
 
-      <article class="pub-card" data-category="training">
-        <div class="pub-year">
-          <div>
-            <strong>2025</strong>
-            <span>Training</span>
-          </div>
+
+
+
+
+
+
+      <!-- ===============================================
+           TRAINING 2025
+      ================================================ -->
+
+      <article
+        class="pub-card"
+        data-category="training"
+      >
+
+
+        <div class="pub-meta">
+
+
+          <span class="pub-year-small">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            2025
+
+          </span>
+
+
+          <span class="pub-tag">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+
+            Training Material
+
+          </span>
+
+
         </div>
+
+
 
         <div class="pub-content">
 
-          <h3>Pemodelan Banjir Menggunakan HEC-HMS</h3>
+
+          <h3>
+
+            Pemodelan Banjir Menggunakan HEC-HMS
+
+          </h3>
+
+
 
           <div class="pub-authors">
+
             Training material
+
           </div>
+
+
 
           <div class="pub-source">
-            Practical training material for rainfall-runoff simulation and flood modelling using HEC-HMS to support hydrological and hydraulic analysis.
+
+            Practical training material for rainfall-runoff
+            simulation and flood modelling using HEC-HMS
+            to support hydrological and hydraulic analysis.
+
           </div>
 
+
+
           <div class="pub-actions">
-            <a class="pub-link" href="assets/training/pemodelan-banjir-menggunakan-hec-hms.pdf" target="_blank">
-              <i class="fa-regular fa-file-pdf"></i> View PDF
+
+
+            <a
+              class="pub-link"
+              href="assets/training/pemodelan-banjir-menggunakan-hec-hms.pdf"
+              target="_blank"
+            >
+
+              <i class="fa-regular fa-file-pdf"></i>
+
+              View PDF
+
             </a>
+
+
           </div>
+
+
         </div>
+
+
       </article>
+
+
+
 
     </div>
 
   </div>
+
 </section>
 
+
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
 <footer class="footer">
+
   <div class="container footer-grid">
+
+
     <div class="brand">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
+
+      <img
+        src="assets/ourlogo.png"
+        alt="EFSRG logo"
+      >
+
+
       <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
-        <p>Science-driven solutions for water and environmental challenges.</p>
+
+        <strong>
+          Environmental Fluid Systems
+        </strong>
+
+        <span>
+          Research Group
+        </span>
+
+        <p>
+          Science-driven solutions for water
+          and environmental challenges.
+        </p>
+
       </div>
+
     </div>
 
+
+
     <p class="copyright">
-      © 2024 Environmental Fluid Systems Research Group. All rights reserved.
+
+      © 2024 Environmental Fluid Systems Research Group.
+      All rights reserved.
+
     </p>
+
+
   </div>
+
 </footer>
+
+
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
 
 <script src="script.js"></script>
 
-<script>
-  function filterPublications(category, button) {
-    const cards = document.querySelectorAll(".pub-card");
-    const buttons = document.querySelectorAll(".filter-btn");
 
-    buttons.forEach(btn => btn.classList.remove("active"));
+
+<script>
+
+  function filterPublications(category, button) {
+
+    const cards =
+      document.querySelectorAll(".pub-card");
+
+    const buttons =
+      document.querySelectorAll(".filter-btn");
+
+
+    buttons.forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+
     button.classList.add("active");
 
+
     cards.forEach(card => {
-      if (category === "all" || card.dataset.category === category) {
-        card.style.display = "grid";
-      } else {
-        card.style.display = "none";
+
+      if (
+        category === "all" ||
+        card.dataset.category === category
+      ) {
+
+        card.style.display = "block";
+
       }
+
+      else {
+
+        card.style.display = "none";
+
+      }
+
     });
+
   }
+
 </script>
 
+
+
 </body>
+
 </html>

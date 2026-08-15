@@ -30,6 +30,7 @@ function openScopeModal(pageUrl, title) {
   document.body.classList.add("scope-modal-open");
 }
 
+
 function closeScopeModal() {
   const modal = document.getElementById("scopeModal");
   const frame = document.getElementById("scopeFrame");
@@ -43,6 +44,7 @@ function closeScopeModal() {
     frame.src = "";
   }, 250);
 }
+
 
 function printScopeContent() {
   const frame = document.getElementById("scopeFrame");
@@ -61,13 +63,16 @@ function printScopeContent() {
 let aboutSlideIndex = 0;
 let aboutAutoSlide;
 
+
 function getAboutSlides() {
   return document.querySelectorAll(".about-slide");
 }
 
+
 function getAboutDots() {
   return document.querySelectorAll(".about-dot");
 }
+
 
 function showAboutSlide(index) {
   const aboutSlides = getAboutSlides();
@@ -92,10 +97,12 @@ function showAboutSlide(index) {
   });
 }
 
+
 function goToAboutSlide(index) {
   showAboutSlide(index);
   resetAboutAutoSlide();
 }
+
 
 function startAboutAutoSlide() {
   if (!getAboutSlides().length) return;
@@ -107,24 +114,33 @@ function startAboutAutoSlide() {
   }, 4200);
 }
 
+
 function resetAboutAutoSlide() {
   clearInterval(aboutAutoSlide);
   startAboutAutoSlide();
 }
 
 
-/* =========================
+/* =====================================================
    RECENT ACTIVITIES / DISCUSSIONS
-   FULL PHOTO + OVERLAY SLIDER
-========================= */
+===================================================== */
 
 const activityItems = [
+
+  /* ===================================================
+     SLIDE 1
+     INDONESIA ENERGY TRANSITION
+  =================================================== */
+
   {
     image: "assets/Discussion1.png",
+
     alt: "Indonesia Energy Transition",
+
     type: "discussion",
 
     topicIcon: "fa-solid fa-bolt",
+
     topic: "Indonesia Energy Transition",
 
     title:
@@ -135,58 +151,81 @@ const activityItems = [
 
     points: [
       "Energy demand, consumption trends, and the current fossil fuel-dominated energy mix.",
+
       "Opportunities for renewable energy development and the technical, economic, and policy challenges of the energy transition.",
+
       "How Indonesia's archipelagic geography influences energy infrastructure, accessibility, and renewable energy deployment."
     ],
 
     outcome: `
       <p>
         <strong>Discussion result:</strong>
-        One interesting point raised during the discussion was Japan's energy transition
-        experience. In the 1990s, Japan imported liquefied natural gas (LNG) from Indonesia
-        as a cleaner alternative to coal.
+        One interesting point raised during the discussion was Japan's energy
+        transition experience. In the 1990s, Japan imported liquefied natural
+        gas (LNG) from Indonesia as a cleaner alternative to coal.
       </p>
 
       <p>
-        This highlights that, for Indonesia, LNG could serve as a practical transitional
-        energy source while renewable energy capacity continues to expand. Compared with
-        coal, LNG produces lower CO₂ emissions and significantly reduces SOₓ and NOₓ
-        emissions, helping maintain reliable and affordable electricity during the transition.
+        This highlights that, for Indonesia, LNG could serve as a practical
+        transitional energy source while renewable energy capacity continues
+        to expand.
       </p>
 
       <p>
-        Japan's long-term strategy also demonstrates that LNG can play an important bridging
-        role before renewable energy becomes the dominant source.
+        Compared with coal, LNG produces lower CO₂ emissions and significantly
+        reduces SOₓ and NOₓ emissions, helping maintain reliable and affordable
+        electricity during the transition.
       </p>
 
       <p>
-        For Indonesia, this approach is particularly relevant because 82% of electricity
-        generation still comes from fossil fuels, despite the country's enormous renewable
-        energy potential.
+        Japan's long-term strategy also demonstrates that LNG can play an
+        important bridging role before renewable energy becomes the dominant
+        source.
       </p>
 
       <p>
-        The discussion emphasized that the main challenge is not the availability of renewable
-        resources, but Indonesia's unique archipelagic geography. Renewable energy resources
-        are often located far from major demand centers, making power transmission and grid
-        integration technically challenging and costly.
+        For Indonesia, this approach is particularly relevant because 82% of
+        electricity generation still comes from fossil fuels, despite the
+        country's enormous renewable energy potential.
       </p>
 
       <p>
-        Therefore, accelerating Indonesia's energy transition will require not only greater
-        investment in renewable energy but also stronger transmission networks, energy storage
-        systems, and integrated grid infrastructure to ensure reliable and affordable
-        electricity across the archipelago.
+        The discussion emphasized that the main challenge is not the
+        availability of renewable resources, but Indonesia's unique
+        archipelagic geography.
+      </p>
+
+      <p>
+        Renewable energy resources are often located far from major demand
+        centers, making power transmission and grid integration technically
+        challenging and costly.
+      </p>
+
+      <p>
+        Therefore, accelerating Indonesia's energy transition will require not
+        only greater investment in renewable energy but also stronger
+        transmission networks, energy storage systems, and integrated grid
+        infrastructure to ensure reliable and affordable electricity across
+        the archipelago.
       </p>
     `
   },
 
+
+  /* ===================================================
+     SLIDE 2
+     ECOEDU TRAINING
+  =================================================== */
+
   {
     image: "assets/training-ecoedu.png.png",
+
     alt: "Training Support with EcoEdu.id",
+
     type: "activity",
 
     topicIcon: "fa-solid fa-person-chalkboard",
+
     topic: "Training Support with EcoEdu.id",
 
     title:
@@ -196,215 +235,504 @@ const activityItems = [
       "Training support conducted together with EcoEdu.id to strengthen practical skills in watershed analysis, rainfall-runoff modeling, flood simulation, and integrated one-dimensional and two-dimensional hydraulic modeling.",
 
     points: [
+
       "QGIS training for spatial data preparation, watershed delineation, stream network analysis, terrain processing, and map visualization.",
+
       "HEC-HMS training for rainfall-runoff modeling, basin model setup, hydrologic parameter preparation, and discharge simulation.",
+
       "HEC-RAS 1D training for river geometry setup, cross-section preparation, boundary conditions, steady and unsteady flow simulation, and flood profile analysis.",
+
       "HEC-RAS 2D training for terrain-based computational mesh setup, 2D flow areas, boundary conditions, flood-depth mapping, velocity analysis, and inundation assessment.",
+
       "Integration of HEC-RAS 1D and 2D models to represent river-channel flow and floodplain inundation within a connected hydraulic system."
     ],
 
     outcome: `
       <p>
         <strong>Training result:</strong>
-        The training introduced an integrated workflow beginning with spatial-data processing
-        in QGIS, followed by watershed and hydrologic analysis in HEC-HMS, and hydraulic
-        simulation using HEC-RAS.
+        The training introduced an integrated workflow beginning with spatial
+        data processing in QGIS, followed by watershed and hydrologic analysis
+        in HEC-HMS, and hydraulic simulation using HEC-RAS.
       </p>
 
       <p>
-        In the QGIS session, participants practiced preparing elevation and spatial datasets,
-        delineating watersheds, extracting stream networks, organizing model inputs, and
-        producing clear maps for hydrologic and hydraulic analysis.
+        In the QGIS session, participants practiced preparing elevation and
+        spatial datasets, delineating watersheds, extracting stream networks,
+        organizing model inputs, and producing clear maps for hydrologic and
+        hydraulic analysis.
       </p>
 
       <p>
-        The HEC-HMS session focused on rainfall-runoff modeling, basin configuration,
-        hydrologic parameterization, and the preparation of discharge hydrographs that can
-        be used as hydraulic-model boundary conditions.
+        The HEC-HMS session focused on rainfall-runoff modeling, basin
+        configuration, hydrologic parameterization, and the preparation of
+        discharge hydrographs that can be used as hydraulic-model boundary
+        conditions.
       </p>
 
       <p>
-        The HEC-RAS sessions covered both 1D and 2D approaches. The 1D component focused on
-        river cross-sections, flow boundaries, water-surface profiles, and river hydraulics,
-        while the 2D component introduced computational meshes, terrain-based flood modeling,
-        inundation depth, and velocity interpretation.
+        The HEC-RAS sessions covered both 1D and 2D approaches. The 1D
+        component focused on river cross-sections, flow boundaries,
+        water-surface profiles, and river hydraulics.
       </p>
 
       <p>
-        The final part of the training demonstrated the integration of 1D and 2D domains,
-        allowing the river channel and surrounding floodplain to be represented within one
-        connected modeling framework. This workflow supports more comprehensive flood analysis
-        and practical engineering assessment.
+        The 2D component introduced computational meshes, terrain-based flood
+        modeling, inundation depth, and velocity interpretation.
+      </p>
+
+      <p>
+        The final part of the training demonstrated the integration of 1D and
+        2D domains, allowing the river channel and surrounding floodplain to be
+        represented within one connected modeling framework.
+      </p>
+
+      <p>
+        This workflow supports more comprehensive flood analysis and practical
+        engineering assessment.
       </p>
     `
+  },
+
+
+  /* ===================================================
+     SLIDE 3
+     YOUTUBE VIDEO
+  =================================================== */
+
+  {
+    type: "youtube",
+
+    topicIcon: "fa-brands fa-youtube",
+
+    topic: "YouTube Research Video",
+
+    title:
+      "Tsunami-Induced Wave Pressure and Force",
+
+    summary:
+      "A research video presenting numerical analysis of tsunami-induced wave pressure and force, highlighting how computational modelling can support the assessment of wave–structure interaction and coastal engineering problems.",
+
+    youtubeUrl:
+      "https://www.youtube.com/embed/yqZhMp-yWcU",
+
+    externalUrl:
+      "https://www.youtube.com/watch?v=yqZhMp-yWcU",
+
+    buttonText:
+      "Watch on YouTube"
   }
+
 ];
 
+
 let activityIndex = 0;
+
 let activityAutoSlide;
+
 let activityTouchStartX = null;
 
 
-/* =========================
+/* =====================================================
    RENDER ACTIVITY
-========================= */
+===================================================== */
 
 function renderActivity(index, immediate = false) {
-  const slider = document.getElementById("activitySlider");
-  const image = document.getElementById("activityImage");
-  const topic = document.getElementById("activityTopic");
-  const title = document.getElementById("activityTitle");
-  const summary = document.getElementById("activitySummary");
-  const readMore = document.getElementById("activityReadMore");
-  const dots = document.querySelectorAll(".activity-dot");
 
-  if (!slider || !activityItems.length) return;
+  const slider =
+    document.getElementById("activitySlider");
 
-  if (index >= activityItems.length) {
+  const image =
+    document.getElementById("activityImage");
+
+  const topic =
+    document.getElementById("activityTopic");
+
+  const title =
+    document.getElementById("activityTitle");
+
+  const summary =
+    document.getElementById("activitySummary");
+
+  const readMore =
+    document.getElementById("activityReadMore");
+
+  const youtubePanel =
+    document.getElementById("activityYoutubePanel");
+
+  const youtubeFrame =
+    document.getElementById("activityYoutubeFrame");
+
+  const dots =
+    document.querySelectorAll(".activity-dot");
+
+
+  if (
+    !slider ||
+    !activityItems.length
+  ) return;
+
+
+  /* =========================
+     INDEX LOOP
+  ========================= */
+
+  if (
+    index >= activityItems.length
+  ) {
+
     activityIndex = 0;
-  } else if (index < 0) {
-    activityIndex = activityItems.length - 1;
-  } else {
-    activityIndex = index;
+
   }
 
-  const item = activityItems[activityIndex];
+  else if (
+    index < 0
+  ) {
+
+    activityIndex =
+      activityItems.length - 1;
+
+  }
+
+  else {
+
+    activityIndex =
+      index;
+
+  }
+
+
+  const item =
+    activityItems[activityIndex];
+
 
   const applyItem = () => {
 
-    if (image) {
-      image.src = item.image;
-      image.alt = item.alt;
+    const isYoutube =
+      item.type === "youtube";
+
+
+    /* =================================================
+       SWITCH YOUTUBE MODE
+    ================================================= */
+
+    slider.classList.toggle(
+      "youtube-mode",
+      isYoutube
+    );
+
+
+    /* =================================================
+       YOUTUBE PANEL
+    ================================================= */
+
+    if (youtubePanel) {
+
+      youtubePanel.classList.toggle(
+        "active",
+        isYoutube
+      );
+
+      youtubePanel.setAttribute(
+        "aria-hidden",
+        isYoutube
+          ? "false"
+          : "true"
+      );
+
     }
+
+
+    /* =================================================
+       VIDEO
+    ================================================= */
+
+    if (youtubeFrame) {
+
+      youtubeFrame.src =
+        isYoutube
+          ? item.youtubeUrl
+          : "";
+
+    }
+
+
+    /* =================================================
+       BACKGROUND IMAGE
+    ================================================= */
+
+    if (image) {
+
+      if (isYoutube) {
+
+        image.style.opacity =
+          "0";
+
+      }
+
+      else {
+
+        image.style.opacity =
+          "1";
+
+        image.src =
+          item.image;
+
+        image.alt =
+          item.alt;
+
+      }
+
+    }
+
+
+    /* =================================================
+       TOPIC
+    ================================================= */
 
     if (topic) {
-      topic.innerHTML =
-        `<i class="${item.topicIcon}"></i> ${item.topic}`;
+
+      topic.innerHTML = `
+        <i class="${item.topicIcon}"></i>
+        ${item.topic}
+      `;
+
     }
+
+
+    /* =================================================
+       TITLE
+    ================================================= */
 
     if (title) {
-      title.textContent = item.title;
+
+      title.textContent =
+        item.title;
+
     }
 
+
+    /* =================================================
+       SUMMARY
+    ================================================= */
+
     if (summary) {
-      summary.textContent = item.summary;
+
+      summary.textContent =
+        item.summary;
+
     }
+
+
+    /* =================================================
+       MAIN BUTTON
+    ================================================= */
 
     if (readMore) {
 
-      const label =
+      let label =
+        "Read full discussion";
+
+
+      if (isYoutube) {
+
+        label =
+          item.buttonText ||
+          "Watch on YouTube";
+
+      }
+
+      else if (
         item.type === "activity"
-          ? "Read full activity"
-          : "Read full discussion";
+      ) {
+
+        label =
+          "Read full activity";
+
+      }
+
 
       readMore.innerHTML = `
         ${label}
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       `;
+
+
+      readMore.classList.toggle(
+        "youtube-button",
+        isYoutube
+      );
+
     }
 
-    dots.forEach((dot, dotIndex) => {
 
-      dot.classList.toggle(
-        "active",
-        dotIndex === activityIndex
-      );
+    /* =================================================
+       DOTS
+    ================================================= */
 
-      dot.setAttribute(
-        "aria-current",
-        dotIndex === activityIndex ? "true" : "false"
-      );
+    dots.forEach(
+      (dot, dotIndex) => {
 
-    });
+        dot.classList.toggle(
+          "active",
+          dotIndex === activityIndex
+        );
 
-    slider.classList.remove("is-fading");
+
+        dot.setAttribute(
+          "aria-current",
+          dotIndex === activityIndex
+            ? "true"
+            : "false"
+        );
+
+      }
+    );
+
+
+    slider.classList.remove(
+      "is-fading"
+    );
+
   };
 
 
+  /* =========================
+     INITIAL RENDER
+  ========================= */
+
   if (immediate) {
+
     applyItem();
+
     return;
+
   }
 
 
-  slider.classList.add("is-fading");
+  /* =========================
+     FADE TRANSITION
+  ========================= */
+
+  slider.classList.add(
+    "is-fading"
+  );
+
 
   window.setTimeout(
     applyItem,
     220
   );
+
 }
 
 
-/* =========================
+/* =====================================================
    SLIDER CONTROLS
-========================= */
+===================================================== */
 
 function goToActivity(index) {
+
   renderActivity(index);
+
   resetActivityAutoSlide();
+
 }
 
 
 function previousActivity() {
-  renderActivity(activityIndex - 1);
+
+  renderActivity(
+    activityIndex - 1
+  );
+
   resetActivityAutoSlide();
+
 }
 
 
 function nextActivity() {
-  renderActivity(activityIndex + 1);
+
+  renderActivity(
+    activityIndex + 1
+  );
+
   resetActivityAutoSlide();
+
 }
 
 
-/* =========================
+/* =====================================================
    AUTO SLIDE
-========================= */
+===================================================== */
 
 function startActivityAutoSlide() {
 
   const slider =
-    document.getElementById("activitySlider");
+    document.getElementById(
+      "activitySlider"
+    );
 
-  if (!slider || activityItems.length < 2)
-    return;
 
-  clearInterval(activityAutoSlide);
+  if (
+    !slider ||
+    activityItems.length < 2
+  ) return;
+
+
+  clearInterval(
+    activityAutoSlide
+  );
+
 
   activityAutoSlide =
-    setInterval(() => {
+    setInterval(
+      () => {
 
-      renderActivity(
-        activityIndex + 1
-      );
+        renderActivity(
+          activityIndex + 1
+        );
 
-    }, 6500);
+      },
+      6500
+    );
+
 }
 
 
 function stopActivityAutoSlide() {
-  clearInterval(activityAutoSlide);
+
+  clearInterval(
+    activityAutoSlide
+  );
+
 }
 
 
 function resetActivityAutoSlide() {
+
   stopActivityAutoSlide();
+
   startActivityAutoSlide();
+
 }
 
 
-/* =========================
+/* =====================================================
    SETUP ACTIVITY SLIDER
-========================= */
+===================================================== */
 
 function setupActivitySlider() {
 
   const slider =
-    document.getElementById("activitySlider");
+    document.getElementById(
+      "activitySlider"
+    );
+
 
   const dotsWrap =
-    document.getElementById("activityDots");
+    document.getElementById(
+      "activityDots"
+    );
 
 
   if (
@@ -414,7 +742,9 @@ function setupActivitySlider() {
   ) return;
 
 
-  /* CREATE DOTS */
+  /* =========================
+     CREATE DOTS
+  ========================= */
 
   dotsWrap.innerHTML =
     activityItems
@@ -434,12 +764,15 @@ function setupActivitySlider() {
       .join("");
 
 
-  /* PAUSE ON HOVER */
+  /* =========================
+     PAUSE ON HOVER
+  ========================= */
 
   slider.addEventListener(
     "mouseenter",
     stopActivityAutoSlide
   );
+
 
   slider.addEventListener(
     "mouseleave",
@@ -447,12 +780,15 @@ function setupActivitySlider() {
   );
 
 
-  /* PAUSE WHEN KEYBOARD FOCUS */
+  /* =========================
+     PAUSE WHEN FOCUS
+  ========================= */
 
   slider.addEventListener(
     "focusin",
     stopActivityAutoSlide
   );
+
 
   slider.addEventListener(
     "focusout",
@@ -460,7 +796,9 @@ function setupActivitySlider() {
   );
 
 
-  /* MOBILE SWIPE */
+  /* =========================
+     MOBILE SWIPE START
+  ========================= */
 
   slider.addEventListener(
     "touchstart",
@@ -476,6 +814,10 @@ function setupActivitySlider() {
   );
 
 
+  /* =========================
+     MOBILE SWIPE END
+  ========================= */
+
   slider.addEventListener(
     "touchend",
     event => {
@@ -486,7 +828,8 @@ function setupActivitySlider() {
 
 
       const endX =
-        event.changedTouches[0].clientX;
+        event.changedTouches[0]
+          .clientX;
 
 
       const distance =
@@ -498,11 +841,15 @@ function setupActivitySlider() {
         Math.abs(distance) > 50
       ) {
 
-        if (distance < 0) {
+        if (
+          distance < 0
+        ) {
 
           nextActivity();
 
-        } else {
+        }
+
+        else {
 
           previousActivity();
 
@@ -511,7 +858,8 @@ function setupActivitySlider() {
       }
 
 
-      activityTouchStartX = null;
+      activityTouchStartX =
+        null;
 
     },
     {
@@ -520,57 +868,140 @@ function setupActivitySlider() {
   );
 
 
+  /* =========================
+     INITIALIZE
+  ========================= */
+
   renderActivity(
     0,
     true
   );
 
+
   startActivityAutoSlide();
+
 }
 
 
-/* =========================
+/* =====================================================
+   ACTIVITY MAIN BUTTON
+===================================================== */
+
+function handleActivityButton() {
+
+  const item =
+    activityItems[
+      activityIndex
+    ];
+
+
+  if (!item) return;
+
+
+  /* =========================
+     YOUTUBE BUTTON
+  ========================= */
+
+  if (
+    item.type === "youtube"
+  ) {
+
+    window.open(
+      item.externalUrl ||
+      "https://www.youtube.com/watch?v=yqZhMp-yWcU",
+
+      "_blank",
+
+      "noopener,noreferrer"
+    );
+
+
+    return;
+
+  }
+
+
+  /* =========================
+     ACTIVITY / DISCUSSION
+  ========================= */
+
+  openActivityModal();
+
+}
+
+
+/* =====================================================
    ACTIVITY MODAL
-========================= */
+===================================================== */
 
 function openActivityModal() {
 
   const item =
-    activityItems[activityIndex];
+    activityItems[
+      activityIndex
+    ];
 
 
   const modal =
-    document.getElementById("activityModal");
+    document.getElementById(
+      "activityModal"
+    );
+
 
   const modalTopic =
-    document.getElementById("activityModalTopic");
+    document.getElementById(
+      "activityModalTopic"
+    );
+
 
   const modalTitle =
-    document.getElementById("activityModalTitle");
+    document.getElementById(
+      "activityModalTitle"
+    );
+
 
   const modalSummary =
-    document.getElementById("activityModalSummary");
+    document.getElementById(
+      "activityModalSummary"
+    );
+
 
   const modalPoints =
-    document.getElementById("activityModalPoints");
+    document.getElementById(
+      "activityModalPoints"
+    );
+
 
   const modalContent =
-    document.getElementById("activityModalContent");
+    document.getElementById(
+      "activityModalContent"
+    );
 
 
   if (
     !modal ||
-    !item
+    !item ||
+    item.type === "youtube"
   ) return;
 
 
+  /* =========================
+     MODAL TOPIC
+  ========================= */
+
   if (modalTopic) {
 
-    modalTopic.innerHTML =
-      `<i class="${item.topicIcon}"></i> ${item.topic}`;
+    modalTopic.innerHTML = `
+      <i class="${item.topicIcon}"></i>
+      ${item.topic}
+    `;
 
   }
 
+
+  /* =========================
+     MODAL TITLE
+  ========================= */
 
   if (modalTitle) {
 
@@ -580,6 +1011,10 @@ function openActivityModal() {
   }
 
 
+  /* =========================
+     MODAL SUMMARY
+  ========================= */
+
   if (modalSummary) {
 
     modalSummary.textContent =
@@ -587,6 +1022,10 @@ function openActivityModal() {
 
   }
 
+
+  /* =========================
+     MODAL POINTS
+  ========================= */
 
   if (modalPoints) {
 
@@ -603,6 +1042,10 @@ function openActivityModal() {
   }
 
 
+  /* =========================
+     MODAL CONTENT
+  ========================= */
+
   if (modalContent) {
 
     modalContent.innerHTML =
@@ -614,9 +1057,14 @@ function openActivityModal() {
   stopActivityAutoSlide();
 
 
+  /* =========================
+     OPEN MODAL
+  ========================= */
+
   modal.classList.add(
     "active"
   );
+
 
   modal.setAttribute(
     "aria-hidden",
@@ -640,9 +1088,9 @@ function openActivityModal() {
 }
 
 
-/* =========================
+/* =====================================================
    CLOSE ACTIVITY MODAL
-========================= */
+===================================================== */
 
 function closeActivityModal() {
 
@@ -688,15 +1136,18 @@ function closeActivityModal() {
 }
 
 
-/* =========================
+/* =====================================================
    PAGE INITIALIZATION
-========================= */
+===================================================== */
 
 document.addEventListener(
   "DOMContentLoaded",
   () => {
 
-    /* ABOUT HERO */
+
+    /* =========================
+       ABOUT HERO
+    ========================= */
 
     if (
       getAboutSlides().length
@@ -709,7 +1160,9 @@ document.addEventListener(
     }
 
 
-    /* ACTIVITY */
+    /* =========================
+       ACTIVITY SLIDER
+    ========================= */
 
     setupActivitySlider();
 
@@ -717,15 +1170,18 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    KEYBOARD CONTROLS
-========================= */
+===================================================== */
 
 document.addEventListener(
   "keydown",
   event => {
 
-    /* ESC CLOSE MODALS */
+
+    /* =========================
+       ESC CLOSE MODALS
+    ========================= */
 
     if (
       event.key === "Escape"
@@ -738,7 +1194,9 @@ document.addEventListener(
     }
 
 
-    /* ARROW NAVIGATION */
+    /* =========================
+       ARROW NAVIGATION
+    ========================= */
 
     if (
       document.activeElement &&
@@ -750,6 +1208,7 @@ document.addEventListener(
           document.activeElement
         )
     ) {
+
 
       if (
         event.key === "ArrowLeft"

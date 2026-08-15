@@ -17,267 +17,689 @@
 
 <header class="site-header">
   <div class="container nav-wrap">
+
     <a class="brand" href="index.html">
       <img src="assets/ourlogo.png" alt="EFSRG logo">
+
       <div>
         <strong>Environmental Fluid Systems</strong>
         <span>Research Group</span>
       </div>
     </a>
 
+
     <nav class="nav">
       <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="about.html">About</a></li>
+
+        <li>
+          <a
+            class="active"
+            href="index.html"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="projects.html">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="publications.html">
+            Publications
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
       </ul>
     </nav>
 
-    <a class="btn btn-primary header-cta" href="contact.html">
-      <i class="fa-regular fa-envelope"></i> Contact Us
+
+    <!--
+      HEADER CONTACT BUTTON
+
+      header-cta tetap dipakai di sini.
+      Jadi pada mobile tombol header ini boleh disembunyikan
+      oleh media query di style.css.
+    -->
+    <a
+      class="btn btn-primary header-cta"
+      href="contact.html"
+    >
+      <i class="fa-regular fa-envelope"></i>
+      Contact Us
     </a>
 
-    <button class="menu-btn" aria-label="Open menu">
+
+    <button
+      class="menu-btn"
+      type="button"
+      aria-label="Open menu"
+    >
       <i class="fa-solid fa-bars"></i>
     </button>
+
   </div>
 </header>
 
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
+
   <div class="container hero-content">
+
     <div class="hero-text">
-      <h1>Environmental Fluid<br>Systems Research Group</h1>
+
+      <h1>
+        Environmental Fluid<br>
+        Systems Research Group
+      </h1>
+
 
       <div class="accent-line"></div>
+
 
       <h2>
         Numerical Modeling and Data-Driven Analysis
       </h2>
 
+
       <p>
-        Supporting water, energy, climate, and environmental infrastructure through research-based modelling, technical analysis, and data-driven assessment. Our expertise covers hydrology, flood risk, coastal and marine systems, hydropower, wind energy, and environmental fluid processes to support safer planning and sustainable infrastructure development.
+        Supporting water, energy, climate, and environmental infrastructure
+        through research-based modelling, technical analysis, and data-driven
+        assessment. Our expertise covers hydrology, flood risk, coastal and
+        marine systems, hydropower, wind energy, and environmental fluid
+        processes to support safer planning and sustainable infrastructure
+        development.
       </p>
+
 
       <div class="hero-actions">
 
-        <a class="btn btn-outline" href="projects.html">
-          <i class="fa-solid fa-folder"></i> View Projects
+        <!-- VIEW PROJECTS -->
+        <a
+          class="btn btn-outline"
+          href="projects.html"
+        >
+          <i class="fa-solid fa-folder"></i>
+          View Projects
         </a>
-      
-        <a class="btn btn-primary header-cta" href="contact.html">
-         <i class="fa-regular fa-envelope"></i> Contact Us
+
+
+        <!--
+          CONTACT US
+
+          IMPORTANT:
+          Tidak menggunakan class "header-cta".
+
+          Dengan begitu tombol ini tetap muncul
+          di desktop, tablet, dan HP.
+        -->
+        <a
+          class="btn btn-primary"
+          href="contact.html"
+        >
+          <i class="fa-regular fa-envelope"></i>
+          Contact Us
         </a>
-        
-        <a class="btn btn-green" href="assets/EFSRG_Profile.pdf" target="_blank" rel="noopener">
-          <i class="fa-solid fa-file-pdf"></i> Download Profile
+
+
+        <!-- DOWNLOAD PROFILE -->
+        <a
+          class="btn btn-green"
+          href="assets/EFSRG_Profile.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+          Download Profile
         </a>
 
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="section" id="business-scope">
+
+
+<!-- =====================================================
+     OUR EXPERTISE
+===================================================== -->
+
+<section
+  class="section"
+  id="business-scope"
+>
+
   <div class="container">
+
     <div class="section-title">
       <h2>Our Expertise</h2>
     </div>
 
+
     <div class="project-grid expertise-grid">
 
-      <article class="card project-card scope-card expertise-card" onclick="openScopeModal('business-scope/hydroclimate.html', 'Hydrology & Climate Risk Analysis')">
-        <img src="assets/project-hydroclimate.png" alt="Hydrology and climate risk analysis">
+
+      <!-- HYDROLOGY -->
+
+      <article
+        class="card project-card scope-card expertise-card"
+        onclick="openScopeModal(
+          'business-scope/hydroclimate.html',
+          'Hydrology & Climate Risk Analysis'
+        )"
+      >
+
+        <img
+          src="assets/project-hydroclimate.png"
+          alt="Hydrology and climate risk analysis"
+        >
+
         <div class="expertise-card-content">
-          <h3>Hydrology & Climate Risk Analysis</h3>
-          <p>Rainfall, watershed, flood, and climate risk assessment.</p>
+
+          <h3>
+            Hydrology &amp; Climate Risk Analysis
+          </h3>
+
+          <p>
+            Rainfall, watershed, flood, and climate risk assessment.
+          </p>
+
         </div>
+
       </article>
 
-      <article class="card project-card scope-card expertise-card" onclick="openScopeModal('business-scope/flood.html', 'Hydraulic Modelling & Flood Risk Analysis')">
-        <img src="assets/project-flood.png" alt="Hydraulic modelling and flood risk analysis">
+
+
+      <!-- HYDRAULIC / FLOOD -->
+
+      <article
+        class="card project-card scope-card expertise-card"
+        onclick="openScopeModal(
+          'business-scope/flood.html',
+          'Hydraulic Modelling & Flood Risk Analysis'
+        )"
+      >
+
+        <img
+          src="assets/project-flood.png"
+          alt="Hydraulic modelling and flood risk analysis"
+        >
+
         <div class="expertise-card-content">
-          <h3>Hydraulic Modelling & Flood Risk Analysis</h3>
-          <p>River, dam, drainage, sediment, and flood modelling.</p>
+
+          <h3>
+            Hydraulic Modelling &amp; Flood Risk Analysis
+          </h3>
+
+          <p>
+            River, dam, drainage, sediment, and flood modelling.
+          </p>
+
         </div>
+
       </article>
 
-      <article class="card project-card scope-card expertise-card" onclick="openScopeModal('business-scope/coastal.html', 'Coastal & Marine Modelling')">
-        <img src="assets/project-coastal.png" alt="Coastal and marine modelling">
+
+
+      <!-- COASTAL -->
+
+      <article
+        class="card project-card scope-card expertise-card"
+        onclick="openScopeModal(
+          'business-scope/coastal.html',
+          'Coastal & Marine Modelling'
+        )"
+      >
+
+        <img
+          src="assets/project-coastal.png"
+          alt="Coastal and marine modelling"
+        >
+
         <div class="expertise-card-content">
-          <h3>Coastal & Marine Modelling</h3>
-          <p>Tide, wave, tsunami, and coastal hazard analysis.</p>
+
+          <h3>
+            Coastal &amp; Marine Modelling
+          </h3>
+
+          <p>
+            Tide, wave, tsunami, and coastal hazard analysis.
+          </p>
+
         </div>
+
       </article>
 
-      <article class="card project-card scope-card expertise-card" onclick="openScopeModal('business-scope/hydropower.html', 'Hydropower Support')">
-        <img src="assets/hydropower.png" alt="Hydropower support">
+
+
+      <!-- HYDROPOWER -->
+
+      <article
+        class="card project-card scope-card expertise-card"
+        onclick="openScopeModal(
+          'business-scope/hydropower.html',
+          'Hydropower Support'
+        )"
+      >
+
+        <img
+          src="assets/hydropower.png"
+          alt="Hydropower support"
+        >
+
         <div class="expertise-card-content">
-          <h3>Hydropower Support</h3>
-          <p>Water availability, intake, and sedimentation assessment.</p>
+
+          <h3>
+            Hydropower Support
+          </h3>
+
+          <p>
+            Water availability, intake, and sedimentation assessment.
+          </p>
+
         </div>
+
       </article>
 
-      <article class="card project-card scope-card expertise-card" onclick="openScopeModal('business-scope/wind-energy.html', 'Wind Energy Support')">
-        <img src="assets/windturbine.png" alt="Wind energy support">
+
+
+      <!-- WIND ENERGY -->
+
+      <article
+        class="card project-card scope-card expertise-card"
+        onclick="openScopeModal(
+          'business-scope/wind-energy.html',
+          'Wind Energy Support'
+        )"
+      >
+
+        <img
+          src="assets/windturbine.png"
+          alt="Wind energy support"
+        >
+
         <div class="expertise-card-content">
-          <h3>Wind Energy Support</h3>
-          <p>Wind-flow, site condition, turbulence, and wake evaluation.</p>
+
+          <h3>
+            Wind Energy Support
+          </h3>
+
+          <p>
+            Wind-flow, site condition, turbulence, and wake evaluation.
+          </p>
+
         </div>
+
       </article>
 
     </div>
+
   </div>
+
 </section>
 
+
+
+<!-- =====================================================
+     SELECTED PROJECT EXPERIENCE
+===================================================== -->
+
 <section class="section section-soft collaboration-section">
+
   <div class="container">
+
     <div class="section-title">
       <h2>Selected Project Experience</h2>
     </div>
 
+
     <div class="logo-marquee">
+
       <div class="logo-track">
 
-        <div class="logo-item">
-          <img src="assets/hdec.png" alt="HDEC China">
-        </div>
 
         <div class="logo-item">
-          <img src="assets/tectona.jpg" alt="PT Tectona Mitra Utama">
+          <img
+            src="assets/hdec.png"
+            alt="HDEC China"
+          >
         </div>
 
-        <div class="logo-item">
-          <img src="assets/saumy.png" alt="PT Saumy Gemilang Indonesia">
-        </div>
 
         <div class="logo-item">
-          <img src="assets/freeport.png" alt="PT Freeport Indonesia">
+          <img
+            src="assets/tectona.jpg"
+            alt="PT Tectona Mitra Utama"
+          >
         </div>
 
-        <div class="logo-item">
-          <img src="assets/lapi.png" alt="PT LAPI ITB">
-        </div>
 
         <div class="logo-item">
-          <img src="assets/jasatirta.png" alt="Perum Jasa Tirta II">
-        </div>
-        
-        <div class="logo-item">
-          <img src="assets/ecoedu.png" alt="EcoEdu">
-        </div>
-        
-        <div class="logo-item">
-          <img src="assets/amreta.png" alt="Government and Water Resources Agencies">
+          <img
+            src="assets/saumy.png"
+            alt="PT Saumy Gemilang Indonesia"
+          >
         </div>
 
-        <div class="logo-item">
-          <img src="assets/hdec.png" alt="HDEC China">
-        </div>
 
         <div class="logo-item">
-          <img src="assets/tectona.jpg" alt="PT Tectona Mitra Utama">
+          <img
+            src="assets/freeport.png"
+            alt="PT Freeport Indonesia"
+          >
         </div>
 
-        <div class="logo-item">
-          <img src="assets/saumy.png" alt="PT Saumy Gemilang Indonesia">
-        </div>
 
         <div class="logo-item">
-          <img src="assets/freeport.png" alt="PT Freeport Indonesia">
+          <img
+            src="assets/lapi.png"
+            alt="PT LAPI ITB"
+          >
         </div>
 
-        <div class="logo-item">
-          <img src="assets/lapi.png" alt="PT LAPI ITB">
-        </div>
 
         <div class="logo-item">
-          <img src="assets/jasatirta.png" alt="Perum Jasa Tirta II">
-        </div>
-        
-        <div class="logo-item">
-          <img src="assets/ecoedu.png" alt="EcoEdu">
+          <img
+            src="assets/jasatirta.png"
+            alt="Perum Jasa Tirta II"
+          >
         </div>
 
+
         <div class="logo-item">
-          <img src="assets/amreta.png" alt="Government and Water Resources Agencies">
+          <img
+            src="assets/ecoedu.png"
+            alt="EcoEdu"
+          >
         </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/amreta.png"
+            alt="Government and Water Resources Agencies"
+          >
+        </div>
+
+
+
+        <!--
+          DUPLICATE SET
+
+          Dipakai supaya marquee terlihat looping.
+        -->
+
+        <div class="logo-item">
+          <img
+            src="assets/hdec.png"
+            alt="HDEC China"
+          >
+        </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/tectona.jpg"
+            alt="PT Tectona Mitra Utama"
+          >
+        </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/saumy.png"
+            alt="PT Saumy Gemilang Indonesia"
+          >
+        </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/freeport.png"
+            alt="PT Freeport Indonesia"
+          >
+        </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/lapi.png"
+            alt="PT LAPI ITB"
+          >
+        </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/jasatirta.png"
+            alt="Perum Jasa Tirta II"
+          >
+        </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/ecoedu.png"
+            alt="EcoEdu"
+          >
+        </div>
+
+
+        <div class="logo-item">
+          <img
+            src="assets/amreta.png"
+            alt="Government and Water Resources Agencies"
+          >
+        </div>
+
 
       </div>
+
     </div>
+
 
     <p class="commit">
+
       <i class="fa-regular fa-circle-check"></i>
+
       Experience across public, private, and research-sector projects.
+
     </p>
+
 
     <p class="logo-disclaimer">
-      Names and logos are shown only to indicate previous project, institutional, or collaboration experience.
-      They do not imply endorsement, sponsorship, or official partnership unless explicitly stated.
+
+      Names and logos are shown only to indicate previous project,
+      institutional, or collaboration experience.
+
+      They do not imply endorsement, sponsorship, or official partnership
+      unless explicitly stated.
+
     </p>
+
   </div>
+
 </section>
 
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer class="footer">
+
   <div class="container footer-grid">
+
     <div class="brand">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
+
+      <img
+        src="assets/ourlogo.png"
+        alt="EFSRG logo"
+      >
+
       <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
-        <p>Science-driven solutions for water and environmental challenges.</p>
+
+        <strong>
+          Environmental Fluid Systems
+        </strong>
+
+        <span>
+          Research Group
+        </span>
+
+        <p>
+          Science-driven solutions for water and environmental challenges.
+        </p>
+
       </div>
+
     </div>
 
-<!--
-<div>
-  <h4>Contact</h4>
-  <p><i class="fa-regular fa-envelope"></i> info@efsrgroup.com</p>
-  <p><i class="fa-solid fa-location-dot"></i> Worldwide Collaboration</p>
-</div>
 
-<div>
-  <h4>Follow</h4>
-  <div class="socials">
-    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-    <a href="#"><i class="fa-brands fa-github"></i></a>
-    <a href="#"><i class="fa-brands fa-researchgate"></i></a>
-  </div>
-</div>
--->
+    <!--
+    <div>
+      <h4>Contact</h4>
+
+      <p>
+        <i class="fa-regular fa-envelope"></i>
+        info@efsrgroup.com
+      </p>
+
+      <p>
+        <i class="fa-solid fa-location-dot"></i>
+        Worldwide Collaboration
+      </p>
+    </div>
+
+
+    <div>
+
+      <h4>Follow</h4>
+
+      <div class="socials">
+
+        <a href="#">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-researchgate"></i>
+        </a>
+
+      </div>
+
+    </div>
+    -->
+
 
     <p class="copyright">
-      © 2024 Environmental Fluid Systems Research Group. All rights reserved.
+      © 2024 Environmental Fluid Systems Research Group.
+      All rights reserved.
     </p>
+
   </div>
+
 </footer>
 
-<div class="scope-modal" id="scopeModal">
-  <div class="scope-modal-overlay" onclick="closeScopeModal()"></div>
+
+
+<!-- =====================================================
+     BUSINESS SCOPE MODAL
+===================================================== -->
+
+<div
+  class="scope-modal"
+  id="scopeModal"
+>
+
+  <div
+    class="scope-modal-overlay"
+    onclick="closeScopeModal()"
+  ></div>
+
 
   <div class="scope-modal-box">
+
+
     <div class="scope-modal-header">
+
       <div>
-        <span class="scope-modal-label">Expertise Detail</span>
-        <h2 id="scopeModalTitle">Scope Detail</h2>
+
+        <span class="scope-modal-label">
+          Expertise Detail
+        </span>
+
+        <h2 id="scopeModalTitle">
+          Scope Detail
+        </h2>
+
       </div>
+
 
       <div class="scope-modal-actions">
-        <button type="button" onclick="printScopeContent()" class="scope-print-btn">
-          <i class="fa-solid fa-print"></i> Print / Save PDF
+
+
+        <button
+          type="button"
+          onclick="printScopeContent()"
+          class="scope-print-btn"
+        >
+          <i class="fa-solid fa-print"></i>
+          Print / Save PDF
         </button>
 
-        <button type="button" onclick="closeScopeModal()" class="scope-close-btn" aria-label="Close modal">
+
+        <button
+          type="button"
+          onclick="closeScopeModal()"
+          class="scope-close-btn"
+          aria-label="Close modal"
+        >
           <i class="fa-solid fa-xmark"></i>
         </button>
+
+
       </div>
+
     </div>
 
+
     <div class="scope-modal-content">
-      <iframe id="scopeFrame" src="" title="Expertise detail"></iframe>
+
+      <iframe
+        id="scopeFrame"
+        src=""
+        title="Expertise detail"
+      ></iframe>
+
     </div>
+
   </div>
+
 </div>
+
+
 
 <script src="script.js"></script>
 

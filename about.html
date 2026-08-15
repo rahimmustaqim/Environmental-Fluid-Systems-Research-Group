@@ -357,171 +357,7 @@
 
 
 
-    .activity-section {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 14% 18%, rgba(11, 95, 179, .10), transparent 34%),
-        radial-gradient(circle at 92% 82%, rgba(37, 184, 90, .10), transparent 32%),
-        linear-gradient(135deg, #ffffff 0%, #f6fbff 58%, #eef9f3 100%);
-    }
-
-    .activity-header {
-      max-width: 820px;
-      margin-bottom: 20px;
-    }
-
-    .activity-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      color: var(--green-dark);
-      background: rgba(37, 184, 90, .12);
-      border: 1px solid rgba(37, 184, 90, .22);
-      font-size: .82rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 16px;
-    }
-
-    .activity-header h2 {
-      color: var(--primary-dark);
-      font-size: clamp(1.7rem, 3.2vw, 2.35rem);
-      line-height: 1.12;
-      letter-spacing: -0.04em;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .activity-header p {
-      color: var(--muted);
-      font-size: .94rem;
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .activity-slider {
-      position: relative;
-      display: grid;
-      grid-template-columns: 330px 1fr;
-      min-height: 330px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .activity-slider.is-fading .activity-slider-photo img,
-    .activity-slider.is-fading .activity-slider-content {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-
-    .activity-slider-photo {
-      background: var(--primary-soft);
-      min-height: 100%;
-      overflow: hidden;
-    }
-
-    .activity-slider-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: opacity .45s ease, transform .45s ease;
-    }
-
-    .activity-slider-content {
-      padding: 26px 28px 24px;
-      transition: opacity .45s ease, transform .45s ease;
-    }
-
-    .activity-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .activity-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      border: 1px solid var(--line);
-      color: var(--primary-dark);
-      font-size: .82rem;
-      font-weight: 800;
-    }
-
-    .activity-slider-content h3 {
-      color: var(--primary-dark);
-      font-size: clamp(1.45rem, 2.5vw, 2.05rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .activity-summary {
-      color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.62;
-      margin-bottom: 12px;
-    }
-
-    .activity-points {
-      margin: 0 0 14px;
-      padding-left: 20px;
-      color: var(--primary-dark);
-      line-height: 1.55;
-      font-size: .92rem;
-    }
-
-    .activity-points li + li {
-      margin-top: 6px;
-    }
-
-    .activity-outcome {
-      padding: 13px 16px;
-      border-radius: 18px;
-      background: rgba(5, 45, 88, .05);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: .9rem;
-    }
-
-    .activity-outcome strong {
-      color: var(--primary-dark);
-    }
-
-    .activity-dots {
-      display: flex;
-      gap: 9px;
-      margin-top: 12px;
-    }
-
-    .activity-dot {
-      width: 10px;
-      height: 10px;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(11, 95, 179, .24);
-      cursor: pointer;
-      transition: .25s ease;
-    }
-
-    .activity-dot.active {
-      width: 30px;
-      background: var(--primary);
-    }
+    /* Activity and discussion modal styles are defined in style.css */
 
     .team-section {
       background:
@@ -1048,31 +884,41 @@
 <section class="section activity-section">
   <div class="container">
     <div class="activity-header">
-
-      <h2>Recent Activities & Discussions</h2>
+      <h2>Recent Activities &amp; Discussions</h2>
 
       <p>
-      An exhilarating knowledge-sharing session with participants from diverse countries! Exchanging ideas and experiences broadened our perspective, 
-      challenged the way we think, and highlighted the value of learning from different cultures and backgrounds. Truly an inspiring and encouraging experience.
-
+        An exhilarating knowledge-sharing session with participants from diverse countries!
+        Exchanging ideas and experiences broadened our perspective, challenged the way we think,
+        and highlighted the value of learning from different cultures and backgrounds.
+        Truly an inspiring and encouraging experience.
       </p>
     </div>
 
     <article class="activity-slider" id="activitySlider">
       <div class="activity-slider-photo">
-        <img id="activityImage" src="assets/Discussion1.png" alt="Indonesia's New Renewable Energy Potensial">
+        <img
+          id="activityImage"
+          src="assets/Discussion1.png"
+          alt="Indonesia Energy Transition"
+        >
       </div>
 
       <div class="activity-slider-content">
         <div class="activity-meta">
-          <span id="activityTopic"><i class="fa-solid fa-bolt"></i> Indonesia Energy Transition</span>
+          <span id="activityTopic">
+            <i class="fa-solid fa-bolt"></i>
+            Indonesia Energy Transition
+          </span>
         </div>
 
-        <h3 id="activityTitle">Indonesia's Renewable Energy Potential: From Fossil Fuel Dependence to a Sustainable Future</h3>
+        <h3 id="activityTitle">
+          Indonesia's Renewable Energy Potential: From Fossil Fuel Dependence to a Sustainable Future
+        </h3>
 
         <p class="activity-summary" id="activitySummary">
-         A discussion on Indonesia's transition from fossil fuel dependence to a cleaner and more sustainable energy future, highlighting current challenges, 
-        renewable energy potential, and the infrastructure needed to support the transition.
+          A discussion on Indonesia's transition from fossil fuel dependence to a cleaner and
+          more sustainable energy future, highlighting current challenges, renewable energy
+          potential, and the infrastructure needed to support the transition.
         </p>
 
         <ul class="activity-points" id="activityPoints">
@@ -1081,18 +927,76 @@
           <li>How Indonesia's archipelagic geography influences energy infrastructure, accessibility, and renewable energy deployment.</li>
         </ul>
 
-        <div class="activity-outcome" id="activityOutcome">
-          <strong>Discussion result:</strong>
-        One interesting point raised during the discussion was Japan's energy transition experience. In the 1990s, Japan imported liquefied natural gas (LNG) from Indonesia as a cleaner alternative to coal. This highlights that, for Indonesia, LNG could serve as a practical transitional energy source while renewable energy capacity continues to expand. Compared with coal, LNG produces lower CO₂ emissions and significantly reduces SOₓ and NOₓ emissions, helping maintain reliable and affordable electricity during the transition. Japan's long-term strategy also demonstrates that LNG can play an important bridging role before renewable energy becomes the dominant source.
+        <div class="activity-outcome-preview">
+          <div class="activity-outcome-short" id="activityOutcomeShort">
+            <strong>Discussion result:</strong>
+            LNG may serve as a transitional energy source while Indonesia expands renewable
+            energy and strengthens its electricity infrastructure.
+          </div>
 
-        For Indonesia, this approach is particularly relevant because 82% of electricity generation still comes from fossil fuels, despite the country's enormous renewable energy potential. The discussion emphasized that the main challenge is not the availability of renewable resources, but Indonesia's unique archipelagic geography. Renewable energy resources are often located far from major demand centers, making power transmission and grid integration technically challenging and costly. Therefore, accelerating Indonesia's energy transition will require not only greater investment in renewable energy but also stronger transmission networks, energy storage systems, and integrated grid infrastructure to ensure reliable and affordable electricity across the archipelago.  
+          <button
+            class="activity-read-more"
+            type="button"
+            onclick="openActivityModal()"
+          >
+            Read full discussion
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </button>
         </div>
 
-        <div class="activity-dots" id="activityDots" aria-label="Activity slider navigation"></div>
+        <div
+          class="activity-dots"
+          id="activityDots"
+          aria-label="Activity slider navigation"
+        ></div>
       </div>
     </article>
   </div>
 </section>
+
+
+<!-- Full discussion popup -->
+<div
+  class="activity-modal"
+  id="activityModal"
+  aria-hidden="true"
+>
+  <div
+    class="activity-modal-backdrop"
+    onclick="closeActivityModal()"
+  ></div>
+
+  <div
+    class="activity-modal-box"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="activityModalTitle"
+  >
+    <button
+      class="activity-modal-close"
+      type="button"
+      onclick="closeActivityModal()"
+      aria-label="Close discussion"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="activity-modal-meta" id="activityModalTopic">
+      <i class="fa-solid fa-bolt"></i>
+      Indonesia Energy Transition
+    </div>
+
+    <h3 id="activityModalTitle">
+      Indonesia's Renewable Energy Potential: From Fossil Fuel Dependence to a Sustainable Future
+    </h3>
+
+    <div
+      class="activity-modal-content"
+      id="activityModalContent"
+    ></div>
+  </div>
+</div>
+
 
 <section class="section team-section">
   <div class="container">
@@ -1284,52 +1188,126 @@
     {
       image: "assets/Discussion1.png",
       alt: "Indonesia Energy Transition",
-      statusIcon: "fa-regular fa-calendar",
       topicIcon: "fa-solid fa-bolt",
       topic: "Indonesia Energy Transition",
       title: "Indonesia's Renewable Energy Potential: From Fossil Fuel Dependence to a Sustainable Future",
-      summary: "A discussion on Indonesia's transition from fossil fuel dependence to a cleaner and more sustainable energy future, highlighting current challenges, 
-        renewable energy potential, and the infrastructure needed to support the transition.",
+
+      summary:
+        "A discussion on Indonesia's transition from fossil fuel dependence to a cleaner and more sustainable energy future, highlighting current challenges, renewable energy potential, and the infrastructure needed to support the transition.",
+
       points: [
         "Energy demand, consumption trends, and the current fossil fuel-dominated energy mix.",
-        "Opportunities for renewable energy development and the technical, economic, and policy challenges of the energy transition",
+        "Opportunities for renewable energy development and the technical, economic, and policy challenges of the energy transition.",
         "How Indonesia's archipelagic geography influences energy infrastructure, accessibility, and renewable energy deployment."
       ],
-      outcome: "<strong>Discussion result:</strong> One interesting point raised during the discussion was Japan's energy transition experience. In the 1990s, Japan imported liquefied natural gas (LNG) from Indonesia as a cleaner alternative to coal. This highlights that, for Indonesia, LNG could serve as a practical transitional energy source while renewable energy capacity continues to expand. Compared with coal, LNG produces lower CO₂ emissions and significantly reduces SOₓ and NOₓ emissions, helping maintain reliable and affordable electricity during the transition. Japan's long-term strategy also demonstrates that LNG can play an important bridging role before renewable energy becomes the dominant source.
 
-        For Indonesia, this approach is particularly relevant because 82% of electricity generation still comes from fossil fuels, despite the country's enormous renewable energy potential. The discussion emphasized that the main challenge is not the availability of renewable resources, but Indonesia's unique archipelagic geography. Renewable energy resources are often located far from major demand centers, making power transmission and grid integration technically challenging and costly. Therefore, accelerating Indonesia's energy transition will require not only greater investment in renewable energy but also stronger transmission networks, energy storage systems, and integrated grid infrastructure to ensure reliable and affordable electricity across the archipelago."
+      outcomeShort:
+        "<strong>Discussion result:</strong> LNG may serve as a transitional energy source while Indonesia expands renewable energy and strengthens its electricity infrastructure.",
+
+      outcome: `
+        <p>
+          <strong>Discussion result:</strong>
+          One interesting point raised during the discussion was Japan's energy transition
+          experience. In the 1990s, Japan imported liquefied natural gas (LNG) from Indonesia
+          as a cleaner alternative to coal.
+        </p>
+
+        <p>
+          This highlights that, for Indonesia, LNG could serve as a practical transitional
+          energy source while renewable energy capacity continues to expand. Compared with
+          coal, LNG produces lower CO₂ emissions and significantly reduces SOₓ and NOₓ
+          emissions, helping maintain reliable and affordable electricity during the transition.
+        </p>
+
+        <p>
+          Japan's long-term strategy also demonstrates that LNG can play an important bridging
+          role before renewable energy becomes the dominant source.
+        </p>
+
+        <p>
+          For Indonesia, this approach is particularly relevant because 82% of electricity
+          generation still comes from fossil fuels, despite the country's enormous renewable
+          energy potential.
+        </p>
+
+        <p>
+          The discussion emphasized that the main challenge is not the availability of renewable
+          resources, but Indonesia's unique archipelagic geography. Renewable energy resources
+          are often located far from major demand centers, making power transmission and grid
+          integration technically challenging and costly.
+        </p>
+
+        <p>
+          Therefore, accelerating Indonesia's energy transition will require not only greater
+          investment in renewable energy but also stronger transmission networks, energy storage
+          systems, and integrated grid infrastructure to ensure reliable and affordable
+          electricity across the archipelago.
+        </p>
+      `
     },
+
     {
       image: "assets/activity2.jpeg",
       alt: "Presentation or sharing session",
-      statusIcon: "fa-solid fa-users",
-      status: "Activity Update",
       topicIcon: "fa-solid fa-person-chalkboard",
       topic: "Presentation / Sharing",
       title: "Presentation & Sharing Session",
-      summary: "A space for documenting seminars, technical presentations, or sharing sessions conducted by EFSRG and collaborators.",
+
+      summary:
+        "A space for documenting seminars, technical presentations, or sharing sessions conducted by EFSRG and collaborators.",
+
       points: [
         "Add the speaker name, event date, and audience later.",
         "Use one short paragraph to explain the topic.",
         "Write the main takeaway so visitors understand the discussion result quickly."
       ],
-      outcome: "<strong>Discussion result:</strong> Replace this with the key takeaway from the presentation, follow-up idea, or collaboration opportunity."
+
+      outcomeShort:
+        "<strong>Discussion result:</strong> A brief summary of the main technical insight or takeaway from the presentation.",
+
+      outcome: `
+        <p>
+          <strong>Discussion result:</strong>
+          Replace this section with the main findings or insights discussed during the presentation.
+        </p>
+
+        <p>
+          Additional details may include technical observations, questions raised during the
+          discussion, recommendations, or opportunities for future collaboration.
+        </p>
+      `
     },
+
     {
       image: "assets/activity3.jpeg",
       alt: "Research discussion and follow-up",
-      statusIcon: "fa-solid fa-lightbulb",
-      status: "Discussion Note",
       topicIcon: "fa-solid fa-diagram-project",
       topic: "Research Follow-Up",
       title: "Research Discussion & Follow-Up",
-      summary: "A short update area for meetings, research discussions, technical exchange, or project follow-up activities.",
+
+      summary:
+        "A short update area for meetings, research discussions, technical exchange, or project follow-up activities.",
+
       points: [
         "Summarize what was discussed in 2–3 bullets.",
         "Mention the practical result or next step.",
         "Keep the update short so the page remains clean."
       ],
-      outcome: "<strong>Discussion result:</strong> Replace this with the agreed follow-up plan, project direction, or next technical task."
+
+      outcomeShort:
+        "<strong>Discussion result:</strong> Key technical outcomes and follow-up actions were identified for the next stage of the work.",
+
+      outcome: `
+        <p>
+          <strong>Discussion result:</strong>
+          Replace this section with the agreed follow-up plan, project direction, or next technical task.
+        </p>
+
+        <p>
+          This popup can contain a more detailed explanation while keeping the main website card
+          short and easy to browse.
+        </p>
+      `
     }
   ];
 
@@ -1339,12 +1317,11 @@
   function renderActivity(index) {
     const slider = document.getElementById("activitySlider");
     const image = document.getElementById("activityImage");
-    const status = document.getElementById("activityStatus");
     const topic = document.getElementById("activityTopic");
     const title = document.getElementById("activityTitle");
     const summary = document.getElementById("activitySummary");
     const points = document.getElementById("activityPoints");
-    const outcome = document.getElementById("activityOutcome");
+    const outcomeShort = document.getElementById("activityOutcomeShort");
     const dots = document.querySelectorAll(".activity-dot");
 
     if (!slider || !activityItems.length) return;
@@ -1354,21 +1331,39 @@
     slider.classList.add("is-fading");
 
     setTimeout(() => {
-      image.src = item.image;
-      image.alt = item.alt;
-      status.innerHTML = `<i class="${item.statusIcon}"></i> ${item.status}`;
-      topic.innerHTML = `<i class="${item.topicIcon}"></i> ${item.topic}`;
-      title.textContent = item.title;
-      summary.textContent = item.summary;
-      points.innerHTML = item.points.map(point => `<li>${point}</li>`).join("");
-      outcome.innerHTML = item.outcome;
+      if (image) {
+        image.src = item.image;
+        image.alt = item.alt;
+      }
 
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
+      if (topic) {
+        topic.innerHTML = `<i class="${item.topicIcon}"></i> ${item.topic}`;
+      }
+
+      if (title) {
+        title.textContent = item.title;
+      }
+
+      if (summary) {
+        summary.textContent = item.summary;
+      }
+
+      if (points) {
+        points.innerHTML = item.points
+          .map(point => `<li>${point}</li>`)
+          .join("");
+      }
+
+      if (outcomeShort) {
+        outcomeShort.innerHTML = item.outcomeShort;
+      }
+
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("active", dotIndex === index);
       });
 
       slider.classList.remove("is-fading");
-    }, 280);
+    }, 250);
   }
 
   function goToActivity(index) {
@@ -1378,10 +1373,12 @@
   }
 
   function startActivityAutoSlide() {
+    clearInterval(activityAutoSlide);
+
     activityAutoSlide = setInterval(() => {
       activityIndex = (activityIndex + 1) % activityItems.length;
       renderActivity(activityIndex);
-    }, 5000);
+    }, 6000);
   }
 
   function resetActivityAutoSlide() {
@@ -1391,15 +1388,62 @@
 
   function setupActivitySlider() {
     const dotsWrap = document.getElementById("activityDots");
+
     if (!dotsWrap || !activityItems.length) return;
 
     dotsWrap.innerHTML = activityItems
-      .map((_, index) => `<button class="activity-dot${index === 0 ? " active" : ""}" onclick="goToActivity(${index})" aria-label="Show activity ${index + 1}"></button>`)
+      .map(
+        (_, index) =>
+          `<button class="activity-dot${index === 0 ? " active" : ""}" type="button" onclick="goToActivity(${index})" aria-label="Show activity ${index + 1}"></button>`
+      )
       .join("");
 
     renderActivity(0);
     startActivityAutoSlide();
   }
+
+  function openActivityModal() {
+    const item = activityItems[activityIndex];
+
+    const modal = document.getElementById("activityModal");
+    const modalTopic = document.getElementById("activityModalTopic");
+    const modalTitle = document.getElementById("activityModalTitle");
+    const modalContent = document.getElementById("activityModalContent");
+
+    if (!modal || !item) return;
+
+    if (modalTopic) {
+      modalTopic.innerHTML = `<i class="${item.topicIcon}"></i> ${item.topic}`;
+    }
+
+    if (modalTitle) {
+      modalTitle.textContent = item.title;
+    }
+
+    if (modalContent) {
+      modalContent.innerHTML = item.outcome;
+    }
+
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeActivityModal() {
+    const modal = document.getElementById("activityModal");
+
+    if (!modal) return;
+
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      closeActivityModal();
+    }
+  });
 
   setupActivitySlider();
 

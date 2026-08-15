@@ -182,7 +182,7 @@ const activityItems = [
   },
 
   {
-    image: "assets/training-ecoedu.png",
+    image: "assets/training-ecoedu.png.png",
     alt: "Training Support with EcoEdu.id",
     type: "activity",
 

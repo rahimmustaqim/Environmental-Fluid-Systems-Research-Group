@@ -527,26 +527,6 @@
         padding: 74px 0 56px;
       }
 
-      .activity-highlight {
-        grid-template-columns: 1fr;
-      }
-
-      .activity-photo {
-        max-height: 360px;
-      }
-
-      .activity-list {
-        grid-template-columns: 1fr;
-      }
-
-      .activity-slider {
-        grid-template-columns: 1fr;
-      }
-
-      .activity-slider-photo {
-        max-height: 360px;
-      }
-
       .expert-team-list {
         grid-template-columns: 1fr;
       }
@@ -557,9 +537,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .activity-card {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 640px) {
@@ -619,14 +596,6 @@
       .founder-profile {
         padding: 22px;
         border-radius: 24px;
-      }
-
-      .activity-details {
-        padding: 22px;
-      }
-
-      .activity-card {
-        padding: 16px;
       }
 
       .expert-member-card {
@@ -885,7 +854,6 @@
   <div class="container">
     <div class="activity-header">
       <h2>Recent Activities &amp; Discussions</h2>
-
       <p>
         An exhilarating knowledge-sharing session with participants from diverse countries!
         Exchanging ideas and experiences broadened our perspective, challenged the way we think,
@@ -895,7 +863,7 @@
     </div>
 
     <article class="activity-slider" id="activitySlider">
-      <div class="activity-slider-photo">
+      <div class="activity-slider-bg">
         <img
           id="activityImage"
           src="assets/Discussion1.png"
@@ -921,41 +889,50 @@
           potential, and the infrastructure needed to support the transition.
         </p>
 
-        <ul class="activity-points" id="activityPoints">
-          <li>Energy demand, consumption trends, and the current fossil fuel-dominated energy mix.</li>
-          <li>Opportunities for renewable energy development and the technical, economic, and policy challenges of the energy transition.</li>
-          <li>How Indonesia's archipelagic geography influences energy infrastructure, accessibility, and renewable energy deployment.</li>
-        </ul>
+        <button
+          class="activity-read-more"
+          id="activityReadMore"
+          type="button"
+          onclick="openActivityModal()"
+        >
+          Read full discussion
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </button>
+      </div>
 
-        <div class="activity-outcome-preview">
-          <div class="activity-outcome-short" id="activityOutcomeShort">
-            <strong>Discussion result:</strong>
-            LNG may serve as a transitional energy source while Indonesia expands renewable
-            energy and strengthens its electricity infrastructure.
-          </div>
-
-          <button
-            class="activity-read-more"
-            type="button"
-            onclick="openActivityModal()"
-          >
-            Read full discussion
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </button>
-        </div>
-
+      <div class="activity-controls">
         <div
           class="activity-dots"
           id="activityDots"
           aria-label="Activity slider navigation"
         ></div>
+
+        <div class="activity-arrows">
+          <button
+            class="activity-arrow"
+            type="button"
+            onclick="previousActivity()"
+            aria-label="Previous activity"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <button
+            class="activity-arrow"
+            type="button"
+            onclick="nextActivity()"
+            aria-label="Next activity"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </article>
   </div>
 </section>
 
 
-<!-- Full discussion popup -->
+<!-- Full activity / discussion popup -->
 <div
   class="activity-modal"
   id="activityModal"
@@ -976,7 +953,7 @@
       class="activity-modal-close"
       type="button"
       onclick="closeActivityModal()"
-      aria-label="Close discussion"
+      aria-label="Close activity details"
     >
       <i class="fa-solid fa-xmark"></i>
     </button>
@@ -989,6 +966,16 @@
     <h3 id="activityModalTitle">
       Indonesia's Renewable Energy Potential: From Fossil Fuel Dependence to a Sustainable Future
     </h3>
+
+    <div
+      class="activity-modal-summary"
+      id="activityModalSummary"
+    ></div>
+
+    <ul
+      class="activity-modal-points"
+      id="activityModalPoints"
+    ></ul>
 
     <div
       class="activity-modal-content"
@@ -1139,308 +1126,7 @@
 
 <script src="script.js"></script>
 
-<script>
-  let aboutSlideIndex = 0;
-  const aboutSlides = document.querySelectorAll(".about-slide");
-  const aboutDots = document.querySelectorAll(".about-dot");
-  let aboutAutoSlide;
 
-  function showAboutSlide(index) {
-    if (!aboutSlides.length) return;
-
-    if (index >= aboutSlides.length) {
-      aboutSlideIndex = 0;
-    } else if (index < 0) {
-      aboutSlideIndex = aboutSlides.length - 1;
-    } else {
-      aboutSlideIndex = index;
-    }
-
-    aboutSlides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === aboutSlideIndex);
-    });
-
-    aboutDots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === aboutSlideIndex);
-    });
-  }
-
-  function goToAboutSlide(index) {
-    showAboutSlide(index);
-    resetAboutAutoSlide();
-  }
-
-  function startAboutAutoSlide() {
-    aboutAutoSlide = setInterval(() => {
-      showAboutSlide(aboutSlideIndex + 1);
-    }, 4200);
-  }
-
-  function resetAboutAutoSlide() {
-    clearInterval(aboutAutoSlide);
-    startAboutAutoSlide();
-  }
-
-  showAboutSlide(0);
-  startAboutAutoSlide();
-
-  const activityItems = [
-    {
-      image: "assets/Discussion1.png",
-      alt: "Indonesia Energy Transition",
-      topicIcon: "fa-solid fa-bolt",
-      topic: "Indonesia Energy Transition",
-      title: "Indonesia's Renewable Energy Potential: From Fossil Fuel Dependence to a Sustainable Future",
-
-      summary:
-        "A discussion on Indonesia's transition from fossil fuel dependence to a cleaner and more sustainable energy future, highlighting current challenges, renewable energy potential, and the infrastructure needed to support the transition.",
-
-      points: [
-        "Energy demand, consumption trends, and the current fossil fuel-dominated energy mix.",
-        "Opportunities for renewable energy development and the technical, economic, and policy challenges of the energy transition.",
-        "How Indonesia's archipelagic geography influences energy infrastructure, accessibility, and renewable energy deployment."
-      ],
-
-      outcomeShort:
-        "<strong>Discussion result:</strong> LNG may serve as a transitional energy source while Indonesia expands renewable energy and strengthens its electricity infrastructure.",
-
-      outcome: `
-        <p>
-          <strong>Discussion result:</strong>
-          One interesting point raised during the discussion was Japan's energy transition
-          experience. In the 1990s, Japan imported liquefied natural gas (LNG) from Indonesia
-          as a cleaner alternative to coal.
-        </p>
-
-        <p>
-          This highlights that, for Indonesia, LNG could serve as a practical transitional
-          energy source while renewable energy capacity continues to expand. Compared with
-          coal, LNG produces lower CO₂ emissions and significantly reduces SOₓ and NOₓ
-          emissions, helping maintain reliable and affordable electricity during the transition.
-        </p>
-
-        <p>
-          Japan's long-term strategy also demonstrates that LNG can play an important bridging
-          role before renewable energy becomes the dominant source.
-        </p>
-
-        <p>
-          For Indonesia, this approach is particularly relevant because 82% of electricity
-          generation still comes from fossil fuels, despite the country's enormous renewable
-          energy potential.
-        </p>
-
-        <p>
-          The discussion emphasized that the main challenge is not the availability of renewable
-          resources, but Indonesia's unique archipelagic geography. Renewable energy resources
-          are often located far from major demand centers, making power transmission and grid
-          integration technically challenging and costly.
-        </p>
-
-        <p>
-          Therefore, accelerating Indonesia's energy transition will require not only greater
-          investment in renewable energy but also stronger transmission networks, energy storage
-          systems, and integrated grid infrastructure to ensure reliable and affordable
-          electricity across the archipelago.
-        </p>
-      `
-    },
-
-    {
-      image: "assets/training-ecoedu.jpeg",
-      alt: "Training Support with EcoEdu.id",
-      topicIcon: "fa-solid fa-person-chalkboard",
-      topic: "Training Support with EcoEdu.id",
-      title: "GIS and Hydraulic Modeling Training: QGIS, HEC-HMS, HEC-RAS 1D & 2D",
-
-      summary:
-        "Training support conducted together with EcoEdu.id to strengthen practical skills in watershed analysis, rainfall-runoff modeling, flood simulation, and integrated one-dimensional and two-dimensional hydraulic modeling.",
-
-      points: [
-        "QGIS training for spatial data preparation, watershed delineation, stream network analysis, terrain processing, and map visualization.",
-        "HEC-HMS training for rainfall-runoff modeling, basin model setup, hydrologic parameter preparation, and discharge simulation.",
-        "HEC-RAS 1D training for river geometry setup, cross-section preparation, boundary conditions, steady and unsteady flow simulation, and flood profile analysis.",
-        "HEC-RAS 2D training for terrain-based computational mesh setup, 2D flow areas, boundary conditions, flood-depth mapping, velocity analysis, and inundation assessment.",
-        "Integration of HEC-RAS 1D and 2D models to represent river-channel flow and floodplain inundation within a connected hydraulic system."
-      ],
-
-      outcomeShort:
-        "<strong>Training result:</strong> Participants developed a practical workflow connecting GIS preparation, hydrologic modeling, and integrated 1D–2D hydraulic simulation.",
-
-      outcome: `
-        <p>
-          <strong>Training result:</strong>
-          The training introduced an integrated workflow beginning with spatial-data processing
-          in QGIS, followed by watershed and hydrologic analysis in HEC-HMS, and hydraulic
-          simulation using HEC-RAS.
-        </p>
-
-        <p>
-          In the QGIS session, participants practiced preparing elevation and spatial datasets,
-          delineating watersheds, extracting stream networks, organizing model inputs, and
-          producing clear maps for hydrologic and hydraulic analysis.
-        </p>
-
-        <p>
-          The HEC-HMS session focused on rainfall-runoff modeling, basin configuration,
-          hydrologic parameterization, and the preparation of discharge hydrographs that can
-          be used as hydraulic-model boundary conditions.
-        </p>
-
-        <p>
-          The HEC-RAS sessions covered both 1D and 2D approaches. The 1D component focused on
-          river cross-sections, flow boundaries, water-surface profiles, and river hydraulics,
-          while the 2D component introduced computational meshes, terrain-based flood modeling,
-          inundation depth, and velocity interpretation.
-        </p>
-
-        <p>
-          The final part of the training demonstrated the integration of 1D and 2D domains,
-          allowing the river channel and surrounding floodplain to be represented within one
-          connected modeling framework. This workflow supports more comprehensive flood analysis
-          and practical engineering assessment.
-        </p>
-      `
-    }
-  ];
-
-  let activityIndex = 0;
-  let activityAutoSlide;
-
-  function renderActivity(index) {
-    const slider = document.getElementById("activitySlider");
-    const image = document.getElementById("activityImage");
-    const topic = document.getElementById("activityTopic");
-    const title = document.getElementById("activityTitle");
-    const summary = document.getElementById("activitySummary");
-    const points = document.getElementById("activityPoints");
-    const outcomeShort = document.getElementById("activityOutcomeShort");
-    const dots = document.querySelectorAll(".activity-dot");
-
-    if (!slider || !activityItems.length) return;
-
-    const item = activityItems[index];
-
-    slider.classList.add("is-fading");
-
-    setTimeout(() => {
-      if (image) {
-        image.src = item.image;
-        image.alt = item.alt;
-      }
-
-      if (topic) {
-        topic.innerHTML = `<i class="${item.topicIcon}"></i> ${item.topic}`;
-      }
-
-      if (title) {
-        title.textContent = item.title;
-      }
-
-      if (summary) {
-        summary.textContent = item.summary;
-      }
-
-      if (points) {
-        points.innerHTML = item.points
-          .map(point => `<li>${point}</li>`)
-          .join("");
-      }
-
-      if (outcomeShort) {
-        outcomeShort.innerHTML = item.outcomeShort;
-      }
-
-      dots.forEach((dot, dotIndex) => {
-        dot.classList.toggle("active", dotIndex === index);
-      });
-
-      slider.classList.remove("is-fading");
-    }, 250);
-  }
-
-  function goToActivity(index) {
-    activityIndex = index;
-    renderActivity(activityIndex);
-    resetActivityAutoSlide();
-  }
-
-  function startActivityAutoSlide() {
-    clearInterval(activityAutoSlide);
-
-    activityAutoSlide = setInterval(() => {
-      activityIndex = (activityIndex + 1) % activityItems.length;
-      renderActivity(activityIndex);
-    }, 6000);
-  }
-
-  function resetActivityAutoSlide() {
-    clearInterval(activityAutoSlide);
-    startActivityAutoSlide();
-  }
-
-  function setupActivitySlider() {
-    const dotsWrap = document.getElementById("activityDots");
-
-    if (!dotsWrap || !activityItems.length) return;
-
-    dotsWrap.innerHTML = activityItems
-      .map(
-        (_, index) =>
-          `<button class="activity-dot${index === 0 ? " active" : ""}" type="button" onclick="goToActivity(${index})" aria-label="Show activity ${index + 1}"></button>`
-      )
-      .join("");
-
-    renderActivity(0);
-    startActivityAutoSlide();
-  }
-
-  function openActivityModal() {
-    const item = activityItems[activityIndex];
-
-    const modal = document.getElementById("activityModal");
-    const modalTopic = document.getElementById("activityModalTopic");
-    const modalTitle = document.getElementById("activityModalTitle");
-    const modalContent = document.getElementById("activityModalContent");
-
-    if (!modal || !item) return;
-
-    if (modalTopic) {
-      modalTopic.innerHTML = `<i class="${item.topicIcon}"></i> ${item.topic}`;
-    }
-
-    if (modalTitle) {
-      modalTitle.textContent = item.title;
-    }
-
-    if (modalContent) {
-      modalContent.innerHTML = item.outcome;
-    }
-
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-  }
-
-  function closeActivityModal() {
-    const modal = document.getElementById("activityModal");
-
-    if (!modal) return;
-
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-  }
-
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-      closeActivityModal();
-    }
-  });
-
-  setupActivitySlider();
-
-</script>
 
 </body>
 </html>

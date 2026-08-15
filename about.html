@@ -871,6 +871,21 @@
         >
       </div>
 
+      <!-- Used only by the YouTube slide -->
+      <div class="activity-youtube-panel" id="activityYoutubePanel" aria-hidden="true">
+        <div class="activity-youtube-frame">
+          <iframe
+            id="activityYoutubeFrame"
+            src=""
+            title="Tsunami-Induced Wave Pressure and Force"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
       <div class="activity-slider-content">
         <div class="activity-meta">
           <span id="activityTopic">
@@ -893,7 +908,7 @@
           class="activity-read-more"
           id="activityReadMore"
           type="button"
-          onclick="openActivityModal()"
+          onclick="handleActivityButton()"
         >
           Read full discussion
           <i class="fa-solid fa-arrow-up-right-from-square"></i>

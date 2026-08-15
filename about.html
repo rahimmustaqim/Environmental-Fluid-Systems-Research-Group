@@ -229,26 +229,22 @@
       background: #fff;
     }
 
+    /* =========================
+       HAZARD VIDEO GALLERY
+    ========================= */
 
     .video-section {
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at top left, rgba(11, 95, 179, .12), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(37, 184, 90, .10), transparent 34%),
+        radial-gradient(circle at top left, rgba(11, 95, 179, .10), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(37, 184, 90, .09), transparent 34%),
         linear-gradient(135deg, #ffffff 0%, #f6fbff 100%);
     }
 
     .video-showcase {
       display: grid;
       gap: 34px;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      align-items: stretch;
     }
 
     .video-kicker {
@@ -263,7 +259,7 @@
       font-size: .82rem;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: .08em;
+      letter-spacing: .075em;
       margin-bottom: 18px;
     }
 
@@ -276,18 +272,19 @@
       margin-bottom: 18px;
     }
 
-    .video-content p {
+    .video-content > p {
       color: var(--muted);
       font-size: 1.04rem;
       line-height: 1.85;
       margin-bottom: 22px;
-      max-width: 600px;
+      max-width: 920px;
     }
 
     .video-points {
       display: grid;
       gap: 12px;
       margin-top: 22px;
+      max-width: 1040px;
     }
 
     .video-point {
@@ -312,48 +309,141 @@
       margin-top: 1px;
     }
 
-    .youtube-card {
-      position: relative;
-      border-radius: 32px;
-      padding: 14px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+    .hazard-video-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      gap: 34px;
+      align-items: end;
+      padding-top: 8px;
     }
 
-    .youtube-frame {
+    .hazard-video-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: var(--green-dark);
+      font-size: .76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+    }
+
+    .hazard-video-head h3 {
+      margin: 0;
+      color: var(--primary-dark);
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -.025em;
+    }
+
+    .hazard-video-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.7;
+    }
+
+    .hazard-video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .hazard-video-card {
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 32px rgba(7, 54, 111, .08);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .hazard-video-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(11, 95, 179, .28);
+      box-shadow: 0 20px 42px rgba(7, 54, 111, .13);
+    }
+
+    .hazard-video-frame {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 24px;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(5, 45, 88, .94), rgba(11, 95, 179, .82)),
-        url('assets/activity3.jpeg') center/cover;
+      background: #04192e;
     }
 
-    .youtube-frame iframe {
+    .hazard-video-frame iframe {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
+      display: block;
     }
 
-    .video-caption {
-      display: flex;
+    .hazard-video-body {
+      padding: 15px 16px 17px;
+    }
+
+    .hazard-tag {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 16px 8px 4px;
+      min-height: 25px;
+      padding: 5px 9px;
+      margin-bottom: 9px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: .68rem;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .055em;
+    }
+
+    .hazard-video-body h4 {
+      color: var(--primary-dark);
+      font-size: .98rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .hazard-video-body p {
       color: var(--muted);
-      font-size: .92rem;
+      font-size: .82rem;
+      line-height: 1.55;
+      margin: 0 0 11px;
+    }
+
+    .hazard-video-body small {
+      display: block;
+      color: #7d8da0;
+      font-size: .71rem;
+      line-height: 1.45;
+    }
+
+    .hazard-source-note {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(233, 245, 255, .68);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .79rem;
       line-height: 1.55;
     }
 
-    .video-caption i {
-      color: #ff0033;
-      font-size: 1.2rem;
+    .hazard-source-note i {
+      color: var(--primary);
+      margin-top: 3px;
     }
+
 
 
 
@@ -612,6 +702,35 @@
         font-size: 1rem;
       }
     }
+
+
+    @media (max-width: 1050px) {
+      .hazard-video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hazard-video-head {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .hazard-video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hazard-video-card {
+        border-radius: 18px;
+      }
+
+      .hazard-video-body {
+        padding: 14px;
+      }
+    }
+
   </style>
 
 </head>
@@ -775,76 +894,155 @@
 <section class="section video-section">
   <div class="container">
     <div class="video-showcase">
+
       <div class="video-content">
         <div class="video-kicker">
-          <i class="fa-brands fa-youtube"></i>
-          Featured Video
+          <i class="fa-solid fa-water"></i>
+          From Hazard to Engineering Analysis
         </div>
 
         <h2>Why Environmental Fluid Systems Matter</h2>
 
         <p>
-          Water, sediment, climate, and environmental flow processes strongly influence
-          infrastructure safety, disaster risk, and sustainable development. Through
-          research-based modelling and technical analysis, EFSRG supports better planning
-          and decision-making for water and environmental systems.
+          Water, sediment, waves, climate, and environmental flow processes directly influence
+          infrastructure performance, disaster risk, and long-term sustainability. Through
+          numerical modelling, field-based analysis, and engineering assessment, EFSRG investigates
+          these interconnected processes to support safer infrastructure and better environmental
+          decision-making.
         </p>
 
         <div class="video-points">
           <div class="video-point">
             <i class="fa-solid fa-check"></i>
-            <span>Explaining the importance of water, flood, sediment, coastal, and climate-related analysis.</span>
+            <span>Understanding complex interactions between water, sediment, waves, climate, and infrastructure.</span>
           </div>
 
           <div class="video-point">
             <i class="fa-solid fa-check"></i>
-            <span>Helping visitors understand how modelling supports safer infrastructure and communities.</span>
+            <span>Applying numerical modelling to assess hazards, system performance, and environmental change.</span>
           </div>
 
           <div class="video-point">
             <i class="fa-solid fa-check"></i>
-            <span>Connecting EFSRG research expertise with practical environmental engineering problems.</span>
+            <span>Translating scientific analysis into practical support for resilient infrastructure and communities.</span>
           </div>
         </div>
       </div>
 
-      <div class="video-grid">
-      <div class="youtube-card">
-        <div class="youtube-frame">
-          <iframe
-            src="https://www.youtube.com/embed/K0rWPm9f3GQ"
-            title="EFSRG introduction video"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
+      <div class="hazard-video-head">
+        <div>
+          <span class="hazard-video-eyebrow">
+            <i class="fa-brands fa-youtube"></i>
+            Selected Visual References
+          </span>
+          <h3>Water-Related Hazards &amp; Monitoring</h3>
         </div>
 
-        <div class="video-caption">
-          <i class="fa-brands fa-youtube"></i>
-          <span>Tsunami in Kesennuma city, Miyagi / Great East Japan Earthquake.</span>
-        </div>
+        <p>
+          Selected NOAA visualizations showing tsunami propagation, coastal hazards,
+          and monitoring systems that connect real-world events with engineering analysis.
+        </p>
       </div>
-      
-      <div class="youtube-card">
-        <div class="youtube-frame">
-          <iframe
-            src="https://www.youtube.com/embed/yqZhMp-yWcU"
-            title="Pressure and Force During Tsunami"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
-        </div>
 
-        <div class="video-caption">
-          <i class="fa-brands fa-youtube"></i>
-          <span>Tsunami-Induced Wave Pressure and Force</span>
-        </div>
+      <div class="hazard-video-grid">
+
+        <article class="hazard-video-card">
+          <div class="hazard-video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/OX2z_Q7dKfs"
+              title="Ternate Indonesia Tsunami Propagation April 1 2026"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="hazard-video-body">
+            <span class="hazard-tag">Indonesia · Tsunami</span>
+            <h4>Ternate, Indonesia Tsunami Propagation</h4>
+            <p>
+              NOAA PMEL visualization of tsunami propagation following the April 1, 2026 Ternate event.
+            </p>
+            <small>Source: NOAA Pacific Marine Environmental Laboratory</small>
+          </div>
+        </article>
+
+        <article class="hazard-video-card">
+          <div class="hazard-video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/_fvqWqfrXXM"
+              title="Hunga Tonga Hunga Haapai Volcano Generated Tsunami Propagation"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="hazard-video-body">
+            <span class="hazard-tag">Volcanic Tsunami</span>
+            <h4>Hunga Tonga–Hunga Haʻapai Tsunami</h4>
+            <p>
+              Propagation of the tsunami generated by the January 15, 2022 Hunga Tonga volcanic eruption.
+            </p>
+            <small>Source: NOAA Pacific Marine Environmental Laboratory</small>
+          </div>
+        </article>
+
+        <article class="hazard-video-card">
+          <div class="hazard-video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/vrfAtuC29Ow"
+              title="Cape Mendocino California Tsunami Propagation December 5 2024"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="hazard-video-body">
+            <span class="hazard-tag">Coastal Hazard</span>
+            <h4>Cape Mendocino Tsunami Propagation</h4>
+            <p>
+              Numerical visualization of tsunami propagation following the December 5, 2024 Cape Mendocino event.
+            </p>
+            <small>Source: NOAA Pacific Marine Environmental Laboratory</small>
+          </div>
+        </article>
+
+        <article class="hazard-video-card">
+          <div class="hazard-video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/2mKbFORiDzg"
+              title="DART Tsunami Detection Buoy"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="hazard-video-body">
+            <span class="hazard-tag">Monitoring System</span>
+            <h4>DART® Tsunami Detection Buoy</h4>
+            <p>
+              An introduction to deep-ocean tsunami monitoring technology used to support forecasting and warning systems.
+            </p>
+            <small>Source: NOAA Pacific Marine Environmental Laboratory</small>
+          </div>
+        </article>
+
       </div>
+
+      <div class="hazard-source-note">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>
+          External videos are embedded for educational reference. NOAA PMEL states that videos listed in its gallery are freely available for use with NOAA credit.
+        </span>
       </div>
+
     </div>
   </div>
 </section>

@@ -731,6 +731,139 @@
       }
     }
 
+
+    /* =========================
+       FEATURED YOUTUBE ACTIVITY
+       (kept inside Recent Activities & Discussions)
+    ========================= */
+    .activity-featured-youtube {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+      gap: 44px;
+      align-items: center;
+      min-height: 520px;
+      margin-top: 26px;
+      padding: 58px 56px;
+      overflow: hidden;
+      border-radius: 30px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(11, 95, 179, .24), transparent 34%),
+        radial-gradient(circle at 84% 86%, rgba(37, 184, 90, .12), transparent 30%),
+        linear-gradient(135deg, #06233f 0%, #041b31 58%, #03172a 100%);
+      box-shadow: 0 28px 70px rgba(5, 45, 88, .17);
+    }
+
+    .activity-featured-youtube::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(115deg, rgba(255,255,255,.025), transparent 45%);
+    }
+
+    .featured-youtube-media,
+    .featured-youtube-content {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .featured-youtube-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 22px 46px rgba(0,0,0,.26);
+    }
+
+    .featured-youtube-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .featured-youtube-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 15px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.24);
+      font-size: .82rem;
+      font-weight: 850;
+      backdrop-filter: blur(10px);
+    }
+
+    .featured-youtube-content h3 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: clamp(2rem, 3vw, 3.15rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      font-weight: 900;
+    }
+
+    .featured-youtube-content p {
+      margin: 0 0 26px;
+      color: rgba(255,255,255,.86);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .featured-youtube-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 13px;
+      background: #ff0033;
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 14px 28px rgba(255,0,51,.22);
+      transition: .22s ease;
+    }
+
+    .featured-youtube-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(255,0,51,.28);
+    }
+
+    @media (max-width: 900px) {
+      .activity-featured-youtube {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 34px 28px;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .activity-featured-youtube {
+        padding: 22px 18px;
+        border-radius: 24px;
+      }
+
+      .featured-youtube-frame {
+        border-radius: 18px;
+      }
+
+      .featured-youtube-content h3 {
+        font-size: 2rem;
+      }
+    }
+
   </style>
 
 </head>
@@ -1141,6 +1274,53 @@
         </div>
       </div>
     </article>
+
+    <!-- ======================================================
+         NEW YOUTUBE ACTIVITY
+         Inserted directly after the existing activity slider.
+         This stays inside "Recent Activities & Discussions"
+         and does not require any script.js changes.
+    ======================================================= -->
+    <article class="activity-featured-youtube">
+      <div class="featured-youtube-media">
+        <div class="featured-youtube-frame">
+          <iframe
+            src="https://www.youtube.com/embed/zW5q_-NVnVU?start=89&rel=0"
+            title="KULIAH S1, S2, S3 FULL BEASISWA: RAHASIANYA APA? | Jiwa Berbicara #4"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="featured-youtube-content">
+        <div class="featured-youtube-badge">
+          <i class="fa-brands fa-youtube"></i>
+          YouTube Conversation
+        </div>
+
+        <h3>Kuliah S1, S2, S3 Full Beasiswa: Rahasianya Apa?</h3>
+
+        <p>
+          A conversation on pursuing undergraduate, master&apos;s, and doctoral education through
+          scholarships, sharing academic experiences, preparation, and perspectives on continuing
+          higher education and building an international academic journey.
+        </p>
+
+        <a
+          class="featured-youtube-button"
+          href="https://www.youtube.com/watch?v=zW5q_-NVnVU&list=LL&index=30&t=89s"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch on YouTube
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </article>
+
   </div>
 </section>
 

@@ -10,6 +10,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
@@ -25,8 +26,14 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+
+    /* =========================
+       CONTACT HERO
+    ========================== */
+
     .contact-simple {
       padding: 96px 0 70px;
+
       background:
         radial-gradient(
           circle at top right,
@@ -58,22 +65,30 @@
       margin-top: 18px;
     }
 
+
+    /* =========================
+       CONTACT SECTION
+    ========================== */
+
     .contact-content {
       padding: 70px 0 90px;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 30px;
-      align-items: start;
+    .contact-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
     }
+
+
+    /* =========================
+       CONTACT BOX
+    ========================== */
 
     .contact-box {
       background: #ffffff;
       border: 1px solid var(--line);
       border-radius: 28px;
-      padding: 30px;
+      padding: 36px;
       box-shadow: var(--shadow);
     }
 
@@ -86,47 +101,16 @@
       margin-bottom: 12px;
     }
 
-    .contact-box p {
+    .contact-box > p {
       color: var(--muted);
       line-height: 1.75;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
 
-    .quick-links {
-      display: grid;
-      gap: 12px;
-      margin-top: 22px;
-    }
 
-    .quick-link {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      padding: 14px 15px;
-      border-radius: 16px;
-      background: var(--primary-soft);
-      border: 1px solid var(--line);
-      color: var(--primary-dark);
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.22s ease;
-    }
-
-    .quick-link i {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #ffffff;
-      color: var(--primary);
-      box-shadow: 0 8px 18px rgba(7, 54, 111, 0.08);
-    }
-
-    .quick-link:hover {
-      transform: translateY(-2px);
-      color: var(--primary);
-    }
+    /* =========================
+       CONTACT FORM
+    ========================== */
 
     .contact-form {
       display: grid;
@@ -177,22 +161,31 @@
       line-height: 1.6;
     }
 
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
     @media (max-width: 900px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
 
       .contact-simple {
         padding: 82px 0 58px;
       }
+
+      .contact-wrapper {
+        max-width: 100%;
+      }
     }
 
     @media (max-width: 560px) {
+
       .contact-box {
         padding: 23px;
         border-radius: 23px;
       }
+
     }
+
   </style>
 </head>
 
@@ -202,26 +195,35 @@
   <!-- =========================
        HEADER
   ========================== -->
+
   <header class="site-header">
+
     <div class="container nav-wrap">
 
       <a class="brand" href="index.html">
-        <img src="assets/ourlogo.png" alt="EFSRG logo">
+
+        <img
+          src="assets/ourlogo.png"
+          alt="EFSRG logo"
+        >
 
         <div>
           <strong>Environmental Fluid Systems</strong>
           <span>Research Group</span>
         </div>
+
       </a>
 
 
       <nav class="nav">
+
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
+
       </nav>
 
 
@@ -234,96 +236,62 @@
       </a>
 
 
-      <button class="menu-btn" aria-label="Open menu">
+      <button
+        class="menu-btn"
+        aria-label="Open menu"
+      >
         <i class="fa-solid fa-bars"></i>
       </button>
 
     </div>
+
   </header>
+
 
 
   <!-- =========================
        HERO
   ========================== -->
+
   <section class="contact-simple">
+
     <div class="container">
 
       <div class="eyebrow">
         Contact &amp; Collaboration
       </div>
 
+
       <h1>
         Let’s discuss your project or collaboration idea.
       </h1>
 
+
       <div class="accent-line"></div>
 
     </div>
+
   </section>
+
 
 
   <!-- =========================
        CONTACT FORM
   ========================== -->
+
   <section class="contact-content">
+
     <div class="container">
 
-      <div class="contact-grid">
+      <div class="contact-wrapper">
 
-        <!-- LEFT SIDE -->
         <div class="contact-box">
 
-          <h2>Work With Us</h2>
 
-          <p>
-            Have a project, research idea, or collaboration opportunity?
-            Tell us about your needs and our team will get in touch with you.
-          </p>
+          <h2>
+            Send a Project Inquiry
+          </h2>
 
-          <div class="quick-links">
-
-            <a
-              class="quick-link"
-              href="mailto:your-email@example.com"
-            >
-              <i class="fa-regular fa-envelope"></i>
-
-              <span>
-                Contact Our Team
-              </span>
-            </a>
-
-            <a
-              class="quick-link"
-              href="projects.html"
-            >
-              <i class="fa-solid fa-diagram-project"></i>
-
-              <span>
-                Explore Our Projects
-              </span>
-            </a>
-
-            <a
-              class="quick-link"
-              href="about.html"
-            >
-              <i class="fa-solid fa-users"></i>
-
-              <span>
-                Meet Our Team
-              </span>
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- RIGHT SIDE -->
-        <div class="contact-box">
-
-          <h2>Send a Project Inquiry</h2>
 
           <p>
             Fill in the form below and provide a brief overview of
@@ -339,7 +307,9 @@
             class="contact-form"
           >
 
+
             <!-- Email subject -->
+
             <input
               type="hidden"
               name="_subject"
@@ -348,6 +318,7 @@
 
 
             <!-- Automatic confirmation email -->
+
             <input
               type="hidden"
               name="_autoresponse"
@@ -362,7 +333,11 @@ Environmental Fluid Systems Research Group"
             >
 
 
+
+            <!-- NAME -->
+
             <label>
+
               <b>Your Name</b>
 
               <input
@@ -371,10 +346,15 @@ Environmental Fluid Systems Research Group"
                 required
                 placeholder="e.g. John Smith"
               >
+
             </label>
 
 
+
+            <!-- EMAIL -->
+
             <label>
+
               <b>Email Address</b>
 
               <input
@@ -383,10 +363,15 @@ Environmental Fluid Systems Research Group"
                 required
                 placeholder="e.g. john@company.com"
               >
+
             </label>
 
 
+
+            <!-- PROJECT TITLE -->
+
             <label>
+
               <b>Project Title</b>
 
               <input
@@ -395,10 +380,15 @@ Environmental Fluid Systems Research Group"
                 required
                 placeholder="e.g. Flood Risk Assessment"
               >
+
             </label>
 
 
+
+            <!-- PROJECT DESCRIPTION -->
+
             <label>
+
               <b>Project Description</b>
 
               <textarea
@@ -406,22 +396,35 @@ Environmental Fluid Systems Research Group"
                 required
                 placeholder="Briefly describe your project objective, location, available data, and expected outputs."
               ></textarea>
+
             </label>
 
+
+
+            <!-- SUBMIT BUTTON -->
 
             <button
               type="submit"
               class="btn btn-green"
             >
+
               <i class="fa-regular fa-paper-plane"></i>
+
               Send Inquiry
+
             </button>
 
 
+
+            <!-- PRIVACY NOTE -->
+
             <p class="contact-note">
+
               By submitting this form, you agree that your information
               will be used only to contact you regarding your inquiry.
+
             </p>
+
 
           </form>
 
@@ -430,13 +433,17 @@ Environmental Fluid Systems Research Group"
       </div>
 
     </div>
+
   </section>
+
 
 
   <!-- =========================
        FOOTER
   ========================== -->
+
   <footer class="footer">
+
     <div class="container footer-grid">
 
       <div class="brand">
@@ -447,12 +454,19 @@ Environmental Fluid Systems Research Group"
         >
 
         <div>
-          <strong>Environmental Fluid Systems</strong>
-          <span>Research Group</span>
+
+          <strong>
+            Environmental Fluid Systems
+          </strong>
+
+          <span>
+            Research Group
+          </span>
 
           <p>
             Science-driven solutions for water and environmental challenges.
           </p>
+
         </div>
 
       </div>
@@ -464,10 +478,13 @@ Environmental Fluid Systems Research Group"
       </p>
 
     </div>
+
   </footer>
 
 
+
   <!-- Main JavaScript -->
+
   <script src="script.js"></script>
 
 </body>

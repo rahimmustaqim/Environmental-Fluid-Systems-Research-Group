@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contact | Environmental Fluid Systems Research Group</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
 
   <style>
     .contact-simple {
       padding: 96px 0 70px;
       background:
-        radial-gradient(circle at top right, rgba(37, 184, 90, .12), transparent 32%),
-        linear-gradient(135deg, #eef8ff 0%, #ffffff 75%);
+        radial-gradient(
+          circle at top right,
+          rgba(37, 184, 90, 0.12),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #eef8ff 0%,
+          #ffffff 75%
+        );
     }
 
     .contact-simple h1 {
@@ -38,15 +58,19 @@
       margin-top: 18px;
     }
 
+    .contact-content {
+      padding: 70px 0 90px;
+    }
+
     .contact-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
+      grid-template-columns: 0.85fr 1.15fr;
       gap: 30px;
       align-items: start;
     }
 
     .contact-box {
-      background: #fff;
+      background: #ffffff;
       border: 1px solid var(--line);
       border-radius: 28px;
       padding: 30px;
@@ -84,7 +108,8 @@
       border: 1px solid var(--line);
       color: var(--primary-dark);
       font-weight: 700;
-      transition: .22s ease;
+      text-decoration: none;
+      transition: 0.22s ease;
     }
 
     .quick-link i {
@@ -93,9 +118,9 @@
       display: grid;
       place-items: center;
       border-radius: 12px;
-      background: #fff;
+      background: #ffffff;
       color: var(--primary);
-      box-shadow: 0 8px 18px rgba(7, 54, 111, .08);
+      box-shadow: 0 8px 18px rgba(7, 54, 111, 0.08);
     }
 
     .quick-link:hover {
@@ -112,7 +137,7 @@
       display: grid;
       gap: 7px;
       color: var(--primary-dark);
-      font-size: .94rem;
+      font-size: 0.94rem;
     }
 
     .contact-form input,
@@ -123,11 +148,12 @@
       border-radius: 15px;
       padding: 14px 15px;
       font-family: inherit;
-      font-size: .96rem;
+      font-size: 0.96rem;
       color: var(--primary-dark);
       background: #fbfdff;
       outline: none;
-      transition: .22s ease;
+      transition: 0.22s ease;
+      box-sizing: border-box;
     }
 
     .contact-form textarea {
@@ -138,15 +164,16 @@
     .contact-form input:focus,
     .contact-form select:focus,
     .contact-form textarea:focus {
-      border-color: rgba(11, 95, 179, .45);
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(11, 95, 179, .08);
+      border-color: rgba(11, 95, 179, 0.45);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(11, 95, 179, 0.08);
     }
 
     .contact-note {
       margin-top: 12px;
+      margin-bottom: 0 !important;
       color: var(--muted);
-      font-size: .86rem;
+      font-size: 0.86rem;
       line-height: 1.6;
     }
 
@@ -169,127 +196,280 @@
   </style>
 </head>
 
+
 <body>
 
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
-      <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a class="brand" href="index.html">
+        <img src="assets/ourlogo.png" alt="EFSRG logo">
+
+        <div>
+          <strong>Environmental Fluid Systems</strong>
+          <span>Research Group</span>
+        </div>
+      </a>
+
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+
+      <a
+        class="btn btn-primary header-cta active"
+        href="contact.html"
+      >
+        <i class="fa-regular fa-envelope"></i>
+        Contact Us
+      </a>
+
+
+      <button class="menu-btn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="contact-simple">
+    <div class="container">
+
+      <div class="eyebrow">
+        Contact &amp; Collaboration
       </div>
-    </a>
 
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+      <h1>
+        Let’s discuss your project or collaboration idea.
+      </h1>
 
-    <a class="btn btn-primary header-cta active" href="contact.html">
-      <i class="fa-regular fa-envelope"></i> Contact Us
-    </a>
+      <div class="accent-line"></div>
 
-    <button class="menu-btn" aria-label="Open menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
-</header>
-
-<section class="contact-simple">
-  <div class="container">
-    <div class="eyebrow">Contact & Collaboration</div>
-
-    <h1>Let’s discuss your project or collaboration idea.</h1>
-
-    <div class="accent-line"></div>
-  </div>
-</section>
+    </div>
+  </section>
 
 
-    <div class="contact-box">
-      <h2>Send a Project Inquiry</h2>
+  <!-- =========================
+       CONTACT FORM
+  ========================== -->
+  <section class="contact-content">
+    <div class="container">
 
-      <p>
-        Fill in the form below. Your message will be sent directly through Formspree.
-      </p>
+      <div class="contact-grid">
 
-      <form id="contactForm"
+        <!-- LEFT SIDE -->
+        <div class="contact-box">
+
+          <h2>Work With Us</h2>
+
+          <p>
+            Have a project, research idea, or collaboration opportunity?
+            Tell us about your needs and our team will get in touch with you.
+          </p>
+
+          <div class="quick-links">
+
+            <a
+              class="quick-link"
+              href="mailto:your-email@example.com"
+            >
+              <i class="fa-regular fa-envelope"></i>
+
+              <span>
+                Contact Our Team
+              </span>
+            </a>
+
+            <a
+              class="quick-link"
+              href="projects.html"
+            >
+              <i class="fa-solid fa-diagram-project"></i>
+
+              <span>
+                Explore Our Projects
+              </span>
+            </a>
+
+            <a
+              class="quick-link"
+              href="about.html"
+            >
+              <i class="fa-solid fa-users"></i>
+
+              <span>
+                Meet Our Team
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-box">
+
+          <h2>Send a Project Inquiry</h2>
+
+          <p>
+            Fill in the form below and provide a brief overview of
+            your project. Our team will review your inquiry and
+            respond as soon as possible.
+          </p>
+
+
+          <form
+            id="contactForm"
             action="https://formspree.io/f/mykgebza"
             method="POST"
-            class="contact-form">
+            class="contact-form"
+          >
 
-        <input type="hidden" name="_subject" value="New Project Inquiry – EFSRG">
+            <!-- Email subject -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Project Inquiry – EFSRG"
+            >
 
-        <input type="hidden" name="_autoresponse"
-               value="Thank you for your inquiry.
+
+            <!-- Automatic confirmation email -->
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Thank you for your inquiry.
 
 We have received your message and will review the project details shortly.
+
 We typically respond within 24 hours on working days.
 
 Best regards,
-Environmental Fluid Systems Research Group">
+Environmental Fluid Systems Research Group"
+            >
 
-        <label>
-          <b>Your Name</b>
-          <input type="text" name="Name" required placeholder="e.g. John Smith">
-        </label>
 
-        <label>
-          <b>Email Address</b>
-          <input type="email" name="_replyto" required placeholder="e.g. john@company.com">
-        </label>
+            <label>
+              <b>Your Name</b>
 
-        <label>
-          <b>Project Title</b>
-         <textarea name="Message"
-                    required
-                    placeholder="Project Title"></textarea>
-        </label>
+              <input
+                type="text"
+                name="Name"
+                required
+                placeholder="e.g. John Smith"
+              >
+            </label>
 
-        <label>
-          <b>Project Description</b>
-          <textarea name="Message"
-                    required
-                    placeholder="Briefly describe your project objective, location, available data, and expected outputs."></textarea>
-        </label>
 
-        <button type="submit" class="btn btn-green">
-          <i class="fa-regular fa-paper-plane"></i> Send Inquiry
-        </button>
+            <label>
+              <b>Email Address</b>
 
-        <p class="contact-note">
-          By submitting this form, you agree that your information will be used only to contact you regarding your inquiry.
-        </p>
-      </form>
-    </div>
+              <input
+                type="email"
+                name="_replyto"
+                required
+                placeholder="e.g. john@company.com"
+              >
+            </label>
 
-  </div>
-</section>
 
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="brand">
-      <img src="assets/ourlogo.png" alt="EFSRG logo">
-      <div>
-        <strong>Environmental Fluid Systems</strong>
-        <span>Research Group</span>
-        <p>Science-driven solutions for water and environmental challenges.</p>
+            <label>
+              <b>Project Title</b>
+
+              <input
+                type="text"
+                name="Project Title"
+                required
+                placeholder="e.g. Flood Risk Assessment"
+              >
+            </label>
+
+
+            <label>
+              <b>Project Description</b>
+
+              <textarea
+                name="Project Description"
+                required
+                placeholder="Briefly describe your project objective, location, available data, and expected outputs."
+              ></textarea>
+            </label>
+
+
+            <button
+              type="submit"
+              class="btn btn-green"
+            >
+              <i class="fa-regular fa-paper-plane"></i>
+              Send Inquiry
+            </button>
+
+
+            <p class="contact-note">
+              By submitting this form, you agree that your information
+              will be used only to contact you regarding your inquiry.
+            </p>
+
+          </form>
+
+        </div>
+
       </div>
+
     </div>
+  </section>
 
 
-    <p class="copyright">
-      © 2024 Environmental Fluid Systems Research Group. All rights reserved.
-    </p>
-  </div>
-</footer>
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
 
-<script src="script.js"></script>
+      <div class="brand">
+
+        <img
+          src="assets/ourlogo.png"
+          alt="EFSRG logo"
+        >
+
+        <div>
+          <strong>Environmental Fluid Systems</strong>
+          <span>Research Group</span>
+
+          <p>
+            Science-driven solutions for water and environmental challenges.
+          </p>
+        </div>
+
+      </div>
+
+
+      <p class="copyright">
+        © 2026 Environmental Fluid Systems Research Group.
+        All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
 
 </body>
+
 </html>
